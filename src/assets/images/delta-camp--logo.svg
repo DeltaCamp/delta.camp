@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="851" height="456" viewBox="0 0 851 456" style="background:#fff">
+  <g fill="none" fill-rule="evenodd">
+    <text fill="#545454" font-family="AcierBATText-Solid, Acier BAT" font-size="144">
+      <tspan x="83.064" y="378">DELTA</tspan>
+    </text>
+    <text fill="#545454" font-family="AcierBATText-Gris, Acier BAT" font-size="144">
+      <tspan x="444.144" y="378">CAMP</tspan>
+    </text>
+    <path fill="#545454" d="M346.5,202 L415.5,54.5 L432.956,33 L517.628,211.56 L375.461914,211.56 L346.5,202 Z M388,176 L456.5,176 L423,97.5 L388,176 Z"/>
+  </g>
+</svg>
