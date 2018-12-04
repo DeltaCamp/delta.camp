@@ -1,26 +1,14 @@
 import React from 'react'
 import Img from "gatsby-image"
-import { Link } from 'gatsby'
+import { Link, graphql, StaticQuery } from 'gatsby'
 
 import { ThreeContainer } from 'src/components/ThreeContainer'
 
 class Hero extends React.Component {
-  render() {
+  renderHero = (data) => {
     return (
       <div>
-        {/*<Img
-          fixed={this.props.data.profilePic.childImageSharp.fixed}
-          className="hero-bg"
-          style={{
-            position: "absolute",
-            left: 550,
-            top: 30,
-            width: "959px",
-            height: "737px"
-          }}
-        />*/}
-
-        <ThreeContainer data={this.props.data} />
+        <ThreeContainer data={data} />
 
         <div className="about">
           <div className="container">
@@ -38,6 +26,24 @@ class Hero extends React.Component {
           </div>
         </div>
       </div>
+    )
+  }
+
+  render() {
+    return (
+      <StaticQuery
+        query={graphql`
+          query {
+            deltaCamp3DSymbol: file(relativePath: { eq: "DeltaCamp-logo-3d--symbol.fbx" }) {
+              publicURL
+            }
+            deltaCamp3DLightbox: file(relativePath: { eq: "DeltaCamp-logo-3d--lightbox.fbx" }) {
+              publicURL
+            }
+          }
+        `}
+        render={(data) => this.renderHero(data)}
+      />
     )
   }
 }

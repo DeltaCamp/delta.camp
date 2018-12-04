@@ -8,7 +8,7 @@ class Index extends React.Component {
   render() {
     return (
       <LayoutWithHeader>
-        <Hero />
+        <Hero data={this.props.data} />
         <IndexContent />
       </LayoutWithHeader>
     )
