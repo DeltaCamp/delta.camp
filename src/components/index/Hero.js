@@ -1,5 +1,6 @@
 import React from 'react'
 import Img from "gatsby-image"
+import { Link } from 'gatsby'
 
 import { ThreeContainer } from 'src/components/ThreeContainer'
 
@@ -26,11 +27,11 @@ class Hero extends React.Component {
             <div>
               <div className="six columns six-columns--tablet-override">
                 <p>
-                  <a className="button button-primary internal" href="#contact" title="Reach out and let's start a discussion">
+                  <Link className="button button-primary internal" to="/contact" title="Reach out and let's start a discussion">
                     Let's Work Together
-                  </a>
+                  </Link>
                   &nbsp;
-                  <a className="button button-outline internal" href="#projects" title="View some of my work">View Projects</a>
+                  <Link className="button button-outline internal" to="/work" title="Our Work">Our Work</Link>
                 </p>
               </div>
             </div>
