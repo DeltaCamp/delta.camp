@@ -14,7 +14,7 @@ import 'src/assets/stylesheets/deltacamp.css.scss'
 
 class Index extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, location } = this.props
 
     const siteTitle = data.site.siteMetadata.title
     const siteDescription = data.site.siteMetadata.description
