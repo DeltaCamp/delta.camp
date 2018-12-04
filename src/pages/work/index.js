@@ -10,7 +10,7 @@ class Work extends React.PureComponent {
   render () {
     return (
       <LayoutWithHeader>
-        <div className='work'>
+        <div className='container'>
           <h1>Client Work</h1>
 
           <div>
@@ -36,38 +36,3 @@ class Work extends React.PureComponent {
 }
 
 export default Work
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-          }
-        }
-      }
-    }
-    profilePic: file(relativePath: { eq: "delta-camp--logo.png" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fixed(width: 851, height: 737) {
-          ...GatsbyImageSharpFixed_tracedSVG
-        }
-      }
-    }
-
-  }
-`
