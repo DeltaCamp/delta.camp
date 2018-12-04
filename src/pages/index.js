@@ -111,7 +111,7 @@ class Index extends React.Component {
             [
               {
                 rel: "stylesheet",
-                href: "https://use.typekit.net/fme3two.css"
+                href: "https://use.typekit.net/xce0plw.css"
               },
               {
                 rel: 'alternate',
