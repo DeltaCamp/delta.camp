@@ -7,42 +7,25 @@ class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let header
-
-    if (location.pathname === rootPath) {
-      header = (
+    let header = (
         <div className="container">
           <div className="twelve columns">
-            <a className="brand" href="/" title="Delta Camp Logo">delta.camp</a>
+            <Link to='/' className='brand' title="Delta Camp Logo">delta.camp</Link>
 
             <ul className="nav work-layout--nav">
               <li className="nav--list-item">
-                <a className="nav--link" href="/" title="Learn more about me">About</a>
+                <Link className="nav--link" to="/work" title="See Our Work">Work</Link>
               </li>
               <li className="nav--list-item">
-                <a className="nav--link" href="/work/index.html" title="See my work">Work</a>
+                <Link className="nav--link" to="/contact" title="Contact Us">Contact</Link>
               </li>
               <li className="nav--list-item">
-                <a className="nav--link" href="/#contact" title="Contact me">Contact</a>
-              </li>
-              <li className="nav--list-item">
-                <a className="nav--link" href="/blog" title="Read my words">Blog</a>
+                <Link className="nav--link" to="/blog" title="Read my words">Blog</Link>
               </li>
             </ul>
           </div>
         </div>
       )
-    } else {
-      header = (
-        <h3>
-          <Link
-            to={'/'}
-          >
-            {title}
-          </Link>
-        </h3>
-      )
-    }
     return (
       <div>
         {header}
