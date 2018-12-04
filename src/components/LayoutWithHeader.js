@@ -6,7 +6,6 @@ import Layout from 'src/components/Layout'
 import { rhythm } from 'src/utils/typography'
 
 import 'src/assets/stylesheets/normalize.css'
-import 'src/assets/stylesheets/skeleton.css'
 import 'src/assets/stylesheets/highlight.css'
 import 'src/assets/stylesheets/deltacamp.css.scss'
 

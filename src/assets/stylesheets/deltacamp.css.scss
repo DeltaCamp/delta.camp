@@ -1,3 +1,5 @@
+@import "./bulma_and_overrides.css.scss";
+
 // Acier BAT Noir
 // font-family: acier-bat-noir, sans-serif;
 // font-weight: 400;
@@ -263,13 +265,6 @@ em {
 .brand svg {
   height: 57px;
   width: 360px;
-}
-
-.six.columns.six-columns--tablet-override {
-  @media (min-width: 550px) and (max-width: 1000px) {
-    width: 75%;
-  }
-
 }
 
 .hero-bg {
