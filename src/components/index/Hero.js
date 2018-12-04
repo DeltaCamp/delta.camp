@@ -20,7 +20,7 @@ class Hero extends React.Component {
           }}
         />*/}
 
-        <ThreeContainer />
+        <ThreeContainer data={this.props.data} />
 
         <div className="about">
           <div className="container">

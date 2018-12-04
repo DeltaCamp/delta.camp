@@ -1,8 +1,10 @@
 import * as THREE from 'three'
 import SceneSubject from './SceneSubject'
 import GeneralLights from './GeneralLights'
+import { BloomEffect, EffectComposer, EffectPass, RenderPass } from "postprocessing"
 
-export default canvas => {
+export default (canvas, data) => {
+
   const clock = new THREE.Clock()
   const origin = new THREE.Vector3(0, 0, 0)
 
@@ -23,6 +25,13 @@ export default canvas => {
   const renderer = buildRender(screenDimensions)
   const camera = buildCamera(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
+
+  const composer = new EffectComposer(new THREE.WebGLRenderer());
+  const effectPass = new EffectPass(camera, new BloomEffect());
+  effectPass.renderToScreen = true;
+
+  composer.addPass(new RenderPass(scene, camera));
+  composer.addPass(effectPass);
 
   function buildScene() {
     const scene = new THREE.Scene()
@@ -86,7 +95,7 @@ export default canvas => {
     ]
     const sceneSubjects = [
       new GeneralLights(scene, lights),
-      new SceneSubject(scene)
+      new SceneSubject(scene, data)
     ]
 
     return sceneSubjects
@@ -106,6 +115,7 @@ export default canvas => {
     updateCameraPositionRelativeToMouse(alphaX, alphaY)
 
     renderer.render(scene, camera)
+    composer.render();
   }
 
   function updateCameraPositionRelativeToMouse(alphaX, alphaY) {
@@ -137,6 +147,7 @@ export default canvas => {
     camera.updateProjectionMatrix()
 
     renderer.setSize(width, height)
+    composer.setSize(width, height)
   }
 
   function onMouseMove(x, y) {

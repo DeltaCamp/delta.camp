@@ -55,6 +55,6 @@ export default (scene, lights) => {
   }
 
   return {
-    update,
+    update
   }
 }

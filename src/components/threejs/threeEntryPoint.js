@@ -1,8 +1,8 @@
 import SceneManager from './SceneManager'
 
-export default container => {
+export default (container, data) => {
   const canvas = createCanvas(document, container)
-  const sceneManager = new SceneManager(canvas)
+  const sceneManager = new SceneManager(canvas, data)
 
   let canvasHalfWidth
   let canvasHalfHeight

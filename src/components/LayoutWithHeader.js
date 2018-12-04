@@ -154,6 +154,12 @@ class LayoutWithHeader extends React.Component {
                 }
               }
             }
+            deltaCamp3DSymbol: file(relativePath: { eq: "DeltaCamp-logo-3d--symbol.fbx" }) {
+              publicURL
+            }
+            deltaCamp3DLightbox: file(relativePath: { eq: "DeltaCamp-logo-3d--lightbox.fbx" }) {
+              publicURL
+            }
             profilePic: file(relativePath: { eq: "delta-camp--logo.png" }) {
               childImageSharp {
                 # Specify the image processing specifications right in the query.
