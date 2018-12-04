@@ -11,16 +11,14 @@ class IndexContent extends React.Component {
               <p>
                 We create high quality and delightful web applications using decentralized technologies. We constantly evolve our development process so that we're using the best tools, techniques, and standards. Ethereum is currently the most mature blockchain platform, so we have focused our efforts on building amazing Ethereum apps.  Looking to the future, we will progress into multi-blockchain systems as tools such as Polkadot and Cosmos mature.
               </p>
-              <p>
-                <ul>
-                  <li>Product Design</li>
-                  <li>Project Management</li>
-                  <li>Web application development</li>
-                  <li>Smart contract development</li>
-                  <li>Blockchain integration</li>
-                  <li>Infrastructure deployment</li>
-                </ul>
-              </p>
+              <ul>
+                <li>Product Design</li>
+                <li>Project Management</li>
+                <li>Web application development</li>
+                <li>Smart contract development</li>
+                <li>Blockchain integration</li>
+                <li>Infrastructure deployment</li>
+              </ul>
           </div>
 
           <div className='values'>

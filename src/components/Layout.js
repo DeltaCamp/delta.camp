@@ -9,27 +9,23 @@ class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let header
-    const brandAndNav = (
+    const header = (
       <div className="container">
         <div className="twelve columns">
           <div className="nav-grid">
-            <a className="brand" href="/" title="Delta Camp Logo">
+            <Link className="brand" to="/" title="Delta Camp Logo">
               <LogoSvg />
-            </a>
+            </Link>
 
             <ul className="nav work-layout--nav">
               <li className="nav--list-item">
-                <a className="nav--link" href="/" title="Learn more about me">About</a>
+                <Link className="nav--link" to="/work" title="See Our Work">Work</Link>
               </li>
               <li className="nav--list-item">
-                <a className="nav--link" href="/work/index.html" title="See my work">Work</a>
+                <Link className="nav--link" to="/contact" title="Contact Us">Contact</Link>
               </li>
               <li className="nav--list-item">
-                <a className="nav--link" href="/#contact" title="Contact me">Contact</a>
-              </li>
-              <li className="nav--list-item">
-                <a className="nav--link" href="/blog" title="Read my words">Blog</a>
+                <Link className="nav--link" to="/blog" title="Read my words">Blog</Link>
               </li>
             </ul>
           </div>
@@ -37,25 +33,6 @@ class Layout extends React.Component {
       </div>
     )
 
-
-    if (location.pathname === rootPath) {
-      header = (
-        brandAndNav
-      )
-    } else {
-      header = (
-        <React.Fragment>
-          {brandAndNav}
-          <h3>
-            <Link
-              to={'/'}
-            >
-              {title}
-            </Link>
-          </h3>
-        </React.Fragment>
-      )
-    }
     return (
       <React.Fragment>
         {header}
