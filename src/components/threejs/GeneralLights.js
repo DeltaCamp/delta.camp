@@ -42,6 +42,7 @@ export default (scene, lights) => {
 
   function update(time, alphaX, alphaY) {
     const x = rad * Math.sin(time * 0.05) * speed
+    // console.log(x)
 
     // for (let i = 0; i < createdLights.length; i++) {
       createdLights[0].position.x = x

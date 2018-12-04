@@ -26,10 +26,11 @@ class Hero extends React.Component {
             <div>
               <div className="six columns six-columns--tablet-override">
                 <p>
-                  Delta Camp
-                </p>
-                <p>
-                  <a className="button button-primary internal" href="#contact" title="Reach out and let's start a discussion">Let's Work Together</a> <a className="button internal" href="#projects" title="View some of my work">View Projects</a>
+                  <a className="button button-primary internal" href="#contact" title="Reach out and let's start a discussion">
+                    Let's Work Together
+                  </a>
+                  &nbsp;
+                  <a className="button button-outline internal" href="#projects" title="View some of my work">View Projects</a>
                 </p>
               </div>
             </div>

@@ -3,14 +3,19 @@ import { Link } from 'gatsby'
 
 import { rhythm, scale } from 'src/utils/typography'
 
+import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--wordmark-white--outlines.svg'
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
     const rootPath = `${__PATH_PREFIX__}/`
-    let header = (
-        <div className="container">
-          <div className="twelve columns">
-            <Link to='/' className='brand' title="Delta Camp Logo">delta.camp</Link>
+    const header = (
+      <div className="container">
+        <div className="twelve columns">
+          <div className="nav-grid">
+            <Link className="brand" to="/" title="Delta Camp Logo">
+              <LogoSvg />
+            </Link>
 
             <ul className="nav work-layout--nav">
               <li className="nav--list-item">
@@ -25,12 +30,14 @@ class Layout extends React.Component {
             </ul>
           </div>
         </div>
-      )
+      </div>
+    )
+
     return (
-      <div>
+      <React.Fragment>
         {header}
         {children}
-      </div>
+      </React.Fragment>
     )
   }
 }
