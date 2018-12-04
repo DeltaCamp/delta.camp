@@ -4,7 +4,7 @@ import GeneralLights from './GeneralLights'
 
 export default canvas => {
   const clock = new THREE.Clock()
-  const origin = new THREE.Vector3(20, 0, -50)
+  const origin = new THREE.Vector3(0, 0, 0)
 
   const screenDimensions = {
     width: canvas.width,
@@ -15,6 +15,9 @@ export default canvas => {
     x: 0,
     y: 0,
   }
+
+  var originalCameraPos
+  var targetCameraPos
 
   const scene = buildScene()
   const renderer = buildRender(screenDimensions)
@@ -47,8 +50,8 @@ export default canvas => {
   function buildCamera({ width, height }) {
     const aspectRatio = width / height
     const fieldOfView = 60
-    const nearPlane = 4
-    const farPlane = 100
+    const nearPlane = 1
+    const farPlane = 5000
     const camera = new THREE.PerspectiveCamera(
       fieldOfView,
       aspectRatio,
@@ -56,31 +59,71 @@ export default canvas => {
       farPlane
     )
 
-    camera.position.z = 40
+    camera.position.x = 0
+    camera.position.y = 700
+    camera.position.z = 70
+
+    originalCameraPos = new THREE.Vector3(camera.position.x + 0, camera.position.y + -10, camera.position.z + 10)
+    targetCameraPos = new THREE.Vector3(originalCameraPos.x, originalCameraPos.y + -100, originalCameraPos.z + 80)
 
     return camera
   }
 
   function createSceneSubjects(scene) {
-    const sceneSubjects = [new GeneralLights(scene), new SceneSubject(scene)]
+    const lights = [
+      {
+        color: '#f0eaff', // back light
+        x: 20,
+        y: -100,
+        z: 150
+      },
+      {
+        color: '#ffe9f0',
+        x: 100,
+        y: 400,
+        z: -100
+      },
+    ]
+    const sceneSubjects = [
+      new GeneralLights(scene, lights),
+      new SceneSubject(scene)
+    ]
 
     return sceneSubjects
   }
 
   function update() {
+    const alphaX = ((((mousePosition.x / window.innerWidth) * 2) + 1) * 0.5)
+    const alphaY = ((((mousePosition.y / window.innerHeight) * 2) + 1) * 0.5)
+    // console.log(alphaY)
+
     const elapsedTime = clock.getElapsedTime()
 
-    for (let i = 0; i < sceneSubjects.length; i++)
-      sceneSubjects[i].update(elapsedTime)
+    for (let i = 0; i < sceneSubjects.length; i++) {
+      sceneSubjects[i].update(elapsedTime, alphaX, alphaY)
+    }
 
-    updateCameraPositionRelativeToMouse()
+    updateCameraPositionRelativeToMouse(alphaX, alphaY)
 
     renderer.render(scene, camera)
   }
 
-  function updateCameraPositionRelativeToMouse() {
-    camera.position.x += (mousePosition.x * 0.01 - camera.position.x) * 0.01
-    camera.position.y += (-(mousePosition.y * 0.01) - camera.position.y) * 0.01
+  function updateCameraPositionRelativeToMouse(alphaX, alphaY) {
+    // console.log(camera.position.y)
+    // camera.position.y += (-(mousePosition.y * 0.1) - camera.position.y * 0.01) * 0.01
+    // camera.position.z += ((mousePosition.y * 0.05) - camera.position.z) * 0.01
+
+    // console.log(mousePosition.y)
+    // console.log((((mousePosition.x / window.innerWidth) * 2) + 1) * 0.5)
+
+
+    var newPos = new THREE.Vector3(originalCameraPos.x, originalCameraPos.y, originalCameraPos.z)
+    newPos.lerp(targetCameraPos, alphaX)
+
+    var newY = THREE.Math.lerp(originalCameraPos.y, targetCameraPos.y, alphaY)
+
+    camera.position.copy(new THREE.Vector3(newPos.x, newY, newPos.z))
+
     camera.lookAt(origin)
   }
 
