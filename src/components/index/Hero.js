@@ -10,19 +10,17 @@ class Hero extends React.Component {
   renderHero = (data) => {
     return (
       <ThreeContainer data={data}>
-        <Nav logo={false} />
+        <Nav />
         <div className="about">
           <div className="container">
             <div className='columns'>
               <div className="column is-half is-three-quarters-tablet">
-                <LogoSvg />
-                <h1>We build blockchain applications</h1>
+                <h2>We build apps for the third web.</h2>
+                <h4>Delta Camp is a development consultancy that specializes in decentralized applications</h4>
                 <p>
-                  <Link className="button button-primary internal" to="/contact" title="Reach out and let's start a discussion">
-                    Let's Work Together
+                  <Link className="button button-primary internal" to="/work" title="Reach out and let's start a discussion">
+                    Our Work
                   </Link>
-                  &nbsp;
-                  <Link className="button button-outline internal" to="/work" title="Our Work">Our Work</Link>
                 </p>
               </div>
             </div>
