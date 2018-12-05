@@ -4,7 +4,11 @@ import threeEntryPoint from './threejs/threeEntryPoint'
 export const ThreeContainer = class extends Component {
 
   componentDidMount() {
-    threeEntryPoint(this.threeRootElement, this.props.data)
+    this.threeObject = threeEntryPoint(this.threeRootElement, this.props.data)
+  }
+
+  componentWillUnmount() {
+    this.threeObject.destroy()
   }
 
   render () {

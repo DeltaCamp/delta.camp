@@ -26,7 +26,7 @@ export default (canvas, data) => {
   const camera = buildCamera(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
 
-  const composer = new EffectComposer(new THREE.WebGLRenderer());
+  const composer = new EffectComposer(renderer);
   const effectPass = new EffectPass(camera, new BloomEffect());
   effectPass.renderToScreen = true;
 
