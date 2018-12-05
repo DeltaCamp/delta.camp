@@ -145,7 +145,7 @@ export default (scene, data) => {
       var newY = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.001)
       var newZ = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.001)
 
-      console.log('newY', newY, 'originalSymbolPosY', originalSymbolPos.y, 'targetSymbolPosY', targetSymbolPos.y)
+      // console.log('newY', newY, 'originalSymbolPosY', originalSymbolPos.y, 'targetSymbolPosY', targetSymbolPos.y)
 
       createdSubjects[1].position.copy(new THREE.Vector3(newPos.x, newY * 2, newZ * 2))
 
