@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Bio from 'src/components/Bio'
-import LayoutWithHeader from 'src/components/LayoutWithHeader'
+import Layout from 'src/components/Layout'
 import { rhythm } from 'src/utils/typography'
 
 class Work extends React.PureComponent {
@@ -14,7 +14,7 @@ class Work extends React.PureComponent {
 
   render () {
     return (
-      <LayoutWithHeader>
+      <Layout>
         <div className='container'>
           <h1>Contact Us</h1>
           <form
@@ -38,7 +38,7 @@ class Work extends React.PureComponent {
             </div>
           </form>
         </div>
-      </LayoutWithHeader>
+      </Layout>
     )
   }
 }

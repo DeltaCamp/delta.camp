@@ -2,15 +2,15 @@ import React from 'react'
 
 import Hero from 'src/components/index/Hero'
 import IndexContent from 'src/components/index/IndexContent'
-import LayoutWithHeader from 'src/components/LayoutWithHeader'
+import Layout from 'src/components/Layout'
 
 class Index extends React.Component {
   render() {
     return (
-      <LayoutWithHeader>
+      <Layout>
         <Hero data={this.props.data} />
         <IndexContent />
-      </LayoutWithHeader>
+      </Layout>
     )
   }
 }

@@ -28,11 +28,11 @@ export default (canvas, data) => {
   const sceneSubjects = createSceneSubjects(scene)
 
   const composer = new EffectComposer(renderer);
-  const effectPass = new EffectPass(camera, new BloomEffect());
-  effectPass.renderToScreen = true;
-
-  composer.addPass(new RenderPass(scene, camera));
-  composer.addPass(effectPass);
+  // const effectPass = new EffectPass(camera, new BloomEffect());
+  // effectPass.renderToScreen = true;
+  //
+  // composer.addPass(new RenderPass(scene, camera));
+  // composer.addPass(effectPass);
 
   function buildScene() {
     const scene = new THREE.Scene()
