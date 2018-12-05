@@ -130,7 +130,7 @@ export default (scene, data) => {
 
   scene.add(group)
 
-  function update(time, alphaX, alphaY, yScrollPos) {
+  function update(time, yScrollPos) {
     const angle = time * 0.02
     const scale = (Math.sin(angle * 20)) + 7
 
@@ -138,7 +138,7 @@ export default (scene, data) => {
     // so it's abstracted properly and makes sense
     if (createdSubjects[1]) {
       var newPos = new THREE.Vector3(originalSymbolPos.x, originalSymbolPos.y, originalSymbolPos.z)
-      newPos.lerp(targetSymbolPos, alphaX)
+      // newPos.lerp(targetSymbolPos, alphaX)
 
       var newY = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.001)
       var newZ = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.001)
