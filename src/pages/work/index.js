@@ -9,7 +9,7 @@ import { rhythm } from 'src/utils/typography'
 class Work extends React.PureComponent {
   render () {
     return (
-      <LayoutWithHeader>
+      <LayoutWithHeader cssClass="work">
         <div className='container'>
           <h1>Client Work</h1>
 

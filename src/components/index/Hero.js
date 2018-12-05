@@ -13,7 +13,7 @@ class Hero extends React.Component {
         <div className="about">
           <div className="container">
             <div className='columns'>
-              <div className="column is-half is-three-quarters-tablet">
+              <div className="column is-half is-three-quarters-tablet is-paddingless">
                 <p>
                   <Link className="button button-primary internal" to="/contact" title="Reach out and let's start a discussion">
                     Let's Work Together

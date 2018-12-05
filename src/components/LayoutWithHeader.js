@@ -22,7 +22,10 @@ class LayoutWithHeader extends React.Component {
     return (
       <Layout location={location} title={siteTitle}>
         <Helmet
-          htmlAttributes={{ lang: 'en' }}
+          htmlAttributes={{
+            lang: 'en',
+            class: this.props.cssClass || ''
+          }}
           meta={[
             {
               name: 'description',
@@ -171,7 +174,8 @@ class LayoutWithHeader extends React.Component {
             }
           }
         `}
-        render={(data) => this.renderLayoutAndHeader(data)} />
+        render={(data) => this.renderLayoutAndHeader(data)}
+      />
     )
   }
 }

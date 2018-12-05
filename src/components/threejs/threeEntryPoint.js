@@ -21,11 +21,13 @@ export default (container, data) => {
   function bindEventListeners() {
     window.addEventListener('resize', resizeCanvas)
     window.addEventListener('mousemove', mouseMove)
+    window.addEventListener('scroll', scroll)
   }
 
   function unbindEventListeners() {
     window.removeEventListener('resize', resizeCanvas)
     window.removeEventListener('mousemove', mouseMove)
+    window.removeEventListener('scroll', scroll)
   }
 
   function resizeCanvas() {
@@ -39,6 +41,12 @@ export default (container, data) => {
     canvasHalfHeight = Math.round(canvas.offsetHeight / 2)
 
     sceneManager.onWindowResize()
+  }
+
+  function scroll() {
+    sceneManager.onScroll(
+      window.scrollY
+    )
   }
 
   function mouseMove({ screenX, screenY }) {
