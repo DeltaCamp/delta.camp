@@ -215,7 +215,7 @@ h4,
 h5,
 h6 {
   color: #121218;
-  margin-top: 50px;
+  // margin-top: 50px;
   text-transform: uppercase;
   font-style: initial;
 }
@@ -286,6 +286,15 @@ em {
   color: #333;
   font-style: initial;
   font-weight: 700;
+}
+
+p {
+  margin: 0 0 40px 0;
+}
+
+.values {
+  margin-bottom: 80px;
+  margin-top: 80px;
 }
 
 .hero-h1 {
@@ -406,7 +415,7 @@ em {
 
 .portfolio-category--title {
   color: #232436;
-  margin-top: 50px;
+  // margin-top: 50px;
   text-transform: uppercase;
 }
 
@@ -968,7 +977,7 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  box-shadow: 2px 2px 0 0 rgba(54, 54, 54, 0.1);
+  // box-shadow: 2px 2px 0 0 rgba(54, 54, 54, 0.1);
   border-width: 2px;
   font-family: "acier-bat-solid", Verdana, sans-serif;
   font-size: 18px;
@@ -987,7 +996,7 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-  box-shadow: 3px 3px 0 0 rgba(54, 54, 54, 0.15);
+  // box-shadow: 2px 2px 0 0 rgba(54, 54, 54, 0.15);
   padding-top: 2px;
 }
 
@@ -1001,7 +1010,7 @@ button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
-  box-shadow: 1px 1px 0 0 rgba(54, 54, 54, 0.05);
+  // box-shadow: 1px 1px 0 0 rgba(54, 54, 54, 0.05);
   padding-top: 4px;
 }
 

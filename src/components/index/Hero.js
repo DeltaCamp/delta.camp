@@ -20,11 +20,11 @@ class Hero extends React.Component {
                   We build blockchain applications
                 </h1>
                 <p>
-                  <Link className="button button-primary internal" to="/contact" title="Reach out and let's start a discussion">
+                  <Link className="button button-primary" to="/contact" title="Reach out and let's start a discussion">
                     Let's Build Together
                   </Link>
                   &nbsp;
-                  <Link className="button button-outline internal" to="/work" title="Our Work">See Our Work</Link>
+                  <Link className="button button-outline" to="/work" title="Our Work">See Our Work</Link>
                 </p>
               </div>
             </div>
