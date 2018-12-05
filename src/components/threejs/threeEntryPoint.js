@@ -2,12 +2,14 @@ import SceneManager from './SceneManager'
 
 export default (container, data) => {
   const canvas = createCanvas(document, container)
-  const sceneManager = new SceneManager(canvas, data)
 
+  let sceneManager = new SceneManager(canvas, data)
   let canvasHalfWidth
   let canvasHalfHeight
+  let requestAnimationFrameId
 
   bindEventListeners()
+  resizeCanvas()
   render()
 
   function createCanvas(document, container) {
@@ -17,11 +19,15 @@ export default (container, data) => {
   }
 
   function bindEventListeners() {
-    window.onresize = resizeCanvas
-    window.onmousemove = mouseMove
-    window.onscroll = scroll
+    window.addEventListener('resize', resizeCanvas)
+    window.addEventListener('mousemove', mouseMove)
+    window.addEventListener('scroll', scroll)
+  }
 
-    resizeCanvas()
+  function unbindEventListeners() {
+    window.removeEventListener('resize', resizeCanvas)
+    window.removeEventListener('mousemove', mouseMove)
+    window.removeEventListener('scroll', scroll)
   }
 
   function resizeCanvas() {
@@ -51,7 +57,15 @@ export default (container, data) => {
   }
 
   function render(time) {
-    requestAnimationFrame(render)
+    requestAnimationFrameId = requestAnimationFrame(render)
     sceneManager.update()
+  }
+
+  return {
+    destroy: function () {
+      cancelAnimationFrame(requestAnimationFrameId)
+      unbindEventListeners()
+      sceneManager = null
+    }
   }
 }
