@@ -84,8 +84,8 @@ $hover-color: #7fd9d0;
 
 $work-link-color: #2f19a0;
 $work-link-hover-color: #ca12be;
-$work-brand-color: #ca12be;
-$work-brand-hover-color: #fa12be;
+$work-brand-color: #fa12be;
+$work-brand-hover-color: #ca12be;
 
 
 $primary-btn-background-color: #333;
@@ -98,14 +98,9 @@ $outline-btn-border-color: #555;
 $outline-btn-background-hover-color: #7fd9d0;
 $outline-btn-color: #fff;
 
-body {
-  font-size: 1em; /* currently ems cause chrome bug misinterpreting rems on body element */
-}
-
 * {
   box-sizing: border-box;
 }
-
 
 /* TypeKit font loading */
 .wf-loading .nav--link,
@@ -181,7 +176,7 @@ body {
 body {
   color: #565659;
   font-family: 'futura-pt', sans-serif;
-  font-size: 1em;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
@@ -203,28 +198,61 @@ hr {
 
 h1,
 h2,
+h3 {
+  font-family: "acier-bat-noir", sans-serif;
+}
+
+h4,
+h5,
+h6 {
+  font-family: 'futura-pt', sans-serif;
+  font-weight: 700;
+}
+
+h1,
+h2,
 h3,
 h4,
 h5,
 h6 {
   color: #121218;
-  font-size: 4rem;
-  font-family: "acier-bat-noir", sans-serif;
   margin-top: 50px;
   text-transform: uppercase;
   font-style: initial;
 }
 
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1.75rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
 h3 {
-  font-size: 3.33rem;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
 }
 
 h5 {
-  font-size: 2.64em;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h5 small {
+  font-size: 1.25rem;
 }
 
 h6 {
-  font-size: 4rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 em {
