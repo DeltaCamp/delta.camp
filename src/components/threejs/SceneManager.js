@@ -7,9 +7,7 @@ import { BloomEffect, EffectComposer, EffectPass, RenderPass } from "postprocess
 
 export default (canvas, data) => {
 
-  let yScrollPos,
-    // originalCameraPos,
-    // targetCameraPos
+  let yScrollPos
 
   const clock = new THREE.Clock()
   const origin = new THREE.Vector3(0, 0, 0)
@@ -53,7 +51,7 @@ export default (canvas, data) => {
     renderer.setSize(width, height)
 
     // renderer.gammaInput = true
-    // renderer.gammaOutput = true
+    renderer.gammaOutput = true
 
     return renderer
   }
