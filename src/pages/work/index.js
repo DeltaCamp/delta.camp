@@ -34,26 +34,25 @@ class Work extends React.PureComponent {
             id="masonry-layout"
             infiniteScroll={this.loadItems}
             sizes={[
-              { columns: 2, gutter: 20 },
-              { mq: '768px', columns: 3, gutter: 20 },
+              { columns: 1, gutter: 20 },
+              { mq: '768px', columns: 2, gutter: 20 },
               { mq: '1024px', columns: 3, gutter: 20 }
             ]}
           >
             {this.state.items.map((v, i) => {
-              // let height = i % 2 === 0 ? 200 : 100;
-              let height = 100;
+              let height = i % 4 === 0 ? 200 : 170;
               return (
                 <div
                   key={i}
                   style={{
-                    width: '300px',
+                    width: '340px',
                     height: `${height}px`,
                     lineHeight: `${height}px`,
                     transition: 'all 0.7s ease-in-out',
                     color: 'white',
                     fontSize: '32px',
                     display: 'block',
-                    background: 'rgba(0,0,0,0.7)'
+                    background: 'rgba(0,0,0,0.3)'
                   }}
                 >
                   {i}
