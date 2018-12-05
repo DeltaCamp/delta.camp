@@ -19,22 +19,19 @@ export default (scene, lights) => {
     createdLights.push(light)
   }
 
-  // const rad = 50
-  // const speed = 2
+  const rad = 50
+  const speed = 2
 
-  // function update(time) {
-    // const x = rad * Math.sin(time * 0.05) * speed
-    // console.log(x)
+  function update(time) {
+    const x = rad * Math.sin(time * 0.05) * speed
+    console.log(x)
 
-    // for (let i = 0; i < createdLights.length; i++) {
-      // createdLights[0].position.x = x
-      // createdLights[0].position.y = x
-      // createdLights[0].position.z = x
-    // }
-
-    // lightIn.position.x = x
-    // lightOut.position.y = x
-  // }
+    for (let i = 0; i < createdLights.length; i++) {
+      createdLights[0].position.x = x
+      createdLights[0].position.y = x
+      createdLights[0].position.z = x
+    }
+  }
 
   return {
     update
