@@ -98,14 +98,9 @@ $outline-btn-border-color: #555;
 $outline-btn-background-hover-color: #7fd9d0;
 $outline-btn-color: #fff;
 
-body {
-  font-size: 1em; /* currently ems cause chrome bug misinterpreting rems on body element */
-}
-
 * {
   box-sizing: border-box;
 }
-
 
 /* TypeKit font loading */
 .wf-loading .nav--link,
@@ -181,7 +176,7 @@ body {
 body {
   color: #565659;
   font-family: 'futura-pt', sans-serif;
-  font-size: 1em;
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 
