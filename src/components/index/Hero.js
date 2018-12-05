@@ -4,15 +4,19 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import Nav from 'src/components/Nav'
 import { ThreeContainer } from 'src/components/ThreeContainer'
 
+import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--wordmark-white--outlines.svg'
+
 class Hero extends React.Component {
   renderHero = (data) => {
     return (
       <ThreeContainer data={data}>
-        <Nav />
+        <Nav logo={false} />
         <div className="about">
           <div className="container">
             <div className='columns'>
               <div className="column is-half is-three-quarters-tablet">
+                <LogoSvg />
+                <h1>We build blockchain applications</h1>
                 <p>
                   <Link className="button button-primary internal" to="/contact" title="Reach out and let's start a discussion">
                     Let's Work Together
