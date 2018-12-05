@@ -81,6 +81,13 @@
 $link-color: #f0c;
 $hover-color: #7fd9d0;
 
+
+$work-link-color: #2f19a0;
+$work-link-hover-color: #ca12be;
+$work-brand-color: #ca12be;
+$work-brand-hover-color: #fa12be;
+
+
 $primary-btn-background-color: #333;
 $primary-btn-border-color: #3a3a3a;
 $primary-btn-background-hover-color: #666;
@@ -413,6 +420,22 @@ em {
     font-size: 13px;
   }
 
+}
+
+.work .nav--link {
+  color: $work-link-color;
+}
+
+.work .nav--link:hover {
+  color: $work-link-hover-color;
+}
+
+.work .brand path {
+  fill: $work-brand-color;
+}
+
+.work .brand:hover path {
+  fill: $work-brand-hover-color;
 }
 
 .work-layout--bg-photo {
