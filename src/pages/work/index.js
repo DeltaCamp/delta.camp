@@ -6,12 +6,62 @@ import Bio from 'src/components/Bio'
 import Layout from 'src/components/Layout'
 import { rhythm } from 'src/utils/typography'
 
+
+import MasonryLayout from 'react-masonry-layout'
+
 class Work extends React.PureComponent {
+
+  state = {
+    perPage: 10,
+    items: Array(6).fill()
+  }
+
+  loadItems = () => {
+      // this.setState({
+      //   items: this.state.items.concat(Array(this.state.perPage).fill())
+      // });
+  }
+
+
+
   render () {
     return (
       <Layout cssClass="work">
         <div className='container'>
           <h1>Client Work</h1>
+
+          <MasonryLayout
+            id="masonry-layout"
+            infiniteScroll={this.loadItems}
+            sizes={[
+              { columns: 2, gutter: 20 },
+              { mq: '768px', columns: 3, gutter: 20 },
+              { mq: '1024px', columns: 3, gutter: 20 }
+            ]}
+          >
+            {this.state.items.map((v, i) => {
+              // let height = i % 2 === 0 ? 200 : 100;
+              let height = 100;
+              return (
+                <div
+                  key={i}
+                  style={{
+                    width: '300px',
+                    height: `${height}px`,
+                    lineHeight: `${height}px`,
+                    transition: 'all 0.7s ease-in-out',
+                    color: 'white',
+                    fontSize: '32px',
+                    display: 'block',
+                    background: 'rgba(0,0,0,0.7)'
+                  }}
+                >
+                  {i}
+                </div>
+              )}
+            )}
+
+          </MasonryLayout>
 
           <div>
             <h2>The Token Registry<small><a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>open</a></small></h2>
