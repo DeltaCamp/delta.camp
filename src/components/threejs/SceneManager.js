@@ -5,6 +5,10 @@ import { BloomEffect, EffectComposer, EffectPass, RenderPass } from "postprocess
 
 export default (canvas, data) => {
 
+  let yScrollPos,
+    originalCameraPos,
+    targetCameraPos
+
   const clock = new THREE.Clock()
   const origin = new THREE.Vector3(0, 0, 0)
 
@@ -18,15 +22,12 @@ export default (canvas, data) => {
     y: 0,
   }
 
-  var originalCameraPos
-  var targetCameraPos
-
   const scene = buildScene()
   const renderer = buildRender(screenDimensions)
   const camera = buildCamera(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
 
-  const composer = new EffectComposer(new THREE.WebGLRenderer());
+  const composer = new EffectComposer(renderer);
   const effectPass = new EffectPass(camera, new BloomEffect());
   effectPass.renderToScreen = true;
 
@@ -81,13 +82,15 @@ export default (canvas, data) => {
   function createSceneSubjects(scene) {
     const lights = [
       {
-        color: '#f0eaff', // back light
+        distance: 12000,
+        color: '#f00a0f', // back light
         x: 20,
         y: -100,
         z: 150
       },
       {
-        color: '#ffe9f0',
+        distance: 5000,
+        color: '#aff9f0',
         x: 100,
         y: 400,
         z: -100
@@ -109,13 +112,14 @@ export default (canvas, data) => {
     const elapsedTime = clock.getElapsedTime()
 
     for (let i = 0; i < sceneSubjects.length; i++) {
-      sceneSubjects[i].update(elapsedTime, alphaX, alphaY)
+      sceneSubjects[i].update(elapsedTime, alphaX, alphaY, yScrollPos)
     }
 
     updateCameraPositionRelativeToMouse(alphaX, alphaY)
 
+
     renderer.render(scene, camera)
-    composer.render();
+    composer.render()
   }
 
   function updateCameraPositionRelativeToMouse(alphaX, alphaY) {
@@ -128,13 +132,18 @@ export default (canvas, data) => {
 
 
     var newPos = new THREE.Vector3(originalCameraPos.x, originalCameraPos.y, originalCameraPos.z)
-    newPos.lerp(targetCameraPos, alphaX)
+    // newPos.lerp(targetCameraPos, alphaX)
 
-    var newY = THREE.Math.lerp(originalCameraPos.y, targetCameraPos.y, alphaY)
+    // var newY = THREE.Math.lerp(originalCameraPos.y, targetCameraPos.y, alphaY)
 
-    camera.position.copy(new THREE.Vector3(newPos.x, newY, newPos.z))
+    // camera.position.copy(new THREE.Vector3(newPos.x, newY, newPos.z))
+    camera.position.copy(new THREE.Vector3(newPos.x, newPos.y, newPos.z))
 
     camera.lookAt(origin)
+  }
+
+  function onScroll(scrollY) {
+    yScrollPos = scrollY
   }
 
   function onWindowResize() {
@@ -159,5 +168,6 @@ export default (canvas, data) => {
     update,
     onWindowResize,
     onMouseMove,
+    onScroll,
   }
 }

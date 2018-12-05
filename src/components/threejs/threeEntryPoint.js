@@ -19,6 +19,8 @@ export default (container, data) => {
   function bindEventListeners() {
     window.onresize = resizeCanvas
     window.onmousemove = mouseMove
+    window.onscroll = scroll
+
     resizeCanvas()
   }
 
@@ -33,6 +35,12 @@ export default (container, data) => {
     canvasHalfHeight = Math.round(canvas.offsetHeight / 2)
 
     sceneManager.onWindowResize()
+  }
+
+  function scroll() {
+    sceneManager.onScroll(
+      window.scrollY
+    )
   }
 
   function mouseMove({ screenX, screenY }) {

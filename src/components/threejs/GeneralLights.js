@@ -9,13 +9,15 @@ export default (scene, lights) => {
   // lightOut.position.set(400, -500, 400)
 
   const intensity = 1
-  const distance = 1200
+  // const distance = 1200
   const falloff = 2
 
   for (let i = 0; i < lights.length; i++) {
-    const light = new THREE.PointLight(lights[i].color, intensity, distance, falloff)
+    const light = new THREE.PointLight(lights[i].color, intensity, 0, falloff)
 
     light.position.set(lights[i].x, lights[i].y, lights[i].z)
+
+    light.distance = lights[i].distance
 
     scene.add(light)
 
