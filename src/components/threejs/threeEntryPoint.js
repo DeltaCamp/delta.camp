@@ -9,16 +9,17 @@ export default (canvas, data, initialWidth, initialHeight) => {
   bindEventListeners()
   resizeCanvas(initialWidth, initialHeight)
   render()
+  resizeCanvas(initialWidth, initialHeight)
 
   function bindEventListeners() {
     window.addEventListener('resize', onResize)
-    window.addEventListener('mousemove', mouseMove)
+    // window.addEventListener('mousemove', mouseMove)
     window.addEventListener('scroll', scroll)
   }
 
   function unbindEventListeners() {
     window.removeEventListener('resize', onResize)
-    window.removeEventListener('mousemove', mouseMove)
+    // window.removeEventListener('mousemove', mouseMove)
     window.removeEventListener('scroll', scroll)
   }
 
@@ -48,12 +49,12 @@ export default (canvas, data, initialWidth, initialHeight) => {
     )
   }
 
-  function mouseMove({ screenX, screenY }) {
-    sceneManager.onMouseMove(
-      screenX - canvasHalfWidth,
-      screenY - canvasHalfHeight
-    )
-  }
+  // function mouseMove({ screenX, screenY }) {
+  //   sceneManager.onMouseMove(
+  //     screenX - canvasHalfWidth,
+  //     screenY - canvasHalfHeight
+  //   )
+  // }
 
   function render(time) {
     requestAnimationFrameId = requestAnimationFrame(render)
