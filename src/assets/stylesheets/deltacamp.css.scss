@@ -87,15 +87,14 @@ $work-link-hover-color: #ca12be;
 $work-brand-color: #fa12be;
 $work-brand-hover-color: #ca12be;
 
-
 $primary-btn-background-color: #333;
 $primary-btn-border-color: #3a3a3a;
 $primary-btn-background-hover-color: #666;
 $primary-btn-color: #fff;
 
 $outline-btn-background-color: transparent;
-$outline-btn-border-color: #555;
-$outline-btn-background-hover-color: #7fd9d0;
+$outline-btn-border-color: #222;
+$outline-btn-background-hover-color: #7fc6f5;
 $outline-btn-color: #fff;
 
 * {
@@ -287,6 +286,11 @@ em {
   color: #333;
   font-style: initial;
   font-weight: 700;
+}
+
+.hero-h1 {
+  color: white;
+  font-family: "acier-bat-gris", Verdana, sans-serif;
 }
 
 .brand {

@@ -16,13 +16,15 @@ class Hero extends React.Component {
             <div className='columns'>
               <div className="column is-half is-three-quarters-tablet">
                 <LogoSvg />
-                <h1>We build blockchain applications</h1>
+                <h1 className="hero-h1">
+                  We build blockchain applications
+                </h1>
                 <p>
                   <Link className="button button-primary internal" to="/contact" title="Reach out and let's start a discussion">
-                    Let's Work Together
+                    Let's Build Together
                   </Link>
                   &nbsp;
-                  <Link className="button button-outline internal" to="/work" title="Our Work">Our Work</Link>
+                  <Link className="button button-outline internal" to="/work" title="Our Work">See Our Work</Link>
                 </p>
               </div>
             </div>
