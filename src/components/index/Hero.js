@@ -1,15 +1,14 @@
 import React from 'react'
 import Img from "gatsby-image"
 import { Link, graphql, StaticQuery } from 'gatsby'
-
+import Nav from 'src/components/Nav'
 import { ThreeContainer } from 'src/components/ThreeContainer'
 
 class Hero extends React.Component {
   renderHero = (data) => {
     return (
-      <div>
-        <ThreeContainer data={data} />
-
+      <ThreeContainer data={data}>
+        <Nav />
         <div className="about">
           <div className="container">
             <div className='columns'>
@@ -25,7 +24,7 @@ class Hero extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </ThreeContainer>
     )
   }
 

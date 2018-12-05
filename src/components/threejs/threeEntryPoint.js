@@ -1,44 +1,43 @@
 import SceneManager from './SceneManager'
 
-export default (container, data) => {
-  const canvas = createCanvas(document, container)
-
+export default (canvas, data, initialWidth, initialHeight) => {
   let sceneManager = new SceneManager(canvas, data)
   let canvasHalfWidth
   let canvasHalfHeight
   let requestAnimationFrameId
 
   bindEventListeners()
-  resizeCanvas()
+  resizeCanvas(initialWidth, initialHeight)
   render()
 
-  function createCanvas(document, container) {
-    const canvas = document.createElement('canvas')
-    container.appendChild(canvas)
-    return canvas
-  }
-
   function bindEventListeners() {
-    window.addEventListener('resize', resizeCanvas)
+    window.addEventListener('resize', onResize)
     window.addEventListener('mousemove', mouseMove)
     window.addEventListener('scroll', scroll)
   }
 
   function unbindEventListeners() {
-    window.removeEventListener('resize', resizeCanvas)
+    window.removeEventListener('resize', onResize)
     window.removeEventListener('mousemove', mouseMove)
     window.removeEventListener('scroll', scroll)
   }
 
-  function resizeCanvas() {
+  function onResize() {
+    resizeCanvas()
+  }
+
+  function resizeCanvas(width, height) {
     canvas.style.width = '100%'
     canvas.style.height = '100%'
 
-    canvas.width = canvas.offsetWidth
-    canvas.height = canvas.offsetHeight
+    width = width || canvas.offsetWidth
+    height = height || canvas.offsetHeight
 
-    canvasHalfWidth = Math.round(canvas.offsetWidth / 2)
-    canvasHalfHeight = Math.round(canvas.offsetHeight / 2)
+    canvas.width = width
+    canvas.height = height
+
+    canvasHalfWidth = Math.round(width / 2)
+    canvasHalfHeight = Math.round(height / 2)
 
     sceneManager.onWindowResize()
   }

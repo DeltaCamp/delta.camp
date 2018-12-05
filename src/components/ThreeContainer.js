@@ -4,7 +4,7 @@ import threeEntryPoint from './threejs/threeEntryPoint'
 export const ThreeContainer = class extends Component {
 
   componentDidMount() {
-    this.threeObject = threeEntryPoint(this.threeRootElement, this.props.data)
+    this.threeObject = threeEntryPoint(this.threeRootElement, this.props.data, window.innerWidth, window.innerHeight)
   }
 
   componentWillUnmount() {
@@ -13,10 +13,11 @@ export const ThreeContainer = class extends Component {
 
   render () {
     return (
-      <div
-        className="header-3d"
-        ref={element => this.threeRootElement = element}
-      />
+      <div className="header-3d">
+        <canvas
+          ref={element => this.threeRootElement = element} />
+        {this.props.children}
+      </div>
     )
   }
 

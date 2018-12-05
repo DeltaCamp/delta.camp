@@ -7,8 +7,8 @@ import Layout from 'src/components/Layout'
 class Index extends React.Component {
   render() {
     return (
-      <Layout>
-        <Hero data={this.props.data} />
+      <Layout nav={false}>
+        <Hero />
         <IndexContent />
       </Layout>
     )
