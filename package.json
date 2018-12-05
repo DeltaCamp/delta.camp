@@ -1,11 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
-  "description": "Starter Gatsby Blog",
+  "name": "delta-camp-site",
+  "description": "Delta Camp Site",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
-  },
+  "author": "Chuck Bergeron <chuck@chuckbergeron.io>, Brendan Asselstine <mail.asselstine@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.9.2",
     "bulma": "^0.7.2",
@@ -49,15 +46,16 @@
     "gh-pages": "^1.2.0",
     "prettier": "^1.14.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://delta.camp",
   "keywords": [
-    "gatsby"
+    "delta",
+    "camp"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/deltacamp/delta.camp.git"
   },
   "scripts": {
     "dev": "gatsby develop",
