@@ -24,9 +24,6 @@ class Layout extends React.Component {
               <li className="nav--list-item">
                 <Link className="nav--link" to="/contact" title="Contact Us">Contact</Link>
               </li>
-              <li className="nav--list-item">
-                <Link className="nav--link" to="/blog" title="Read my words">Blog</Link>
-              </li>
             </ul>
           </div>
         </div>
