@@ -22,7 +22,6 @@ class Nav extends React.Component {
   }
 
   toggleMenu = () => {
-    console.log("toggle")
     this.setState({
       isMenuOpen: !this.state.isMenuOpen
     })
