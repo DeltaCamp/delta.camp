@@ -21,12 +21,13 @@ class Work extends React.PureComponent {
 
   renderMasonryLayoutItems = (items) => {
     return items.map((v, i) => {
+      let width = Math.random(1) > 0.5 ? 340 : 240;
       let height = Math.random(1) > 0.5 ? 200 : 240;
       return (
         <div
           key={i}
           style={{
-            width: '340px',
+            width: `${width}px`,
             height: `${height}px`,
             lineHeight: `${height}px`,
             transition: 'all 0.7s ease-in-out',
@@ -44,10 +45,10 @@ class Work extends React.PureComponent {
 
   renderWork = (data) => {
     const items = [
-      <img src={data.gif1.publicURL} />,
-      <img src={data.gif1.publicURL} />,
-      <img src={data.gif1.publicURL} />,
-      <img src={data.gif1.publicURL} />
+      <img src={data.tokenRegGif1.publicURL} />,
+      <img src={data.tokenRegGif1.publicURL} />,
+      <img src={data.tokenRegGif1.publicURL} />,
+      <img src={data.tokenRegGif1.publicURL} />
     ]
 
     return (
@@ -126,20 +127,8 @@ class Work extends React.PureComponent {
       <StaticQuery
         query={graphql`
           query {
-            gif1: file(relativePath: { eq: "ezgif-3-4153a76d4de2.gif" }) {
+            tokenRegGif1: file(relativePath: { eq: "ezgif-3-4153a76d4de2.gif" }) {
               publicURL
-            }
-            deltaCamp3DLightbox: file(relativePath: { eq: "DeltaCamp-logo-3d--lightbox.fbx" }) {
-              publicURL
-            }
-            profilePic: file(relativePath: { eq: "delta-camp--logo.png" }) {
-              childImageSharp {
-                # Specify the image processing specifications right in the query.
-                # Makes it trivial to update as your page's design changes.
-                fixed(width: 851, height: 737) {
-                  ...GatsbyImageSharpFixed_tracedSVG
-                }
-              }
             }
           }
         `}

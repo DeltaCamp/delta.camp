@@ -1,5 +1,6 @@
 import * as THREE from 'three'
-import SceneSubject from './SceneSubject'
+import BackgroundSubject from './BackgroundSubject'
+import SymbolSubject from './SymbolSubject'
 import GeneralLights from './GeneralLights'
 import { BloomEffect, EffectComposer, EffectPass, RenderPass } from "postprocessing"
 
@@ -27,7 +28,7 @@ export default (canvas, data) => {
   const camera = buildCamera(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
 
-  const composer = new EffectComposer(renderer);
+  // const composer = new EffectComposer(renderer);
   // const effectPass = new EffectPass(camera, new BloomEffect());
   // effectPass.renderToScreen = true;
   //
@@ -36,7 +37,7 @@ export default (canvas, data) => {
 
   function buildScene() {
     const scene = new THREE.Scene()
-    // scene.background = new THREE.Color('#160c13')
+    scene.background = new THREE.Color('#160c13')
 
     return scene
   }
@@ -96,47 +97,57 @@ export default (canvas, data) => {
         z: -100
       },
     ]
+
     const sceneSubjects = [
       new GeneralLights(scene, lights),
-      new SceneSubject(scene, data)
+      new BackgroundSubject(scene, data),
+      new SymbolSubject(scene, data)
     ]
 
     return sceneSubjects
   }
 
-  function update() {
-    const alphaX = ((((mousePosition.x / window.innerWidth) * 2) + 1) * 0.5)
-    const alphaY = ((((mousePosition.y / window.innerHeight) * 2) + 1) * 0.5)
+  function update(alphaX, alphaY) {
+    // const alphaX = ((((mousePosition.x / window.innerWidth) * 2) + 1) * 0.5)
+    // const alphaY = ((((mousePosition.y / window.innerHeight) * 2) + 1) * 0.5)
     // console.log(alphaY)
 
     const elapsedTime = clock.getElapsedTime()
 
+    // console.log(sceneSubjects)
+
     for (let i = 0; i < sceneSubjects.length; i++) {
-      sceneSubjects[i].update(elapsedTime, alphaX, alphaY, yScrollPos)
+      // console.log(sceneSubjects[i])
+      // debugger
+
+      if ('update' in sceneSubjects[i]) {
+        // console.log('furthermore')
+        sceneSubjects[i].update(elapsedTime, yScrollPos)
+        // sceneSubjects[i].update(elapsedTime, alphaX, alphaY, yScrollPos)
+      }
     }
 
+    // updateCameraPositionRelativeToMouse()
     updateCameraPositionRelativeToMouse(alphaX, alphaY)
 
-
     renderer.render(scene, camera)
-    composer.render()
+    // composer.render()
   }
 
-  function updateCameraPositionRelativeToMouse(alphaX, alphaY) {
-    // console.log(camera.position.y)
-    // camera.position.y += (-(mousePosition.y * 0.1) - camera.position.y * 0.01) * 0.01
-    // camera.position.z += ((mousePosition.y * 0.05) - camera.position.z) * 0.01
-
-    // console.log(mousePosition.y)
-    // console.log((((mousePosition.x / window.innerWidth) * 2) + 1) * 0.5)
-
-
+  function updateCameraPositionRelativeToMouse() {
+    // // console.log(camera.position.y)
+    // // camera.position.y += (-(mousePosition.y * 0.1) - camera.position.y * 0.01) * 0.01
+    // // camera.position.z += ((mousePosition.y * 0.05) - camera.position.z) * 0.01
+    //
+    // // console.log(mousePosition.y)
+    // // console.log((((mousePosition.x / window.innerWidth) * 2) + 1) * 0.5)
+    //
     var newPos = new THREE.Vector3(originalCameraPos.x, originalCameraPos.y, originalCameraPos.z)
-    // newPos.lerp(targetCameraPos, alphaX)
-
-    // var newY = THREE.Math.lerp(originalCameraPos.y, targetCameraPos.y, alphaY)
-
-    // camera.position.copy(new THREE.Vector3(newPos.x, newY, newPos.z))
+    // // newPos.lerp(targetCameraPos, alphaX)
+    //
+    // // var newY = THREE.Math.lerp(originalCameraPos.y, targetCameraPos.y, alphaY)
+    //
+    // // camera.position.copy(new THREE.Vector3(newPos.x, newY, newPos.z))
     camera.position.copy(new THREE.Vector3(newPos.x, newPos.y, newPos.z))
 
     camera.lookAt(origin)
@@ -156,7 +167,7 @@ export default (canvas, data) => {
     camera.updateProjectionMatrix()
 
     renderer.setSize(width, height)
-    composer.setSize(width, height)
+    // composer.setSize(width, height)
   }
 
   function onMouseMove(x, y) {
