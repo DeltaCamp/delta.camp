@@ -10,7 +10,7 @@ export default (scene, data) => {
   const speed = 20
   const group = new THREE.Group()
 
-  let sphere
+  // let sphere
 
   let originalSymbolPos
   let targetSymbolPos
@@ -100,15 +100,15 @@ export default (scene, data) => {
     symbolObject3d.rotation.y = 0.2
     symbolObject3d.rotation.z = 3.13
 
-    symbolObject3d.position.x = 30
-    symbolObject3d.position.y = 240
-    symbolObject3d.position.z = 0
+    // symbolObject3d.position.x = 30
+    // symbolObject3d.position.y = 240
+    // symbolObject3d.position.z = 0
 
     symbolObject3d.castShadow = true
     symbolObject3d.receiveShadow = true
 
     originalSymbolPos = new THREE.Vector3(
-      10,
+      400,
       0,
       0
     )
@@ -123,9 +123,9 @@ export default (scene, data) => {
 
 
 
-    var geometry = new THREE.SphereGeometry(30, 64, 64);
-    sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere)
+    // var geometry = new THREE.SphereGeometry(30, 64, 64);
+    // sphere = new THREE.Mesh(geometry, material);
+    // scene.add(sphere)
   })
 
   scene.add(group)
@@ -148,11 +148,11 @@ export default (scene, data) => {
       createdSubjects[1].rotation.y += 0.001;
     }
 
-    if (sphere) {
-      sphere.position.x = Math.sin(time*0.1)*200;
-      sphere.position.y = Math.sin(time*0.1)*200;
-      sphere.position.z = Math.sin(time*0.1)*200;
-    }
+    // if (sphere) {
+    //   sphere.position.x = Math.sin(time*0.1)*200;
+    //   sphere.position.y = Math.sin(time*0.1)*200;
+    //   sphere.position.z = Math.sin(time*0.1)*200;
+    // }
 
   }
 
