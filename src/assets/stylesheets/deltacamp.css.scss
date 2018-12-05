@@ -79,7 +79,7 @@
 
 
 $link-color: #f0c;
-$hover-color: #f7d;
+$hover-color: #7fd9d0;
 
 $primary-btn-background-color: #333;
 $primary-btn-border-color: #3a3a3a;
@@ -88,7 +88,7 @@ $primary-btn-color: #fff;
 
 $outline-btn-background-color: transparent;
 $outline-btn-border-color: #555;
-$outline-btn-background-hover-color: #f60;
+$outline-btn-background-hover-color: #7fd9d0;
 $outline-btn-color: #fff;
 
 body {
@@ -401,7 +401,8 @@ em {
 
 .work-layout--nav .nav--link {
   // color: $link-color;
-  color: rgba(255, 255, 255, 0.8);
+  // color: rgba(255, 255, 255, 0.8);
+  color: white;
 
   &:hover {
     color: $hover-color;
@@ -998,14 +999,14 @@ label,
   top: 0;
 
   // width: 100%;
-  // height: 737px;
+  height: 100vh;
 }
 
 
 /* desktop-x-small */
 @media all and (min-width: 0) and (max-width: 480px) {
     .header-3d {
-        height: 65vh;
+        // height: 65vh;
         width: 100%;
     }
 
@@ -1015,7 +1016,7 @@ label,
 /* desktop-small */
 @media all and (min-width: 481px) and (max-width: 840px) {
     .header-3d {
-        height: 65vh;
+        // height: 65vh;
         width: 100%;
     }
 
@@ -1025,7 +1026,7 @@ label,
 /* desktop-medium */
 @media all and (min-width: 841px) and (max-width: 1280px) {
     .header-3d {
-        height: 75vh;
+        // height: 75vh;
         width: 100%;
     }
 
@@ -1035,7 +1036,7 @@ label,
 /* desktop-large */
 @media all and (min-width: 1281px) and (max-width: 1600px) {
     .header-3d {
-        height: 70vh;
+        // height: 70vh;
         width: 100%;
     }
 
@@ -1056,7 +1057,6 @@ label,
   .container {
     width: 100%;
   }
-
 }
 
 

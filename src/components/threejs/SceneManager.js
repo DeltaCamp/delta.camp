@@ -36,7 +36,7 @@ export default (canvas, data) => {
 
   function buildScene() {
     const scene = new THREE.Scene()
-    scene.background = new THREE.Color('#160c13')
+    // scene.background = new THREE.Color('#160c13')
 
     return scene
   }
@@ -89,7 +89,7 @@ export default (canvas, data) => {
         z: 150
       },
       {
-        distance: 5000,
+        distance: 8000,
         color: '#aff9f0',
         x: 100,
         y: 400,

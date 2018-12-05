@@ -10,8 +10,10 @@ export default (scene, data) => {
   const speed = 20
   const group = new THREE.Group()
 
-  var originalSymbolPos
-  var targetSymbolPos
+  let sphere
+
+  let originalSymbolPos
+  let targetSymbolPos
 
   // function buildLights(scene) {
   //   var light = new THREE.SpotLight("#fff", 1);
@@ -32,7 +34,7 @@ export default (scene, data) => {
   // }
   // var light = buildLights(scene);
 
-  const material = new THREE.MeshStandardMaterial({ color: '#111', roughness: 1 });
+  const material = new THREE.MeshStandardMaterial({ color: '#fff', roughness: 0 });
 
   var image = document.createElement('img');
   var envMap = new THREE.Texture(image);
@@ -55,10 +57,22 @@ export default (scene, data) => {
   console.log(roughnessMap)
   material.roughnessMap = roughnessMap
 
-  var mesh
-
   loader.load(data.deltaCamp3DLightbox.publicURL, function (lightboxObject3d) {
+    // var meshes = lightboxObject3d.children
+
+    // for (let i = 0; i < meshes.length; i++){
+    //   let child = meshes[i]
+    //
+    //   if ( child instanceof THREE.Mesh ) {
+    //     child.material = material
+    //   }
+    // }
+
     lightboxObject3d.scale.set(7, 7, 7)
+
+    lightboxObject3d.position.x = 0
+    lightboxObject3d.position.y = 740
+    lightboxObject3d.position.z = 400
 
     lightboxObject3d.rotation.x = 1.8
     lightboxObject3d.rotation.y = 0
@@ -82,7 +96,7 @@ export default (scene, data) => {
       }
     }
 
-    symbolObject3d.scale.set(7, 7, 7)
+    symbolObject3d.scale.set(12, 12, 12)
 
     symbolObject3d.rotation.x = 1.8
     symbolObject3d.rotation.y = 0.2
@@ -97,7 +111,7 @@ export default (scene, data) => {
 
     originalSymbolPos = new THREE.Vector3(
       10,
-      40,
+      0,
       0
     )
     targetSymbolPos = new THREE.Vector3(
@@ -112,45 +126,36 @@ export default (scene, data) => {
 
 
     var geometry = new THREE.SphereGeometry(30, 64, 64);
-    mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh)
+    sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere)
   })
 
   scene.add(group)
 
   function update(time, alphaX, alphaY, yScrollPos) {
-    // console.log(yScrollPos)
     const angle = time * 0.02
     const scale = (Math.sin(angle * 20)) + 7
-    // console.log(scale)
 
     // hard-coded animation specifically for logo symbol, clean up the scene subject loading
     // so it's abstracted properly and makes sense
     if (createdSubjects[1]) {
-      // createdSubjects[1].scale.set(scale, scale, scale)
-
       var newPos = new THREE.Vector3(originalSymbolPos.x, originalSymbolPos.y, originalSymbolPos.z)
       newPos.lerp(targetSymbolPos, alphaX)
 
-      var newY = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.002)
-      var newZ = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.002)
+      var newY = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.001)
+      var newZ = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.001)
 
-// console.log(yScrollPos)
       console.log('newY', newY, 'originalSymbolPosY', originalSymbolPos.y, 'targetSymbolPosY', targetSymbolPos.y)
 
-      createdSubjects[1].position.copy(new THREE.Vector3(newPos.x, newY * 1.2, newZ * 1.2))
+      createdSubjects[1].position.copy(new THREE.Vector3(newPos.x, newY * 2, newZ * 2))
 
       createdSubjects[1].rotation.y += 0.001;
     }
 
-    // light.position.x = Math.sin(time*0.1)*200;
-    // light.position.y = Math.sin(time*0.1)*200;
-    // light.position.z = Math.sin(time*0.1)*200;
-
-    if (mesh) {
-      mesh.position.x = Math.sin(time*0.1)*200;
-      mesh.position.y = Math.sin(time*0.1)*200;
-      mesh.position.z = Math.sin(time*0.1)*200;
+    if (sphere) {
+      sphere.position.x = Math.sin(time*0.1)*200;
+      sphere.position.y = Math.sin(time*0.1)*200;
+      sphere.position.z = Math.sin(time*0.1)*200;
     }
 
   }
