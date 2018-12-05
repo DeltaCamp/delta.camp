@@ -20,7 +20,7 @@ class Layout extends React.Component {
     return (
       <React.Fragment>
         {this.props.nav && <Nav />}
-        <MetaTags />
+        <MetaTags {...this.props} />
         { this.props.children }
       </React.Fragment>
     )
