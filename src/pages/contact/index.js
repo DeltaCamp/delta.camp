@@ -6,7 +6,7 @@ import Bio from 'src/components/Bio'
 import Layout from 'src/components/Layout'
 import { rhythm } from 'src/utils/typography'
 
-class Work extends React.PureComponent {
+class Contact extends React.PureComponent {
   constructor (props) {
     super(props)
     this.state = {}
@@ -14,7 +14,7 @@ class Work extends React.PureComponent {
 
   render () {
     return (
-      <Layout>
+      <Layout cssClass="contact">
         <div className='container'>
           <h1>Contact Us</h1>
           <form
@@ -43,4 +43,4 @@ class Work extends React.PureComponent {
   }
 }
 
-export default Work
+export default Contact
