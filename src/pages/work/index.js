@@ -2,16 +2,86 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
+import { Masonry } from 'src/components/Masonry'
 import Bio from 'src/components/Bio'
 import LayoutWithHeader from 'src/components/LayoutWithHeader'
 import { rhythm } from 'src/utils/typography'
 
+
+const IMAGE_HEIGHT = 200
+const TITLE_HEIGHT = 200
+const FOOTER_HEIGHT = 200
+
+class MyMasonryItem extends React.Component {
+  static getColumnSpanFromProps = ({ isFeatured }, getState) => {
+    if (isFeatured) {
+      return 2;
+    }
+    return 1;
+  }
+  static getHeightFromProps = (getState, props, columnSpan, columnGutter) => {
+    return IMAGE_HEIGHT + TITLE_HEIGHT + FOOTER_HEIGHT;
+  }
+
+  render() {
+    console.log(this.props)
+    return null
+    // return this.props.name
+  }
+}
+
+const myArrayOfItems = [{ name: 'Hello' }, { name: 'World' }]
+
+
+
+
+
 class Work extends React.PureComponent {
+
+  state = {
+    items: myArrayOfItems,
+    hasMore: false,
+    isLoading: false,
+  }
+
+  // componentDidMount() {
+  //   this.fetch()
+  // }
+
+  fetch () {
+  //   // update isLoading flag appropriately
+  //   const additionalData = getMoreData()
+  //   this.setState((prevState) => ({
+  //     items: prevState.items.concat(additionalData.items),
+  //     hasMore: additionalData.hasMore,
+  //   }))
+  }
+
+  getState = () => this.state
+
+
   render () {
     return (
       <LayoutWithHeader cssClass="work">
         <div className='container'>
           <h1>Client Work</h1>
+
+          <Masonry
+            items={this.state.items}
+            itemComponent={(props) => (<MyMasonryItem />)}
+            alignCenter={true}
+            containerClassName="masonry"
+            layoutClassName="masonry-view"
+            pageClassName="masonry-page"
+            loadingElement={<span>Loading...</span>}
+            columnWidth={20}
+            numColumns={3}
+            columnGutter={30}
+            hasMore={this.state.hasMore}
+            isLoading={false}
+            onInfiniteLoad={this.fetch}
+            getState={this.getState}
+          />
 
           <div>
             <h2>The Token Registry<small><a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>open</a></small></h2>
