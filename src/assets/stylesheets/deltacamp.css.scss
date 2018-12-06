@@ -1106,10 +1106,18 @@ label,
 
 .masonry-layout > div {
   @media (max-width: 800px) {
-    min-height: 190px !important;
+    min-height: 320px !important;
     height: auto !important;
     line-height: 1 !important;
     width: 100% !important;
+  }
+
+  @media (max-width: 600px) {
+    min-height: 260px !important;
+  }
+
+  @media (max-width: 460px) {
+    min-height: 150px !important;
   }
 }
 
