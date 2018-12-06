@@ -39,7 +39,7 @@ class IndexContent extends React.Component {
             </div>
           </div>
         </section>
-        <section className='section has-background-grey'>
+        <section className='section is-medium has-background-grey'>
           <div className='container'>
             <h1>
               Technology
@@ -64,7 +64,11 @@ class IndexContent extends React.Component {
                 <li>Infrastructure deployment</li>
               </ul>
             </div>
+          </div>
+        </section>
 
+        <section className='section is-medium'>
+          <div className='container'>
             <div className='values'>
               <h1>
                 Values

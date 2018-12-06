@@ -54,7 +54,7 @@ class Work extends React.PureComponent {
     ]
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <section className="section">
           <div className="container">
             <h1 className="page-title is-marginless">

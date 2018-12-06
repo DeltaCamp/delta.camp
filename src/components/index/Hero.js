@@ -29,7 +29,7 @@ class Hero extends React.Component {
           </div>
 
           <div className="down-arrow--container">
-            <a className="down-arrow--button">
+            <a className="down-arrow--button" href="#services-and-values">
               <DownArrowSvg className="down-arrow--svg" />
               <DownArrowSvg className="down-arrow--svg--hover" />
             </a>

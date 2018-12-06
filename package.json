@@ -37,6 +37,7 @@
     "react-helmet": "^5.2.0",
     "react-masonry-layout": "^0.4.0",
     "react-typography": "^0.16.13",
+    "smooth-scroll": "^15.0.0",
     "styled-components": "^4.1.2",
     "three": "^0.99.0",
     "three-fbx-loader": "^1.0.3",

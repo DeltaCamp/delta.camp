@@ -142,7 +142,7 @@ class Contact extends React.PureComponent {
     }
 
     return (
-      <Layout cssClass="contact">
+      <Layout location={this.props.location} cssClass="contact">
         <section className="section">
           <div className="container">
             <div className="columns">

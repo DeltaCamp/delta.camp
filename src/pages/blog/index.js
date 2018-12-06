@@ -12,7 +12,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <div className='container'>
           <Bio />
 

@@ -9,13 +9,21 @@ import 'src/assets/stylesheets/normalize.css'
 import 'src/assets/stylesheets/highlight.css'
 import 'src/assets/stylesheets/deltacamp.css.scss'
 
+if (typeof window !== 'undefined') {
+  // Make scroll behavior of internal links smooth
+  // eslint-disable-next-line global-require
+  require('smooth-scroll')('a[href*="#"]')
+}
+
 class Layout extends React.Component {
   static propTypes = {
-    nav: PropTypes.bool
+    nav: PropTypes.bool,
+    location: PropTypes.object.isRequired
   }
 
   static defaultProps = {
-    nav: true
+    nav: true,
+    location: {}
   }
 
   render() {
