@@ -10,6 +10,12 @@ module.exports = {
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
+      resolve: 'gatsby-plugin-page-transitions',
+      options: {
+        transitionTime: 750
+      }
+    },
+    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
