@@ -36,7 +36,7 @@ class Nav extends React.Component {
           <div className="navbar-brand">
             {this.props.logo &&
               <Link className={classnames("navbar-item brand", { "is-inverted": this.props.invert })} to="/">
-                <LogoSvg width='150' />
+                <LogoSvg width='150' className="brand" />
               </Link>
             }
 

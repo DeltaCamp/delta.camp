@@ -14,9 +14,9 @@ class Work extends React.PureComponent {
   }
 
   loadItems = () => {
-      // this.setState({
-      //   items: this.state.items.concat(Array(this.state.perPage).fill())
-      // });
+    // this.setState({
+    //   items: this.state.items.concat(Array(this.state.perPage).fill())
+    // });
   }
 
   renderMasonryLayoutItems = (items) => {
@@ -33,7 +33,7 @@ class Work extends React.PureComponent {
             color: 'white',
             fontSize: '32px',
             display: 'block',
-            background: 'rgba(0,0,0,1)'
+            background: 'transparent'
           }}
         >
           {v}
@@ -43,11 +43,16 @@ class Work extends React.PureComponent {
   }
 
   renderWork = (data) => {
-    const items = [
+    const tokenRegItems = [
       <img src={data.regTokenAnimated.publicURL} />,
       <img src={data.regTokenShot1.publicURL} />,
-      <img src={data.regTokenShot2.publicURL} />,
-      // <img src={data.regTokenShot3.publicURL} />
+      <img src={data.regTokenShot2.publicURL} />
+    ]
+
+    const openCareItems = [
+      <img src={data.openCareShot1.publicURL} />,
+      <img src={data.openCareShot2.publicURL} />,
+      <img src={data.openCareShot3.publicURL} />
     ]
 
     return (
@@ -81,11 +86,11 @@ class Work extends React.PureComponent {
                   infiniteScroll={this.loadItems}
                   sizes={[
                     { columns: 1, gutter: 20 },
-                    { mq: '768px', columns: 2, gutter: 20 },
-                    { mq: '1280px', columns: 2, gutter: 20 }
+                    { mq: '768px', columns: 1, gutter: 20 },
+                    { mq: '1472px', columns: 2, gutter: 20 }
                   ]}
                 >
-                  {this.renderMasonryLayoutItems(items)}
+                  {this.renderMasonryLayoutItems(tokenRegItems)}
                 </MasonryLayout>
               </div>
             </div>
@@ -122,11 +127,11 @@ class Work extends React.PureComponent {
                   infiniteScroll={this.loadItems}
                   sizes={[
                     { columns: 1, gutter: 20 },
-                    { mq: '768px', columns: 2, gutter: 20 },
-                    { mq: '1280px', columns: 2, gutter: 20 }
+                    { mq: '768px', columns: 1, gutter: 20 },
+                    { mq: '1472px', columns: 2, gutter: 20 }
                   ]}
                 >
-                  {this.renderMasonryLayoutItems(items)}
+                  {this.renderMasonryLayoutItems(openCareItems)}
                 </MasonryLayout>
 
               </div>
@@ -163,6 +168,15 @@ class Work extends React.PureComponent {
               publicURL
             }
             regTokenShot2: file(relativePath: { eq: "reg-token-shot-2.png" }) {
+              publicURL
+            }
+            openCareShot1: file(relativePath: { eq: "open-care-shot-1.png" }) {
+              publicURL
+            }
+            openCareShot2: file(relativePath: { eq: "open-care-shot-2.png" }) {
+              publicURL
+            }
+            openCareShot3: file(relativePath: { eq: "open-care-shot-3.png" }) {
               publicURL
             }
 
