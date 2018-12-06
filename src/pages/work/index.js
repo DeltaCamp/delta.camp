@@ -58,7 +58,7 @@ class Work extends React.PureComponent {
         <section className="section">
           <div className="container">
             <h1 className="page-title is-marginless">
-              Work
+              Our Work
             </h1>
           </div>
         </section>

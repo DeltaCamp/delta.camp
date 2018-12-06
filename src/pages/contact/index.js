@@ -73,7 +73,6 @@ class Contact extends React.PureComponent {
     } else {
       content =
         <form onSubmit={this.submit}>
-
           <div className="field">
             <label className="label" htmlFor="contact-project-name-input">
               What is your company or project name?
@@ -149,11 +148,8 @@ class Contact extends React.PureComponent {
             <div className="columns">
               <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd">
                 <h1 className="page-title">
-                  Contact
+                  Contact Us
                 </h1>
-                <h4 className="page-subtitle">
-                  Hire us and we'll help you build superb blockchain apps
-                </h4>
               </div>
             </div>
           </div>
