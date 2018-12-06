@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Bio from 'src/components/Bio'
-import Layout from 'src/components/Layout'
+import { BodyClass } from 'src/components/BodyClass'
 import { rhythm } from 'src/utils/typography'
 
 import queryString from 'query-string'
@@ -45,7 +45,7 @@ class Contact extends React.PureComponent {
 
     if (this.state.wasError) {
       error =
-        <section className="hero is-small is-danger has-text-centered">
+        <section className="hero is-small is-danger has-text-centered first">
           <div className="hero-body">
             <h1 className="title">
               An Error Occurred
@@ -135,15 +135,17 @@ class Contact extends React.PureComponent {
 
           <div className="field is-pulled-right">
             <div className="control">
-              <button type="submit" className={classnames("button is-success", { "is-loading": this.state.isLoading })}>Submit</button>
+              <button type="submit" className={classnames("button is-info", { "is-loading": this.state.isLoading })}>Submit</button>
             </div>
           </div>
         </form>
     }
 
     return (
-      <Layout location={this.props.location} cssClass="contact">
-        <section className="section">
+      <React.Fragment>
+        <BodyClass cssClass="contact" />
+
+        <section className="section first">
           <div className="container">
             <div className="columns">
               <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd">
@@ -164,7 +166,7 @@ class Contact extends React.PureComponent {
             </div>
           </div>
         </section>
-      </Layout>
+      </React.Fragment>
     )
   }
 }

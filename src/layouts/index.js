@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Nav from 'src/components/Nav'
 import MetaTags from 'src/components/MetaTags'
 import Footer from 'src/components/Footer'
+import Transition from 'src/components/Transition'
 
 import 'src/assets/stylesheets/normalize.css'
 import 'src/assets/stylesheets/highlight.css'
@@ -17,23 +18,21 @@ if (typeof window !== 'undefined') {
 
 class Layout extends React.Component {
   static propTypes = {
-    nav: PropTypes.bool,
     location: PropTypes.object.isRequired
   }
 
   static defaultProps = {
-    nav: true,
     location: {}
   }
 
   render() {
     return (
-      <React.Fragment>
-        {this.props.nav && <Nav />}
+      <Transition location={location}>
+        <Nav />
         <MetaTags {...this.props} />
         { this.props.children }
         <Footer />
-      </React.Fragment>
+      </Transition>
     )
   }
 }

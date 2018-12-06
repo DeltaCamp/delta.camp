@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 
 import Bio from 'src/components/Bio'
-import Layout from 'src/components/Layout'
+// import Layout from 'src/components/Layout'
 import { rhythm, scale } from 'src/utils/typography'
 
 class BlogPostTemplate extends React.Component {

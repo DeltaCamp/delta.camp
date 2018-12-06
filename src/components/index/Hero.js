@@ -10,12 +10,11 @@ class Hero extends React.Component {
   renderHero = (data) => {
     return (
       <ThreeContainer data={data}>
-        <Nav invert={true} />
         <div className="hero about">
           <div className='hero-body'>
             <div className="container">
               <div className='columns'>
-                <div className="column is-half is-three-quarters-tablet">
+                <div className="column is-three-quarters is-three-quarters-tablet is-three-quarters-desktop is-half-fullhd">
                   <h1 className="hero-h1">We build apps for the third web</h1>
                   <h4 className="hero-h4">Delta Camp is a development consultancy specializing in decentralized applications</h4>
                   <p>
