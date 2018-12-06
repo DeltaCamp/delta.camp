@@ -51,6 +51,15 @@ class Nav extends React.Component {
             <div className="navbar-end">
               <div className="navbar-item">
                 <Link
+                  to='/'
+                  className={classnames("nav-link", { "is-inverted": this.props.invert })}
+                  activeClassName='is-active'
+                  title='Home'>
+                  Home
+                </Link>
+              </div>
+              <div className="navbar-item">
+                <Link
                   to='/work'
                   className={classnames("nav-link", { "is-inverted": this.props.invert })}
                   activeClassName='is-active'

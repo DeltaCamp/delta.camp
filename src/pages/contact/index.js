@@ -63,7 +63,7 @@ class Contact extends React.PureComponent {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd column--form">
+              <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd">
                 <form onSubmit={this.submit}>
 
                   <div className="field">
@@ -83,7 +83,7 @@ class Contact extends React.PureComponent {
                     </label>
                     <div className="control">
                       <input id="contact-name-input" className="input" type="text" name="name"
-                        value={this.state.companyName} onChange={(e) => this.setState({companyName: e.target.value})}
+                        value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}
                         />
                     </div>
                   </div>

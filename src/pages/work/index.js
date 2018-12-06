@@ -29,9 +29,7 @@ class Work extends React.PureComponent {
             width: '600px',
             height: `325px`,
             lineHeight: `325px`,
-            transition: 'all 0.7s ease-out',
-            color: 'white',
-            fontSize: '32px',
+            transition: 'all 1.1s cubic-bezier(.28, .99, .49, 1.14)',
             display: 'block',
             background: 'transparent'
           }}
@@ -56,7 +54,7 @@ class Work extends React.PureComponent {
     ]
 
     return (
-      <Layout cssClass="work">
+      <Layout>
         <section className="section">
           <div className="container">
             <h1 className="page-title is-marginless">
