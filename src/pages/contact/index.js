@@ -6,10 +6,40 @@ import Bio from 'src/components/Bio'
 import Layout from 'src/components/Layout'
 import { rhythm } from 'src/utils/typography'
 
+import queryString from 'query-string'
+
 class Contact extends React.PureComponent {
   constructor (props) {
     super(props)
-    this.state = {}
+    this.state = {
+      projectName: "",
+      companyName: "",
+      email: "",
+      budget: "",
+      comments: ""
+    }
+  }
+
+  submit = (e) => {
+    e.preventDefault()
+    const url = "https://script.google.com/macros/s/AKfycby1cKI5HlVcwx8uR0XB4w68SULY2v5dVSbI2lj4BQKBA1HudJ8/exec"
+    console.log('Sending: ', this.state)
+    fetch(`${url}?${queryString.stringify(this.state)}`)
+      .then(() => {
+        console.log('sent!')
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  //   var jqxhr = $.ajax({
+  //     url: url,
+  //     method: "GET",
+  //     dataType: "json",
+  //     data: $form.serializeObject()
+  //   }).success(
+  //     // do something
+  //   );
+  // })
   }
 
   render () {
@@ -34,21 +64,16 @@ class Contact extends React.PureComponent {
           <div className="container">
             <div className="columns">
               <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd column--form">
-                <form
-                  id="contact-form"
-                  action="https://docs.google.com/forms/d/e/1FAIpQLSemclsCI6sl3YXo66axFAx5bHzdVN-7Rv7Vec_y0JLtaEEW1Q/viewform?usp=sf_link"
-                  method="POST"
-                  target="_self"
-                  acceptCharset="UTF-8"
-                  encType="multipart/form-data"
-                >
+                <form onSubmit={this.submit}>
 
                   <div className="field">
                     <label className="label" htmlFor="contact-project-name-input">
                       What is your company or project name?
                     </label>
                     <div className="control">
-                      <input id="contact-project-name-input" className="input" type="text" name="companyProjectName" />
+                      <input id="contact-project-name-input" className="input" type="text" name="companyProjectName"
+                        value={this.state.projectName} onChange={(e) => this.setState({projectName: e.target.value})}
+                        />
                     </div>
                   </div>
 
@@ -57,7 +82,9 @@ class Contact extends React.PureComponent {
                       What is your name?
                     </label>
                     <div className="control">
-                      <input id="contact-name-input" className="input" type="text" name="name" />
+                      <input id="contact-name-input" className="input" type="text" name="name"
+                        value={this.state.companyName} onChange={(e) => this.setState({companyName: e.target.value})}
+                        />
                     </div>
                   </div>
 
@@ -66,7 +93,9 @@ class Contact extends React.PureComponent {
                       What is your email address?
                     </label>
                     <div className="control">
-                      <input id="contact-email-input" className="input" type="text" name="email" />
+                      <input id="contact-email-input" className="input" type="text" name="email"
+                        value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}
+                        />
                     </div>
                   </div>
 
@@ -75,7 +104,9 @@ class Contact extends React.PureComponent {
                       What is your budget?
                     </label>
                     <div className="control">
-                      <input id="contact-budget-input" className="input" type="text" name="budget" />
+                      <input id="contact-budget-input" className="input" type="text" name="budget"
+                        value={this.state.budget} onChange={(e) => this.setState({budget: e.target.value})}
+                        />
                     </div>
                   </div>
 
@@ -90,7 +121,8 @@ class Contact extends React.PureComponent {
                         type="text"
                         name="Name"
                         rows="5"
-                      />
+                        value={this.state.comments} onChange={(e) => this.setState({comments: e.target.value})}
+                        />
                     </div>
                   </div>
 
