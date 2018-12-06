@@ -33,7 +33,7 @@ class Contact extends React.PureComponent {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd column--form">
+              <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd">
                 <form
                   id="contact-form"
                   action="https://docs.google.com/forms/d/e/1FAIpQLSemclsCI6sl3YXo66axFAx5bHzdVN-7Rv7Vec_y0JLtaEEW1Q/viewform?usp=sf_link"

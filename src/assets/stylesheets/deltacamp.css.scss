@@ -1086,18 +1086,9 @@ textarea.textarea:active {
   box-shadow: none;
 }
 
-.column--form {
-  background: #f5f5f5;
-  transition: all 0.2s ease-in-out;
-}
-
-.column--form:hover {
-  background: #eaeaea;
-}
-
 form {
   background: white;
-  margin: 1rem;
+  background: #fafafa;
   padding: 3.5rem 3.5rem 8rem;
 
   @media (max-width: 800px) {
