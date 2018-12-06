@@ -4,6 +4,16 @@ $navbar-background-color: transparent;
 $navbar-item-hover-background-color: none;
 $navbar-height: 9.875rem;
 
+$link: $link-color;
+$link-invert: white;
+$link-visited: $link-color;
+$link-hover: $work-link-hover-color;
+$link-hover-border: $work-link-hover-color;
+$link-focus: $link-color;
+$link-focus-border: $link-color;
+$link-active: $link-color;
+$link-active-border: $link-color;
+
 @import "bulma/sass/utilities/_all.sass";
 @import "bulma/sass/base/_all.sass";
 
