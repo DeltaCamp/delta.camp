@@ -8,7 +8,6 @@ class IndexContent extends React.Component {
       <React.Fragment>
         <section id="services-and-values" className="section is-medium">
           <div className="container">
-            <h1>Experience and Skills </h1>
             <div className='columns'>
               <div className='column'>
                 <h5>UX &amp; UI Design</h5>
