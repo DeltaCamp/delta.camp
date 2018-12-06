@@ -54,3 +54,7 @@ $navbar-mobile-height: 3rem;
 .navbar-item a.is-inverted:hover {
   color: $work-brand-color;
 }
+
+.navbar-menu.is-active {
+  text-align: right;
+}
