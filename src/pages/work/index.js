@@ -59,7 +59,7 @@ class Work extends React.PureComponent {
       <Layout cssClass="work">
         <section className="section">
           <div className="container">
-            <h1 className="is-marginless">
+            <h1 className="page-title is-marginless">
               Work
             </h1>
           </div>
