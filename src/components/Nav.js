@@ -35,7 +35,7 @@ class Nav extends React.Component {
           <div className="navbar-brand">
             {this.props.logo &&
               <Link className="navbar-item brand" to="/">
-                <LogoSvg width='150' />
+                <LogoSvg className="brand" />
               </Link>
             }
 

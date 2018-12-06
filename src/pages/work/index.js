@@ -33,7 +33,7 @@ class Work extends React.PureComponent {
             color: 'white',
             fontSize: '32px',
             display: 'block',
-            background: 'rgba(0,0,0,1)'
+            background: 'transparent'
           }}
         >
           {v}
@@ -81,8 +81,8 @@ class Work extends React.PureComponent {
                   infiniteScroll={this.loadItems}
                   sizes={[
                     { columns: 1, gutter: 20 },
-                    { mq: '768px', columns: 2, gutter: 20 },
-                    { mq: '1280px', columns: 2, gutter: 20 }
+                    { mq: '768px', columns: 1, gutter: 20 },
+                    { mq: '1472px', columns: 2, gutter: 20 }
                   ]}
                 >
                   {this.renderMasonryLayoutItems(items)}
@@ -138,7 +138,7 @@ class Work extends React.PureComponent {
                 <p>
                   <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> needed to develop OpenCare, their first decentralized application for the global healthcare market. OpenCare is a teledermatology app that allows users to receive diagnoses from dermatologists.  Patients create a new case that includes some demographic information, a brief history of the condition, and several photos.  The case is assigned to a doctor who can submit a diagnosis and receive a fee.  If the patient is unhappy with the diagnosis they can receive a second opinion.
                 </p>
-                
+
                 <p>
                   OpenCare uses a broad spectrum of decentralized technologies: including IPFS, Whisper and Ethereum.
                 </p>

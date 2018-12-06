@@ -317,17 +317,6 @@ p {
   }
 }
 
-.about svg.brand {
-  margin-left: 0;
-
-  @media (max-width: 1000px) {
-    width: 400px;
-  }
-
-  @media (max-width: 460px) {
-    width: 300px;
-  }
-}
 
 .hero-h1 {
   color: white;
@@ -343,38 +332,26 @@ p {
   }
 }
 
-.brand {
-  color: #fff;
-  display: inline-block;
-  font-family: "acier-bat-solid", Verdana, sans-serif;
-  font-size: 32px;
-  margin: 47px 0 24px;
-  position: relative;
-  z-index: 1001;
+.about svg.brand {
+  margin-left: 0;
 
-  @media (max-width: 800px) {
-    display: inline-block;
-    font-size: 13px;
-    margin-top: 15px;
-    margin-left: 30px;
-    margin-right: 0;
+  @media (max-width: 1000px) {
+    width: 400px;
   }
 
-  @media (max-width: 550px) {
-    margin-top: 15px;
-    margin-left: 0;
+  @media (max-width: 460px) {
+    width: 300px;
   }
-
-  @media (max-width: 422px) {
-    margin: 47px 0 24px;
-    margin-right: 0;
-  }
-
 }
 
 .brand svg {
+  margin-left: -10px;
   height: 57px;
-  width: 360px;
+  width: 380px;
+
+  @media (max-width: 1087px) {
+    margin-left: 0;
+  }
 }
 
 .large--text {
@@ -1121,6 +1098,25 @@ label,
 
 .masonry-layout {
   margin: 0 0 40px;
+
+  @media (max-width: 800px) {
+    width: 100% !important;
+  }
+}
+
+.masonry-layout > div {
+  @media (max-width: 800px) {
+    min-height: 190px !important;
+    height: auto !important;
+    line-height: 1 !important;
+    width: 100% !important;
+  }
+}
+
+.masonry-layout img {
+  @media (max-width: 800px) {
+    max-width: 100%;
+  }
 }
 
 
