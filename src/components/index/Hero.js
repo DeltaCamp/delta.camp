@@ -4,6 +4,8 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import Nav from 'src/components/Nav'
 import { ThreeContainer } from 'src/components/ThreeContainer'
 
+import DownArrowSvg from '-!svg-react-loader!src/assets/images/down-arrow.svg'
+
 class Hero extends React.Component {
   renderHero = (data) => {
     return (
@@ -24,6 +26,13 @@ class Hero extends React.Component {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="down-arrow--container">
+            <a className="down-arrow--button">
+              <DownArrowSvg className="down-arrow--svg" />
+              <DownArrowSvg className="down-arrow--svg--hover" />
+            </a>
           </div>
         </div>
       </ThreeContainer>
