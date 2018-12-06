@@ -1051,9 +1051,11 @@ textarea.textarea:active {
   box-shadow: none;
 }
 
+.has-background-grey {
+  background: $grey;
+}
+
 form {
-  background: white;
-  background: #fafafa;
   padding: 3.5rem 3.5rem 8rem;
 
   @media (max-width: 800px) {

@@ -158,8 +158,7 @@ class Contact extends React.PureComponent {
             </div>
           </div>
         </section>
-
-        <section className="section">
+        <section className='section has-background-grey'>
           <div className="container">
             <div className="columns">
               <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd">
