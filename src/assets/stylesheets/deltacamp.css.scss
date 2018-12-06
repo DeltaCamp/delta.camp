@@ -82,25 +82,29 @@ $link-color: #f0c;
 $hover-color: #7fd9d0;
 
 
-$work-link-color: #2f19a0;
-$work-link-hover-color: #ca12be;
-$work-brand-color: #fa12be;
-$work-brand-hover-color: #0cc0d8;
-
-$contact-link-color: #2f19a0;
-$contact-link-hover-color: #ca12be;
-$contact-brand-color: #0c14d2;
-$contact-brand-hover-color: #1fb90a;
-
 $primary-btn-background-color: #333;
 $primary-btn-border-color: #3a3a3a;
-$primary-btn-background-hover-color: #666;
+$primary-btn-background-hover-color: #de5ae1;
 $primary-btn-color: #fff;
 
 $outline-btn-background-color: transparent;
-$outline-btn-border-color: #222;
-$outline-btn-background-hover-color: #7fc6f5;
+$outline-btn-border-color: #7fc6f5;
+$outline-btn-background-hover-color: white;
 $outline-btn-color: #fff;
+$outline-btn-hover-color: #7fc6f5;
+$outline-btn-border-hover-color: white;
+
+
+$work-link-color: #fa12be;
+$work-link-hover-color: #0cc0d8;
+$work-brand-color: #fa12be;
+$work-brand-hover-color: #0cc0d8;
+
+$contact-link-color: #0c14d2;
+$contact-link-hover-color: #1fb90a;
+$contact-brand-color: #0c14d2;
+$contact-brand-hover-color: #1fb90a;
+
 
 * {
   box-sizing: border-box;
@@ -302,9 +306,41 @@ p {
   margin-top: 80px;
 }
 
+.about {
+  margin-top: -20px;
+  position: relative;
+  height: 100%;
+  z-index: 1001;
+
+  @media (max-width: 1000px) {
+    margin-top: -100px;
+  }
+}
+
+.about svg.brand {
+  margin-left: 0;
+
+  @media (max-width: 1000px) {
+    width: 400px;
+  }
+
+  @media (max-width: 460px) {
+    width: 300px;
+  }
+}
+
 .hero-h1 {
   color: white;
   font-family: "acier-bat-gris", Verdana, sans-serif;
+  margin: 30px 0 50px;
+
+  @media (max-width: 1200px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 3rem;
+  }
 }
 
 .brand {
@@ -339,21 +375,6 @@ p {
 .brand svg {
   height: 57px;
   width: 360px;
-}
-
-.hero-bg {
-  z-index: 999;
-
-  @media (min-width: 1000px) {
-    display: none;
-  }
-
-}
-
-.about {
-  position: relative;
-  height: 100%;
-  z-index: 1001;
 }
 
 .large--text {
@@ -397,6 +418,10 @@ p {
     color: $hover-color;
   }
 
+}
+
+.navbar-item a {
+  border: none;
 }
 
 .portfolio-container {
@@ -492,11 +517,11 @@ p {
 
 }
 
-.work .nav--link {
+.work .navbar-item a {
   color: $work-link-color;
 }
 
-.work .nav--link:hover {
+.work .navbar-item a:hover {
   color: $work-link-hover-color;
 }
 
@@ -508,11 +533,11 @@ p {
   fill: $work-brand-hover-color;
 }
 
-.contact .nav--link {
+.contact .navbar-item a {
   color: $contact-link-color;
 }
 
-.contact .nav--link:hover {
+.contact .navbar-item a:hover {
   color: $contact-link-hover-color;
 }
 
@@ -982,17 +1007,6 @@ p.footnote {
   padding: 0;
 }
 
-.button.button-huge {
-  padding-top: 10px;
-  padding-bottom: 15px;
-
-  @media (min-width: 992px) {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-
-}
-
 .button,
 button,
 input[type="submit"],
@@ -1006,6 +1020,7 @@ input[type="button"] {
   height: 46px;
   letter-spacing: 1px;
   margin-right: 10px;
+  margin-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 2px;
@@ -1081,7 +1096,8 @@ input[type="submit"].button-outline:focus,
 input[type="reset"].button-outline:focus,
 input[type="button"].button-outline:focus {
   background-color: $outline-btn-background-hover-color;
-  border-color: $outline-btn-background-hover-color;
+  border-color: $outline-btn-border-hover-color;
+  color: $outline-btn-hover-color;
 }
 
 label,

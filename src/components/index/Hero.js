@@ -11,11 +11,11 @@ class Hero extends React.Component {
     return (
       <ThreeContainer data={data}>
         <Nav logo={false} />
-        <div className="about">
+        <section className="section about">
           <div className="container">
             <div className='columns'>
-              <div className="column is-half is-three-quarters-tablet">
-                <LogoSvg />
+              <div className="column is-three-quarters-tablet">
+                <LogoSvg className="brand" />
                 <h1 className="hero-h1">
                   We build blockchain applications
                 </h1>
@@ -29,7 +29,7 @@ class Hero extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </ThreeContainer>
     )
   }

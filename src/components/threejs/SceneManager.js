@@ -44,7 +44,7 @@ export default (canvas, data) => {
   function buildRender({ width, height }) {
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
-      // antialias: true,
+      antialias: true,
     })
     const DPR = window.devicePixelRatio ? window.devicePixelRatio : 1
     renderer.setPixelRatio(DPR)

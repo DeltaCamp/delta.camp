@@ -49,12 +49,12 @@ class Nav extends React.Component {
           <div id="navbarBasicExample" className={classnames("navbar-menu", { "is-active": this.state.isMenuOpen })}>
             <div className="navbar-end">
               <div className="navbar-item">
-                <Link to='/work' className="button is-inverted" title='See our work'>
+                <Link to='/work' className="button button-outline" title='See our work'>
                   Work
                 </Link>
               </div>
               <div className="navbar-item">
-                <Link to='/contact' className="button is-inverted" title='Contact us'>
+                <Link to='/contact' className="button button-outline" title='Contact us'>
                   Contact
                 </Link>
               </div>
