@@ -98,7 +98,11 @@ export default (scene, data) => {
       newZ = THREE.Math.lerp(originalSymbolPos.z, targetSymbolPos.z, yScrollPos * 0.001)
 
       createdSubject.position.copy(new THREE.Vector3(originalSymbolPos.x, newY * 2, newY * 2))
-      createdSubject.rotation.y += 0.002;
+      // createdSubject.rotation.y += 0.002;
+
+      // const rotationInDegrees = THREE.Math.radToDeg(createdSubject.rotation.y) % 360
+
+      createdSubject.rotation.y += 0.0005;
     }
 
     // if (sphere) {

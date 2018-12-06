@@ -45,12 +45,12 @@ class Contact extends React.PureComponent {
 
     if (this.state.wasError) {
       error =
-        <section class="hero is-small is-danger has-text-centered">
-          <div class="hero-body">
-            <h1 class="title">
+        <section className="hero is-small is-danger has-text-centered">
+          <div className="hero-body">
+            <h1 className="title">
               An Error Occurred
             </h1>
-            <h2 class="subtitle">
+            <h2 className="subtitle">
               Try again later!
             </h2>
           </div>
@@ -59,12 +59,12 @@ class Contact extends React.PureComponent {
 
     if (this.state.emailSent) {
       content =
-        <section class="hero is-medium is-primary has-text-centered">
-          <div class="hero-body">
-            <h1 class="title">
+        <section className="hero is-medium is-primary has-text-centered">
+          <div className="hero-body">
+            <h1 className="title">
               Thank you!
             </h1>
-            <h2 class="subtitle">
+            <h2 className="subtitle">
               We'll respond shortly.
             </h2>
           </div>
