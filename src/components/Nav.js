@@ -8,12 +8,14 @@ import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--logo--whit
 class Nav extends React.Component {
   static propTypes = {
     logo: PropTypes.bool,
-    invert: PropTypes.bool
+    invert: PropTypes.bool,
+    hideLayoutNav: PropTypes.bool
   }
 
   static defaultProps = {
     logo: true,
-    invert: false
+    invert: false,
+    hideLayoutNav: false
   }
 
   constructor (props) {
@@ -31,11 +33,11 @@ class Nav extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <nav className={classnames("navbar", { "is-inverted": this.props.invert })} role="navigation" aria-label="main navigation">
+      <div className='container'>
+        <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             {this.props.logo &&
-              <Link className={classnames("navbar-item brand", { "is-inverted": this.props.invert })} to="/">
+              <Link className={classnames("navbar-item brand")} to="/">
                 <LogoSvg width='150' className="brand" />
               </Link>
             }
@@ -52,7 +54,7 @@ class Nav extends React.Component {
               <div className="navbar-item">
                 <Link
                   to='/'
-                  className={classnames("nav-link", { "is-inverted": this.props.invert })}
+                  className="nav-link"
                   activeClassName='is-active'
                   title='Home'>
                   Home
@@ -61,7 +63,7 @@ class Nav extends React.Component {
               <div className="navbar-item">
                 <Link
                   to='/work'
-                  className={classnames("nav-link", { "is-inverted": this.props.invert })}
+                  className="nav-link"
                   activeClassName='is-active'
                   title='See our work'>
                   Work
@@ -70,7 +72,7 @@ class Nav extends React.Component {
               <div className="navbar-item">
                 <Link
                   to='/contact'
-                  className={classnames("nav-link", { "is-inverted": this.props.invert })}
+                  className="nav-link"
                   activeClassName='is-active'
                   title='Contact us'>
                   Contact

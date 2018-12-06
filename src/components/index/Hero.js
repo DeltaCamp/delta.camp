@@ -10,12 +10,11 @@ class Hero extends React.Component {
   render() {
     return (
       <ThreeContainer>
-        <Nav invert={true} />
         <div className="hero about">
           <div className='hero-body'>
             <div className="container">
               <div className='columns'>
-                <div className="column is-half is-three-quarters-tablet">
+                <div className="column is-three-quarters is-three-quarters-tablet is-three-quarters-desktop is-half-fullhd">
                   <h1 className="hero-h1">We build apps for the third web</h1>
                 </div>
               </div>

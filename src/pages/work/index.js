@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Layout from 'src/components/Layout'
+import { BodyClass } from 'src/components/BodyClass'
 import { rhythm } from 'src/utils/typography'
 
 import MasonryLayout from 'react-masonry-layout'
@@ -54,8 +54,10 @@ class Work extends React.PureComponent {
     ]
 
     return (
-      <Layout location={this.props.location}>
-        <section className="section">
+      <React.Fragment>
+        <BodyClass cssClass="work" />
+
+        <section className="section first">
           <div className="container">
             <h1 className="page-title is-marginless">
               Our Work
@@ -150,7 +152,7 @@ class Work extends React.PureComponent {
             </div>
           </div>
         </section>
-      </Layout>
+      </React.Fragment>
     )
   }
 

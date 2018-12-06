@@ -9,6 +9,7 @@ module.exports = {
   },
   pathPrefix: '/gatsby-starter-blog',
   plugins: [
+    'gatsby-plugin-layout',
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
