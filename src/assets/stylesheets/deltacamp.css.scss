@@ -1,5 +1,6 @@
 @import "./variables.css.scss";
 @import "./bulma_and_overrides.css.scss";
+@import "./components/_all.css.scss";
 
 // Acier BAT Noir
 // font-family: acier-bat-noir, sans-serif;
@@ -277,42 +278,6 @@ p {
 .page-subtitle {
   letter-spacing: 1px;
 }
-
-.navbar {
-  z-index: 1002;
-}
-
-.navbar-item button,
-.navbar-item .button {
-  padding: 1rem;
-}
-
-.navbar-menu.is-active {
-  background-color: white;
-  box-shadow: none;
-  border-bottom: 3px solid #ddd;
-  padding: 0.5rem 0px;
-
-  @media screen and (max-width: 1087px) {
-
-  }
-}
-
-.navbar-menu.is-active a {
-  margin-bottom: 0;
-}
-
-.home .navbar-menu.is-active .navbar-item a {
-  color: pink;
-}
-
-.home .navbar-menu.is-active {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%
-}
-
 
 .values {
   margin-bottom: 80px;
@@ -1204,5 +1169,3 @@ form {
     // width: 100%;
   }
 }
-
-@import "./components/_all.css.scss";

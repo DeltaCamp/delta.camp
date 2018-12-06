@@ -1,4 +1,4 @@
-$navbar-mobile-height: 3rem;
+$navbar-mobile-height: 73px;
 
 @media all and (max-width: 800px) {
   .navbar,
@@ -16,6 +16,41 @@ $navbar-mobile-height: 3rem;
     margin: 0;
     max-width: 50%;
   }
+}
+
+.navbar {
+  z-index: 1002;
+}
+
+.navbar-item button,
+.navbar-item .button {
+  padding: 1rem;
+}
+
+.navbar-menu.is-active {
+  background-color: white;
+  box-shadow: none;
+  border-bottom: 3px solid #ddd;
+  padding: 0.5rem 0px;
+
+  @media screen and (max-width: 1087px) {
+
+  }
+}
+
+.navbar-menu.is-active a {
+  margin-bottom: 0;
+}
+
+.home .navbar-menu.is-active .navbar-item a {
+  color: pink;
+}
+
+.home .navbar-menu.is-active {
+  position: absolute;
+  top: $navbar-mobile-height;
+  left: 0;
+  width: 100%
 }
 
 .navbar-burger {
