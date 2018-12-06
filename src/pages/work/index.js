@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
-import PageTransition from 'gatsby-plugin-page-transitions'
 
 import Layout from 'src/components/Layout'
 import { rhythm } from 'src/utils/typography'
@@ -55,105 +54,102 @@ class Work extends React.PureComponent {
     ]
 
     return (
-      <PageTransition>
-        <Layout cssClass="work">
-          <section className="section">
-            <div className="container">
-              <h1 className="page-title is-marginless">
-                Work
-              </h1>
-            </div>
-          </section>
+        <section className="section">
+          <div className="container">
+            <h1 className="page-title is-marginless">
+              Work
+            </h1>
+          </div>
+        </section>
 
-          <section id="work-section-token-reg" className="section">
-            <div className="container">
+        <section id="work-section-token-reg" className="section">
+          <div className="container">
 
-              <div className="columns">
-                <div className="column">
-                  <h5>
-                    The Token Registry
-                    <br className="is-hidden-desktop" />
+            <div className="columns">
+              <div className="column">
+                <h5>
+                  The Token Registry
+                  <br className="is-hidden-desktop" />
 
-                    <small>
-                      <span className="is-hidden-touch">&nbsp;&nbsp;</span>
-                      <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>view live</a>
-                    </small>
-                  </h5>
+                  <small>
+                    <span className="is-hidden-touch">&nbsp;&nbsp;</span>
+                    <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>view live</a>
+                  </small>
+                </h5>
 
-                  <MasonryLayout
-                    id="token-reg-masonry"
-                    className="masonry-layout"
-                    infiniteScroll={this.loadItems}
-                    sizes={[
-                      { columns: 1, gutter: 20 },
-                      { mq: '768px', columns: 1, gutter: 20 },
-                      { mq: '1472px', columns: 2, gutter: 20 }
-                    ]}
-                  >
-                    {this.renderMasonryLayoutItems(tokenRegItems)}
-                  </MasonryLayout>
-                </div>
-              </div>
-
-              <div className="columns">
-                <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
-                  <p>
-                    We worked with <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> to iterate on their design for an <a href='https://medium.com/coinmonks/subjective-vs-objective-tcrs-a21f5d848553' target='_blank' rel="noopener noreferrer">Objective TCR</a>.  After completing the smart contracts we decided to build a proof-of-concept around the idea of a token registry.  Tokens are listed on many different exchanges, but there is no decentralized list of tokens.  Using our objective TCR contracts we were able to create a decentralized registry of tokens.
-                  </p>
-                </div>
+                <MasonryLayout
+                  id="token-reg-masonry"
+                  className="masonry-layout"
+                  infiniteScroll={this.loadItems}
+                  sizes={[
+                    { columns: 1, gutter: 20 },
+                    { mq: '768px', columns: 1, gutter: 20 },
+                    { mq: '1472px', columns: 2, gutter: 20 }
+                  ]}
+                >
+                  {this.renderMasonryLayoutItems(tokenRegItems)}
+                </MasonryLayout>
               </div>
             </div>
-          </section>
 
-          <section id="work-section-opencare" className="section">
-            <div className="container">
-
-              <div className="columns">
-                <div className="column">
-                  <h5>
-                    OpenCare
-                    <br className="is-hidden-desktop" />
-
-                    <small>
-                      <span className="is-hidden-touch">&nbsp;&nbsp;</span>
-
-                      <a href='https://opencare.medxprotocol.com/welcome' target='_blank' rel='noopener noreferrer'>view live</a>
-                    </small>
-                  </h5>
-
-                  <MasonryLayout
-                    id="opencare-masonry"
-                    className="masonry-layout"
-                    infiniteScroll={this.loadItems}
-                    sizes={[
-                      { columns: 1, gutter: 20 },
-                      { mq: '768px', columns: 1, gutter: 20 },
-                      { mq: '1472px', columns: 2, gutter: 20 }
-                    ]}
-                  >
-                    {this.renderMasonryLayoutItems(openCareItems)}
-                  </MasonryLayout>
-
-                </div>
+            <div className="columns">
+              <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+                <p>
+                  We worked with <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> to iterate on their design for an <a href='https://medium.com/coinmonks/subjective-vs-objective-tcrs-a21f5d848553' target='_blank' rel="noopener noreferrer">Objective TCR</a>.  After completing the smart contracts we decided to build a proof-of-concept around the idea of a token registry.  Tokens are listed on many different exchanges, but there is no decentralized list of tokens.  Using our objective TCR contracts we were able to create a decentralized registry of tokens.
+                </p>
               </div>
+            </div>
+          </div>
+        </section>
 
-              <div className="columns">
-                <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+        <section id="work-section-opencare" className="section">
+          <div className="container">
 
-                  <p>
-                    <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> needed to develop OpenCare, their first decentralized application for the global healthcare market. OpenCare is a teledermatology app that allows users to receive diagnoses from dermatologists.  Patients create a new case that includes some demographic information, a brief history of the condition, and several photos.  The case is assigned to a doctor who can submit a diagnosis and receive a fee.  If the patient is unhappy with the diagnosis they can receive a second opinion.
-                  </p>
+            <div className="columns">
+              <div className="column">
+                <h5>
+                  OpenCare
+                  <br className="is-hidden-desktop" />
 
-                  <p>
-                    OpenCare uses a broad spectrum of decentralized technologies: including IPFS, Whisper and Ethereum.
-                  </p>
-                </div>
+                  <small>
+                    <span className="is-hidden-touch">&nbsp;&nbsp;</span>
+
+                    <a href='https://opencare.medxprotocol.com/welcome' target='_blank' rel='noopener noreferrer'>view live</a>
+                  </small>
+                </h5>
+
+                <MasonryLayout
+                  id="opencare-masonry"
+                  className="masonry-layout"
+                  infiniteScroll={this.loadItems}
+                  sizes={[
+                    { columns: 1, gutter: 20 },
+                    { mq: '768px', columns: 1, gutter: 20 },
+                    { mq: '1472px', columns: 2, gutter: 20 }
+                  ]}
+                >
+                  {this.renderMasonryLayoutItems(openCareItems)}
+                </MasonryLayout>
 
               </div>
             </div>
-          </section>
-        </Layout>
-      </PageTransition>
+
+            <div className="columns">
+              <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+
+                <p>
+                  <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> needed to develop OpenCare, their first decentralized application for the global healthcare market. OpenCare is a teledermatology app that allows users to receive diagnoses from dermatologists.  Patients create a new case that includes some demographic information, a brief history of the condition, and several photos.  The case is assigned to a doctor who can submit a diagnosis and receive a fee.  If the patient is unhappy with the diagnosis they can receive a second opinion.
+                </p>
+
+                <p>
+                  OpenCare uses a broad spectrum of decentralized technologies: including IPFS, Whisper and Ethereum.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </Layout>
     )
   }
 
