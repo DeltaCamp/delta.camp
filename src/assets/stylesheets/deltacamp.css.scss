@@ -17,12 +17,6 @@
 // font-weight: 400;
 // font-style: normal;
 //
-//
-// Acier BAT Text Strokes
-// font-family: acier-bat-strokes, sans-serif;
-// font-weight: 400;
-// font-style: normal;
-//
 // Acier BAT Text Gris
 // font-family: acier-bat-gris, sans-serif;
 // font-weight: 400;
@@ -266,6 +260,59 @@ p {
   margin: 0 0 40px 0;
 }
 
+.section {
+  padding: 3rem 1.5rem;
+
+  @media (max-width: 800px) {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+.page-title,
+.page-subtitle {
+  font-family: 'acier-bat-gris';
+}
+
+.page-subtitle {
+  letter-spacing: 1px;
+}
+
+.navbar {
+  z-index: 1002;
+}
+
+.navbar-item button,
+.navbar-item .button {
+  padding: 1rem;
+}
+
+.navbar-menu.is-active {
+  background-color: white;
+  box-shadow: none;
+  border-bottom: 3px solid #ddd;
+  padding: 0.5rem 0px;
+
+  @media screen and (max-width: 1087px) {
+
+  }
+}
+
+.navbar-menu.is-active a {
+  margin-bottom: 0;
+}
+
+.home .navbar-menu.is-active .navbar-item a {
+  color: pink;
+}
+
+.home .navbar-menu.is-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%
+}
+
+
 .values {
   margin-bottom: 80px;
   margin-top: 80px;
@@ -502,20 +549,6 @@ ul.list--basic {
 
   @media (max-width: 800px) {
     padding-top: 0;
-  }
-
-}
-
-.page-title {
-  font-size: 36px;
-  padding-top: 310px;
-  position: relative;
-  z-index: 1000;
-
-  @media (max-width: 800px) {
-    padding-bottom: 30px;
-    padding-top: 0;
-    font-size: 20px;
   }
 
 }
@@ -916,20 +949,22 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  // box-shadow: 2px 2px 0 0 rgba(54, 54, 54, 0.1);
   border-width: 2px;
   font-family: "acier-bat-solid", Verdana, sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  height: 46px;
+  font-size: 1.5rem;
   letter-spacing: 1px;
-  margin-right: 10px;
+  margin-right: 20px;
   margin-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 2rem;
+  padding-right: 2rem;
   padding-bottom: 2px;
   padding-top: 3px;
   transition: 0.2s;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  margin-right: 0;
 }
 
 .button:hover,
@@ -938,7 +973,7 @@ input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
   // box-shadow: 2px 2px 0 0 rgba(54, 54, 54, 0.15);
-  padding-top: 2px;
+  // padding-top: 2px;
 }
 
 .button:focus,
@@ -952,7 +987,7 @@ input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
   // box-shadow: 1px 1px 0 0 rgba(54, 54, 54, 0.05);
-  padding-top: 4px;
+  // padding-top: 4px;
 }
 
 .button.button-primary,
@@ -1006,9 +1041,62 @@ input[type="button"].button-outline:focus {
 
 label,
 .label {
+  color: #aaa;
   cursor: pointer;
   font-family: "acier-bat-solid", Verdana, sans-serif;
-  font-size: 14px;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+}
+
+.label:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
+
+input.input,
+textarea.textarea {
+  border-radius: 0;
+  font-family: "futura-pt", Verdana, sans-serif;
+  // font-family: "acier-bat-solid", Verdana, sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  height: 50px;
+  padding: 5px 15px 3px;
+  border-bottom: 3px solid #ddd;
+  box-shadow: none;
+}
+
+textarea.textarea {
+  height: auto;
+}
+
+input.input:hover,
+input.input:active,
+input.input:focus,
+textarea.textarea:hover,
+textarea.textarea:focus,
+textarea.textarea:active {
+  border: 1px solid #ddd;
+  border-bottom: 3px solid $success;
+  box-shadow: none;
+}
+
+.column--form {
+  background: #f5f5f5;
+  transition: all 0.2s ease-in-out;
+}
+
+.column--form:hover {
+  background: #eaeaea;
+}
+
+form {
+  background: white;
+  margin: 1rem;
+  padding: 3.5rem 3.5rem 8rem;
+}
+
+.field:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .text-left {
