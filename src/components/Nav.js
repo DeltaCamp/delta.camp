@@ -7,11 +7,13 @@ import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--wordmark-w
 
 class Nav extends React.Component {
   static propTypes = {
-    logo: PropTypes.bool
+    logo: PropTypes.bool,
+    invert: PropTypes.bool
   }
 
   static defaultProps = {
-    logo: true
+    logo: true,
+    invert: false
   }
 
   constructor (props) {
@@ -30,10 +32,10 @@ class Nav extends React.Component {
   render() {
     return (
       <div className="container">
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+        <nav className={classnames("navbar", { "is-inverted": this.props.invert })} role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             {this.props.logo &&
-              <Link className="navbar-item brand" to="/">
+              <Link className={classnames("navbar-item brand", { "is-inverted": this.props.invert })} to="/">
                 <LogoSvg width='150' />
               </Link>
             }
@@ -48,12 +50,20 @@ class Nav extends React.Component {
           <div id="navbarBasicExample" className={classnames("navbar-menu", { "is-active": this.state.isMenuOpen })}>
             <div className="navbar-end">
               <div className="navbar-item">
-                <Link to='/work' className="button is-inverted" title='See our work'>
+                <Link
+                  to='/work'
+                  className={classnames("nav-link", { "is-inverted": this.props.invert })}
+                  activeClassName='is-active'
+                  title='See our work'>
                   Work
                 </Link>
               </div>
               <div className="navbar-item">
-                <Link to='/contact' className="button is-inverted" title='Contact us'>
+                <Link
+                  to='/contact'
+                  className={classnames("nav-link", { "is-inverted": this.props.invert })}
+                  activeClassName='is-active'
+                  title='Contact us'>
                   Contact
                 </Link>
               </div>

@@ -1,0 +1,23 @@
+.IndexContent .nav--link {
+  color: $work-link-color;
+}
+
+.nav--link:hover {
+  color: $work-link-hover-color;
+}
+
+.brand path {
+  fill: $work-brand-color;
+}
+
+.brand:hover path {
+  fill: $work-brand-hover-color;
+}
+
+.brand path {
+
+}
+
+.brand.is-inverted path {
+  fill: white;
+}

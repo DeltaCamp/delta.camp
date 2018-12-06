@@ -9,11 +9,39 @@ class IndexContent extends React.Component {
         <section id="services-and-values" className="section is-medium">
           <div className="container">
             <div className="columns is-mobile">
-              <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+              <div className="column">
                 <div className='services'>
                   <h1>
                     Services
                   </h1>
+
+                  <div className='columns'>
+                    <div className='column'>
+                      <h5>UX &amp; UI Design</h5>
+                      <ul>
+                        <li>Prototyping</li>
+                        <li>User Interface Design</li>
+                        <li>Logo &amp; Wordmark</li>
+                      </ul>
+                    </div>
+                    <div className='column'>
+                      <h5>Web Development</h5>
+                      <ul>
+                        <li></li>
+                        <li>Ruby on Rails</li>
+                      </ul>
+                    </div>
+                    <div className='column'>
+                      <h5>Web3 Integration</h5>
+                      <ul>
+                        <li>Smart contract development</li>
+                        <li>Protocol Integration</li>
+                        <li>Distributed Storage</li>
+                        <li>Dapp Browser Integration</li>
+                      </ul>
+                    </div>
+                  </div>
+
                   <p>
                     We create high quality and delightful web applications using decentralized technologies. We constantly evolve our development process so that we're using the best tools, techniques, and standards. Ethereum is currently the most mature blockchain platform, so we have focused our efforts on building amazing Ethereum apps.  Looking to the future, we will progress into multi-blockchain systems as tools such as Polkadot and Cosmos mature.
                   </p>

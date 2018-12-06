@@ -1,3 +1,4 @@
+@import "./variables.css.scss";
 @import "./bulma_and_overrides.css.scss";
 
 // Acier BAT Noir
@@ -76,31 +77,6 @@
 // font-family: futura-pt-condensed, sans-serif;
 // font-weight: 700;
 // font-style: italic;
-
-
-$link-color: #f0c;
-$hover-color: #7fd9d0;
-
-
-$work-link-color: #2f19a0;
-$work-link-hover-color: #ca12be;
-$work-brand-color: #fa12be;
-$work-brand-hover-color: #0cc0d8;
-
-$contact-link-color: #2f19a0;
-$contact-link-hover-color: #ca12be;
-$contact-brand-color: #0c14d2;
-$contact-brand-hover-color: #1fb90a;
-
-$primary-btn-background-color: #333;
-$primary-btn-border-color: #3a3a3a;
-$primary-btn-background-hover-color: #666;
-$primary-btn-color: #fff;
-
-$outline-btn-background-color: transparent;
-$outline-btn-border-color: #222;
-$outline-btn-background-hover-color: #7fc6f5;
-$outline-btn-color: #fff;
 
 * {
   box-sizing: border-box;
@@ -490,22 +466,6 @@ p {
     font-size: 13px;
   }
 
-}
-
-.work .nav--link {
-  color: $work-link-color;
-}
-
-.work .nav--link:hover {
-  color: $work-link-hover-color;
-}
-
-.work .brand path {
-  fill: $work-brand-color;
-}
-
-.work .brand:hover path {
-  fill: $work-brand-hover-color;
 }
 
 .contact .nav--link {
@@ -1166,3 +1126,5 @@ label,
     // width: 100%;
   }
 }
+
+@import "./components/_all.css.scss";

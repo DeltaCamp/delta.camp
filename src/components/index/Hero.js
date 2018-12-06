@@ -10,18 +10,20 @@ class Hero extends React.Component {
   renderHero = (data) => {
     return (
       <ThreeContainer data={data}>
-        <Nav />
-        <div className="about">
-          <div className="container">
-            <div className='columns'>
-              <div className="column is-half is-three-quarters-tablet">
-                <h1 className="hero-h1">We build apps for the third web.</h1>
-                <h4>Delta Camp is a development consultancy that specializes in decentralized applications</h4>
-                <p>
-                  <Link className="button button-primary internal" to="/work" title="Reach out and let's start a discussion">
-                    Our Work
-                  </Link>
-                </p>
+        <Nav invert={true} />
+        <div className="hero about">
+          <div className='hero-body'>
+            <div className="container">
+              <div className='columns'>
+                <div className="column is-half is-three-quarters-tablet">
+                  <h1 className="hero-h1">We build apps for the third web.</h1>
+                  <h4>Delta Camp is a development consultancy that specializes in decentralized applications</h4>
+                  <p>
+                    <Link className="button button-primary internal" to="/work" title="Reach out and let's start a discussion">
+                      Our Work
+                    </Link>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
