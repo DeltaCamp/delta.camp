@@ -4,8 +4,6 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import Nav from 'src/components/Nav'
 import { ThreeContainer } from 'src/components/ThreeContainer'
 
-import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--wordmark-white--outlines.svg'
-
 class Hero extends React.Component {
   renderHero = (data) => {
     return (

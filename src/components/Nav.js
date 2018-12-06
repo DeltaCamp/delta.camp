@@ -3,7 +3,8 @@ import classnames from 'classnames'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--wordmark-white--outlines.svg'
+// import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--wordmark-white--outlines.svg'
+import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--logo--white-horiz.svg'
 
 class Nav extends React.Component {
   static propTypes = {

@@ -272,7 +272,8 @@ p {
 
 .page-title,
 .page-subtitle {
-  font-family: 'acier-bat-gris';
+  // font-family: 'acier-bat-gris';
+  font-family: 'acier-bat-solid';
 }
 
 .page-subtitle {
@@ -294,7 +295,8 @@ p {
 
 .hero-h1 {
   color: white;
-  font-family: "acier-bat-gris", Verdana, sans-serif;
+  // font-family: "acier-bat-gris", Verdana, sans-serif;
+  font-family: "acier-bat-solid", Verdana, sans-serif;
   margin: 30px 0 50px;
 
   @media (max-width: 1200px) {
