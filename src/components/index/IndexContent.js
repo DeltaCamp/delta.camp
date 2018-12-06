@@ -8,6 +8,7 @@ class IndexContent extends React.Component {
       <React.Fragment>
         <section id="services-and-values" className="section is-medium">
           <div className="container">
+            <h1>Experience and Skills </h1>
             <div className='columns'>
               <div className='column'>
                 <h5>UX &amp; UI Design</h5>
@@ -22,7 +23,7 @@ class IndexContent extends React.Component {
                 <ul>
                   <li>React, Redux</li>
                   <li>Webpack, Gatsby JS</li>
-                  <li>API Servers</li>
+                  <li>Server Development</li>
                   <li>Infrastructure as code</li>
                   <li>Continuous Delivery</li>
                 </ul>
@@ -44,7 +45,6 @@ class IndexContent extends React.Component {
             <h1>
               Technology
             </h1>
-
             <p>
               We create high quality and delightful web applications using decentralized technologies. We constantly evolve our development process so that we're using the best tools, techniques, and standards.
             </p>

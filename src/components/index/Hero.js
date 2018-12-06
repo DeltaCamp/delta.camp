@@ -1,15 +1,15 @@
 import React from 'react'
 import Img from "gatsby-image"
-import { Link, graphql, StaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
 import Nav from 'src/components/Nav'
 import { ThreeContainer } from 'src/components/ThreeContainer'
 
 import DownArrowSvg from '-!svg-react-loader!src/assets/images/down-arrow.svg'
 
 class Hero extends React.Component {
-  renderHero = (data) => {
+  render() {
     return (
-      <ThreeContainer data={data}>
+      <ThreeContainer>
         <Nav invert={true} />
         <div className="hero about">
           <div className='hero-body'>
@@ -17,6 +17,10 @@ class Hero extends React.Component {
               <div className='columns'>
                 <div className="column is-half is-three-quarters-tablet">
                   <h1 className="hero-h1">We build apps for the third web</h1>
+                </div>
+              </div>
+              <div className='columns'>
+                <div className='column is-half is-three-quarters-tablet'>
                   <h4 className="hero-h4">Delta Camp is a development consultancy specializing in decentralized applications</h4>
                   <p>
                     <Link className="button button-primary internal" to="/work" title="Reach out and let's start a discussion">
@@ -36,24 +40,6 @@ class Hero extends React.Component {
           </div>
         </div>
       </ThreeContainer>
-    )
-  }
-
-  render() {
-    return (
-      <StaticQuery
-        query={graphql`
-          query {
-            deltaCamp3DSymbol: file(relativePath: { eq: "DeltaCamp-logo-3d--symbol.fbx" }) {
-              publicURL
-            }
-            deltaCamp3DLightbox: file(relativePath: { eq: "DeltaCamp-logo-3d--lightbox.fbx" }) {
-              publicURL
-            }
-          }
-        `}
-        render={(data) => this.renderHero(data)}
-      />
     )
   }
 }

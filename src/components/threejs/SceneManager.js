@@ -36,8 +36,6 @@ export default (canvas, data) => {
 
   function buildScene() {
     const scene = new THREE.Scene()
-    // scene.background = new THREE.Color('#160c13')
-
     return scene
   }
 
@@ -45,6 +43,7 @@ export default (canvas, data) => {
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
       antialias: true,
+      alpha: true
     })
     const DPR = window.devicePixelRatio ? window.devicePixelRatio : 1
     renderer.setPixelRatio(DPR)
@@ -100,18 +99,13 @@ export default (canvas, data) => {
     const sceneSubjects = [
       new GeneralLights(scene, lights),
       new SymbolSubject(scene, data),
-      new BackgroundSubject(scene, data)
+      // new BackgroundSubject(scene, data)
     ]
 
     return sceneSubjects
   }
 
   function update() {
-  // function update(alphaX, alphaY) {
-    // const alphaX = ((((mousePosition.x / window.innerWidth) * 2) + 1) * 0.5)
-    // const alphaY = ((((mousePosition.y / window.innerHeight) * 2) + 1) * 0.5)
-    // console.log(alphaY)
-
     const elapsedTime = clock.getElapsedTime()
 
     for (let i = 0; i < sceneSubjects.length; i++) {
@@ -119,12 +113,8 @@ export default (canvas, data) => {
         sceneSubjects[i].update(elapsedTime, yScrollPos)
       }
     }
-
-    // updateCameraPositionRelativeToMouse()
-
     camera.lookAt(origin)
     renderer.render(scene, camera)
-    // composer.render()
   }
 
   // function updateCameraPositionRelativeToMouse() {

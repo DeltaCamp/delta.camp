@@ -1191,14 +1191,6 @@ form {
   height: 100vh;
 }
 
-.header-3d canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  max-height: 100%;
-}
-
 /* desktop-x-small */
 @media all and (min-width: 0) and (max-width: 480px) {
   .header-3d {
