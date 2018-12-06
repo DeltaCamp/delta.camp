@@ -85,8 +85,12 @@ $hover-color: #7fd9d0;
 $work-link-color: #2f19a0;
 $work-link-hover-color: #ca12be;
 $work-brand-color: #fa12be;
-$work-brand-hover-color: #ca12be;
+$work-brand-hover-color: #0cc0d8;
 
+$contact-link-color: #2f19a0;
+$contact-link-hover-color: #ca12be;
+$contact-brand-color: #0c14d2;
+$contact-brand-hover-color: #1fb90a;
 
 $primary-btn-background-color: #333;
 $primary-btn-border-color: #3a3a3a;
@@ -94,8 +98,8 @@ $primary-btn-background-hover-color: #666;
 $primary-btn-color: #fff;
 
 $outline-btn-background-color: transparent;
-$outline-btn-border-color: #555;
-$outline-btn-background-hover-color: #7fd9d0;
+$outline-btn-border-color: #222;
+$outline-btn-background-hover-color: #7fc6f5;
 $outline-btn-color: #fff;
 
 * {
@@ -216,7 +220,8 @@ h4,
 h5,
 h6 {
   color: #121218;
-  margin-top: 50px;
+  // margin-top: 50px;
+  text-transform: uppercase;
   font-style: initial;
 }
 
@@ -286,6 +291,20 @@ em {
   color: #333;
   font-style: initial;
   font-weight: 700;
+}
+
+p {
+  margin: 0 0 40px 0;
+}
+
+.values {
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.hero-h1 {
+  color: white;
+  font-family: "acier-bat-gris", Verdana, sans-serif;
 }
 
 .brand {
@@ -401,7 +420,7 @@ em {
 
 .portfolio-category--title {
   color: #232436;
-  margin-top: 50px;
+  // margin-top: 50px;
   text-transform: uppercase;
 }
 
@@ -487,6 +506,22 @@ em {
 
 .work .brand:hover path {
   fill: $work-brand-hover-color;
+}
+
+.contact .nav--link {
+  color: $contact-link-color;
+}
+
+.contact .nav--link:hover {
+  color: $contact-link-hover-color;
+}
+
+.contact .brand path {
+  fill: $contact-brand-color;
+}
+
+.contact .brand:hover path {
+  fill: $contact-brand-hover-color;
 }
 
 .work-layout--bg-photo {
@@ -963,7 +998,7 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  box-shadow: 2px 2px 0 0 rgba(54, 54, 54, 0.1);
+  // box-shadow: 2px 2px 0 0 rgba(54, 54, 54, 0.1);
   border-width: 2px;
   font-family: "acier-bat-solid", Verdana, sans-serif;
   font-size: 18px;
@@ -982,7 +1017,7 @@ button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-  box-shadow: 3px 3px 0 0 rgba(54, 54, 54, 0.15);
+  // box-shadow: 2px 2px 0 0 rgba(54, 54, 54, 0.15);
   padding-top: 2px;
 }
 
@@ -996,7 +1031,7 @@ button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
-  box-shadow: 1px 1px 0 0 rgba(54, 54, 54, 0.05);
+  // box-shadow: 1px 1px 0 0 rgba(54, 54, 54, 0.05);
   padding-top: 4px;
 }
 
