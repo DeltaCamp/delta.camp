@@ -13,7 +13,12 @@ $navbar-mobile-height: 73px;
   }
 
   .navbar-item.brand {
-    margin: 0 1rem;
+    max-width: 40%;
+  }
+}
+
+@media all and (max-width: 480px) {
+  .navbar-item.brand {
     max-width: 60%;
   }
 }
@@ -31,6 +36,7 @@ $navbar-mobile-height: 73px;
 }
 
 .brand {
+  margin: 0 1rem;
   transition: 500ms all ease-in-out;
 }
 
