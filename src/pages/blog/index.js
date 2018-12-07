@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Bio from 'src/components/Bio'
-// import Layout from 'src/components/Layout'
 import { rhythm } from 'src/utils/typography'
 
 class BlogIndex extends React.Component {
@@ -12,7 +11,7 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     return (
-      <Layout location={this.props.location}>
+      <React.Fragment>
         <div className='container'>
           <Bio />
 
@@ -31,7 +30,7 @@ class BlogIndex extends React.Component {
             )
           })}
         </div>
-      </Layout>
+      </React.Fragment>
     )
   }
 }

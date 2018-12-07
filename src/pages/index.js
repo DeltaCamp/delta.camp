@@ -17,5 +17,3 @@ class Index extends React.Component {
 }
 
 export default Index
-
-// <Layout location={this.props.location} cssClass="home" nav={false}>

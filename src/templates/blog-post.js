@@ -3,7 +3,6 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 
 import Bio from 'src/components/Bio'
-// import Layout from 'src/components/Layout'
 import { rhythm, scale } from 'src/utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -14,7 +13,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <React.Fragment>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
@@ -65,7 +64,7 @@ class BlogPostTemplate extends React.Component {
             }
           </li>
         </ul>
-      </Layout>
+      </React.Fragment>
     )
   }
 }
