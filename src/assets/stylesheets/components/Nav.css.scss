@@ -75,7 +75,7 @@ $navbar-mobile-height: 73px;
   font-family: "acier-bat-solid", Verdana, sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  color: $work-link-color;
+  color: lighten($work-link-color, 20%);
   border-bottom: 4px solid;
   border-color: transparent;
 }
@@ -85,11 +85,11 @@ $navbar-mobile-height: 73px;
 }
 
 .navbar-item a:focus {
-  // color: $work-link-hover-color;
+  color: $work-link-color;
 }
 
 .navbar-item a:hover {
-  // color: $work-link-hover-color;
+  color: $work-link-color;
 }
 
 .navbar-menu.is-active {
@@ -128,9 +128,4 @@ $navbar-mobile-height: 73px;
   @media (max-width: 1087px) {
     margin-left: 0;
   }
-}
-
-.contact .navbar-menu .navbar-item a,
-.work .navbar-menu .navbar-item a {
-  color: $link-color;
 }

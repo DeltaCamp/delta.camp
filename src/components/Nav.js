@@ -1,6 +1,5 @@
 import React from 'react'
 import classnames from 'classnames'
-// import { Link } from 'gatsby'
 import { Link } from 'src/components/Link'
 import PropTypes from 'prop-types'
 

@@ -34,19 +34,17 @@ class Layout extends React.Component {
   }
 
   render() {
-    console.log('re-render with', this.currentPage())
     return (
-      <Transition location={this.props.location}>
+      <div>
         <MetaTags {...this.props} cssClass={this.currentPage()} />
-
-        {/*<BodyClass cssClass={this.currentPage()} />*/}
-
         <Nav />
-        <div className="animatable-content">
-          { this.props.children }
-          <Footer />
-        </div>
-      </Transition>
+        <Transition location={this.props.location}>
+          <div className="animatable-content">
+            { this.props.children }
+            <Footer />
+          </div>
+        </Transition>
+      </div>
     )
   }
 }
