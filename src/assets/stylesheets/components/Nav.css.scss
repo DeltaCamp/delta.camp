@@ -1,6 +1,46 @@
 $navbar-mobile-height: 73px;
 
-@media all and (max-width: 800px) {
+.nav-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+  opacity: 0;
+  background-color: black;
+  z-index: 999;
+}
+
+.nav-background.is-active {
+  opacity: 0.5;
+}
+
+.brand path {
+  fill: $work-brand-color;
+}
+
+.brand:hover path {
+  fill: $work-brand-hover-color;
+}
+
+.home .brand path {
+  fill: white;
+}
+
+@media all and (max-width: $navbar-breakpoint) {
+  .navbar-brand.is-active {
+    background: white;
+  }
+  .home .navbar-brand.is-active path {
+    fill: $work-brand-color;
+  }
+  .home .navbar-brand.is-active .navbar-burger {
+    color: $work-brand-color;
+  }
+}
+
+@media all and (max-width: 768px) {
   .navbar,
   .navbar-brand,
   .navbar-burger {
@@ -62,7 +102,6 @@ $navbar-mobile-height: 73px;
 
 .home .navbar-menu.is-active {
   position: absolute;
-  top: $navbar-mobile-height;
   left: 0;
   width: 100%
 }

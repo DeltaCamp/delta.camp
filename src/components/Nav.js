@@ -45,56 +45,66 @@ class Nav extends React.Component {
     })
   }
 
+  close = () => {
+    this.setState({isMenuOpen: false})
+  }
+
   render() {
     return (
-      <div className='container'>
-        <nav className="navbar" role="navigation" aria-label="main navigation">
-          <div className="navbar-brand">
-            {this.props.logo &&
-              <Link className={classnames("navbar-item brand")} to="/">
-                <LogoSvg width='150' className="brand" />
-              </Link>
-            }
+      <div>
+        <div className={classnames('nav-background', { 'is-active': this.state.isMenuOpen })} onClick={this.close}/>
+        <div className='container'>
+          <nav className="navbar" role="navigation" aria-label="main navigation">
+            <div className={classnames("navbar-brand", { "is-active": this.state.isMenuOpen })}>
+              {this.props.logo &&
+                <Link className={classnames("navbar-item brand")} to="/">
+                  <LogoSvg width='150' className="brand" />
+                </Link>
+              }
 
-            <a role="button" className={classnames("navbar-burger burger", { "is-active": this.state.isMenuOpen })} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={this.toggleMenu}>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
+              <a role="button" className={classnames("navbar-burger burger", { "is-active": this.state.isMenuOpen })} aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" onClick={this.toggleMenu}>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
 
-          <div id="navbarBasicExample" className={classnames("navbar-menu", { "is-active": this.state.isMenuOpen })}>
-            <div className="navbar-end">
-              <div className="navbar-item">
-                <Link
-                  to='/'
-                  className="nav-link"
-                  activeClassName='is-active'
-                  title='Home'>
-                  Home
-                </Link>
-              </div>
-              <div className="navbar-item">
-                <Link
-                  to='/work'
-                  className="nav-link"
-                  activeClassName='is-active'
-                  title='See our work'>
-                  Work
-                </Link>
-              </div>
-              <div className="navbar-item">
-                <Link
-                  to='/contact'
-                  className="nav-link"
-                  activeClassName='is-active'
-                  title='Contact us'>
-                  Contact
-                </Link>
+            <div id="navbarBasicExample" className={classnames("navbar-menu", { "is-active": this.state.isMenuOpen })}>
+              <div className="navbar-end">
+                <div className="navbar-item">
+                  <Link
+                    to='/'
+                    className="nav-link"
+                    activeClassName='is-active'
+                    onClick={this.close}
+                    title='Home'>
+                    Home
+                  </Link>
+                </div>
+                <div className="navbar-item">
+                  <Link
+                    to='/work'
+                    className="nav-link"
+                    activeClassName='is-active'
+                    onClick={this.close}
+                    title='See our work'>
+                    Work
+                  </Link>
+                </div>
+                <div className="navbar-item">
+                  <Link
+                    to='/contact'
+                    className="nav-link"
+                    activeClassName='is-active'
+                    onClick={this.close}
+                    title='Contact us'>
+                    Contact
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </div>
       </div>
     )
   }
