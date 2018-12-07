@@ -34,7 +34,6 @@ class Transition extends React.PureComponent {
                   transitionClasses[status]
                 )}
               >
-              {console.log(status)}
                 {children}
               </div>
             )
