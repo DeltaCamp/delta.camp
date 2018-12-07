@@ -3,7 +3,6 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import { BodyClass } from 'src/components/BodyClass'
-import { rhythm } from 'src/utils/typography'
 
 import MasonryLayout from 'react-masonry-layout'
 

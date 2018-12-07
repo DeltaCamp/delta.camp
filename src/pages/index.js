@@ -7,11 +7,12 @@ import { BodyClass } from 'src/components/BodyClass'
 class Index extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div>
         <BodyClass cssClass="home" />
+
         <Hero />
         <IndexContent />
-      </React.Fragment>
+      </div>
     )
   }
 }

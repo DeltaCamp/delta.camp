@@ -20,7 +20,6 @@
     "gatsby-plugin-sass": "^2.0.5",
     "gatsby-plugin-sharp": "^2.0.14",
     "gatsby-plugin-styled-components": "^3.0.4",
-    "gatsby-plugin-typography": "^2.2.0",
     "gatsby-remark-copy-linked-files": "^2.0.5",
     "gatsby-remark-images": "^2.0.4",
     "gatsby-remark-prismjs": "^3.0.0",
@@ -39,13 +38,10 @@
     "react-masonry-layout": "^0.4.0",
     "react-timeout": "^1.1.2",
     "react-transition-group": "^2.5.0",
-    "react-typography": "^0.16.13",
     "smooth-scroll": "^15.0.0",
     "styled-components": "^4.1.2",
     "three": "^0.99.0",
-    "three-fbx-loader": "^1.0.3",
-    "typography": "^0.16.17",
-    "typography-theme-wordpress-2016": "^0.15.10"
+    "three-fbx-loader": "^1.0.3"
   },
   "devDependencies": {
     "eslint": "^4.19.1",

@@ -3,7 +3,6 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Bio from 'src/components/Bio'
-import { rhythm } from 'src/utils/typography'
 
 class BlogIndex extends React.Component {
   render() {

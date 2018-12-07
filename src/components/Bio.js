@@ -1,25 +1,20 @@
 import React from 'react'
 
 import profilePic from 'src/components/profile-pic.jpg'
-import { rhythm } from 'src/utils/typography'
 
 class Bio extends React.Component {
   render() {
     return (
       <div
         style={{
-          display: 'flex',
-          marginBottom: rhythm(2.5),
+          display: 'flex'
         }}
       >
         <img
           src={profilePic}
           alt={`Chuck Bergeron`}
           style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
+            marginBottom: 0
           }}
         />
         <p>

@@ -28,8 +28,9 @@ class Layout extends React.Component {
   render() {
     return (
       <Transition location={this.props.location}>
-        <Nav />
         <MetaTags {...this.props} />
+
+        <Nav />
         { this.props.children }
         <Footer />
       </Transition>

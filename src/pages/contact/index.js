@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 
 import Bio from 'src/components/Bio'
 import { BodyClass } from 'src/components/BodyClass'
-import { rhythm } from 'src/utils/typography'
 
 import queryString from 'query-string'
 

@@ -5,7 +5,7 @@ import { Link } from 'gatsby'
 class IndexContent extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div>
         <section id="services-and-values" className="section is-medium">
           <div className="container">
             <div className='columns'>
@@ -92,7 +92,7 @@ class IndexContent extends React.Component {
             </p>
           </div>
         </section>
-      </React.Fragment>
+      </div>
     )
   }
 }
