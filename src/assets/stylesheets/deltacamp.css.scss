@@ -279,7 +279,7 @@ li {
 }
 
 .section.first {
-  padding-top: 300px;
+  padding-top: 240px;
 
   @media (max-width: 768px) {
     padding-top: 120px;
@@ -308,11 +308,8 @@ li {
   margin: 0 auto;
   height: 100px;
   position: relative;
+  top: -20px;
   width: 100px;
-
-  @media (max-width: 800px) {
-    top: -20px;
-  }
 
   @media (max-width: 600px) {
     height: 50px;
