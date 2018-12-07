@@ -31,6 +31,20 @@ class Nav extends React.Component {
     })
   }
 
+  componentDidMount () {
+    window.addEventListener('resize', this.onResize)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.onResize)
+  }
+
+  onResize = () => {
+    this.setState({
+      isMenuOpen: false
+    })
+  }
+
   render() {
     return (
       <div className='container'>
