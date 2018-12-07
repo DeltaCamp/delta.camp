@@ -15,25 +15,23 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
 
   initializeCanvas = (element, data) => {
     if (this.state.loading || this.state.loaded) { return }
+
     this.canvasElement = element
     this.onResize() //resize canvas
+
     this.setState({
       loading: true
     }, () => {
       window.addEventListener('resize', this.onResize)
-      this.props.setTimeout(() => {
 
-        console.log(element.offsetWidth, element.offsetHeight)
+      this.props.setTimeout(() => {
+        // console.log(element.offsetWidth, element.offsetHeight)
         this.threeObject = threeEntryPoint(this.canvasElement, data)
-        console.log('three object instantiated')
+        // console.log('three object instantiated')
+
         this.threeObject.init().then(() => {
-          console.log('three object initialized')
-          this.props.setTimeout(() => {
-            this.setState({
-              loaded: true,
-              loading: false
-            })
-          }, 2000)
+          // console.log('three object initialized')
+          this.props.setTimeout(this.loaded, 1000)
         }).catch((error) => {
           console.error(error)
           this.setState({
@@ -41,28 +39,48 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
           })
         })
 
-      }, 0)
+      }, 1)
+
+    })
+  }
+
+  loaded = () => {
+    this.setState({
+      loaded: true,
+      loading: false
     })
   }
 
   componentDidMount() {
     this.onResize()
+
+    window.addEventListener('scroll', this.onScroll)
   }
 
   componentWillUnmount() {
     if (this.threeObject) {
       this.threeObject.destroy()
     }
+
     window.removeEventListener('resize', this.onResize)
+    window.removeEventListener('scroll', this.onScroll)
+  }
+
+  onScroll = () => {
+    if (this.threeObject && window) {
+      this.threeObject.onScroll(window.scrollY)
+    }
   }
 
   onResize = () => {
     if (!this.canvasElement) { return }
     var width = window.innerWidth
     var height = window.innerHeight
-    console.log('on resize', width, height)
+
+    // console.log('on resize', width, height)
     this.canvasElement.width = width
     this.canvasElement.height = height
+
     if (this.threeObject) {
       this.threeObject.onResize()
     }

@@ -7,48 +7,59 @@ import AntdIcon from 'react-antd-icons/esm';
 class IndexContent extends React.Component {
   render() {
     const columnsClassName = 'columns is-centered'
-    const columnClassName = 'column is-three-quarters-fullhd'
+    const columnClassName = 'column'
 
     return (
       <div>
         <section id="services-and-values" className="section is-medium">
           <div className="container">
-            <div className='columns'>
-              <div className='column'>
-                <h2>Experience and Skills</h2>
-              </div>
-              <div className='column'>
-                <h6 className='subtitle-1'>
-                  <AntdIcon type={'experiment'} />
-                  UX &amp; UI Design
-                </h6>
-                <ul>
-                  <li>Prototyping</li>
-                  <li>User Interface</li>
-                  <li>Interaction</li>
-                  <li>Logo &amp; Wordmark</li>
-                </ul>
-                <h6 className='subtitle-2'>
-                  <AntdIcon type={'thunderbolt'} />
-                  Web Development
-                </h6>
-                <ul>
-                  <li>React, Redux</li>
-                  <li>Webpack, Gatsby JS</li>
-                  <li>Server Development</li>
-                  <li>Infrastructure</li>
-                  <li>Continuous Delivery</li>
-                </ul>
-                <h6 className='subtitle-3'>
-                  <AntdIcon type={'deployment-unit'} />
-                  Web3 Integration
-                </h6>
-                <ul>
-                  <li>Smart contract development</li>
-                  <li>Protocol Integration</li>
-                  <li>Distributed Storage</li>
-                  <li>Dapp Browser Integration</li>
-                </ul>
+            <div className={columnsClassName}>
+              <div className={columnClassName}>
+                <div className='columns'>
+                  <div className='column'>
+                    <h6 className='subtitle-1'>
+                      <AntdIcon type={'experiment'} className='prefix-icon' />
+                      <span>
+                        UX &amp; UI Design
+                      </span>
+                    </h6>
+                    <ul className='prefix-icon-list'>
+                      <li>Prototyping</li>
+                      <li>User Interface</li>
+                      <li>Interaction</li>
+                      <li>Logo &amp; Wordmark</li>
+                    </ul>
+                  </div>
+                  <div className='column'>
+                    <h6 className='subtitle-2'>
+                      <AntdIcon type={'thunderbolt'} className='prefix-icon' />
+                      <span>
+                        Web Development
+                      </span>
+                    </h6>
+                    <ul className='prefix-icon-list'>
+                      <li>React, Redux</li>
+                      <li>Webpack, Gatsby JS</li>
+                      <li>Server Development</li>
+                      <li>Infrastructure</li>
+                      <li>Continuous Delivery</li>
+                    </ul>
+                  </div>
+                  <div className='column'>
+                    <h6 className='subtitle-3'>
+                      <AntdIcon type={'deployment-unit'} className='prefix-icon' />
+                      <span>
+                        Web3 Integration
+                      </span>
+                    </h6>
+                    <ul className='prefix-icon-list'>
+                      <li>Smart contract development</li>
+                      <li>Protocol Integration</li>
+                      <li>Distributed Storage</li>
+                      <li>Dapp Browser Integration</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

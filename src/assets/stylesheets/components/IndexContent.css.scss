@@ -23,12 +23,22 @@
 .subtitle-3 {
   position: relative;
   font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 
-  > svg {
-    position: absolute;
-    left: -1em;
-    top: 0;
+  > * {
+    vertical-align: middle;
   }
+}
+
+$prefix-icon-width: 2rem;
+
+.prefix-icon {
+  width: $prefix-icon-width;
+}
+
+.prefix-icon-list {
+  margin-left: $prefix-icon-width;
 }
 
 .subtitle-1 {
