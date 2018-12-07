@@ -27,7 +27,7 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <Transition location={location}>
+      <Transition location={this.props.location}>
         <Nav />
         <MetaTags {...this.props} />
         { this.props.children }
