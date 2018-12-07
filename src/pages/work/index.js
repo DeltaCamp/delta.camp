@@ -2,8 +2,6 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import { BodyClass } from 'src/components/BodyClass'
-
 import MasonryLayout from 'react-masonry-layout'
 
 class Work extends React.PureComponent {
@@ -54,8 +52,6 @@ class Work extends React.PureComponent {
 
     return (
       <React.Fragment>
-        {/*<BodyClass cssClass="work" />*/}
-
         <section className="section first">
           <div className="container">
             <h1 className="page-title is-marginless">

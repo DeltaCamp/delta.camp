@@ -1,11 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { BodyClass } from 'src/components/BodyClass'
 import Nav from 'src/components/Nav'
 import MetaTags from 'src/components/MetaTags'
 import Footer from 'src/components/Footer'
-import Transition from 'src/components/Transition'
+import { Transition } from 'src/components/Transition'
 
 import { getPurePathname } from 'src/utils/getPurePathname'
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactTimeout from 'react-timeout'
 import classnames from 'classnames'
 import {
   TransitionGroup,
@@ -14,36 +15,50 @@ const transitionClasses = {
   exiting: 'page-transition-exiting'
 }
 
-class Transition extends React.PureComponent {
-  render() {
-    const { children, location } = this.props
+export const Transition = ReactTimeout(
+  class extends React.PureComponent {
 
-    return (
-      <TransitionGroup>
-        <ReactTransition
-          key={location.pathname}
-          timeout={{
-            enter: timeout,
-            exit: timeout,
-          }}
-        >
-          {
-            status => (
-              <div
-                id={location.pathname}
-                className={classnames(
-                  'page-transition-group',
-                  transitionClasses[status]
-                )}
-              >
-                {children}
-              </div>
-            )
-          }
-        </ReactTransition>
-      </TransitionGroup>
-    )
+    state = {
+      mounted: false
+    }
+
+    componentDidMount() {
+      this.props.setTimeout(() => {
+        this.setState({ mounted: true })
+      }, 200)
+    }
+
+    render() {
+      const { children, location } = this.props
+
+      return (
+        <TransitionGroup>
+          <ReactTransition
+            key={location.pathname}
+            timeout={{
+              enter: timeout,
+              exit: timeout,
+            }}
+          >
+            {
+              status => (
+                <div
+                  id={location.pathname}
+                  className={classnames(
+                    'page-transition-group',
+                    transitionClasses[status],
+                    {
+                      'page-transition-group--active': this.state.mounted
+                    }
+                  )}
+                >
+                  {children}
+                </div>
+              )
+            }
+          </ReactTransition>
+        </TransitionGroup>
+      )
+    }
   }
-}
-
-export default Transition
+)
