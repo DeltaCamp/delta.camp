@@ -6,7 +6,7 @@ export const ThreeContainer = class extends Component {
   render () {
     var deltaCamp3D
 
-    // deltaCamp3D = <DeltaCamp3D />
+    deltaCamp3D = <DeltaCamp3D />
     return (
       <div>
         <div className="header-3d">
