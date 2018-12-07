@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Chuck Bergeron <chuck@chuckbergeron.io>, Brendan Asselstine <mail.asselstine@gmail.com>",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.9.2",
     "bulma": "^0.7.2",
     "classnames": "^2.2.6",
     "gatsby": "^2.0.19",
@@ -19,7 +18,6 @@
     "gatsby-plugin-react-svg": "^2.0.0-beta1",
     "gatsby-plugin-sass": "^2.0.5",
     "gatsby-plugin-sharp": "^2.0.14",
-    "gatsby-plugin-styled-components": "^3.0.4",
     "gatsby-remark-copy-linked-files": "^2.0.5",
     "gatsby-remark-images": "^2.0.4",
     "gatsby-remark-prismjs": "^3.0.0",
@@ -39,7 +37,6 @@
     "react-timeout": "^1.1.2",
     "react-transition-group": "^2.5.0",
     "smooth-scroll": "^15.0.0",
-    "styled-components": "^4.1.2",
     "three": "^0.99.0",
     "three-fbx-loader": "^1.0.3"
   },

@@ -5,6 +5,8 @@ class Footer extends React.Component {
   render() {
     const year = (new Date()).getFullYear()
 
+    // don't put this first! <div className="container">
+
     return (
       <footer className="footer">
         <div className="container">
