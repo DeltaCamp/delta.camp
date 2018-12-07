@@ -18,8 +18,11 @@ $lighter-purple: #ac9de8;
 
 canvas.delta-camp-3d {
   position: absolute;
+  bottom: 0;
   top: 0;
   left: 0;
+  right: 0;
+  margin: auto;
   opacity: 0;
   transition: 4s opacity;
   height: 100vh;

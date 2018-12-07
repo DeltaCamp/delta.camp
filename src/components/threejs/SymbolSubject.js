@@ -11,7 +11,7 @@ export default (scene, data) => {
     newY
 
   loader.load(data.deltaCamp3DSymbol.publicURL, function (symbolObject3d) {
-    symbolObject3d.scale.set(12, 12, 12)
+    symbolObject3d.scale.set(21, 21, 21)
 
     symbolObject3d.rotation.x = 1.8
     symbolObject3d.rotation.y = 0.5

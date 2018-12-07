@@ -12,9 +12,9 @@ export default (canvas, data) => {
     originalCameraPos
 
   const clock = new THREE.Clock()
-  const origin = new THREE.Vector3(0, 0, 0)
+  const origin = new THREE.Vector3(0, 0, 20)
 
-  const screenDimensions = {
+  const canvasDimensions = {
     width: canvas.width,
     height: canvas.height,
   }
@@ -25,8 +25,12 @@ export default (canvas, data) => {
   }
 
   const scene = buildScene()
-  const renderer = buildRender(screenDimensions)
-  const camera = buildCamera(screenDimensions)
+  const renderer = buildRender(canvasDimensions)
+  const camera = buildCamera(canvasDimensions)
+  camera.aspect = 2 // always render half the height of the width (2:1)
+  camera.updateProjectionMatrix()
+  renderer.setSize(canvasDimensions.width, canvasDimensions.height)
+
   const sceneSubjects = createSceneSubjects(scene)
 
   // const composer = new EffectComposer(renderer);
@@ -38,6 +42,8 @@ export default (canvas, data) => {
 
   function buildScene() {
     const scene = new THREE.Scene()
+    // scene.background = new THREE.Color( 0xffffff );
+
     return scene
   }
 
@@ -71,7 +77,7 @@ export default (canvas, data) => {
 
     camera.position.x = 0
     camera.position.y = 700
-    camera.position.z = 70
+    camera.position.z = 100
 
     originalCameraPos = camera.position
     camera.lookAt(origin)
@@ -84,16 +90,23 @@ export default (canvas, data) => {
 
   function createSceneSubjects(scene) {
     const lights = [
+      // {
+      //   distance: 2000,
+      //   color: '#ffffff', // fill light
+      //   x: 1000,
+      //   y: 800,
+      //   z: 1000
+      // },
       {
         distance: 12000,
-        color: '#0ca0fe', // back light
+        color: '#f626c0', // back light
         x: 20,
         y: -100,
         z: 150
       },
       {
         distance: 8000,
-        color: '#f626c0',
+        color: '#8c80fe',
         x: 100,
         y: 400,
         z: -100
@@ -137,17 +150,25 @@ export default (canvas, data) => {
     }
   }
 
+  function resetRenderer() {
+    // always render half the height of the width (2:1)
+    camera.aspect = 2
+
+    // console.log(canvasDimensions.width, canvasDimensions.height)
+    // camera.aspect = canvasDimensions.width / canvasDimensions.height
+
+    camera.updateProjectionMatrix()
+    renderer.setSize(canvasDimensions.width, canvasDimensions.height)
+    // composer.setSize(canvasDimensions.width, canvasDimensions.height)
+  }
+
   function onWindowResize() {
     const { width, height } = canvas
 
-    screenDimensions.width = width
-    screenDimensions.height = height
+    canvasDimensions.width = width
+    canvasDimensions.height = height
 
-    camera.aspect = width / height
-    camera.updateProjectionMatrix()
-
-    renderer.setSize(width, height)
-    // composer.setSize(width, height)
+    resetRenderer()
   }
 
   // function onMouseMove(x, y) {

@@ -1,7 +1,8 @@
 import SceneManager from './SceneManager'
 
 export default (canvas, data) => {
-  let sceneManager, requestAnimationFrameId
+  let sceneManager,
+    requestAnimationFrameId
 
   function init() {
     return new Promise((resolve, reject) => {
