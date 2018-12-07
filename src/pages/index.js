@@ -8,7 +8,7 @@ class Index extends React.Component {
   render() {
     return (
       <div>
-        <BodyClass cssClass="home" />
+        {/*<BodyClass cssClass="home" />*/}
 
         <Hero />
         <IndexContent />

@@ -358,7 +358,6 @@ li {
   color: white;
   font-family: "acier-bat-solid", Verdana, sans-serif;
   font-size: 7.0vh;
-  margin: 0 0 50px;
   text-transform: uppercase;
 
   @media (max-width: 520px) {
@@ -1025,17 +1024,52 @@ form {
   }
 }
 
-.page-transition-entered {
-  animation: fade-in 1200ms;
+.page-transition-group {
+  position: relative;
 }
 
-.page-transition-entering {
-  animation: fade-in 1200ms;
-  opacity: 0;
+.animatable-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 1200ms cubic-bezier(0.36, 0.07, 0.19, 1.27);
+  transform: translate3d(0, 100px, 0);
+
 }
 
-.page-transition-exiting {
+.page-transition-entered .animatable-content {
+  opacity: 1;
+  // transform: translate3d(0, 100px, 0);
+
+  // animation: fade-in 2500ms;
+  // position: relative;
+  transform: translate3d(0, 0, 0);
+  z-index: 101;
+
+}
+
+.page-transition-entering .animatable-content {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  // animation: fade-in 2500ms;
+  // opacity: 0;
+  // position: absolute;
+  // z-index: 100;
+  z-index: 99;
+
+}
+
+.page-transition-exiting .animatable-content {
   opacity: 0;
+  transform: translate3d(0, -100px, 0);
+  // transition: opacity 2500ms ease-in-out;
+  // opacity: 0;
+  // position: absolute;
+  // z-index: 99;
+  z-index: 101;
+
 }
 
 @keyframes fade-in {

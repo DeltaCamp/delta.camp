@@ -25,7 +25,7 @@ class Hero extends React.Component {
                   <h4 className="hero-h4">Delta Camp is a development consultancy specializing in decentralized applications</h4>
                   <p>
                     <Link className="button button-primary internal" to="/work" title="Reach out and let's start a discussion">
-                      Our Work
+                      View Our Work
                     </Link>
                   </p>
                 </div>

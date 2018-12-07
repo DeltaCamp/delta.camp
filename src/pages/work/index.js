@@ -54,7 +54,7 @@ class Work extends React.PureComponent {
 
     return (
       <React.Fragment>
-        <BodyClass cssClass="work" />
+        {/*<BodyClass cssClass="work" />*/}
 
         <section className="section first">
           <div className="container">

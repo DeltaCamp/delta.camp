@@ -1,6 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
+import { Link } from 'src/components/Link'
 import PropTypes from 'prop-types'
 
 import LogoSvg from '-!svg-react-loader!src/assets/images/delta-camp--logo--white-horiz.svg'

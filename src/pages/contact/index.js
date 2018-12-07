@@ -142,7 +142,7 @@ class Contact extends React.PureComponent {
 
     return (
       <React.Fragment>
-        <BodyClass cssClass="contact" />
+        {/*<BodyClass cssClass="contact" />*/}
 
         <section className="section first">
           <div className="container">

@@ -30,7 +30,9 @@ class Transition extends React.PureComponent {
           {
             status => (
               <div
+                id={location.pathname}
                 className={classnames(
+                  'page-transition-group',
                   transitionClasses[status]
                 )}
               >
