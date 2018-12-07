@@ -147,7 +147,7 @@ class Contact extends React.PureComponent {
         <section className="section first">
           <div className="container">
             <div className="columns">
-              <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd">
+              <div className="column is-two-thirds-tablet is-half-fullhd">
                 <h1 className="page-title">
                   Contact Us
                 </h1>
@@ -158,7 +158,7 @@ class Contact extends React.PureComponent {
         <section className='section has-background-grey'>
           <div className="container">
             <div className="columns">
-              <div className="column is-one-quarter-desktop is-two-thirds-widescreen is-one-half-fullhd">
+              <div className="column is-two-thirds-tablet is-half-fullhd">
                 {error}
                 {content}
               </div>
