@@ -184,19 +184,14 @@ h4,
 h5,
 h6 {
   color: #121218;
-  // margin-top: 50px;
   text-transform: uppercase;
   font-style: initial;
 }
 
 h1 {
-  // font-size: 4rem;
+  line-height: 1;
   font-size: 7.0vh;
   margin-bottom: 1.75rem;
-
-  // @media (max-width: 800px) {
-  //   font-size: 3.5rem;
-  // }
 }
 
 h2 {
@@ -383,7 +378,7 @@ p {
   margin-bottom: 3.5rem;
 
   @media (max-width: 420px) {
-    margin-bottom: 15px;
+    margin-bottom: 2rem;
     margin-top: 0;
   }
 }
@@ -556,7 +551,6 @@ p.footnote {
   border-radius: 0px;
   margin-right: 20px;
   color: #ffffff;
-  background-color: none;
 }
 
 .soc li:last-child a {
@@ -815,7 +809,7 @@ input[type="reset"],
 input[type="button"] {
   border-width: 2px;
   font-family: "acier-bat-solid", Verdana, sans-serif;
-  font-size: 1.5rem;
+  font-size: 3vh;
   letter-spacing: 1px;
   margin-right: 20px;
   margin-bottom: 20px;
