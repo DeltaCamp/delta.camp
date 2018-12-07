@@ -1,11 +1,23 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
+# Delta Camp
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+[delta.camp](https://delta.camp)
 
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+## Setup
 
-Or [view the live demo here](https://gatsby-starter-blog-demo.netlify.com/).
+Install dependencies:
 
-## Running in development
-`gatsby develop`
+```
+$ yarn
+```
+
+Run local server:
+
+```
+$ yarn start
+```
+
+Build static site:
+
+```
+$ yarn build
+```
