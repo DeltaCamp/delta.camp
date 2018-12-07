@@ -104,7 +104,7 @@ class Work extends React.PureComponent {
           </div>
         </section>
 
-        <section id="work-section-opencare" className="section">
+        <section id="work-section-opencare" className="section has-background-grey">
           <div className="container">
 
             <div className="columns">

@@ -7,7 +7,9 @@ import { BloomEffect, EffectComposer, EffectPass, RenderPass } from "postprocess
 
 export default (canvas, data) => {
 
-  let yScrollPos
+  let yScrollPos = 0
+  let elapsedTime,
+    originalCameraPos
 
   const clock = new THREE.Clock()
   const origin = new THREE.Vector3(0, 0, 0)
@@ -71,6 +73,9 @@ export default (canvas, data) => {
     camera.position.y = 700
     camera.position.z = 70
 
+    originalCameraPos = camera.position
+    camera.lookAt(origin)
+
     // originalCameraPos = new THREE.Vector3(camera.position.x + 0, camera.position.y + -10, camera.position.z + 10)
     // targetCameraPos = new THREE.Vector3(originalCameraPos.x, originalCameraPos.y + -100, originalCameraPos.z + 80)
 
@@ -81,16 +86,14 @@ export default (canvas, data) => {
     const lights = [
       {
         distance: 12000,
-        color: '#0cc0de', // back light
-        // color: '#f00a0f', // back light
+        color: '#0ca0fe', // back light
         x: 20,
         y: -100,
         z: 150
       },
       {
         distance: 8000,
-        color: '#c612ba',
-        // color: '#aff9f0',
+        color: '#f626c0',
         x: 100,
         y: 400,
         z: -100
@@ -106,39 +109,32 @@ export default (canvas, data) => {
   }
 
   function update() {
-    const elapsedTime = clock.getElapsedTime()
+    elapsedTime = clock.getElapsedTime()
 
     for (let i = 0; i < sceneSubjects.length; i++) {
       if ('update' in sceneSubjects[i]) {
-        sceneSubjects[i].update(elapsedTime, yScrollPos)
+        sceneSubjects[i].update(elapsedTime)
       }
     }
-    camera.lookAt(origin)
+
+    updateCameraPosition()
+
     renderer.render(scene, camera)
   }
 
-  // function updateCameraPositionRelativeToMouse() {
-    // console.log(camera.position.y)
-    // camera.position.y += (-(mousePosition.y * 0.1) - camera.position.y * 0.01) * 0.01
-    // camera.position.z += ((mousePosition.y * 0.05) - camera.position.z) * 0.01
+  function updateCameraPosition() {
+    const delta = Math.sin(elapsedTime / 1.5) * 0.3
+    camera.translateY(-delta)
+  }
 
-    // console.log(mousePosition.y)
-    // console.log((((mousePosition.x / window.innerWidth) * 2) + 1) * 0.5)
+  function onScroll(scrollTop) {
+    // yScrollPos = scrollTop
 
-
-    // var newPos = new THREE.Vector3(originalCameraPos.x, originalCameraPos.y, originalCameraPos.z)
-    // newPos.lerp(targetCameraPos, alphaX)
-
-    // var newY = THREE.Math.lerp(originalCameraPos.y, targetCameraPos.y, alphaY)
-
-    // camera.position.copy(new THREE.Vector3(newPos.x, newY, newPos.z))
-    // camera.position.copy(new THREE.Vector3(newPos.x, newPos.y, newPos.z))
-
-
-  // }
-
-  function onScroll(scrollY) {
-    yScrollPos = scrollY
+    for (let i = 0; i < sceneSubjects.length; i++) {
+      if ('updatePositionRelativeToScroll' in sceneSubjects[i]) {
+        sceneSubjects[i].updatePositionRelativeToScroll(scrollTop || 0)
+      }
+    }
   }
 
   function onWindowResize() {

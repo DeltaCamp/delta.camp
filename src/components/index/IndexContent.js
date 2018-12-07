@@ -84,6 +84,7 @@ class IndexContent extends React.Component {
             </div>
 
             <p>
+              <br />
               <Link className="button button-primary" to="/contact" title="Reach out and let's start a discussion">
                 Let's Build Together
               </Link>

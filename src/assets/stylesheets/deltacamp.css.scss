@@ -256,12 +256,18 @@ em {
 }
 
 p {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  line-height: 1.75;
   margin: 0 0 40px 0;
 
   @media (max-width: 800px) {
     font-size: 1.5rem;
   }
+}
+
+li {
+  font-size: 1.75rem;
+  margin: 0.5rem 0 0.5rem;
 }
 
 .section {
@@ -282,17 +288,11 @@ p {
 
 .page-title,
 .page-subtitle {
-  // font-family: 'acier-bat-gris';
   font-family: 'acier-bat-solid';
 }
 
 .page-subtitle {
   letter-spacing: 1px;
-}
-
-.values {
-  margin-bottom: 80px;
-  margin-top: 80px;
 }
 
 .about {
@@ -308,7 +308,6 @@ p {
   margin: 0 auto;
   height: 100px;
   position: relative;
-  // top: -150px;
   width: 100px;
 
   @media (max-width: 800px) {
