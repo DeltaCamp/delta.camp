@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Chuck Bergeron <chuck@chuckbergeron.io>, Brendan Asselstine <mail.asselstine@gmail.com>",
   "dependencies": {
+    "antd-icons": "^0.1.0-alpha.1",
     "bulma": "^0.7.2",
     "classnames": "^2.2.6",
     "gatsby": "^2.0.19",
@@ -31,6 +32,7 @@
     "prismjs": "^1.15.0",
     "query-string": "^6.2.0",
     "react": "^16.5.1",
+    "react-antd-icons": "^0.1.0-alpha.5",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-masonry-layout": "^0.4.0",

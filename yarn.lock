@@ -1444,6 +1444,11 @@ ansi-wrap@0.1.0:
   resolved "https://registry.yarnpkg.com/ansi-wrap/-/ansi-wrap-0.1.0.tgz#a82250ddb0015e9a27ca82e82ea603bbfa45efaf"
   integrity sha1-qCJQ3bABXponyoLoLqYDu/pF768=
 
+antd-icons@^0.1.0-alpha.1:
+  version "0.1.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/antd-icons/-/antd-icons-0.1.0-alpha.1.tgz#2b20d5379cf4163f065e50bf9a0dcc43f05fe9ba"
+  integrity sha1-KyDVN5z0Fj8GXlC/mg3MQ/Bf6bo=
+
 any-base@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/any-base/-/any-base-1.1.0.tgz#ae101a62bc08a597b4c9ab5b7089d456630549fe"
@@ -10987,6 +10992,11 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+react-antd-icons@^0.1.0-alpha.5:
+  version "0.1.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/react-antd-icons/-/react-antd-icons-0.1.0-alpha.5.tgz#6f4a6a2e18f8c5aae8bd5f4035d58f0826a09eae"
+  integrity sha1-b0pqLhj4xarovV9ANdWPCCagnq4=
 
 react-dev-utils@^4.2.1:
   version "4.2.3"

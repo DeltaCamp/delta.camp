@@ -17,3 +17,28 @@
 .home .brand path {
   fill: white;
 }
+
+.subtitle-1,
+.subtitle-2,
+.subtitle-3 {
+  position: relative;
+  font-weight: 500;
+
+  > svg {
+    position: absolute;
+    left: -1em;
+    top: 0;
+  }
+}
+
+.subtitle-1 {
+  color: $work-brand-color;
+}
+
+.subtitle-2 {
+  color: $light-blue;
+}
+
+.subtitle-3 {
+  color: $light-orange;
+}
