@@ -8,18 +8,20 @@ import DownArrowSvg from '-!svg-react-loader!src/assets/images/down-arrow.svg'
 
 class Hero extends React.Component {
   render() {
+    const columnClassName = "column is-three-quarters-tablet is-two-thirds-desktop is-three-fifths-fullhd"
+
     return (
       <ThreeContainer>
-        <div className="hero about">
-          <div className='hero-body'>
+        <section className="section about first">
+          <div>
             <div className="container">
               <div className='columns'>
-                <div className="column is-three-quarters is-three-quarters-tablet is-three-quarters-desktop is-half-fullhd">
+                <div className={columnClassName}>
                   <h1 className="hero-h1">We build apps for the third web</h1>
                 </div>
               </div>
               <div className='columns'>
-                <div className='column is-half is-three-quarters-tablet'>
+                <div className={columnClassName}>
                   <h4 className="hero-h4">Delta Camp is a development consultancy specializing in decentralized applications</h4>
                   <p>
                     <Link className="button button-primary internal" to="/work" title="Reach out and let's start a discussion">
@@ -37,7 +39,7 @@ class Hero extends React.Component {
               <DownArrowSvg className="down-arrow--svg--hover" />
             </a>
           </div>
-        </div>
+        </section>
       </ThreeContainer>
     )
   }
