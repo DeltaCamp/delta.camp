@@ -74,12 +74,24 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
 
   onResize = () => {
     if (!this.canvasElement) { return }
-    var width = window.innerWidth
-    var height = window.innerHeight
 
-    // console.log('on resize', width, height)
-    this.canvasElement.width = width
-    this.canvasElement.height = height
+    const halfWidth = window.innerWidth * 0.5
+
+    const newWidth = Math.min(Math.max(halfWidth, 500), 500)
+
+    const newHeight = window.innerHeight * 0.5
+
+    // console.log(newWidth, newHeight)
+
+    if (newWidth < (newHeight * 2)) {
+      // console.log('using constrained resize')
+      this.canvasElement.width = newWidth * 2
+      this.canvasElement.height = newWidth
+    } else  {
+      // console.log('using regular resize')
+      this.canvasElement.width = newWidth
+      this.canvasElement.height = newHeight
+    }
 
     if (this.threeObject) {
       this.threeObject.onResize()
@@ -90,7 +102,8 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
     return (
       <canvas
         className={classnames("delta-camp-3d", { "is-loaded": this.state.loaded })}
-        ref={(element) => this.initializeCanvas(element, data)} />
+        ref={(element) => this.initializeCanvas(element, data)}
+      />
     )
   }
 
