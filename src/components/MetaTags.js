@@ -3,6 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 
 class MetaTags extends React.Component {
+
   renderHelmet = (data) => {
     const location = this.props.location || {}
 
@@ -14,8 +15,22 @@ class MetaTags extends React.Component {
       <Helmet
         htmlAttributes={{
           lang: 'en',
-          class: this.props.cssClass || ''
+          class: this.props.cssClass || 'wf-loading'
         }}
+        link={
+          [
+            {
+              rel: "stylesheet",
+              href: "https://use.typekit.net/xce0plw.css"
+            },
+            {
+              rel: 'alternate',
+              type: 'application/atom+xml',
+              href: `${data.siteUrl}/index.xml`,
+              title: `The Delta Camp blog feed`
+            }
+          ]
+        }
         meta={[
           {
             name: 'description',

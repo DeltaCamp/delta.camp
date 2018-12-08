@@ -4,7 +4,6 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
 import Bio from 'src/components/Bio'
-import { BodyClass } from 'src/components/BodyClass'
 
 import queryString from 'query-string'
 
@@ -142,8 +141,6 @@ class Contact extends React.PureComponent {
 
     return (
       <React.Fragment>
-        {/*<BodyClass cssClass="contact" />*/}
-
         <section className="section first">
           <div className="container">
             <div className="columns">

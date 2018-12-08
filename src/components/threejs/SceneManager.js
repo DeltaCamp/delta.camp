@@ -90,23 +90,23 @@ export default (canvas, data) => {
 
   function createSceneSubjects(scene) {
     const lights = [
-      // {
-      //   distance: 2000,
-      //   color: '#ffffff', // fill light
-      //   x: 1000,
-      //   y: 800,
-      //   z: 1000
-      // },
+      {
+        distance: 600,
+        color: '#ffffff', // fill light
+        x: 300,
+        y: -300,
+        z: 10
+      },
       {
         distance: 12000,
-        color: '#f626c0', // back light
+        color: '#a62680', // back light
         x: 20,
         y: -100,
         z: 150
       },
       {
         distance: 8000,
-        color: '#8c80fe',
+        color: '#173dd6',
         x: 100,
         y: 400,
         z: -100

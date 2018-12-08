@@ -2,60 +2,12 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import { BodyClass } from 'src/components/BodyClass'
-
-import MasonryLayout from 'react-masonry-layout'
-
 class Work extends React.PureComponent {
 
-  state = {
-    perPage: 10
-  }
-
-  loadItems = () => {
-    // this.setState({
-    //   items: this.state.items.concat(Array(this.state.perPage).fill())
-    // });
-  }
-
-  renderMasonryLayoutItems = (items) => {
-    return items.map((v, i) => {
-      // let height = Math.random(1) > 0.5 ? 200 : 240;
-      return (
-        <div
-          key={i}
-          style={{
-            width: '600px',
-            height: `325px`,
-            lineHeight: `325px`,
-            transition: 'all 1.1s cubic-bezier(.28, .99, .49, 1.14)',
-            display: 'block',
-            background: 'transparent'
-          }}
-        >
-          {v}
-        </div>
-      )}
-    )
-  }
-
   renderWork = (data) => {
-    const tokenRegItems = [
-      <img src={data.regTokenAnimated.publicURL} />,
-      <img src={data.regTokenShot1.publicURL} />,
-      <img src={data.regTokenShot2.publicURL} />
-    ]
-
-    const openCareItems = [
-      <img src={data.openCareShot1.publicURL} />,
-      <img src={data.openCareShot2.publicURL} />,
-      <img src={data.openCareShot3.publicURL} />
-    ]
 
     return (
       <React.Fragment>
-        {/*<BodyClass cssClass="work" />*/}
-
         <section className="section first">
           <div className="container">
             <h1 className="page-title is-marginless">
@@ -79,25 +31,57 @@ class Work extends React.PureComponent {
                   </small>
                 </h5>
 
-                <MasonryLayout
-                  id="token-reg-masonry"
-                  className="masonry-layout"
-                  infiniteScroll={this.loadItems}
-                  sizes={[
-                    { columns: 1, gutter: 20 },
-                    { mq: '768px', columns: 1, gutter: 20 },
-                    { mq: '1472px', columns: 2, gutter: 20 }
-                  ]}
-                >
-                  {this.renderMasonryLayoutItems(tokenRegItems)}
-                </MasonryLayout>
+                <div className="columns">
+                  <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+                    <p>
+                      We worked with <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> to iterate on their design of an <a href='https://medium.com/coinmonks/subjective-vs-objective-tcrs-a21f5d848553' target='_blank' rel="noopener noreferrer">Objective TCR</a>. After completing the smart contracts we decided to build a proof-of-concept <abbr title="Decentralized Application">DApp</abbr> around the idea of a token registry:
+                    </p>
+                  </div>
+                </div>
+
+                <div className="masonry">
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.regTokenAnimated.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Token Submission Step</strong>
+                      <br />
+                      Anyone can submit a token to be listed on the registry. A verifier then checks the validity of the submission.
+                    </span>
+                  </div>
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.regTokenShot2.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Following Successful Verification</strong>
+                      <br />
+                      If the verifier and the applicant's answers match (ie. the token, ticker symbol and contract address are valid) the token is in the registry.
+                    </span>
+                  </div>
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.regTokenShot1.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Public Listing</strong>
+                      <br />
+                      Anyone can view the public registry, use the token &amp; contract address data in their DApps and challenge tokens as they see fit.
+                    </span>
+                  </div>
+                </div>
+
               </div>
             </div>
 
             <div className="columns">
               <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
                 <p>
-                  We worked with <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> to iterate on their design for an <a href='https://medium.com/coinmonks/subjective-vs-objective-tcrs-a21f5d848553' target='_blank' rel="noopener noreferrer">Objective TCR</a>.  After completing the smart contracts we decided to build a proof-of-concept around the idea of a token registry.  Tokens are listed on many different exchanges, but there is no decentralized list of tokens.  Using our objective TCR contracts we were able to create a decentralized registry of tokens.
+                  Tokens are listed on many different exchanges, but there is no decentralized list of tokens.  Using our objective TCR contracts we were able to create a decentralized registry of tokens which lives on the Ethereum blockchain and anyone can use.
                 </p>
               </div>
             </div>
@@ -120,35 +104,65 @@ class Work extends React.PureComponent {
                   </small>
                 </h5>
 
-                <MasonryLayout
-                  id="opencare-masonry"
-                  className="masonry-layout"
-                  infiniteScroll={this.loadItems}
-                  sizes={[
-                    { columns: 1, gutter: 20 },
-                    { mq: '768px', columns: 1, gutter: 20 },
-                    { mq: '1472px', columns: 2, gutter: 20 }
-                  ]}
-                >
-                  {this.renderMasonryLayoutItems(openCareItems)}
-                </MasonryLayout>
+                <div className="columns">
+                  <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+                    <p>
+                      <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> needed to develop OpenCare, their first decentralized application for the global healthcare market. OpenCare is a teledermatology app that allows users to receive diagnoses from dermatologists:
+                    </p>
+                  </div>
+                </div>
+
+                <div className="masonry">
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.openCareShot1.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Landing Page</strong>
+                      <br />
+                      New users are greeted by a welcoming landing page which asks them to submit a new case for Doctor's to diagnose.
+                    </span>
+                  </div>
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.openCareShot2.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Sign-up Flow</strong>
+                      <br />
+                      256-bit encryption is employed to create user accounts and encrypt any and all information the patient provides, and the decryption key is only shared with their Doctor.
+                    </span>
+                  </div>
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.openCareShot3.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Case Submission</strong>
+                      <br />
+                      A clean and reactive form requests the patient's general information and skin condition details. Names, addresses, etc. are not collected and patients are kept anonymous.
+                    </span>
+                  </div>
+                </div>
 
               </div>
             </div>
 
             <div className="columns">
               <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
-
                 <p>
-                  <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> needed to develop OpenCare, their first decentralized application for the global healthcare market. OpenCare is a teledermatology app that allows users to receive diagnoses from dermatologists.  Patients create a new case that includes some demographic information, a brief history of the condition, and several photos.  The case is assigned to a doctor who can submit a diagnosis and receive a fee.  If the patient is unhappy with the diagnosis they can receive a second opinion.
+                  Patients create a new case that includes some demographic information, a brief history of the condition, and several photos.  The case is assigned to a doctor who can submit a diagnosis and receive a fee.  If the patient is unhappy with the diagnosis they can receive a second opinion.
                 </p>
 
                 <p>
                   OpenCare uses a broad spectrum of decentralized technologies: including IPFS, Whisper and Ethereum.
                 </p>
               </div>
-
             </div>
+
           </div>
         </section>
       </React.Fragment>
