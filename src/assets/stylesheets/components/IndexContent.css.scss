@@ -37,6 +37,39 @@ $prefix-icon-width: 2rem;
   color: $light-blue;
 }
 
-.subtitle-3 {
+.color-orange {
   color: $light-orange;
+}
+
+.background-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+img.background {
+  position: absolute;
+  min-width: 1000%;
+  min-height: 1000%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0.1);
+}
+
+ul.ul  {
+    margin: 0.75em 0;
+    padding: 0 1em;
+    list-style: none;
+}
+
+ul.ul li:before {
+    content: "";
+    border-color: $light-orange transparent;
+    border-style: solid;
+    border-width: 0 0.35em 0.55em 0.35em;
+    display: block;
+    height: 0;
+    width: 0;
+    left: -1em;
+    top: 0.9em;
+    position: relative;
 }

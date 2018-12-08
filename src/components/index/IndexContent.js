@@ -3,11 +3,25 @@ import Img from "gatsby-image"
 import { Link } from 'gatsby'
 import library from 'src/library'
 import AntdIcon from 'react-antd-icons/esm';
+import EthereumImage from './EthereumImage'
 
 class IndexContent extends React.Component {
   render() {
+    var ethereumSection
+
     const columnsClassName = 'columns is-centered'
     const columnClassName = 'column'
+
+    // ethereumSection =
+    //   <section className='section has-background-charcoal background-image-container'>
+    //     <EthereumImage className='background has-half-opacity' />
+    //     <div className='container'>
+    //       <h2>Ethereum</h2>
+    //       <p>
+    //         Ethereum is currently the most mature general purpose blockchain platform, so we have focused our efforts on building amazing Ethereum apps.
+    //       </p>
+    //     </div>
+    //   </section>
 
     return (
       <div>
@@ -15,6 +29,10 @@ class IndexContent extends React.Component {
           <div className="container">
             <div className={columnsClassName}>
               <div className={columnClassName}>
+                <h3>Experience and skills you need.</h3>
+                <p>
+                  We produce top quality web applications.  Here is what we can do for you:
+                </p>
                 <div className='columns'>
                   <div className='column'>
                     <h6 className='subtitle-1'>
@@ -38,15 +56,13 @@ class IndexContent extends React.Component {
                       </span>
                     </h6>
                     <ul className='prefix-icon-list'>
-                      <li>React, Redux</li>
-                      <li>Webpack, Gatsby JS</li>
+                      <li>Front end Development</li>
                       <li>Server Development</li>
                       <li>Infrastructure</li>
-                      <li>Continuous Delivery</li>
                     </ul>
                   </div>
                   <div className='column'>
-                    <h6 className='subtitle-3'>
+                    <h6 className='subtitle-3 color-orange'>
                       <AntdIcon type={'deployment-unit'} className='prefix-icon' />
                       <span>
                         Web3 Integration
@@ -64,22 +80,35 @@ class IndexContent extends React.Component {
             </div>
           </div>
         </section>
+        {ethereumSection}
         <section className='section is-medium has-background-grey'>
           <div className='container'>
-            <div className={columnsClassName}>
+            <div className='columns'>
+              <div className='column'>
+                PROCESS GRAPHIC / IMAGE HERE
+              </div>
               <div className={columnClassName}>
-                <h1>
-                  Technology
-                </h1>
+                <h3>Small team with big impact.</h3>
                 <p>
-                  We create high quality and delightful web applications using decentralized technologies. We constantly evolve our development process so that we're using the best tools, techniques, and standards.
+                  We will work closely with you to refine your product.  We favour continuous communication and
+                  delivery to ensure we're building the right product.
                 </p>
-                <h5>
-                  Why Ethereum?
-                </h5>
-                <p>
-                  Ethereum is currently the most mature blockchain platform, so we have focused our efforts on building amazing Ethereum apps.  Looking to the future, we will progress into multi-blockchain systems as tools such as Polkadot and Cosmos mature.
-                </p>
+                <div className='columns'>
+                  <div className='column'>
+                    <ul className='ul'>
+                      <li>Weekly iterations</li>
+                      <li>Continous delivery</li>
+                      <li>Dedicated team</li>
+                    </ul>
+                  </div>
+                  <div className='column'>
+                    <ul className='ul'>
+                      <li>Constant communications</li>
+                      <li>Flexible Process</li>
+                      <li>Acceptance testing</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

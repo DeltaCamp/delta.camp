@@ -152,7 +152,6 @@ body {
   color: #565659;
   font-family: 'futura-pt', sans-serif;
   font-size: 1.5rem;
-  line-height: 1.6;
 }
 
 a {
@@ -934,6 +933,19 @@ textarea.textarea:active {
 
 .has-background-grey {
   background: $grey;
+}
+
+.has-background-charcoal {
+  color: white;
+  background: #121217;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: white;
+  }
+}
+
+.has-half-opacity {
+  opacity: 0.13;
 }
 
 form {
