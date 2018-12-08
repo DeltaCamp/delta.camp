@@ -35,7 +35,6 @@
     "react-antd-icons": "^0.1.0-alpha.5",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "react-masonry-layout": "^0.4.0",
     "react-timeout": "^1.1.2",
     "react-transition-group": "^2.5.0",
     "smooth-scroll": "^15.0.0",
