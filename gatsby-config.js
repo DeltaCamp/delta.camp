@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   siteMetadata: {
-    title: 'delta.camp',
+    title: 'Delta Camp | Building Apps for the Third Web',
     author: 'Chuck Bergeron, Brendan Asselstine',
     description: '.',
     siteUrl: 'https://delta.camp',
