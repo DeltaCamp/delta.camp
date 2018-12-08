@@ -2,48 +2,9 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import MasonryLayout from 'react-masonry-layout'
-
 class Work extends React.PureComponent {
 
-  state = {
-    perPage: 10
-  }
-
-  loadItems = () => {
-    // this.setState({
-    //   items: this.state.items.concat(Array(this.state.perPage).fill())
-    // });
-  }
-
-  renderMasonryLayoutItems = (items) => {
-    return items.map((v, i) => {
-      // let height = Math.random(1) > 0.5 ? 200 : 240;
-      return (
-        <div
-          key={i}
-          style={{
-            width: '600px',
-            height: `325px`,
-            lineHeight: `325px`,
-            transition: 'all 1.1s cubic-bezier(.28, .99, .49, 1.14)',
-            display: 'block',
-            background: 'transparent'
-          }}
-        >
-          {v}
-        </div>
-      )}
-    )
-  }
-
   renderWork = (data) => {
-
-    const openCareItems = [
-      <img src={data.openCareShot1.publicURL} />,
-      <img src={data.openCareShot2.publicURL} />,
-      <img src={data.openCareShot3.publicURL} />
-    ]
 
     return (
       <React.Fragment>
@@ -113,6 +74,7 @@ class Work extends React.PureComponent {
                     </span>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -142,35 +104,65 @@ class Work extends React.PureComponent {
                   </small>
                 </h5>
 
-                <MasonryLayout
-                  id="opencare-masonry"
-                  className="masonry-layout"
-                  infiniteScroll={this.loadItems}
-                  sizes={[
-                    { columns: 1, gutter: 20 },
-                    { mq: '768px', columns: 1, gutter: 20 },
-                    { mq: '1472px', columns: 2, gutter: 20 }
-                  ]}
-                >
-                  {this.renderMasonryLayoutItems(openCareItems)}
-                </MasonryLayout>
+                <div className="columns">
+                  <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
+                    <p>
+                      <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> needed to develop OpenCare, their first decentralized application for the global healthcare market. OpenCare is a teledermatology app that allows users to receive diagnoses from dermatologists:
+                    </p>
+                  </div>
+                </div>
+
+                <div className="masonry">
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.openCareShot1.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Landing Page</strong>
+                      <br />
+                      New users are greeted by a welcoming landing page which asks them to submit a new case for Doctor's to diagnose.
+                    </span>
+                  </div>
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.openCareShot2.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Sign-up Flow</strong>
+                      <br />
+                      256-bit encryption is employed to create user accounts and encrypt any and all information the patient provides, and the decryption key is only shared with their Doctor.
+                    </span>
+                  </div>
+                  <div className="masonry--img-container shadow">
+                    <img
+                      className="masonry--img"
+                      src={data.openCareShot3.publicURL}
+                    />
+                    <span className="masonry-img--caption">
+                      <strong>Case Submission</strong>
+                      <br />
+                      A clean and reactive form requests the patient's general information and skin condition details. Names, addresses, etc. are not collected and patients are kept anonymous.
+                    </span>
+                  </div>
+                </div>
 
               </div>
             </div>
 
             <div className="columns">
               <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
-
                 <p>
-                  <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> needed to develop OpenCare, their first decentralized application for the global healthcare market. OpenCare is a teledermatology app that allows users to receive diagnoses from dermatologists.  Patients create a new case that includes some demographic information, a brief history of the condition, and several photos.  The case is assigned to a doctor who can submit a diagnosis and receive a fee.  If the patient is unhappy with the diagnosis they can receive a second opinion.
+                  Patients create a new case that includes some demographic information, a brief history of the condition, and several photos.  The case is assigned to a doctor who can submit a diagnosis and receive a fee.  If the patient is unhappy with the diagnosis they can receive a second opinion.
                 </p>
 
                 <p>
                   OpenCare uses a broad spectrum of decentralized technologies: including IPFS, Whisper and Ethereum.
                 </p>
               </div>
-
             </div>
+
           </div>
         </section>
       </React.Fragment>
