@@ -369,48 +369,6 @@ ul.list--basic {
   margin-top: 80px;
 }
 
-
-.footer {
-  background: #fff;
-  color: #c2c7cE;
-  font-size: 20px;
-  padding: 1.5rem 0;
-
-  a {
-    color: #92979E;
-
-    &:hover,
-    &:focus {
-      color: #22272E;
-    }
-
-  }
-
-  @media (max-width: 1087px) {
-    padding: 1.5rem;
-  }
-}
-
-p.copyright {
-  margin: 30px 0 20px;
-
-  @media (max-width: 1000px) {
-    font-size: 13px;
-  }
-
-}
-
-p.footnote {
-  font-size: 13px;
-
-  @media (max-width: 1000px) {
-    font-size: 11px;
-  }
-
-}
-
-
-
 @font-face {
   font-family: 'si';
   src: url(asset_path('socicon.eot'));

@@ -1,4 +1,6 @@
 import React from 'react'
+import library from 'src/library'
+import AntdIcon from 'react-antd-icons/esm';
 
 class Footer extends React.Component {
 
@@ -10,7 +12,15 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
         <div className="container">
-          &copy; {year} Delta Camp &mdash; Vancouver, BC. Canada
+          <div className='columns'>
+            <div className='column has-text-left'>
+              &copy; {year} Delta Camp &mdash; Vancouver, BC. Canada
+            </div>
+            <div className='column has-text-right'>
+              <AntdIcon type={'medium'} />
+              <AntdIcon type={'github-fill'} />
+            </div>
+          </div>
         </div>
       </footer>
     )

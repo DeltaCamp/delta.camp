@@ -2,13 +2,17 @@ import {
   library,
   Experiment,
   Thunderbolt,
-  DeploymentUnit
+  DeploymentUnit,
+  Medium,
+  GithubFill
 } from 'antd-icons/esm';
 
 library.add(
   Experiment,
   Thunderbolt,
-  DeploymentUnit
+  DeploymentUnit,
+  Medium,
+  GithubFill
 )
 
 export default library

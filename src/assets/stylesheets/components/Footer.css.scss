@@ -1,0 +1,20 @@
+.footer {
+  background: #333;
+  color: #c2c7cE;
+  font-size: 20px;
+  padding: 4rem 0;
+
+  a {
+    color: #92979E;
+
+    &:hover,
+    &:focus {
+      color: #22272E;
+    }
+
+  }
+
+  @media (max-width: 1087px) {
+    padding: 1.5rem;
+  }
+}
