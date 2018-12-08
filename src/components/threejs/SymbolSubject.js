@@ -5,6 +5,8 @@ var loader = new FBXLoader()
 
 export default (scene, data) => {
 
+  const UP = new THREE.Vector3(0, 1, 0)
+
   let createdSubject,
     originalSymbolPos,
     targetSymbolPos,
@@ -35,15 +37,19 @@ export default (scene, data) => {
 
   function updatePositionRelativeToScroll(yScrollPos) {
     if (createdSubject) {
-      newY = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.001)
+      newY = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.00115)
       createdSubject.position.copy(new THREE.Vector3(originalSymbolPos.x, originalSymbolPos.y, newY * 2))
     }
   }
 
   function update(time) {
     if (createdSubject) {
-      const delta = Math.cos(time / 3) * 0.4
-      createdSubject.rotateOnAxis(new THREE.Vector3(0, 1, 0), -(delta) * 0.01)
+      const delta = Math.cos(time / 3) * 0.8
+      console.log(delta)
+      createdSubject.rotateOnAxis(
+        UP,
+        -(delta) * 0.005
+      )
     }
   }
 
