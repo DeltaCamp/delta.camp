@@ -87,10 +87,10 @@ class IndexContent extends React.Component {
               <div className='column'>
                 PROCESS GRAPHIC / IMAGE HERE
               </div>
-              <div className={columnClassName}>
-                <h3>Small team with big impact.</h3>
+              <div className='column is-two-thirds-tablet is-three-fifths-desktop is-half-fullhd'>
+                <h3>A small team with big impact</h3>
                 <p>
-                  We will work closely with you to refine your product.  We favour continuous communication and
+                  We work closely with you to refine your product.  We favour continuous communication and
                   delivery to ensure we're building the right product.
                 </p>
                 <div className='columns'>
@@ -104,8 +104,7 @@ class IndexContent extends React.Component {
                   <div className='column'>
                     <ul className='ul'>
                       <li>Constant communications</li>
-                      <li>Flexible Process</li>
-                      <li>Acceptance testing</li>
+                      <li>Flexible process</li>
                     </ul>
                   </div>
                 </div>
@@ -142,6 +141,7 @@ class IndexContent extends React.Component {
                 </p>
               </div>
             </div>
+
           </div>
         </section>
       </div>
