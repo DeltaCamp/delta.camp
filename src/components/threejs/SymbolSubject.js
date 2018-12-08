@@ -13,7 +13,7 @@ export default (scene, data) => {
     newY
 
   loader.load(data.deltaCamp3DSymbol.publicURL, function (symbolObject3d) {
-    symbolObject3d.scale.set(21, 21, 21)
+    symbolObject3d.scale.set(10, 10, 10)
 
     symbolObject3d.rotation.x = 1.8
     symbolObject3d.rotation.y = 0.5
@@ -44,8 +44,7 @@ export default (scene, data) => {
 
   function update(time) {
     if (createdSubject) {
-      const delta = Math.cos(time / 3) * 0.8
-      console.log(delta)
+      const delta = Math.cos(time / 3) * 0.4
       createdSubject.rotateOnAxis(
         UP,
         -(delta) * 0.005

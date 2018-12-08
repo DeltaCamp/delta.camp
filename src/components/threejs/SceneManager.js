@@ -65,7 +65,7 @@ export default (canvas, data) => {
 
   function buildCamera({ width, height }) {
     const aspectRatio = width / height
-    const fieldOfView = 60
+    const fieldOfView = 30
     const nearPlane = 1
     const farPlane = 5000
     const camera = new THREE.PerspectiveCamera(
@@ -99,14 +99,14 @@ export default (canvas, data) => {
       },
       {
         distance: 12000,
-        color: '#a62680', // back light
+        color: '#f62680', // back light
         x: 20,
         y: -100,
         z: 150
       },
       {
         distance: 8000,
-        color: '#173dd6',
+        color: '#470d86',
         x: 100,
         y: 400,
         z: -100
@@ -136,7 +136,7 @@ export default (canvas, data) => {
   }
 
   function updateCameraPosition() {
-    const delta = Math.sin(elapsedTime / 1.5) * 0.3
+    const delta = Math.sin(elapsedTime / 1.5) * 0.15
     camera.translateY(-delta)
   }
 
