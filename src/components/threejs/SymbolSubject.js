@@ -45,7 +45,6 @@ export default (scene, data) => {
   function update(time) {
     if (createdSubject) {
       const delta = Math.cos(time / 3) * 0.4
-      console.log(delta)
       createdSubject.rotateOnAxis(
         UP,
         -(delta) * 0.005
