@@ -8,7 +8,6 @@ $navbar-mobile-height: 73px;
   height: 100%;
   transition: 0.5s opacity;
   opacity: 0;
-  // background-color: black;
   z-index: -1;
 }
 
@@ -19,6 +18,7 @@ $navbar-mobile-height: 73px;
 
 .brand path {
   fill: $work-brand-color;
+  transition: fill 0.5s ease-in-out;
 }
 
 .brand:hover path {
@@ -141,16 +141,41 @@ $navbar-mobile-height: 73px;
   font-size: 1.5rem;
   font-weight: 300;
   color: lighten($work-link-color, 20%);
-  border-bottom: 4px solid;
-  border-color: transparent;
-}
-
-.navbar-item a.is-active {
-  border-bottom: 4px solid;
 }
 
 .navbar-item a:focus {
-  color: $work-link-color;
+  color: lighten($work-link-color, 20%);
+}
+
+.navbar-item a.is-active::after,
+.navbar-item a:hover::after {
+  transform: scaleX(1);
+
+  @media (max-width: $navbar-breakpoint) {
+    transform: scaleX(0);
+  }
+}
+
+.navbar-item a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  height: 4px;
+  transition: transform 150ms ease-in-out;
+  transform: scaleX(0);
+  background-color: lighten($work-link-color, 30%);
+
+  @media all and (max-width: $navbar-breakpoint) {
+  }
+}
+
+.home .navbar-item a.is-active:after {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.home .navbar-item a::after {
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .navbar-item a:hover {

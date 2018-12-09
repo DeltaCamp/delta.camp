@@ -74,9 +74,16 @@
 
 body {
   background: white;
+  border-top: 6px solid $link-color;
   color: #565659;
   font-family: 'futura-pt', sans-serif;
   font-size: 1.5rem;
+  transition: border-color 2s ease-in-out;
+}
+
+// hehe, homebody
+.home body {
+  border-color: lighten($link-color, 20%);
 }
 
 a {
