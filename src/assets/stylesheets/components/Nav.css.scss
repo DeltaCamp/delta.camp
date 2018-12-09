@@ -29,28 +29,11 @@ $navbar-mobile-height: 73px;
   fill: white;
 }
 
-@media all and (max-width: $navbar-breakpoint) {
-  .navbar-brand.is-active {
-    background: white;
-  }
-  .home .navbar-brand.is-active path {
-    fill: $work-brand-color;
-  }
-  .home .navbar-brand.is-active .navbar-burger {
-    color: $work-brand-color;
-  }
-}
-
 @media all and (max-width: 768px) {
   .navbar,
   .navbar-brand,
   .navbar-burger {
     min-height: $navbar-mobile-height;
-  }
-
-  .navbar-burger {
-    height: 73px;
-    width: 73px;
   }
 
   .navbar-item.brand {
@@ -61,6 +44,33 @@ $navbar-mobile-height: 73px;
 @media all and (max-width: 480px) {
   .navbar-item.brand {
     max-width: 60%;
+  }
+}
+
+.navbar-burger {
+  color: $work-brand-color;
+  height: 6rem;
+  margin-top: 2rem;
+  width: 6rem;
+
+  @media all and (max-width: 768px) {
+    margin-top: 0.5rem;
+    height: 73px;
+    width: 73px;
+  }
+}
+
+.navbar-burger:hover {
+  background: transparent;
+}
+
+.navbar-burger:hover span {
+  height: 2px;
+}
+
+.home .navbar-brand.is-active .navbar-burger {
+  @media all and (max-width: $navbar-breakpoint) {
+    color: $work-brand-color;
   }
 }
 
@@ -88,27 +98,42 @@ $navbar-mobile-height: 73px;
 
 .navbar-menu.is-active {
   background-color: white;
-  box-shadow: none;
-  border-bottom: 3px solid #ddd;
+  box-shadow: 0 30px 30px 0 rgba(80,100,160,.2), 0 5px 30px rgba(0,0,0,.1);
+  border-bottom: 20px solid #f6f6f6;
   padding: 0.5rem 0px;
 }
 
-.navbar-menu.is-active a {
-  margin-bottom: 0;
+.navbar-brand.is-active {
+  background-color: white;
+  transition: background-color 1000ms cubic-bezier(0.36, 0.07, 0.19, 1.27);
+}
+
+.home .navbar-brand.is-active path {
+  fill: $work-brand-color;
+}
+
+.navbar-menu {
+  @media (max-width: 1087px) {
+    position: absolute;
+    transition: 500ms all ease-in-out;
+    display: block;
+    transform: translate3d(0, -600px, 0);
+    transition: transform 400ms cubic-bezier(0.36, 0.07, 0.19, 1.27);
+    width: 100%
+  }
+}
+
+.navbar-menu.is-active {
+  left: 0;
+  transform: translate3d(0, 0, 0);
 }
 
 .home .navbar-menu.is-active .navbar-item a {
+  color: lighten($link-color, 20%);
+}
+
+.home .navbar-menu.is-active .navbar-item a:hover {
   color: $link-color;
-}
-
-.home .navbar-menu.is-active {
-  position: absolute;
-  left: 0;
-  width: 100%
-}
-
-.navbar-burger {
-  color: $work-brand-color;
 }
 
 .navbar-item a {
@@ -168,4 +193,20 @@ $navbar-mobile-height: 73px;
   @media (max-width: 1087px) {
     margin-left: 0;
   }
+}
+
+.navbar-item,
+.navbar-link {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+
+.navbar-menu.is-active .navbar-link {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.navbar-menu.is-active .navbar-item {
+  padding-right: 2.75rem;
 }
