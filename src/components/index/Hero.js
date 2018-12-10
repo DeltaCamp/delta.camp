@@ -8,7 +8,7 @@ import DownArrowSvg from '-!svg-react-loader!src/assets/images/down-arrow.svg'
 
 class Hero extends React.Component {
   render() {
-    const columnClassName = "column is-three-quarters-tablet is-two-thirds-desktop is-two-fifths-fullhd"
+    const columnClassName = "column is-two-thirds-tablet is-two-thirds-desktop is-two-fifths-fullhd"
 
     return (
       <ThreeContainer>

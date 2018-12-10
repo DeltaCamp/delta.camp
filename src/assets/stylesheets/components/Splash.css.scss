@@ -22,13 +22,20 @@ canvas.delta-camp-3d-container {
 
 canvas.delta-camp-3d {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 22vh;
+  right: 10vw;
   margin: auto;
   opacity: 0;
   transition: 4s opacity;
   min-height: 400px;
   width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  canvas.delta-camp-3d {
+    top: 49vh;
+    right: 1vw;
+  }
 }
 
 canvas.delta-camp-3d.is-loaded {
