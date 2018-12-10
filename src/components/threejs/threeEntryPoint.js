@@ -32,7 +32,7 @@ export default (canvas, data) => {
     },
     onResize: function () {
       if (sceneManager) {
-        sceneManager.onWindowResize()
+        sceneManager.onCanvasResize()
       }
     },
     onScroll: function (scrollTop) {

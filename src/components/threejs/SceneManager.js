@@ -158,7 +158,7 @@ export default (canvas, data) => {
     renderer.setSize(dimensions.width, dimensions.height)
   }
 
-  function onWindowResize() {
+  function onCanvasResize() {
     canvasDimensions = mapCanvasDimensions()
     updateCameraAndRendererDimensions(canvasDimensions)
   }
@@ -170,7 +170,7 @@ export default (canvas, data) => {
 
   return {
     update,
-    onWindowResize,
+    onCanvasResize,
     // onMouseMove,
     onScroll,
   }
