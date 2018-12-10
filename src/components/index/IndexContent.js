@@ -90,8 +90,8 @@ class IndexContent extends React.Component {
               <div className='column is-two-thirds-tablet is-three-fifths-desktop is-half-fullhd'>
                 <h3>A small team with big impact</h3>
                 <p>
-                  We work closely with you to refine your product.  We favour continuous communication and
-                  delivery to ensure we're building the right product.
+                  We work closely with you to refine your product.  Constant communication and continous
+                  delivery ensures we're building the right product.
                 </p>
                 <div className='columns'>
                   <div className='column'>
