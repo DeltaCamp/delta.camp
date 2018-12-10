@@ -8,7 +8,7 @@ export default (canvas, data) => {
     return new Promise((resolve, reject) => {
       try {
         sceneManager = new SceneManager(canvas, data)
-        render()
+        sceneManager.render()
         resolve()
       } catch (e) {
         reject(e)
@@ -16,23 +16,14 @@ export default (canvas, data) => {
     })
   }
 
-  function render() {
-    requestAnimationFrameId = requestAnimationFrame(render)
-    if (sceneManager) {
-      sceneManager.update()
-    }
-  }
-
   return {
     destroy: function () {
-      if (requestAnimationFrameId) {
-        cancelAnimationFrame(requestAnimationFrameId)
-      }
+      sceneManager.destroy()
       sceneManager = null
     },
-    onResize: function () {
+    onResize: function (onCanvasResize) {
       if (sceneManager) {
-        sceneManager.onCanvasResize()
+        sceneManager.onCanvasResize(onCanvasResize)
       }
     },
     onScroll: function (scrollTop) {
@@ -40,6 +31,9 @@ export default (canvas, data) => {
         sceneManager.onScroll(scrollTop)
       }
     },
-    init
+    init,
+    getDevicePixelRatio: function () {
+
+    }
   }
 }

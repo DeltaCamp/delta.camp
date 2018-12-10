@@ -6,6 +6,7 @@ import GeneralLights from './GeneralLights'
 import { BloomEffect, EffectComposer, EffectPass, RenderPass } from "postprocessing"
 
 export default (canvas, data) => {
+  let requestAnimationFrameId
 
   let yScrollPos = 0
   let elapsedTime,
@@ -158,9 +159,21 @@ export default (canvas, data) => {
     renderer.setSize(dimensions.width, dimensions.height)
   }
 
-  function onCanvasResize() {
+  function onCanvasResize(dimensions) {
     canvasDimensions = mapCanvasDimensions()
-    updateCameraAndRendererDimensions(canvasDimensions)
+    console.log(canvasDimensions)
+    updateCameraAndRendererDimensions(dimensions || canvasDimensions)
+  }
+
+  function render() {
+    requestAnimationFrameId = requestAnimationFrame(render)
+    update()
+  }
+
+  function destroy() {
+    if (requestAnimationFrameId) {
+      cancelAnimationFrame(requestAnimationFrameId)
+    }
   }
 
   // function onMouseMove(x, y) {
@@ -173,5 +186,7 @@ export default (canvas, data) => {
     onCanvasResize,
     // onMouseMove,
     onScroll,
+    render,
+    destroy
   }
 }

@@ -31,6 +31,7 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
 
         this.threeObject.init().then(() => {
           // console.log('three object initialized')
+          this.onResize() //resize canvas
           this.props.setTimeout(this.loaded, 1000)
         }).catch((error) => {
           console.error(error)
@@ -75,32 +76,39 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
   onResize = () => {
     if (!this.canvasElement) { return }
 
-    const halfWidth = window.innerWidth * 0.5
+    // const newWidth = 500//Math.min(Math.max(halfWidth, 500), 500)
+    // const newHeight = 500 //window.innerHeight * 0.5
 
-    const newWidth = 500//Math.min(Math.max(halfWidth, 500), 500)
-    const newHeight = 500 //window.innerHeight * 0.5
-
-    if (newWidth < (newHeight * 2)) {
-      // console.log('using constrained resize')
-      this.canvasElement.width = newWidth
-      this.canvasElement.height = newWidth
-    } else  {
-      // console.log('using regular resize')
-      this.canvasElement.width = newWidth
-      this.canvasElement.height = newHeight
+    const dimensions = {
+      width: this.canvasElement.width,
+      height: this.canvasElement.height
     }
 
+    console.log('onResize: ', dimensions)
+
+    // if (newWidth < (newHeight * 2)) {
+    //   // console.log('using constrained resize')
+      // this.canvasElement.width = newWidth
+      // this.canvasElement.height = newWidth
+    // } else  {
+    //   // console.log('using regular resize')
+    //   this.canvasElement.width = newWidth
+    //   this.canvasElement.height = newHeight
+    // }
+
     if (this.threeObject) {
-      this.threeObject.onResize()
+      this.threeObject.onResize(dimensions)
     }
   }
 
   renderCanvas (data) {
     return (
-      <canvas
-        className={classnames("delta-camp-3d", { "is-loaded": this.state.loaded })}
-        ref={(element) => this.initializeCanvas(element, data)}
-      />
+      <div className='delta-camp-3d-container'>
+        <canvas
+          className={classnames("delta-camp-3d", { "is-loaded": this.state.loaded })}
+          ref={(element) => this.initializeCanvas(element, data)}
+        />
+      </div>
     )
   }
 
