@@ -19,7 +19,7 @@ export default (scene, data) => {
     symbolObject3d.rotation.y = 0.5
     symbolObject3d.rotation.z = 3.13
 
-    originalSymbolPos = new THREE.Vector3(-25, 0, -100)
+    originalSymbolPos = new THREE.Vector3(-25, 0, 20)
     symbolObject3d.position.copy(originalSymbolPos)
 
     console.log('init', originalSymbolPos)
