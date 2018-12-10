@@ -63,7 +63,7 @@ class Contact extends React.PureComponent {
               Thank you!
             </h1>
             <h2 className="subtitle">
-              We'll respond shortly.
+              We'll be in contact shortly.
             </h2>
           </div>
         </section>
