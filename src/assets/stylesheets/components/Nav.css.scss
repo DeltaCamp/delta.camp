@@ -60,7 +60,8 @@ $navbar-mobile-height: 73px;
   }
 }
 
-.navbar-burger:hover {
+.navbar-burger:hover,
+.navbar-burger:focus {
   background: transparent;
 }
 
@@ -98,8 +99,6 @@ $navbar-mobile-height: 73px;
 
 .navbar-menu.is-active {
   background-color: white;
-  box-shadow: 0 30px 30px 0 rgba(80,100,160,.2), 0 5px 30px rgba(0,0,0,.1);
-  border-bottom: 20px solid #f6f6f6;
   padding: 0.5rem 0px;
 }
 
