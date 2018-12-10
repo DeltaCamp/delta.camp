@@ -17,8 +17,13 @@ class Footer extends React.Component {
               &copy; {year} Delta Camp &mdash; Vancouver, BC. Canada
             </div>
             <div className='column has-text-right'>
-              <AntdIcon type={'medium'} />
-              <AntdIcon type={'github-fill'} />
+              <a
+                href='https://github.com/DeltaCamp'
+                target='_blank'
+                rel='noopener noreferred'
+                title='Delta Camp on Github'>
+                <AntdIcon type={'github-fill'} />
+              </a>
             </div>
           </div>
         </div>
