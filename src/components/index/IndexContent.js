@@ -84,7 +84,7 @@ class IndexContent extends React.Component {
         <section className='section is-medium has-background-grey'>
           <div className='container'>
             <div className='columns'>
-              <div className='column is-two-thirds-tablet is-three-fifths-desktop is-half-fullhd'>
+              <div className='column is-two-thirds-tablet is-half-fullhd'>
                 <h3>A small team with a big impact</h3>
                 <p className='no-margin-bottom'>
                   We will work closely with you to refine your product.  Our iterative process ensures
@@ -109,9 +109,9 @@ class IndexContent extends React.Component {
             <div className={columnsClassName}>
               <div className={columnClassName}>
                 <div className='values'>
-                  <h1>
-                    Values
-                  </h1>
+                  <h3>
+                    Forward Thinking
+                  </h3>
                   <p>
                     We made a decision to focus on blockchain technology because we believe it's the future of the internet. We believe that open technology will continue to transform the world and that embracing this change will enable us to innovate even faster.
                   </p>
