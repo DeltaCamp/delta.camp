@@ -77,15 +77,12 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
 
     const halfWidth = window.innerWidth * 0.5
 
-    const newWidth = Math.min(Math.max(halfWidth, 500), 500)
-
-    const newHeight = window.innerHeight * 0.5
-
-    // console.log(newWidth, newHeight)
+    const newWidth = 500//Math.min(Math.max(halfWidth, 500), 500)
+    const newHeight = 500 //window.innerHeight * 0.5
 
     if (newWidth < (newHeight * 2)) {
       // console.log('using constrained resize')
-      this.canvasElement.width = newWidth * 2
+      this.canvasElement.width = newWidth
       this.canvasElement.height = newWidth
     } else  {
       // console.log('using regular resize')

@@ -12,12 +12,9 @@ export default (canvas, data) => {
     originalCameraPos
 
   const clock = new THREE.Clock()
-  const origin = new THREE.Vector3(0, 0, 20)
+  const origin = new THREE.Vector3(0, 0, 0)
 
-  const canvasDimensions = {
-    width: canvas.width,
-    height: canvas.height,
-  }
+  let canvasDimensions = mapCanvasDimensions()
 
   const mousePosition = {
     x: 0,
@@ -27,11 +24,9 @@ export default (canvas, data) => {
   const scene = buildScene()
   const renderer = buildRender(canvasDimensions)
   const camera = buildCamera(canvasDimensions)
-  camera.aspect = 2 // always render half the height of the width (2:1)
-  camera.updateProjectionMatrix()
-  renderer.setSize(canvasDimensions.width, canvasDimensions.height)
-
   const sceneSubjects = createSceneSubjects(scene)
+
+  updateCameraAndRendererDimensions(canvasDimensions)
 
   // const composer = new EffectComposer(renderer);
   // const effectPass = new EffectPass(camera, new BloomEffect());
@@ -93,21 +88,21 @@ export default (canvas, data) => {
       {
         distance: 600,
         color: '#ffffff', // fill light
-        x: 300,
+        x: 100,
         y: -300,
         z: 10
       },
       {
         distance: 12000,
         color: '#f62680', // back light
-        x: 20,
+        x: -180,
         y: -100,
         z: 150
       },
       {
         distance: 8000,
         color: '#470d86',
-        x: 100,
+        x: -100,
         y: 400,
         z: -100
       },
@@ -150,25 +145,22 @@ export default (canvas, data) => {
     }
   }
 
-  function resetRenderer() {
-    // always render half the height of the width (2:1)
-    camera.aspect = 2
+  function mapCanvasDimensions() {
+    return {
+      width: canvas.width,
+      height: canvas.height
+    }
+  }
 
-    // console.log(canvasDimensions.width, canvasDimensions.height)
-    // camera.aspect = canvasDimensions.width / canvasDimensions.height
-
+  function updateCameraAndRendererDimensions(dimensions) {
+    camera.aspect = dimensions.width / dimensions.height
     camera.updateProjectionMatrix()
-    renderer.setSize(canvasDimensions.width, canvasDimensions.height)
-    // composer.setSize(canvasDimensions.width, canvasDimensions.height)
+    renderer.setSize(dimensions.width, dimensions.height)
   }
 
   function onWindowResize() {
-    const { width, height } = canvas
-
-    canvasDimensions.width = width
-    canvasDimensions.height = height
-
-    resetRenderer()
+    canvasDimensions = mapCanvasDimensions()
+    updateCameraAndRendererDimensions(canvasDimensions)
   }
 
   // function onMouseMove(x, y) {

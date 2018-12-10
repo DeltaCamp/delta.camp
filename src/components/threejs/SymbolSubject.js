@@ -19,10 +19,9 @@ export default (scene, data) => {
     symbolObject3d.rotation.y = 0.5
     symbolObject3d.rotation.z = 3.13
 
-    symbolObject3d.position.copy(new THREE.Vector3(200, 0, 0))
+    symbolObject3d.position.copy(new THREE.Vector3(0, 0, 0))
 
     originalSymbolPos = symbolObject3d.position
-
 
     targetSymbolPos = new THREE.Vector3(
       originalSymbolPos.x + 20, // offsets
