@@ -71,8 +71,8 @@ export default (canvas, data) => {
       farPlane
     )
 
-    camera.position.x = 0
-    camera.position.y = 700
+    camera.position.x = 10
+    camera.position.y = 1100
     camera.position.z = 100
 
     originalCameraPos = camera.position

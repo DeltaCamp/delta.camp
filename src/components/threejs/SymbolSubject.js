@@ -10,7 +10,7 @@ export default (scene, data) => {
   let createdSubject,
     originalSymbolPos,
     targetSymbolPos,
-    newY
+    newZ
 
   loader.load(data.deltaCamp3DSymbol.publicURL, function (symbolObject3d) {
     symbolObject3d.scale.set(10, 10, 10)
@@ -19,9 +19,10 @@ export default (scene, data) => {
     symbolObject3d.rotation.y = 0.5
     symbolObject3d.rotation.z = 3.13
 
-    symbolObject3d.position.copy(new THREE.Vector3(0, 0, 0))
+    originalSymbolPos = new THREE.Vector3(-25, 0, -100)
+    symbolObject3d.position.copy(originalSymbolPos)
 
-    originalSymbolPos = symbolObject3d.position
+    console.log('init', originalSymbolPos)
 
     targetSymbolPos = new THREE.Vector3(
       originalSymbolPos.x + 20, // offsets
@@ -36,8 +37,9 @@ export default (scene, data) => {
 
   function updatePositionRelativeToScroll(yScrollPos) {
     if (createdSubject) {
-      newY = THREE.Math.lerp(originalSymbolPos.y, targetSymbolPos.y, yScrollPos * 0.00115)
-      createdSubject.position.copy(new THREE.Vector3(originalSymbolPos.x, originalSymbolPos.y, newY * 2))
+      newZ = THREE.Math.lerp(originalSymbolPos.z, targetSymbolPos.z, yScrollPos * 0.01)
+      const newCoords = new THREE.Vector3(originalSymbolPos.x, originalSymbolPos.y, newZ)
+      createdSubject.position.copy(newCoords)
     }
   }
 
