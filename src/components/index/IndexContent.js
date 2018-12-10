@@ -84,30 +84,21 @@ class IndexContent extends React.Component {
         <section className='section is-medium has-background-grey'>
           <div className='container'>
             <div className='columns'>
-              <div className='column'>
-                PROCESS GRAPHIC / IMAGE HERE
-              </div>
               <div className='column is-two-thirds-tablet is-three-fifths-desktop is-half-fullhd'>
-                <h3>A small team with big impact</h3>
+                <h3>A small team with a big impact</h3>
                 <p>
-                  We work closely with you to refine your product.  Constant communication and continous
-                  delivery ensures we're building the right product.
+                  We will work closely with you to refine your product.  Our iterative process ensures
+                  we build the <strong>right</strong> product.
                 </p>
-                <div className='columns'>
-                  <div className='column'>
-                    <ul className='ul'>
-                      <li>Weekly iterations</li>
-                      <li>Continous delivery</li>
-                      <li>Dedicated team</li>
-                    </ul>
-                  </div>
-                  <div className='column'>
-                    <ul className='ul'>
-                      <li>Constant communications</li>
-                      <li>Flexible process</li>
-                    </ul>
-                  </div>
-                </div>
+              </div>
+              <div className='column'>
+                <ul className='ul'>
+                  <li>Weekly iterations</li>
+                  <li>Continous delivery</li>
+                  <li>Dedicated team</li>
+                  <li>Constant communication</li>
+                  <li>Flexible process</li>
+                </ul>
               </div>
             </div>
           </div>
