@@ -8,7 +8,6 @@ import { Transition } from 'src/components/Transition'
 
 import { getPurePathname } from 'src/utils/getPurePathname'
 
-import 'src/assets/stylesheets/normalize.css'
 import 'src/assets/stylesheets/highlight.css'
 import 'src/assets/stylesheets/deltacamp.css.scss'
 

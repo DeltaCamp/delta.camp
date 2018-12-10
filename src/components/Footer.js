@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import library from 'src/library'
 import AntdIcon from 'react-antd-icons/esm';
 
@@ -12,6 +13,13 @@ class Footer extends React.Component {
     return (
       <footer className="footer">
         <div className="container">
+          <ul>
+            <li>
+              <Link to='/home'>Home</Link>
+              <Link to='/work'>Our Work</Link>
+              <Link to='/contact'>Contact</Link>
+            </li>
+          </ul>
           <div className='columns'>
             <div className='column has-text-left'>
               &copy; {year} Delta Camp &mdash; Vancouver, BC. Canada

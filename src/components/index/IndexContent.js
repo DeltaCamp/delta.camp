@@ -29,7 +29,7 @@ class IndexContent extends React.Component {
           <div className="container">
             <div className={columnsClassName}>
               <div className={columnClassName}>
-                <h3>Experience and skills you need.</h3>
+                <h2>Experience and skills you need.</h2>
                 <p>
                   We produce top quality web applications.  Here is what we can do for you:
                 </p>
@@ -85,7 +85,7 @@ class IndexContent extends React.Component {
           <div className='container'>
             <div className='columns'>
               <div className='column is-two-thirds-tablet is-half-fullhd'>
-                <h3>A small team with a big impact</h3>
+                <h2>A small team with a big impact</h2>
                 <p className='no-margin-bottom'>
                   We will work closely with you to refine your product.  Our iterative process ensures
                   we build the <strong>right</strong> product.
@@ -109,9 +109,9 @@ class IndexContent extends React.Component {
             <div className={columnsClassName}>
               <div className={columnClassName}>
                 <div className='values'>
-                  <h3>
+                  <h2>
                     Forward Thinking
-                  </h3>
+                  </h2>
                   <p>
                     We made a decision to focus on blockchain technology because we believe it's the future of the internet. We believe that open technology will continue to transform the world and that embracing this change will enable us to innovate even faster.
                   </p>

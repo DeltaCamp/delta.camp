@@ -17,7 +17,7 @@ class Hero extends React.Component {
             <div className="container">
               <div className='columns'>
                 <div className={columnClassName}>
-                  <h1 className="hero-h1">We build apps for the third web</h1>
+                  <h1 className="hero-h1">We build apps for <span>the third web</span></h1>
                 </div>
               </div>
               <div className='columns'>

@@ -2,6 +2,11 @@ $light-blue: #77bce6;
 $light-purple: #a28ad2;
 $lighter-purple: #ac9de8;
 
+html {
+  width: 100%;
+  height: 100%;
+}
+
 .header-3d {
   background: linear-gradient($light-blue, $light-purple, $lighter-purple);
 }
@@ -22,7 +27,7 @@ canvas.delta-camp-3d-container {
 
 canvas.delta-camp-3d {
   position: absolute;
-  top: 0vh;
+  top: 0;
   right: 10vw;
   margin: auto;
   opacity: 0;
@@ -33,7 +38,7 @@ canvas.delta-camp-3d {
 
 @media screen and (max-width: 480px) {
   canvas.delta-camp-3d {
-    top: 38vh;
+    bottom: -500px;
     right: 1vw;
   }
 }
