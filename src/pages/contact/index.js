@@ -148,6 +148,9 @@ class Contact extends React.PureComponent {
                 <h1 className="page-title">
                   Contact Us
                 </h1>
+                <p>
+                  Let's work together.  Start a conversation using the form below.
+                </p>
               </div>
             </div>
           </div>

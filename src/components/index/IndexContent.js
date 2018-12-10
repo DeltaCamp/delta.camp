@@ -119,7 +119,7 @@ class IndexContent extends React.Component {
                     Openness
                   </h5>
                   <p>
-                    Openness is a core value that we hold strongly.  We contribute to open source whenever possible; publicizing code or techniques to the community so that others may benefit from our work.  We also leverage open source code and value partnerships over reinvention and walled gardens.
+                    Openness is a core value that we hold strongly.  We contribute to open source whenever possible; publicizing code or techniques to the community so that others may benefit from our work.  We leverage open source code and value partnerships over reinvention and walled gardens.
                   </p>
                 </div>
 
