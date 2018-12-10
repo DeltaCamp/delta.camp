@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
+import ReactTooltip from 'react-tooltip'
 
 class Work extends React.PureComponent {
 
@@ -34,8 +35,17 @@ class Work extends React.PureComponent {
                 <div className="columns">
                   <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
                     <p>
-                      We worked with <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> to iterate on their design of an <a href='https://medium.com/coinmonks/subjective-vs-objective-tcrs-a21f5d848553' target='_blank' rel="noopener noreferrer">Objective TCR</a>. After completing the smart contracts we decided to build a proof-of-concept <abbr title="Decentralized Application">DApp</abbr> around the idea of a token registry:
+                      We worked with <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> to iterate
+                      on their design of an <a href='https://medium.com/coinmonks/subjective-vs-objective-tcrs-a21f5d848553' target='_blank' rel="noopener noreferrer">Objective TCR</a>.
+                      After completing the smart contracts we decided to build a
+                      proof-of-concept <span
+                        className='tooltip-reference'
+                        data-tip="<strong>Decentralized Application</strong><br />A DApp has its backend code running on a decentralized peer-to-peer network. Contrast this with an app where the backend code is running on centralized servers."
+                      >
+                          DApp
+                      </span> around the idea of a token registry:
                     </p>
+                    <ReactTooltip className='tooltip' html={true} />
                   </div>
                 </div>
 
