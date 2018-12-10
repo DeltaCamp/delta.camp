@@ -1,46 +1,19 @@
+@import './normalize.css';
+@import './highlight.css';
 @import "./variables.css.scss";
 @import "./bulma_and_overrides.css.scss";
 @import "./components/_all.css.scss";
+@import "./blog.css.scss";
 
-// Acier BAT Noir
-// font-family: acier-bat-noir, sans-serif;
-// font-weight: 400;
-// font-style: normal;
+// Acier BAT Noir 'acier-bat-noir', 400
+// Acier BAT Text Solid 'acier-bat-solid', 400
+// Acier BAT Text Outline 'acier-bat-outline', 400
+// Acier BAT Text Gris 'acier-bat-gris', 400
 //
-// Acier BAT Text Solid
-// font-family: acier-bat-solid, sans-serif;
-// font-weight: 400;
-// font-style: normal;
-//
-// Acier BAT Text Outline
-// font-family: acier-bat-outline, sans-serif;
-// font-weight: 400;
-// font-style: normal;
-//
-// Acier BAT Text Gris
-// font-family: acier-bat-gris, sans-serif;
-// font-weight: 400;
-// font-style: normal;
-
-// Futura PT Heavy
-// font-family: futura-pt, sans-serif;
-// font-weight: 700;
-// font-style: normal;
-//
-// Futura PT Heavy Oblique
-// font-family: futura-pt, sans-serif;
-// font-weight: 700;
-// font-style: italic;
-//
-// Futura PT Book
-// font-family: futura-pt, sans-serif;
-// font-weight: 400;
-// font-style: normal;
-//
-// Futura PT Book Oblique
-// font-family: futura-pt, sans-serif;
-// font-weight: 400;
-// font-style: italic;
+// Futura PT Heavy 'futura-pt', 700
+// Futura PT Heavy Oblique 'futura-pt', 700, font-style: italic;
+// Futura PT Book 'futura-pt', 400
+// Futura PT Book Oblique 'futura-pt', 400, font-style: italic;
 
 * {
   box-sizing: border-box;
@@ -1038,4 +1011,8 @@ form {
 
 .tooltip strong {
   color: white;
+}
+
+.is-rounded img {
+  border-radius: 100%;
 }
