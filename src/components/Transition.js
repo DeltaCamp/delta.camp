@@ -7,7 +7,7 @@ import {
 } from 'react-transition-group'
 
 // animation duration
-const timeout = 1200
+const timeout = 800
 
 const transitionClasses = {
   entering: 'page-transition-entering',

@@ -74,9 +74,16 @@
 
 body {
   background: white;
+  border-top: 6px solid $link-color;
   color: #565659;
   font-family: 'futura-pt', sans-serif;
   font-size: 1.5rem;
+  transition: border-color 2s ease-in-out;
+}
+
+// hehe, homebody
+.home body {
+  border-color: lighten($link-color, 20%);
 }
 
 a {
@@ -113,7 +120,7 @@ h6 {
 
 h1 {
   line-height: 1;
-  font-size: 7.0vh;
+  font-size: 5.5vh;
   margin-bottom: 1.75vh;
   line-height: 1.1em;
 }
@@ -286,7 +293,6 @@ li {
 .hero-h1 {
   color: white;
   font-family: "acier-bat-solid", Verdana, sans-serif;
-  font-size: 7.0vh;
   text-transform: uppercase;
 
   @media (max-width: 520px) {
@@ -987,16 +993,33 @@ form {
   opacity: 1;
   transform: translate3d(0, 0, 0);
   z-index: 101;
+  transition-duration: 400ms;
+}
+
+.home .page-transition-entered .animatable-content {
+  transition-duration: 2000ms;
 }
 
 .page-transition-entering .animatable-content {
-  opacity: 1;
-  transform: translate3d(0, 0, 0);
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
   z-index: 99;
+}
+
+.home .page-transition-entering .animatable-content {
+  transform: translate3d(0, 0, 0);
 }
 
 .page-transition-exiting .animatable-content {
   opacity: 0;
-  transform: translate3d(0, -100px, 0);
+  transform: translate3d(0, -50px, 0);
+  transition-duration: 1000ms;
   z-index: 101;
 }
+
+// This doesn't work since if we're on Contact and we click Home, the class is updated
+// to home right away and these transition rules will apply to the Contact page that's exiting :(
+// .home .page-transition-exiting .animatable-content {
+//   transform: translate3d(0, 0, 0);
+//   transition-duration: 1200ms;
+// }

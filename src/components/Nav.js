@@ -57,7 +57,11 @@ class Nav extends React.Component {
           <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className={classnames("navbar-brand", { "is-active": this.state.isMenuOpen })}>
               {this.props.logo &&
-                <Link className={classnames("navbar-item brand")} to="/">
+                <Link
+                  className={classnames("navbar-item brand")}
+                  to="/"
+                  onClick={this.close}
+                >
                   <LogoSvg width='150' className="brand" />
                 </Link>
               }
@@ -81,6 +85,16 @@ class Nav extends React.Component {
                     Home
                   </Link>
                 </div>
+                {/*<div className="navbar-item">
+                  <Link
+                    to='/#services-and-values'
+                    className="nav-link"
+                    activeClassName='is-active'
+                    onClick={this.close}
+                    title='Services'>
+                    Services
+                  </Link>
+                </div>*/}
                 <div className="navbar-item">
                   <Link
                     to='/work'
