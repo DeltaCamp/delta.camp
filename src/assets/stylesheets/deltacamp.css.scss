@@ -230,6 +230,12 @@ li {
   z-index: 1001;
 }
 
+.down-arrow--container {
+  position: absolute;
+  bottom: 4vh;
+  width: 100%;
+}
+
 .down-arrow--button {
   border: 0;
   cursor: pointer;
@@ -237,7 +243,6 @@ li {
   margin: 0 auto;
   height: 100px;
   position: relative;
-  top: 100px;
   width: 100px;
 
   @media (max-width: 1280px) {
@@ -255,7 +260,7 @@ li {
 .down-arrow--svg--hover {
   position: absolute;
   height: 100%;
-  top: -20px;
+  top: -50px;
   left: -5px;
   width: 100%;
 }
