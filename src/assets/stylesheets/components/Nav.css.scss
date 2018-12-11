@@ -112,10 +112,10 @@ $navbar-mobile-height: 73px;
 }
 
 .navbar-menu {
-  background-color: white;
   padding: 0.5rem 0px;
   left: 0;
   @media (max-width: 1087px) {
+    background-color: white;
     text-align: right;
     position: absolute;
     transition: 500ms all ease-in-out;
