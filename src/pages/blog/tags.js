@@ -49,6 +49,7 @@ const TagsPage = ({
 
 export default TagsPage
 
+// always exclude draft posts tags from working properly
 export const pageQuery = graphql`
   query {
     site {
@@ -57,7 +58,17 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      limit: 2000
+      sort: {
+        fields: [frontmatter___date], order: DESC
+      }
+      filter: {
+        frontmatter: {
+          draft: {
+            eq: false
+          }
+        }
+      }
+      limit: 3000
     ) {
       group(field: frontmatter___tags) {
         fieldValue

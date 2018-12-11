@@ -5,12 +5,14 @@ import Img from 'gatsby-image'
 import AntdIcon from 'react-antd-icons/esm'
 
 import { BlogColumn } from 'src/components/BlogColumn'
+import { TagList } from 'src/components/TagList'
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const siteDescription = post.excerpt
+    const tags = post.frontmatter.tags
     const { previous, next } = this.props.pageContext
 
     return (
@@ -45,14 +47,6 @@ class BlogPostTemplate extends React.Component {
                     <small>{post.frontmatter.date}</small>
                   </p>
                 </div>
-
-                <ul>
-                  {post.frontmatter.tags.map((tag) => {
-                    <li>
-                      {tag}
-                    </li>
-                  })}
-                </ul>
               </BlogColumn>
             </div>
           </div>
@@ -71,6 +65,8 @@ class BlogPostTemplate extends React.Component {
                 <p>
                   <small>Originally Published {post.frontmatter.date}</small>
                 </p>
+                <TagList tags={tags} />
+
               </BlogColumn>
             </div>
           </div>
@@ -123,7 +119,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         author
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM Do, YYYY")
         title
         tags
       }

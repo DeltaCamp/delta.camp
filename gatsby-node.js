@@ -1,3 +1,8 @@
+const env = process.env.NODE_ENV || "development"
+
+console.log(`Using environment: '${env}'`)
+
+
 const _ = require("lodash")
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
@@ -10,8 +15,6 @@ exports.createPages = ({ graphql, actions }) => {
 
   let tags = []
 
-
-
   return new Promise((resolve, reject) => {
     resolve(
       graphql(
@@ -20,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
             allMarkdownRemark(
               sort: {
                 fields: [frontmatter___date], order: DESC
-              },
+              }
               limit: 3000
             ) {
               edges {
@@ -46,11 +49,17 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Blog Post Pages:
         // Create blog posts pages
-        const posts = result.data.allMarkdownRemark.edges;
+        const posts = result.data.allMarkdownRemark.edges
 
-        posts.forEach((post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
+        // Filter out draft posts in production but show in dev
+        const showDrafts = (env.NODE_ENV === 'development')
+        const allowedPosts = posts.filter(post =>
+          post.node.frontmatter.draft !== showDrafts
+        )
+
+        allowedPosts.forEach((post, index) => {
+          const previous = index === allowedPosts.length - 1 ? null : allowedPosts[index + 1].node;
+          const next = index === 0 ? null : allowedPosts[index - 1].node;
 
           createPage({
             path: post.node.fields.slug,
@@ -67,7 +76,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Tags Pages:
         // Iterate through each post, putting all found tags into `tags`
-        _.each(posts, edge => {
+        _.each(allowedPosts, edge => {
           if (_.get(edge, "node.frontmatter.tags")) {
             tags = tags.concat(edge.node.frontmatter.tags)
           }
