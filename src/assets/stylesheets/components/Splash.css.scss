@@ -8,7 +8,17 @@ html {
 }
 
 .header-3d {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 700px;
   background: linear-gradient($light-blue, $light-purple, $lighter-purple);
+
+  @include tablet {
+    height: 100vh;
+    max-height: 740px;
+  }
 }
 
 .header-3d__spotlight {
@@ -19,10 +29,6 @@ html {
   height: 100%;
   background: radial-gradient(white, transparent);
   opacity: 0.9;
-}
-
-canvas.delta-camp-3d-container {
-
 }
 
 canvas.delta-camp-3d {
@@ -46,12 +52,4 @@ canvas.delta-camp-3d {
 
 canvas.delta-camp-3d.is-loaded {
   opacity: 1;
-}
-
-.header-3d {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
 }

@@ -8,52 +8,27 @@ import debounce from 'lodash/debounce'
 import DownArrowSvg from '-!svg-react-loader!src/assets/images/down-arrow.svg'
 
 class Hero extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-  //
-  // componentDidMount () {
-  //   this.debouncedUpdateDimensions = debounce(this.updateDimensions.bind(this), 2000, { leading: false, trailing: true })
-  //   this.updateDimensions()
-  //   window.addEventListener('resize', this.callDebounce)
-  // }
-  //
-  // componentWillUnmount () {
-  //   window.removeEventListener('resize', this.callDebounce)
-  // }
-  //
-  // callDebounce = () => {
-  //   this.debouncedUpdateDimensions()
-  // }
-  //
-  // updateDimensions () {
-  //   this.setState({
-  //     dimensions: {
-  //       height: window.innerHeight
-  //     }
-  //   })
-  // }
-
   render() {
-    var deltaCamp3D
+    var deltaCamp3D, downArrow
 
     deltaCamp3D = <DeltaCamp3D />
 
-    const columnClassName = "column is-two-thirds-tablet is-two-thirds-desktop"
+    // downArrow =
+    //   <div className="down-arrow--container is-hidden-tablet">
+    //     <a className="down-arrow--button" href="#services-and-values">
+    //       <DownArrowSvg className="down-arrow--svg" />
+    //       <DownArrowSvg className="down-arrow--svg--hover" />
+    //     </a>
+    //   </div>
 
-    if (this.state && this.state.dimensions) {
-      var extraProps = {
-        style: this.state.dimensions
-      }
-    }
+    const columnClassName = "column is-two-thirds-tablet is-two-thirds-desktop"
 
     return (
       <div>
         <div className="container">
           {deltaCamp3D}
         </div>
-        <div className="header-3d" {...extraProps}>
+        <div className="header-3d">
           <div className='header-3d__spotlight' />
           <section className="section about first">
             <div>
@@ -75,13 +50,7 @@ class Hero extends React.Component {
                 </div>
               </div>
             </div>
-
-            <div className="down-arrow--container">
-              <a className="down-arrow--button" href="#services-and-values">
-                <DownArrowSvg className="down-arrow--svg" />
-                <DownArrowSvg className="down-arrow--svg--hover" />
-              </a>
-            </div>
+            {downArrow}
           </section>
         </div>
       </div>
