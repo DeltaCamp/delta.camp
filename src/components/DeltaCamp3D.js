@@ -63,7 +63,6 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
       this.threeObject.destroy()
     }
 
-    window.removeEventListener('resize', this.onResize)
     window.removeEventListener('scroll', this.onScroll)
   }
 
@@ -76,11 +75,11 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
   onResize = () => {
     if (!this.canvasElement) { return }
 
-    const newWidth = 500//Math.min(Math.max(halfWidth, 500), 500)
-    const newHeight = 500 //window.innerHeight * 0.5
+    const newWidth = 400//Math.min(Math.max(halfWidth, 500), 500)
+    const newHeight = 700 //window.innerHeight * 0.5
 
     this.canvasElement.width = newWidth
-    this.canvasElement.height = newWidth
+    this.canvasElement.height = newHeight
 
     const dimensions = {
       width: this.canvasElement.width,

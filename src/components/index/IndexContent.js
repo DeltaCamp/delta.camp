@@ -29,7 +29,7 @@ class IndexContent extends React.Component {
           <div className="container">
             <div className={columnsClassName}>
               <div className={columnClassName}>
-                <h3>Experience and skills you need.</h3>
+                <h2>Experience and skills you need.</h2>
                 <p>
                   We produce top quality web applications.  Here is what we can do for you:
                 </p>
@@ -84,30 +84,21 @@ class IndexContent extends React.Component {
         <section className='section is-medium has-background-grey'>
           <div className='container'>
             <div className='columns'>
-              <div className='column'>
-                PROCESS GRAPHIC / IMAGE HERE
-              </div>
-              <div className='column is-two-thirds-tablet is-three-fifths-desktop is-half-fullhd'>
-                <h3>A small team with big impact</h3>
-                <p>
-                  We work closely with you to refine your product.  We favour continuous communication and
-                  delivery to ensure we're building the right product.
+              <div className='column is-two-thirds-tablet is-half-fullhd'>
+                <h2>A small team with a big impact</h2>
+                <p className='no-margin-bottom'>
+                  We will work closely with you to refine your product.  Our iterative process ensures
+                  we build the <strong>right</strong> product.
                 </p>
-                <div className='columns'>
-                  <div className='column'>
-                    <ul className='ul'>
-                      <li>Weekly iterations</li>
-                      <li>Continous delivery</li>
-                      <li>Dedicated team</li>
-                    </ul>
-                  </div>
-                  <div className='column'>
-                    <ul className='ul'>
-                      <li>Constant communications</li>
-                      <li>Flexible process</li>
-                    </ul>
-                  </div>
-                </div>
+              </div>
+              <div className='column'>
+                <ul className='ul'>
+                  <li>Weekly iterations</li>
+                  <li>Continous delivery</li>
+                  <li>Dedicated team</li>
+                  <li>Constant communication</li>
+                  <li>Flexible process</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -118,9 +109,9 @@ class IndexContent extends React.Component {
             <div className={columnsClassName}>
               <div className={columnClassName}>
                 <div className='values'>
-                  <h1>
-                    Values
-                  </h1>
+                  <h2>
+                    Forward Thinking
+                  </h2>
                   <p>
                     We made a decision to focus on blockchain technology because we believe it's the future of the internet. We believe that open technology will continue to transform the world and that embracing this change will enable us to innovate even faster.
                   </p>
@@ -128,16 +119,16 @@ class IndexContent extends React.Component {
                     Openness
                   </h5>
                   <p>
-                    Openness is a core value that we hold strongly.  We contribute to open source whenever possible; publicizing code or techniques to the community so that others may benefit from our work.  We also leverage open source code and value partnerships over reinvention and walled gardens.
+                    Openness is a core value that we hold strongly.  We contribute to open source whenever possible; publicizing code or techniques to the community so that others may benefit from our work.  We leverage open source code and value partnerships over reinvention and walled gardens.
                   </p>
                 </div>
 
                 <p>
-                  <Link className="button button-primary" to="/contact" title="Reach out and let's start a discussion">
+                  <Link className="button is-medium button-primary" to="/contact" title="Reach out and let's start a discussion">
                     Let's Build Together
                   </Link>
                   &nbsp;
-                  <Link className="button" to="/work" title="Our Work">See Our Work</Link>
+                  <Link className="button is-medium" to="/work" title="Our Work">See Our Work</Link>
                 </p>
               </div>
             </div>

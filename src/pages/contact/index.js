@@ -20,7 +20,6 @@ class Contact extends React.PureComponent {
   submit = (e) => {
     e.preventDefault()
     const url = "https://script.google.com/macros/s/AKfycby1cKI5HlVcwx8uR0XB4w68SULY2v5dVSbI2lj4BQKBA1HudJ8/exec"
-    console.log('Sending: ', this.state)
     this.setState({isLoading: true})
     fetch(`${url}?${queryString.stringify(this.state)}`)
       .then(() => {
@@ -61,7 +60,7 @@ class Contact extends React.PureComponent {
               Thank you!
             </h1>
             <h2 className="subtitle">
-              We'll respond shortly.
+              We'll be in contact shortly.
             </h2>
           </div>
         </section>
@@ -131,7 +130,7 @@ class Contact extends React.PureComponent {
 
           <div className="field is-pulled-right">
             <div className="control">
-              <button type="submit" className={classnames("button is-info", { "is-loading": this.state.isLoading })}>Submit</button>
+              <button type="submit" className={classnames("button is-info is-large", { "is-loading": this.state.isLoading })}>Submit</button>
             </div>
           </div>
         </form>
@@ -146,6 +145,9 @@ class Contact extends React.PureComponent {
                 <h1 className="page-title">
                   Contact Us
                 </h1>
+                <p className='no-margin-bottom'>
+                  Let's work together.  Start a conversation with us.
+                </p>
               </div>
             </div>
           </div>

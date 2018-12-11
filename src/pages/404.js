@@ -13,7 +13,7 @@ class NotFoundPage extends React.Component {
   render() {
     return (
       <Fragment>
-        <section className="section first">
+        <section className='section is-medium first'>
           <div className="container">
             <h1 className="page-title is-marginless">
               Not Found

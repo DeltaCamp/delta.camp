@@ -66,8 +66,14 @@ $navbar-mobile-height: 73px;
   }
 }
 
-.navbar-burger:hover {
+.navbar a:link,
+.navbar a:hover,
+.navbar a:visited,
+.navbar a:focus,
+.navbar a:active {
   background: transparent;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .navbar-burger:hover span {
@@ -105,12 +111,12 @@ $navbar-mobile-height: 73px;
   padding: 1rem;
 }
 
-.navbar-menu.is-active {
-  background-color: white;
-  box-shadow: 0 30px 10px 0 rgba(80,100,160,.2), 0 5px 30px rgba(0,0,0,.1);
-  border-bottom: 20px solid #f6f6f6;
-  padding: 0.5rem 0px;
-}
+// .navbar-menu.is-active {
+//   background-color: white;
+//   box-shadow: 0 30px 10px 0 rgba(80,100,160,.2), 0 5px 30px rgba(0,0,0,.1);
+//   border-bottom: 20px solid #f6f6f6;
+//   padding: 0.5rem 0px;
+// }
 
 .navbar-brand.is-active {
   background-color: white;
@@ -122,7 +128,11 @@ $navbar-mobile-height: 73px;
 }
 
 .navbar-menu {
+  padding: 0.5rem 0px;
+  left: 0;
   @media (max-width: 1087px) {
+    background-color: white;
+    text-align: right;
     position: absolute;
     transition: 500ms all ease-in-out;
     display: block;
@@ -133,7 +143,6 @@ $navbar-mobile-height: 73px;
 }
 
 .navbar-menu.is-active {
-  left: 0;
   transform: translate3d(0, 0, 0);
 }
 
@@ -143,6 +152,25 @@ $navbar-mobile-height: 73px;
 
 .home .navbar-menu.is-active .navbar-item a:hover {
   color: $link-color;
+}
+
+.navbar-item,
+.navbar-link {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.navbar-link {
+  @media (max-width: $navbar-breakpoint) {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+}
+
+.navbar-item {
+  @media (max-width: $navbar-breakpoint) {
+    padding-right: 2.75rem;
+  }
 }
 
 .navbar-item a {
@@ -191,10 +219,6 @@ $navbar-mobile-height: 73px;
   color: $work-link-color;
 }
 
-.navbar-menu.is-active {
-  text-align: right;
-}
-
 .home .navbar .navbar-burger {
   color: white;
 }
@@ -229,23 +253,26 @@ $navbar-mobile-height: 73px;
   }
 }
 
-.navbar-item,
-.navbar-link {
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-}
 
-.navbar-menu.is-active .navbar-link {
-  padding-bottom: 2rem;
-  padding-top: 2rem;
-}
+// here to end of file ... ?
 
-.navbar-menu.is-active .navbar-item {
-  padding-right: 2.75rem;
-}
-
-.navbar-brand {
-  @media screen and (min-width: 1088px) {
-    min-height: auto;
-  }
-}
+// .navbar-item,
+// .navbar-link {
+//   padding-bottom: 1rem;
+//   padding-top: 1rem;
+// }
+//
+// .navbar-menu.is-active .navbar-link {
+//   padding-bottom: 2rem;
+//   padding-top: 2rem;
+// }
+//
+// .navbar-menu.is-active .navbar-item {
+//   padding-right: 2.75rem;
+// }
+//
+// .navbar-brand {
+//   @media screen and (min-width: 1088px) {
+//     min-height: auto;
+//   }
+// }
