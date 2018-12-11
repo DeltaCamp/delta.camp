@@ -63,7 +63,6 @@ export const DeltaCamp3D = ReactTimeout(class extends Component {
       this.threeObject.destroy()
     }
 
-    window.removeEventListener('resize', this.onResize)
     window.removeEventListener('scroll', this.onScroll)
   }
 

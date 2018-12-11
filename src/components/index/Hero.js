@@ -2,16 +2,52 @@ import React from 'react'
 import Img from "gatsby-image"
 import { Link } from 'gatsby'
 import Nav from 'src/components/Nav'
-import { ThreeContainer } from 'src/components/ThreeContainer'
+import { DeltaCamp3D } from 'src/components/DeltaCamp3D'
+import debounce from 'lodash/debounce'
 
 import DownArrowSvg from '-!svg-react-loader!src/assets/images/down-arrow.svg'
 
 class Hero extends React.Component {
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {}
+  //   this.debouncedUpdateDimensions = debounce(this.updateDimensions.bind(this), 2000)
+  // }
+  //
+  // componentDidMount () {
+  //   this.updateDimensions()
+  //   window.addEventListener('resize', this.debouncedUpdateDimensions)
+  // }
+  //
+  // componentWillUnmount () {
+  //   window.removeEventListener('resize', this.debouncedUpdateDimensions)
+  // }
+  //
+  // updateDimensions () {
+  //   this.setState({
+  //     dimensions: {
+  //       height: window.innerHeight
+  //     }
+  //   })
+  // }
+
   render() {
+    var deltaCamp3D
+
+    deltaCamp3D = <DeltaCamp3D />
+
     const columnClassName = "column is-two-thirds-tablet is-two-thirds-desktop is-two-fifths-fullhd"
 
+    if (this.state && this.state.dimensions) {
+      var extraProps = {
+        style: this.state.dimensions
+      }
+    }
+
     return (
-      <ThreeContainer>
+      <div className="header-3d">
+        <div className='header-3d__spotlight' />
+        {deltaCamp3D}
         <section className="section about first">
           <div>
             <div className="container">
@@ -40,7 +76,7 @@ class Hero extends React.Component {
             </a>
           </div>
         </section>
-      </ThreeContainer>
+      </div>
     )
   }
 }
