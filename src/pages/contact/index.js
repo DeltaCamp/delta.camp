@@ -132,7 +132,7 @@ class Contact extends React.PureComponent {
 
           <div className="field is-pulled-right">
             <div className="control">
-              <button type="submit" className={classnames("button is-info", { "is-loading": this.state.isLoading })}>Submit</button>
+              <button type="submit" className={classnames("button is-info is-large", { "is-loading": this.state.isLoading })}>Submit</button>
             </div>
           </div>
         </form>

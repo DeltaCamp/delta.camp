@@ -1,11 +1,13 @@
+$mobile-padding: 1.5rem;
+
 .footer {
   background: #333;
-  color: #c2c7cE;
+  color: #aaa;
   font-size: 20px;
   padding: 4rem 0;
 
   a {
-    color: #92979E;
+    color: #c2c7cE;
 
     &:hover,
     &:focus {
@@ -14,7 +16,11 @@
 
   }
 
+  ul {
+    margin-bottom: $mobile-padding;
+  }
+
   @media (max-width: 1087px) {
-    padding: 1.5rem;
+    padding: $mobile-padding;
   }
 }

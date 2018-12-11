@@ -15,7 +15,7 @@ class Footer extends React.Component {
         <div className="container">
           <ul>
             <li><Link to='/'>Home</Link></li>
-            <li><Link to='/work'>Our Work</Link></li>
+            <li><Link to='/work'>Work</Link></li>
             <li><Link to='/contact'>Contact</Link></li>
             <li>
               <a
@@ -24,12 +24,11 @@ class Footer extends React.Component {
                 rel='noopener noreferred'
                 title='Delta Camp on Github'>
                 Open Source
-                <AntdIcon type={'github-fill'} />
               </a>
             </li>
           </ul>
           <div className='has-text-left'>
-            &copy; {year} Delta Camp &mdash; Vancouver, BC. Canada
+            <div className='is-inline-block'>&copy; {year} Delta Camp</div> <span className='is-hidden-mobile'>&mdash; </span><div className='is-inline-block'>Vancouver, BC. Canada</div>
           </div>
         </div>
       </footer>

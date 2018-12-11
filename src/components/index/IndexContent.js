@@ -124,11 +124,11 @@ class IndexContent extends React.Component {
                 </div>
 
                 <p>
-                  <Link className="button button-primary" to="/contact" title="Reach out and let's start a discussion">
+                  <Link className="button is-medium button-primary" to="/contact" title="Reach out and let's start a discussion">
                     Let's Build Together
                   </Link>
                   &nbsp;
-                  <Link className="button" to="/work" title="Our Work">See Our Work</Link>
+                  <Link className="button is-medium" to="/work" title="Our Work">See Our Work</Link>
                 </p>
               </div>
             </div>
