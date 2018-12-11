@@ -161,7 +161,6 @@ export default (canvas, data) => {
 
   function onCanvasResize(dimensions) {
     canvasDimensions = mapCanvasDimensions()
-    console.log(canvasDimensions)
     updateCameraAndRendererDimensions(dimensions || canvasDimensions)
   }
 

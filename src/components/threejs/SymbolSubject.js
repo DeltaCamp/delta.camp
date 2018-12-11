@@ -22,8 +22,6 @@ export default (scene, data) => {
     originalSymbolPos = new THREE.Vector3(-25, 0, 20)
     symbolObject3d.position.copy(originalSymbolPos)
 
-    console.log('init', originalSymbolPos)
-
     targetSymbolPos = new THREE.Vector3(
       originalSymbolPos.x + 20, // offsets
       originalSymbolPos.y - 200,

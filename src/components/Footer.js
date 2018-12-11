@@ -14,25 +14,22 @@ class Footer extends React.Component {
       <footer className="footer">
         <div className="container">
           <ul>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/work'>Our Work</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
             <li>
-              <Link to='/home'>Home</Link>
-              <Link to='/work'>Our Work</Link>
-              <Link to='/contact'>Contact</Link>
-            </li>
-          </ul>
-          <div className='columns'>
-            <div className='column has-text-left'>
-              &copy; {year} Delta Camp &mdash; Vancouver, BC. Canada
-            </div>
-            <div className='column has-text-right'>
               <a
                 href='https://github.com/DeltaCamp'
                 target='_blank'
                 rel='noopener noreferred'
                 title='Delta Camp on Github'>
+                Open Source
                 <AntdIcon type={'github-fill'} />
               </a>
-            </div>
+            </li>
+          </ul>
+          <div className='has-text-left'>
+            &copy; {year} Delta Camp &mdash; Vancouver, BC. Canada
           </div>
         </div>
       </footer>

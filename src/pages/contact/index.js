@@ -22,7 +22,6 @@ class Contact extends React.PureComponent {
   submit = (e) => {
     e.preventDefault()
     const url = "https://script.google.com/macros/s/AKfycby1cKI5HlVcwx8uR0XB4w68SULY2v5dVSbI2lj4BQKBA1HudJ8/exec"
-    console.log('Sending: ', this.state)
     this.setState({isLoading: true})
     fetch(`${url}?${queryString.stringify(this.state)}`)
       .then(() => {
