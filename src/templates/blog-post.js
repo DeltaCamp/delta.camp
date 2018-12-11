@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import AntdIcon from 'react-antd-icons/esm'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -21,8 +22,35 @@ class BlogPostTemplate extends React.Component {
         <section className="section first">
           <div className="container">
             <div className="columns">
-              <div className="column has-text-centered">
-                <h1>{post.frontmatter.title}</h1>
+              <div className="column is-three-quarters">
+                <h5>
+                  {post.frontmatter.title}
+                </h5>
+
+                <div className="blog-post--author-container">
+                  <figure className="image is-72x72">
+                    <Img
+                      fixed={this.props.data.chuckProfilePic.childImageSharp.fixed}
+                      alt={`Chuck Bergeron`}
+                      className="is-rounded is-rounded--shadow"
+                    />
+                  </figure>
+
+                  <h6 className="post-author">
+                    Chuck Bergeron <a href="https://twitter.com/chuckbergeron"><AntdIcon className="inline-icon" type={'twitter'} /></a>
+                  </h6>
+                  <p className="post-date">
+                    <small>{post.frontmatter.date}</small>
+                  </p>
+                </div>
+
+                <ul>
+                  {post.frontmatter.tags.map((tag) => {
+                    <li>
+                      {tag}
+                    </li>
+                  })}
+                </ul>
               </div>
             </div>
           </div>
@@ -31,41 +59,26 @@ class BlogPostTemplate extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column has-text-centered">
-                <p
-                  style={{
-                    display: 'block',
-                  }}
-                >
-                  {post.frontmatter.date}
-                </p>
-
-                <figure className="image is-128x128">
-                  <Img
-                    fixed={this.props.data.chuckProfilePic.childImageSharp.fixed}
-                    alt={`Chuck Bergeron`}
-                    className="is-rounded"
-                  />
-                </figure>
-                <p>
-                  Written by <strong>Chuck Bergeron</strong>.
-                  <br />
-                  <a href="https://twitter.com/chuckbergeron">
-                    Follow on Twitter
-                  </a>
-                </p>
-
+              <div className="column is-three-quarters">
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
-                <ul
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    listStyle: 'none',
-                    padding: 0,
-                  }}
-                >
+                <br />
+                <h6>
+                  <small>Chuck Bergeron <a href="https://twitter.com/chuckbergeron"><AntdIcon className="inline-icon" type={'twitter'} /></a></small>
+                </h6>
+                <p>
+                  <small>Originally Published {post.frontmatter.date}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <div className="columns">
+              <div className="column is-two-thirds-tablet is-three-quarters-fullhd">
+                <ul>
                   <li>
                     {
                       previous &&
@@ -107,13 +120,15 @@ export const pageQuery = graphql`
       excerpt
       html
       frontmatter {
-        title
+        author
         date(formatString: "MMMM DD, YYYY")
+        title
+        tags
       }
     }
     chuckProfilePic: file(relativePath: { eq: "chuck-bergeron--profile-sm.jpg" }) {
       childImageSharp {
-        fixed(width: 96, height: 96) {
+        fixed(width: 72, height: 72) {
           ...GatsbyImageSharpFixed_tracedSVG
         }
       }

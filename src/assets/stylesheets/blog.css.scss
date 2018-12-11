@@ -1,12 +1,63 @@
+.blog code,
+.blog pre {
+  width: 100%;
+}
+
+.blog h6 {
+  margin-bottom: 0;
+}
+
 .blog p {
   font-size: 1.5rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
-.blog .column {
-  width: 100%;
+.blog-post--listing {
+  margin-bottom: 100px;
 }
 
-code,
-pre {
-  width: 100%;
+.blog-post--author-container {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  grid-template-rows: 40px 40px;
+  grid-template-areas: "photo name name" "photo date date";
+  margin-top: 20px;
+}
+
+.blog-post--author-container figure {
+  grid-area: photo;
+}
+
+.blog-post--author-container .post-author {
+  font-size: 1.25rem;
+  font-weight: 400;
+  grid-area: name;
+  padding-top: 12px;
+}
+
+.blog-post--author-container .post-date {
+  color: #777;
+  font-size: 1.25rem;
+  grid-area: date;
+  margin-bottom: 0;
+  padding-top: 0;
+  top: -4px;
+  position: relative;
+}
+
+.blog .is-rounded--shadow {
+  overflow: visible !important;
+}
+
+.blog .is-rounded--shadow picture img {
+  border: 3px solid white;
+  background: transparent;
+  border-radius: 100%;
+  box-shadow: 0 2px 20px 0 rgba(120, 120, 120, 0.15);
+  margin: 2px;
+}
+
+.blog .section:not(:first-child) {
+  padding-top: 0;
 }

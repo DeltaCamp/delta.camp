@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import library from 'src/library'
-import AntdIcon from 'react-antd-icons/esm';
 
 class Footer extends React.Component {
 
