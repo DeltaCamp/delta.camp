@@ -25,7 +25,7 @@ class BlogPostTemplate extends React.Component {
           <div className="container">
             <div className="columns">
               <BlogColumn>
-                <h5>
+                <h5 className="is-bottom-marginless">
                   {post.frontmatter.title}
                 </h5>
 
