@@ -13,13 +13,13 @@ class Hero extends React.Component {
 
     deltaCamp3D = <DeltaCamp3D />
 
-    // downArrow =
-    //   <div className="down-arrow--container is-hidden-tablet">
-    //     <a className="down-arrow--button" href="#services-and-values">
-    //       <DownArrowSvg className="down-arrow--svg" />
-    //       <DownArrowSvg className="down-arrow--svg--hover" />
-    //     </a>
-    //   </div>
+    downArrow =
+      <div className="down-arrow--container">
+        <a className="down-arrow--button" href="#services-and-values">
+          <DownArrowSvg className="down-arrow--svg" />
+          <DownArrowSvg className="down-arrow--svg--hover" />
+        </a>
+      </div>
 
     const columnClassName = "column is-two-thirds-tablet is-two-thirds-desktop"
 
