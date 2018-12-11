@@ -3,8 +3,7 @@ $mobile-padding: 1.5rem;
 .footer {
   background: #333;
   color: #aaa;
-  font-size: 20px;
-  padding: 4rem 0;
+  font-size: 1.2rem;
 
   a {
     color: #c2c7cE;
@@ -13,14 +12,31 @@ $mobile-padding: 1.5rem;
     &:focus {
       color: white;
     }
-
   }
+
 
   ul {
     margin-bottom: $mobile-padding;
-  }
+    font-size: 0.9em;
+    margin-right: 2rem;
 
-  @media (max-width: 1087px) {
-    padding: $mobile-padding;
+    li {
+      padding-bottom: 0.5rem;
+    }
   }
+}
+
+section.section.is-footer {
+  padding-top: 0;
+  padding-bottom: 1rem;
+}
+
+.ul-title {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.is-vertical-align-top {
+  vertical-align: top;
 }
