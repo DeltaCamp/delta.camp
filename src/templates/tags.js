@@ -56,12 +56,24 @@ const Tags = ({ pageContext, data }) => {
 
 export default Tags
 
+// always exclude draft posts tags from working properly
 export const pageQuery = graphql`
   query($tag: String) {
     allMarkdownRemark(
-      limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      sort: {
+        fields: [frontmatter___date], order: DESC
+      },
+      filter: {
+        frontmatter: {
+          tags: {
+            in: [$tag]
+          }
+          draft: {
+            eq: false
+          }
+        }
+      }
+      limit: 3000
     ) {
       totalCount
       edges {

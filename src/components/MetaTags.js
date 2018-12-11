@@ -19,6 +19,10 @@ class MetaTags extends React.Component {
         link={
           [
             {
+              href: "https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic,cyrillic-ext,latin-ext",
+              rel: "stylesheet"
+            },
+            {
               rel: "stylesheet",
               href: "https://use.typekit.net/xce0plw.css"
             },

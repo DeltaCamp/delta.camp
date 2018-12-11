@@ -1,5 +1,4 @@
 @import './normalize.css';
-@import './highlight.css';
 @import "./variables.css.scss";
 @import "./bulma_and_overrides.css.scss";
 @import "./components/_all.css.scss";
@@ -14,6 +13,11 @@
 // Futura PT Heavy Oblique 'futura-pt', 700, font-style: italic;
 // Futura PT Book 'futura-pt', 400
 // Futura PT Book Oblique 'futura-pt', 400, font-style: italic;
+
+::selection {
+  background-color: $link-color;
+  color: white;
+}
 
 * {
   box-sizing: border-box;

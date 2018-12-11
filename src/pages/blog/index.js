@@ -5,6 +5,7 @@ import AntdIcon from 'react-antd-icons/esm'
 
 import { BlogColumn } from 'src/components/BlogColumn'
 import { BlogHeader } from 'src/components/BlogHeader'
+import { TagList } from 'src/components/TagList'
 import { authorTwitterUsernames } from 'src/utils/authorTwitterUsernames'
 
 class BlogIndex extends React.Component {
@@ -24,23 +25,13 @@ class BlogIndex extends React.Component {
     return link
   }
 
-  renderTagList = (tags) => {
-    if (tags) {
-      const tagLinks = tags.map(tag =>
-        <Fragment key={`tag-fragment-${tag}`}>
-          <Link key={`tag-${tag}`} to={`/blog/tags/${tag}`}>{tag}</Link>
-          &nbsp;
-          &nbsp;
-        </Fragment>
-      )
-      return tagLinks
-    } else {
-      ''
-    }
-  }
-
   renderBlogLayout = (data) => {
     const posts = data.allMarkdownRemark.edges
+
+    const showDrafts = (process.env.NODE_ENV === 'development')
+    const allowedPosts = posts.filter(post =>
+      post.node.frontmatter.draft !== showDrafts
+    )
 
     return (
       <Fragment>
@@ -68,9 +59,7 @@ class BlogIndex extends React.Component {
 
                       <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
 
-                      <small className="tag-list">
-                        {tags ? this.renderTagList(tags) : ''}
-                      </small>
+                      <TagList tags={tags} />
                     </div>
                   )
                 })}
@@ -93,7 +82,12 @@ class BlogIndex extends React.Component {
               }
             }
           }
-          allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+          allMarkdownRemark(
+            sort: {
+              fields: [frontmatter___date], order: DESC
+            }
+            limit: 3000
+          ) {
             edges {
               node {
                 excerpt
