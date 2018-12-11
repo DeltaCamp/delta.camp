@@ -1,5 +1,9 @@
 $navbar-mobile-height: 73px;
 
+.container--navbar {
+  transition: all 500ms ease-in-out;
+}
+
 .nav-background {
   position: fixed;
   pointer-events: none;
@@ -85,6 +89,9 @@ $navbar-mobile-height: 73px;
 
   @media (max-width: 1000px) {
     height: 80px;
+  }
+  @media screen and (min-width: 1088px) {
+    min-height: auto;
   }
 }
 
@@ -228,7 +235,6 @@ $navbar-mobile-height: 73px;
   padding-top: 1rem;
 }
 
-
 .navbar-menu.is-active .navbar-link {
   padding-bottom: 2rem;
   padding-top: 2rem;
@@ -236,4 +242,10 @@ $navbar-mobile-height: 73px;
 
 .navbar-menu.is-active .navbar-item {
   padding-right: 2.75rem;
+}
+
+.navbar-brand {
+  @media screen and (min-width: 1088px) {
+    min-height: auto;
+  }
 }

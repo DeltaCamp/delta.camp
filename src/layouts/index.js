@@ -10,6 +10,10 @@ import { getPurePathname } from 'src/utils/getPurePathname'
 
 import 'src/assets/stylesheets/deltacamp.css.scss'
 
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+require("prismjs/themes/prism-solarizedlight.css")
+
+
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
   // eslint-disable-next-line global-require
