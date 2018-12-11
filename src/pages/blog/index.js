@@ -1,10 +1,28 @@
 import React, { Fragment } from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
+import AntdIcon from 'react-antd-icons/esm'
+
+import { authorTwitterUsernames } from 'src/utils/authorTwitterUsernames'
 
 import NounProjectMountainsIcon from '-!svg-react-loader!src/assets/images/noun_Mountains_836250_000000.svg'
 
 class BlogIndex extends React.Component {
+
+  formattedTwitterLink = (author) => {
+    let link
+
+    if (author) {
+      link = (
+        <Fragment>
+          &nbsp;-&nbsp;
+          <a href={`https://twitter.com/${authorTwitterUsernames[author]}`}>{author} <AntdIcon className="inline-icon" type={'twitter'} /></a>
+        </Fragment>
+      )
+    }
+
+    return link
+  }
 
   renderBlogLayout = (data) => {
     const posts = data.allMarkdownRemark.edges
@@ -19,6 +37,7 @@ class BlogIndex extends React.Component {
                 <h1 className="page-title">
                   Fresh Tracks
                 </h1>
+                <br />
                 <p>
                   Written by the experienced delta.camp team
                   <br />Designers &amp; developers creating superb decentralized experiences
@@ -31,20 +50,23 @@ class BlogIndex extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-two-thirds-tablet is-three-quarters-fullhd">
+              <div className="column is-two-thirds-tablet is-half-fullhd is-offset-one-quarter-fullhd">
                 {posts.map(({ node }) => {
+                  const twitterLink = this.formattedTwitterLink(node.frontmatter.author)
                   const title = node.frontmatter.title || node.fields.slug
+
                   return (
-                    <div key={node.fields.slug}>
+                    <div key={node.fields.slug} className="blog-post--listing">
                       <h6>
                         <Link to={node.fields.slug}>
                           {title}
                         </Link>
                       </h6>
-                      <small>{node.frontmatter.date}</small>
-                      <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-                      <p>{node.author}</p>
+                      <p>
+                        <small>{node.frontmatter.date}{twitterLink}</small>
+                      </p>
 
+                      <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                     </div>
                   )
                 })}
@@ -75,7 +97,9 @@ class BlogIndex extends React.Component {
                   slug
                 }
                 frontmatter {
+                  author
                   date(formatString: "MMMM DD, YYYY")
+                  tags
                   title
                 }
               }

@@ -1,6 +1,6 @@
 import React from 'react'
-import library from 'src/library'
-import AntdIcon from 'react-antd-icons/esm';
+import antdIconLibrary from 'src/antdIconLibrary'
+import AntdIcon from 'react-antd-icons/esm'
 
 class Footer extends React.Component {
 

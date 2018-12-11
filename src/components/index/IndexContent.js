@@ -1,8 +1,8 @@
 import React from 'react'
 import Img from "gatsby-image"
 import { Link } from 'gatsby'
-import library from 'src/library'
-import AntdIcon from 'react-antd-icons/esm';
+import antdIconLibrary from 'src/antdIconLibrary'
+import AntdIcon from 'react-antd-icons/esm'
 import EthereumImage from './EthereumImage'
 
 class IndexContent extends React.Component {

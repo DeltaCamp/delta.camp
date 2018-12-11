@@ -4,14 +4,16 @@ import {
   Thunderbolt,
   DeploymentUnit,
   Medium,
+  Twitter,
   GithubFill
-} from 'antd-icons/esm';
+} from 'antd-icons/esm'
 
 library.add(
   Experiment,
   Thunderbolt,
   DeploymentUnit,
   Medium,
+  Twitter,
   GithubFill
 )
 

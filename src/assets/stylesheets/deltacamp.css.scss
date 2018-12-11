@@ -148,7 +148,7 @@ h6 {
   margin-bottom: 0.75rem;
 
   @media (max-width: 800px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -186,6 +186,15 @@ li {
   @media (max-width: 768px) {
     padding-top: 120px;
   }
+}
+
+.section.first h1,
+.section.first h2,
+.section.first h3,
+.section.first h4,
+.section.first h5,
+.section.first h6 {
+  margin-bottom: 0;
 }
 
 .page-title,
@@ -334,10 +343,12 @@ ul.list--basic {
 }
 
 .caption {
+  color: #888;
   display: block;
-  font-size: 14px;
+  font-size: 20px;
   font-style: italic;
-  margin-bottom: 20px;
+  margin-top: 6px;
+  margin-bottom: 30px;
 }
 
 .no-padding {
@@ -1015,4 +1026,9 @@ form {
 
 .is-rounded img {
   border-radius: 100%;
+}
+
+.inline-icon {
+  position: relative;
+  top: 3px;
 }
