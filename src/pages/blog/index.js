@@ -3,8 +3,8 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 import AntdIcon from 'react-antd-icons/esm'
 
+import { BlogColumn } from 'src/components/BlogColumn'
 import { authorTwitterUsernames } from 'src/utils/authorTwitterUsernames'
-
 import NounProjectMountainsIcon from '-!svg-react-loader!src/assets/images/noun_Mountains_836250_000000.svg'
 
 class BlogIndex extends React.Component {
@@ -32,17 +32,17 @@ class BlogIndex extends React.Component {
         <section className="section first">
           <div className="container">
             <div className="columns">
-              <div className="column has-text-centered">
+              <BlogColumn hasTextCentered={true}>
                 <NounProjectMountainsIcon width="50" />
                 <h1 className="page-title">
                   Fresh Tracks
                 </h1>
                 <br />
-                <p>
+                <p className="blog-intro">
                   Written by the experienced delta.camp team
                   <br />Designers &amp; developers creating superb decentralized experiences
                 </p>
-              </div>
+              </BlogColumn>
             </div>
           </div>
         </section>
@@ -50,7 +50,7 @@ class BlogIndex extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-two-thirds-tablet is-half-fullhd is-offset-one-quarter-fullhd">
+              <BlogColumn>
                 {posts.map(({ node }) => {
                   const twitterLink = this.formattedTwitterLink(node.frontmatter.author)
                   const title = node.frontmatter.title || node.fields.slug
@@ -70,7 +70,7 @@ class BlogIndex extends React.Component {
                     </div>
                   )
                 })}
-              </div>
+              </BlogColumn>
             </div>
           </div>
         </section>

@@ -53,7 +53,7 @@ class Nav extends React.Component {
     return (
       <div>
         <div className={classnames('nav-background', { 'is-active': this.state.isMenuOpen })} onClick={this.close}/>
-        <div className='container'>
+        <div className='container container--navbar'>
           <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className={classnames("navbar-brand", { "is-active": this.state.isMenuOpen })}>
               {this.props.logo &&

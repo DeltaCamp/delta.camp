@@ -1,3 +1,23 @@
+.blog .container--navbar {
+  max-width: 96%;
+  width: 96%;
+
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.blog .container--navbar .navbar {
+  height: 100px;
+}
+
+.blog .navbar-item.brand .brand {
+  @media screen and (min-width: 768px) {
+    transform: scale(0.5) translate3d(-200px, 0, 0);
+  }
+}
+
 .blog code,
 .blog pre {
   width: 100%;
@@ -60,4 +80,22 @@
 
 .blog .section:not(:first-child) {
   padding-top: 0;
+}
+
+.blog .section.first h1,
+.blog .section.first h2,
+.blog .section.first h3,
+.blog .section.first h4,
+.blog .section.first h5,
+.blog .section.first h6 {
+  margin-bottom: 0;
+}
+
+.blog .blog-intro {
+  font-size: 1.5rem;
+
+  @media all and (max-width: 768px) {
+    margin-top: -20px;
+    font-size: 1.125rem;
+  }
 }

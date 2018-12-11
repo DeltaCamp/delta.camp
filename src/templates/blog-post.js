@@ -4,6 +4,8 @@ import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import AntdIcon from 'react-antd-icons/esm'
 
+import { BlogColumn } from 'src/components/BlogColumn'
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -22,7 +24,7 @@ class BlogPostTemplate extends React.Component {
         <section className="section first">
           <div className="container">
             <div className="columns">
-              <div className="column is-three-quarters">
+              <BlogColumn>
                 <h5>
                   {post.frontmatter.title}
                 </h5>
@@ -51,7 +53,7 @@ class BlogPostTemplate extends React.Component {
                     </li>
                   })}
                 </ul>
-              </div>
+              </BlogColumn>
             </div>
           </div>
         </section>
@@ -59,7 +61,7 @@ class BlogPostTemplate extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-three-quarters">
+              <BlogColumn>
                 <div dangerouslySetInnerHTML={{ __html: post.html }} />
 
                 <br />
@@ -69,7 +71,7 @@ class BlogPostTemplate extends React.Component {
                 <p>
                   <small>Originally Published {post.frontmatter.date}</small>
                 </p>
-              </div>
+              </BlogColumn>
             </div>
           </div>
         </section>
@@ -77,7 +79,7 @@ class BlogPostTemplate extends React.Component {
         <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-two-thirds-tablet is-three-quarters-fullhd">
+              <BlogColumn>
                 <ul>
                   <li>
                     {
@@ -96,7 +98,7 @@ class BlogPostTemplate extends React.Component {
                     }
                   </li>
                 </ul>
-              </div>
+              </BlogColumn>
             </div>
           </div>
         </section>
