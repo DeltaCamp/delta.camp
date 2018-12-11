@@ -82,15 +82,6 @@
   padding-top: 0;
 }
 
-.blog .section.first h1,
-.blog .section.first h2,
-.blog .section.first h3,
-.blog .section.first h4,
-.blog .section.first h5,
-.blog .section.first h6 {
-  margin-bottom: 0;
-}
-
 .blog .blog-intro {
   font-size: 1.5rem;
 
@@ -98,4 +89,9 @@
     margin-top: -20px;
     font-size: 1.125rem;
   }
+}
+
+.tag-list {
+  font-size: 1rem;
+  text-transform: uppercase;
 }
