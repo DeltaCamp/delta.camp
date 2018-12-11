@@ -8,19 +8,23 @@ import debounce from 'lodash/debounce'
 import DownArrowSvg from '-!svg-react-loader!src/assets/images/down-arrow.svg'
 
 class Hero extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {}
-  //   this.debouncedUpdateDimensions = debounce(this.updateDimensions.bind(this), 2000)
-  // }
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
   //
   // componentDidMount () {
+  //   this.debouncedUpdateDimensions = debounce(this.updateDimensions.bind(this), 2000, { leading: false, trailing: true })
   //   this.updateDimensions()
-  //   window.addEventListener('resize', this.debouncedUpdateDimensions)
+  //   window.addEventListener('resize', this.callDebounce)
   // }
   //
   // componentWillUnmount () {
-  //   window.removeEventListener('resize', this.debouncedUpdateDimensions)
+  //   window.removeEventListener('resize', this.callDebounce)
+  // }
+  //
+  // callDebounce = () => {
+  //   this.debouncedUpdateDimensions()
   // }
   //
   // updateDimensions () {
@@ -36,7 +40,7 @@ class Hero extends React.Component {
 
     deltaCamp3D = <DeltaCamp3D />
 
-    const columnClassName = "column is-two-thirds-tablet is-two-thirds-desktop is-two-fifths-fullhd"
+    const columnClassName = "column is-two-thirds-tablet is-two-thirds-desktop"
 
     if (this.state && this.state.dimensions) {
       var extraProps = {
@@ -45,37 +49,41 @@ class Hero extends React.Component {
     }
 
     return (
-      <div className="header-3d">
-        <div className='header-3d__spotlight' />
-        {deltaCamp3D}
-        <section className="section about first">
-          <div>
-            <div className="container">
-              <div className='columns'>
-                <div className={columnClassName}>
-                  <h1 className="hero-h1">We build apps for <span>the third web</span></h1>
+      <div>
+        <div className="container">
+          {deltaCamp3D}
+        </div>
+        <div className="header-3d" {...extraProps}>
+          <div className='header-3d__spotlight' />
+          <section className="section about first">
+            <div>
+              <div className="container">
+                <div className='columns'>
+                  <div className={columnClassName}>
+                    <h1 className="hero-h1">We build apps for <span>the third web</span></h1>
+                  </div>
                 </div>
-              </div>
-              <div className='columns'>
-                <div className={columnClassName}>
-                  <h4 className="hero-h4">Delta Camp is a software consultancy specializing in decentralized apps</h4>
-                  <p>
-                    <Link className="button button-primary is-large internal" to="/work" title="Reach out and let's start a discussion">
-                      View Our Work
-                    </Link>
-                  </p>
+                <div className='columns'>
+                  <div className={columnClassName}>
+                    <h4 className="hero-h4">Delta Camp is a software consultancy specializing in decentralized apps</h4>
+                    <p>
+                      <Link className="button button-primary is-large internal" to="/work" title="Reach out and let's start a discussion">
+                        View Our Work
+                      </Link>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="down-arrow--container">
-            <a className="down-arrow--button" href="#services-and-values">
-              <DownArrowSvg className="down-arrow--svg" />
-              <DownArrowSvg className="down-arrow--svg--hover" />
-            </a>
-          </div>
-        </section>
+            <div className="down-arrow--container">
+              <a className="down-arrow--button" href="#services-and-values">
+                <DownArrowSvg className="down-arrow--svg" />
+                <DownArrowSvg className="down-arrow--svg--hover" />
+              </a>
+            </div>
+          </section>
+        </div>
       </div>
     )
   }

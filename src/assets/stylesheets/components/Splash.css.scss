@@ -27,18 +27,19 @@ canvas.delta-camp-3d-container {
 
 canvas.delta-camp-3d {
   position: absolute;
-  top: 0;
-  right: 10vw;
+  top: 3vh;
+  right: 4vw;
   margin: auto;
   opacity: 0;
   transition: 4s opacity;
   min-height: 400px;
   width: 100%;
+  z-index: 99;
 }
 
 @media screen and (max-width: 480px) {
   canvas.delta-camp-3d {
-    bottom: -500px;
+    top: 250px;
     right: 1vw;
   }
 }
