@@ -46,7 +46,6 @@ class NotFoundPage extends React.Component {
           </div>
         </section>
       </Fragment>
->>>>>>> 404 is go
     )
   }
 }
