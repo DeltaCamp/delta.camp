@@ -19,30 +19,31 @@ class Work extends React.PureComponent {
             </h1>
           </div>
         </section>
-        <section className='section has-background-grey'>
-          <div className='container form'>
-            <div className='columns'>
-              <div className='column is-two-thirds-tablet'>
-                <WorkBrief
-                  title="A decentralized telemedicine app"
-                  name="Open Care for MedX Protocol"
-                  technology="Ethereum Smart Contracts, Web App Design &amp; Development, Encryption Protocol, IPFS Infrastructure"
-                  to="/work/open-care" />
-              </div>
-              <div className='column is-hidden-mobile'>
-                <TokenRegistryImage1 />
+        <section className='has-background-grey no-padding-sides'>
+          <div className='has-position-relative'>
+            <div className='has-absolute-fullsize'>
+              <div className='columns is-gapless has-height-100'>
+                <div className='column has-background-grey'>
+                </div>
+                <div className='column has-position-relative'>
+                  <TokenRegistryImage1 className='background is-hidden-mobile' />
+                </div>
               </div>
             </div>
-            <div className='columns'>
-              <div className='column is-two-thirds-tablet'>
-                <WorkBrief
-                  title="A smart contract protocol proof-of-concept"
-                  name="The Token Registry for MedX Protocol"
-                  technology="Ethereum Smart Contracts, Web App Design &amp; Development"
-                  to="/work/token-registry" />
-              </div>
-              <div className='column is-hidden-mobile'>
-                <OpenCareThumbImg />
+            <div className='container'>
+              <div className='columns'>
+                <div className='column is-half-tablet has-background-grey case-study-content'>
+                  <WorkBrief
+                    title="A decentralized telemedicine app"
+                    name="Open Care for MedX Protocol"
+                    technology="Ethereum Smart Contracts, Web App Design &amp; Development, Encryption Protocol, IPFS Infrastructure"
+                    to="/work/open-care" />
+                  <WorkBrief
+                    title="A smart contract protocol proof-of-concept"
+                    name="The Token Registry for MedX Protocol"
+                    technology="Ethereum Smart Contracts, Web App Design &amp; Development"
+                    to="/work/token-registry" />
+                </div>
               </div>
             </div>
           </div>

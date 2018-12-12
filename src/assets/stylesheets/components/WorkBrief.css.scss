@@ -5,17 +5,17 @@
 .work-brief--link {
   color: inherit;
   display: block;
-  margin-bottom: 4rem;
+  margin-bottom: 6.5rem;
+
+  @include mobile {
+    margin-bottom: 3.25rem;
+  }
 }
 
 .work-brief--title {
   color: inherit;
   margin-bottom: 1rem;
   line-height: 1.1;
-
-  @include mobile {
-    // text-decoration: underline;
-  }
 }
 
 .work-brief--subtitle {

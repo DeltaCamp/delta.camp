@@ -12,7 +12,7 @@ class Work extends React.PureComponent {
           <div className='container'>
             <div className="columns">
               <div className="column">
-                <h5>
+                <h1>
                   OpenCare
                   <br className="is-hidden-desktop" />
 
@@ -21,13 +21,14 @@ class Work extends React.PureComponent {
 
                     <a href='https://opencare.medxprotocol.com/welcome' target='_blank' rel='noopener noreferrer'>view live</a>
                   </small>
-                </h5>
+                </h1>
 
                 <div className="columns">
                   <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
                     <p>
-                      <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> needed to develop OpenCare, their first decentralized application for the global healthcare market. OpenCare is a teledermatology app that allows users to receive diagnoses from dermatologists:
+                      A decentralized application for the global healthcare market.
                     </p>
+                    <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a>
                   </div>
                 </div>
 
