@@ -37,7 +37,7 @@ class Work extends React.PureComponent {
         <section className='work-briefs section first'>
           <div className='container'>
             <h1 className="page-title">
-              Case Studies
+              Our Work
             </h1>
           </div>
         </section>
