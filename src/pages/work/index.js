@@ -29,7 +29,7 @@ class Work extends React.PureComponent {
                   technology="Ethereum Smart Contracts, Web App Design &amp; Development, Encryption Protocol, IPFS Infrastructure"
                   to="/work/open-care" />
               </div>
-              <div className='column'>
+              <div className='column is-hidden-mobile'>
                 <TokenRegistryImage1 />
               </div>
             </div>
@@ -41,7 +41,7 @@ class Work extends React.PureComponent {
                   technology="Ethereum Smart Contracts, Web App Design &amp; Development"
                   to="/work/token-registry" />
               </div>
-              <div className='column'>
+              <div className='column is-hidden-mobile'>
                 <OpenCareThumbImg />
               </div>
             </div>
