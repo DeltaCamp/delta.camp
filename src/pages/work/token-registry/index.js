@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
+import AntdIcon from 'react-antd-icons/esm'
 
 class Work extends React.PureComponent {
 
@@ -14,7 +15,7 @@ class Work extends React.PureComponent {
               The Token Registry
               <small>
                 <span className="is-hidden-touch">&nbsp;&nbsp;</span>
-                <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>view live</a>
+                <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>view live <AntdIcon type={'right-square'} className='icon--work-view-live' /></a>
               </small>
             </h1>
             <div className="columns">

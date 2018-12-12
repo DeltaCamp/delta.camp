@@ -5,7 +5,8 @@ import {
   DeploymentUnit,
   Medium,
   Twitter,
-  GithubFill
+  GithubFill,
+  RightSquare
 } from 'antd-icons/esm'
 
 library.add(
@@ -14,7 +15,8 @@ library.add(
   DeploymentUnit,
   Medium,
   Twitter,
-  GithubFill
+  GithubFill,
+  RightSquare
 )
 
 export default library
