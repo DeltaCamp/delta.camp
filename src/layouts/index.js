@@ -8,8 +8,9 @@ import { Transition } from 'src/components/Transition'
 
 import { getPurePathname } from 'src/utils/getPurePathname'
 
-import 'src/assets/stylesheets/highlight.css'
 import 'src/assets/stylesheets/deltacamp.css.scss'
+
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth

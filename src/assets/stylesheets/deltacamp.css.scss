@@ -1,49 +1,32 @@
+// @import './normalize.css';
 @import "./variables.css.scss";
 @import "./bulma_and_overrides.css.scss";
 @import "./components/_all.css.scss";
+@import "./blog.css.scss";
 
-// Acier BAT Noir
-// font-family: acier-bat-noir, sans-serif;
-// font-weight: 400;
-// font-style: normal;
+// Acier BAT Noir 'acier-bat-noir', 400
+// Acier BAT Text Solid 'acier-bat-solid', 400
+// Acier BAT Text Outline 'acier-bat-outline', 400
+// Acier BAT Text Gris 'acier-bat-gris', 400
 //
-// Acier BAT Text Solid
-// font-family: acier-bat-solid, sans-serif;
-// font-weight: 400;
-// font-style: normal;
-//
-// Acier BAT Text Outline
-// font-family: acier-bat-outline, sans-serif;
-// font-weight: 400;
-// font-style: normal;
-//
-// Acier BAT Text Gris
-// font-family: acier-bat-gris, sans-serif;
-// font-weight: 400;
-// font-style: normal;
+// Futura PT Heavy 'futura-pt', 700
+// Futura PT Heavy Oblique 'futura-pt', 700, font-style: italic;
+// Futura PT Book 'futura-pt', 400
+// Futura PT Book Oblique 'futura-pt', 400, font-style: italic;
 
-// Futura PT Heavy
-// font-family: futura-pt, sans-serif;
-// font-weight: 700;
-// font-style: normal;
-//
-// Futura PT Heavy Oblique
-// font-family: futura-pt, sans-serif;
-// font-weight: 700;
-// font-style: italic;
-//
-// Futura PT Book
-// font-family: futura-pt, sans-serif;
-// font-weight: 400;
-// font-style: normal;
-//
-// Futura PT Book Oblique
-// font-family: futura-pt, sans-serif;
-// font-weight: 400;
-// font-style: italic;
+::selection {
+  background-color: $link-color;
+  color: white;
+}
 
 * {
   box-sizing: border-box;
+}
+
+em {
+  font-family: 'futura-pt';
+  font-weight: 400;
+  font-style: italic;
 }
 
 .img-responsive {
@@ -75,7 +58,7 @@
 body {
   background: white;
   border-top: 6px solid $link-color;
-  color: #565659;
+  color: #363639;
   font-family: 'futura-pt', sans-serif;
   font-size: 1.5rem;
   transition: border-color 2s ease-in-out;
@@ -175,14 +158,8 @@ h6 {
   margin-bottom: 0.75rem;
 
   @media (max-width: 800px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
-}
-
-em {
-  color: #333;
-  font-style: initial;
-  font-weight: 700;
 }
 
 p {
@@ -300,10 +277,12 @@ ul.list--basic {
 }
 
 .caption {
+  color: #888;
   display: block;
-  font-size: 14px;
+  font-size: 20px;
   font-style: italic;
-  margin-bottom: 20px;
+  margin-top: 6px;
+  margin-bottom: 30px;
 }
 
 .no-padding {
@@ -975,4 +954,21 @@ form {
 
 .tooltip strong {
   color: white;
+}
+
+.is-rounded img {
+  border-radius: 100%;
+}
+
+.inline-icon {
+  position: relative;
+  top: 3px;
+}
+
+.is-bottom-marginless {
+  margin-bottom: 0;
+}
+
+.is-light {
+  color: lighten($link-color, 30%);
 }

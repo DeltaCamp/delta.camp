@@ -21,12 +21,13 @@
     "gatsby-plugin-sharp": "^2.0.14",
     "gatsby-remark-copy-linked-files": "^2.0.5",
     "gatsby-remark-images": "^2.0.4",
-    "gatsby-remark-prismjs": "^3.0.0",
+    "gatsby-remark-prismjs": "^3.1.4",
     "gatsby-remark-responsive-iframe": "^2.0.5",
     "gatsby-remark-smartypants": "^2.0.5",
     "gatsby-source-filesystem": "^2.0.2",
     "gatsby-transformer-remark": "^2.1.6",
     "gatsby-transformer-sharp": "^2.1.9",
+    "lodash": "^4.17.11",
     "node-sass": "^4.10.0",
     "postprocessing": "^5.3.1",
     "prismjs": "^1.15.0",
@@ -61,14 +62,14 @@
     "url": "git+https://github.com/deltacamp/delta.camp.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "NODE_ENV=development gatsby develop",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "develop": "NODE_ENV=development gatsby develop",
+    "start": "NODE_ENV=development npm run develop",
+    "build": "NODE_ENV=production gatsby build",
+    "deploy": "NODE_ENV=production gatsby build --prefix-paths && gh-pages -d public",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
 }

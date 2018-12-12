@@ -1,3 +1,7 @@
+let env = process.env.NODE_ENV || "development"
+
+console.log(`Using environment: '${env}'`)
+
 const path = require('path')
 
 module.exports = {
@@ -58,11 +62,12 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        excerpt_separator: `<!-- more -->`,
         plugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
             },
           },
           {
@@ -71,9 +76,15 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          'gatsby-remark-prismjs',
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              inlineCodeMarker: '^',
+              showLineNumbers: true
+            }
+          },
           'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
+          'gatsby-remark-smartypants'
         ],
       },
     },
