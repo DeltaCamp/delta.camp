@@ -84,12 +84,16 @@ class IndexContent extends React.Component {
         <section className='section is-medium has-background-grey'>
           <div className='container'>
             <div className='columns'>
-              <div className='column is-two-thirds-tablet is-half-fullhd'>
-                <h2>A small team with a big impact</h2>
-                <p className='no-margin-bottom'>
-                  We will work closely with you to refine your product.  Our iterative process ensures
-                  we build the <strong>right</strong> product.
-                </p>
+              <div className='column is-two-thirds-tablet'>
+                <div className='columns'>
+                  <div className='column is-11-desktop'>
+                    <h2>A small team with a big impact</h2>
+                    <p className='no-margin-bottom'>
+                      We will work closely with you to refine your product.  Our iterative process ensures
+                      we build the <strong>right</strong> product.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div className='column'>
                 <ul className='ul'>
