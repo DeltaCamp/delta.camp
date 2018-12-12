@@ -8,7 +8,7 @@ class Work extends React.PureComponent {
   renderWork = (data) => {
 
     return (
-    
+
       <React.Fragment>
         <section id="work-section-token-reg" className="section first">
           <div className='container'>
@@ -35,7 +35,7 @@ class Work extends React.PureComponent {
                 </div>
 
                 <div className="masonry">
-                  <div class="columns is-multiline">
+                  <div className="columns is-multiline">
                     <div className="column is-half-tablet is-half-desktop is-half-widescreen is-two-fifths-fullhd">
                       <div className="masonry--img-container shadow">
                         <img

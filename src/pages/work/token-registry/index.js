@@ -37,7 +37,7 @@ class Work extends React.PureComponent {
 
             <div className="columns">
               <div className="masonry">
-                <div class="columns is-multiline">
+                <div className="columns is-multiline">
                   <div className="column is-half-tablet is-half-desktop is-half-widescreen is-two-fifths-fullhd">
                     <div className="masonry--img-container shadow">
                       <img
