@@ -1,0 +1,16 @@
+.contact-call-to-action {
+  text-align: center;
+  background: $purpleDark;
+  color: white;
+  position: relative;
+}
+
+.contact-call-to-action__spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(white, transparent);
+  opacity: 0.25;
+}

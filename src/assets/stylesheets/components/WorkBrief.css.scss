@@ -1,14 +1,19 @@
 .work-brief--link:hover {
-  color: $link-color;
+  @include tablet {
+    color: $link-color;
+  }
 }
 
 .work-brief--link {
-  color: inherit;
   display: block;
   margin-bottom: 6.5rem;
+  color: $link-color;
 
   @include mobile {
     margin-bottom: 3.25rem;
+  }
+  @include tablet {
+    color: inherit;
   }
 }
 

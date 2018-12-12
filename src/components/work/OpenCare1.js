@@ -5,7 +5,7 @@ export default ({ className }) => (
   <StaticQuery
     query={graphql`
       query {
-        file(relativePath: { eq: "TokenRegistry1.png" }) {
+        file(relativePath: { eq: "OpenCare1.png" }) {
           publicURL
         }
       }
