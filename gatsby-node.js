@@ -6,6 +6,7 @@ console.log(`Using environment: '${env}'`)
 const _ = require("lodash")
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const showDrafts = false
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
