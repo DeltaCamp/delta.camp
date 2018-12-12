@@ -30,13 +30,13 @@ class BlogIndex extends React.Component {
 
     // Filter out draftt posts in production
     if (process.env.NODE_ENV !== 'development') {
-      console.log('All posts (drafts and published)', posts.length)
+      // console.log('All posts (drafts and published)', posts.length)
 
       posts = posts.filter(post =>
-        post.node.frontmatter.draft === showDrafts
+        post.node.frontmatter.draft === false
       )
 
-      console.log('Number of published posts', posts.length)
+      // console.log('Number of published posts', posts.length)
     }
 
     return (
