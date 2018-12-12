@@ -20,24 +20,6 @@
   }
 }
 
-.blog h6 {
-  margin-bottom: 0;
-}
-
-.blog p {
-  font-size: 2rem;
-  line-height: 1.5;
-  margin-bottom: 2.5rem;
-
-  @media screen and (max-width: 768px) {
-    font-size: 1.5rem;
-  }
-}
-
-.blog p.excerpt {
-  font-size: 1.5rem;
-}
-
 .blog-post--listing {
   margin-bottom: 100px;
 }
@@ -83,11 +65,7 @@
   margin: 2px;
 }
 
-.blog .section:not(:first-child) {
-  padding-top: 0;
-}
-
-.blog .blog-intro {
+.blog-intro {
   font-size: 1.5rem;
 
   @media all and (max-width: 768px) {
@@ -177,19 +155,45 @@ code[class*="language-"] ::selection,
 }
 
 .blog-post--content h1 {
+  font-family: 'source-serif-pro', serif;
+
   @media screen and (max-width: 768px) {
     font-size: 3rem;
   }
 }
 
 .blog-post--content h2 {
+  font-family: 'source-serif-pro', serif;
+
   @media screen and (max-width: 768px) {
     font-size: 2.5rem;
   }
 }
 
 .blog-post--content h3 {
+  font-family: 'source-serif-pro', serif;
+
   @media screen and (max-width: 768px) {
     font-size: 2rem;
   }
+}
+
+.blog-post--content p {
+  font-family: 'source-serif-pro', serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.blog-post--content em {
+  font-family: 'source-serif-pro', serif;
+  font-style: italic;
+}
+
+p.excerpt {
+  font-size: 1.5rem;
 }

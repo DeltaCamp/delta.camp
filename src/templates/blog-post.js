@@ -75,8 +75,8 @@ class BlogPostTemplate extends React.Component {
                 />
 
                 <br />
-                <h6>
-                  <small>Written by Chuck Bergeron <a href="https://twitter.com/chuckbergeron"><AntdIcon className="inline-icon" type={'twitter'} /></a></small>
+                <h6 className="is-bottom-marginless">
+                  <small>Written by <a href={`https://twitter.com/${authorTwitterUsernames[author]}`}>{author} <AntdIcon className="inline-icon" type={'twitter'} /></a></small>
                 </h6>
                 <small>
                   Originally Published {post.frontmatter.from_medium ? 'on Medium' : ''} {post.frontmatter.date}

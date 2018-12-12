@@ -48,7 +48,7 @@ class BlogIndex extends React.Component {
 
                   return (
                     <div key={node.fields.slug} className="blog-post--listing">
-                      <h6>
+                      <h6 className="is-bottom-marginless">
                         <Link to={node.fields.slug}>
                           {title}
                         </Link>
