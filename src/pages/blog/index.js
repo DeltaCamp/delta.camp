@@ -29,9 +29,15 @@ class BlogIndex extends React.Component {
     const posts = data.allMarkdownRemark.edges
 
     const showDrafts = (process.env.NODE_ENV === 'development')
+    console.log('######################', showDrafts)
+    console.log('showDrafts', showDrafts)
+    console.log('######################', showDrafts)
+
+    console.log('All posts (drafts and published)', posts.length)
     const allowedPosts = posts.filter(post =>
-      post.node.frontmatter.draft !== showDrafts
+      post.node.frontmatter.draft === showDrafts
     )
+    console.log('Number of published posts', allowedPosts.length)
 
     return (
       <Fragment>
@@ -41,7 +47,7 @@ class BlogIndex extends React.Component {
           <div className="container">
             <div className="columns">
               <BlogColumn>
-                {posts.map(({ node }) => {
+                {allowedPosts.map(({ node }) => {
                   const twitterLink = this.formattedTwitterLink(node.frontmatter.author)
                   const title = node.frontmatter.title || node.fields.slug
                   const tags = node.frontmatter.tags
@@ -93,6 +99,7 @@ class BlogIndex extends React.Component {
                   date(formatString: "MMMM DD, YYYY")
                   tags
                   title
+                  draft
                 }
               }
             }

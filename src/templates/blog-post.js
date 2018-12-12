@@ -154,6 +154,7 @@ export const pageQuery = graphql`
         title
         tags
         from_medium
+        draft
       }
     }
     chuckProfilePic: file(relativePath: { eq: "chuck-bergeron--profile-sm.jpg" }) {

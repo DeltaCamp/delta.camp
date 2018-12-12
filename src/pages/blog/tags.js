@@ -18,7 +18,7 @@ const TagsPage = ({
     <Fragment>
       <BlogHeader />
 
-      <section className="section first">
+      <section className="section">
         <div className="container">
           <div className="columns">
             <BlogColumn>
@@ -28,8 +28,8 @@ const TagsPage = ({
 
               <ul>
                 {group.map(tag => (
-                  <li key={tag.fieldValue}>
-                    <Link to={`/blog/tags/${kebabCase(tag.fieldValue)}/`}>
+                  <li key={kebabCase(tag.fieldValue.replace(' ', '-'))}>
+                    <Link to={`/blog/tags/${kebabCase(tag.fieldValue.replace(' ', '-'))}/`}>
                       {tag.fieldValue} ({tag.totalCount})
                     </Link>
                   </li>

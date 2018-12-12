@@ -34,6 +34,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     title
                     tags
+                    draft
                   }
                 }
               }
@@ -53,9 +54,18 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Filter out draft posts in production but show in dev
         const showDrafts = (env.NODE_ENV === 'development')
+
+        console.log('######################', showDrafts)
+        console.log('showDrafts', showDrafts)
+        console.log('######################', showDrafts)
+
+        console.log('All posts (drafts and published)', posts.length)
         const allowedPosts = posts.filter(post =>
-          post.node.frontmatter.draft !== showDrafts
+          post.node.frontmatter.draft === showDrafts
         )
+        console.log('Number of published posts', allowedPosts.length)
+
+
 
         allowedPosts.forEach((post, index) => {
           const previous = index === allowedPosts.length - 1 ? null : allowedPosts[index + 1].node;
@@ -88,7 +98,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         tags.forEach(tag => {
           createPage({
-            path: `/blog/tags/${_.kebabCase(tag)}/`,
+            path: `/blog/tags/${_.kebabCase(tag.replace(' ', '-'))}/`,
             component: tagTemplate,
             context: {
               tag,

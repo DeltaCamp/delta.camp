@@ -21,7 +21,7 @@ class NotFoundPage extends React.Component {
           </div>
         </section>
 
-        <section id="work-section-token-reg" className="section">
+        <section className="section">
           <div className="container">
 
             <div className="columns">
@@ -30,14 +30,14 @@ class NotFoundPage extends React.Component {
                   You found a page that doesn&#39;t exist...!
                 </p>
 
-                <button onClick={this.goBack} className="button is-primary">
+                <button onClick={this.goBack} className="button is-large is-primary">
                   ← Go Back
                 </button>
 
                 <br />
 
 
-                <Link to="/" className="button">
+                <Link to="/" className="button is-large">
                   Start from the Start
                 </Link>
               </div>

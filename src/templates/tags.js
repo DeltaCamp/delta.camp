@@ -5,8 +5,14 @@ import { BlogColumn } from 'src/components/BlogColumn'
 import { BlogHeader } from 'src/components/BlogHeader'
 
 const Tags = ({ pageContext, data }) => {
+  if (data.allMarkdownRemark === null) {
+    console.error('could not find any blog posts (error querying frontmatter draft?)')
+    return null
+  }
+
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
+
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
@@ -15,7 +21,7 @@ const Tags = ({ pageContext, data }) => {
     <Fragment>
       <BlogHeader />
 
-      <section className="section first">
+      <section className="section">
         <div className="container">
           <div className="columns">
             <BlogColumn>
@@ -83,6 +89,7 @@ export const pageQuery = graphql`
           }
           frontmatter {
             title
+            draft
           }
         }
       }
