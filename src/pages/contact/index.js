@@ -146,7 +146,7 @@ class Contact extends React.PureComponent {
                   Contact Us
                 </h1>
                 <p className='no-margin-bottom'>
-                  Let's work together.  Start a conversation with us.
+                  Let's work together. Start a conversation with us.
                 </p>
               </div>
             </div>

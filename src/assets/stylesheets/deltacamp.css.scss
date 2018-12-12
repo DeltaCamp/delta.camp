@@ -69,7 +69,6 @@ body {
   transition: border-color 2s ease-in-out;
 }
 
-// hehe, homebody
 .home body {
   border-color: lighten($link-color, 20%);
 }
@@ -792,4 +791,86 @@ textarea.textarea:active {
 
 .is-light {
   color: lighten($link-color, 30%);
+}
+
+.subtitle-1,
+.subtitle-2,
+.subtitle-3 {
+  position: relative;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+
+  > * {
+    vertical-align: middle;
+  }
+}
+
+$prefix-icon-width: 2rem;
+
+.prefix-icon {
+  width: $prefix-icon-width;
+}
+
+.prefix-icon-list {
+  margin-left: $prefix-icon-width;
+}
+
+.subtitle-1 {
+  color: $work-brand-color;
+}
+
+.subtitle-2 {
+  color: $light-blue;
+}
+
+.color-orange {
+  color: $light-orange;
+}
+
+.background-image-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 100;
+}
+
+img.background {
+  position: absolute;
+  min-width: 1000%;
+  max-width: 10000%;
+  min-height: 1000%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0.1);
+}
+
+.has-absolute-fullsize {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+ul.ul  {
+  margin: 0;
+  padding: 0 1em;
+  list-style: none;
+}
+
+ul.ul li:before {
+  content: "";
+  border-color: $light-orange transparent;
+  border-style: solid;
+  border-width: 0 0.35em 0.55em 0.35em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: 0.9em;
+  position: relative;
 }

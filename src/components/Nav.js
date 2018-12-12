@@ -75,7 +75,7 @@ class Nav extends React.Component {
 
             <div id="navbarBasicExample" className={classnames("navbar-menu", { "is-active": this.state.isMenuOpen })}>
               <div className="navbar-end">
-                <div className="navbar-item">
+                {/*<div className="navbar-item">
                   <Link
                     to='/'
                     className="nav-link"
@@ -84,7 +84,7 @@ class Nav extends React.Component {
                     title='Home'>
                     Home
                   </Link>
-                </div>
+                </div>*/}
                 {/*<div className="navbar-item">
                   <Link
                     to='/#services-and-values'

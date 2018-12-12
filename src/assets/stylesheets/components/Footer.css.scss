@@ -4,6 +4,8 @@ $mobile-padding: 1.5rem;
   background: #333;
   color: #aaa;
   font-size: 1.2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 
   a {
     color: #c2c7cE;
@@ -26,8 +28,12 @@ $mobile-padding: 1.5rem;
   }
 }
 
-section.section.is-footer {
-  padding-top: 0;
+.footer__links {
+  padding-top: 3rem;
+}
+
+.footer__copyright {
+  padding: 3rem 0;
 }
 
 .ul-title {

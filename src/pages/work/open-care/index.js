@@ -10,7 +10,6 @@ class Work extends React.PureComponent {
   renderWork = (data) => {
 
     return (
-
       <React.Fragment>
         <section id="work-section-token-reg" className="section first">
           <div className='container'>
