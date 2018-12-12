@@ -3,8 +3,6 @@ import classnames from 'classnames'
 import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 
-import Bio from 'src/components/Bio'
-
 import queryString from 'query-string'
 
 class Contact extends React.PureComponent {

@@ -9,7 +9,6 @@ class MetaTags extends React.Component {
 
     const siteTitle = data.site.siteMetadata.title
     const siteDescription = data.site.siteMetadata.description
-    const posts = data.allMarkdownRemark.edges
 
     return (
       <Helmet
@@ -142,20 +141,6 @@ class MetaTags extends React.Component {
               siteMetadata {
                 title
                 description
-              }
-            }
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-              edges {
-                node {
-                  excerpt
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    date(formatString: "MMMM DD, YYYY")
-                    title
-                  }
-                }
               }
             }
             deltaCamp3DSymbol: file(relativePath: { eq: "DeltaCamp-logo-3d--symbol.fbx" }) {

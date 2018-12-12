@@ -2,6 +2,7 @@ $navbar-mobile-height: 73px;
 
 .nav-background {
   position: fixed;
+  pointer-events: none;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,6 +13,7 @@ $navbar-mobile-height: 73px;
 }
 
 .nav-background.is-active {
+  pointer-events: initial;
   z-index: 999;
   opacity: 0.5;
 }
@@ -101,6 +103,13 @@ $navbar-mobile-height: 73px;
 .navbar-item .button {
   padding: 1rem;
 }
+
+// .navbar-menu.is-active {
+//   background-color: white;
+//   box-shadow: 0 30px 10px 0 rgba(80,100,160,.2), 0 5px 30px rgba(0,0,0,.1);
+//   border-bottom: 20px solid #f6f6f6;
+//   padding: 0.5rem 0px;
+// }
 
 .navbar-brand.is-active {
   background-color: white;

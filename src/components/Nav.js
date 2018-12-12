@@ -115,6 +115,16 @@ class Nav extends React.Component {
                     Contact
                   </Link>
                 </div>
+                <div className="navbar-item">
+                  <Link
+                    to='/blog'
+                    className="nav-link"
+                    activeClassName='is-active'
+                    onClick={this.close}
+                    title='Blog'>
+                    Blog
+                  </Link>
+                </div>
               </div>
             </div>
           </nav>
