@@ -2,96 +2,99 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 import AntdIcon from 'react-antd-icons/esm'
-import ReactTooltip from 'react-tooltip'
+import ContactCallToAction from 'src/components/ContactCallToAction'
+import WorkNav from 'src/components/work/WorkNav'
 
 class Work extends React.PureComponent {
 
   renderWork = (data) => {
+
     return (
+
       <React.Fragment>
         <section id="work-section-token-reg" className="section first">
-          <div className="container">
-            <h2>
-              The Token Registry
-              <br className="is-hidden-desktop" />
+          <div className='container'>
+            <div className='columns'>
+              <div className='column is-half-tablet'>
+                <h2>
+                  The Token Registry
+                  <br className="is-hidden-desktop" />
 
-              <small>
-                <span className="is-hidden-touch">&nbsp;&nbsp;</span>
-                <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>view live <AntdIcon type={'right-square'} className='icon--work-view-live' /></a>
-              </small>
-            </h2>
-            <div className="columns">
-              <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
-                <p>
-                  We worked with <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> to iterate on their design of an <a href='https://medium.com/coinmonks/subjective-vs-objective-tcrs-a21f5d848553' target='_blank' rel="noopener noreferrer">Objective TCR</a>. After completing the smart contracts we decided to build a proof-of-concept <span
-                    className='tooltip-reference'
-                    data-for='dapp-explain-tooltip'
-                    data-tip="<strong>Decentralized Application</strong><br />A DApp has its backend code running on a decentralized peer-to-peer network. Contrast this with an app where the backend code is running on centralized servers."
-                  >
-                    DApp
-                  </span> around the idea of a token registry:
-                  <ReactTooltip id="dapp-explain-tooltip" className='tooltip' html={true} />
-                </p>
-              </div>
-            </div>
+                    <small>
+                      <span className="is-hidden-touch">&nbsp;&nbsp;</span>
+                      <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>view live <AntdIcon type={'right-square'} className='icon--work-view-live' /></a>
+                    </small>
+                </h2>
 
-            <div className="columns">
-              <div className="masonry">
-                <div className="columns is-multiline">
-                  <div className="column is-half-tablet is-half-desktop is-half-widescreen is-two-fifths-fullhd">
-                    <div className="masonry--img-container shadow">
-                      <img
-                        className="masonry--img"
-                        src={data.regTokenAnimated.publicURL}
-                      />
-                      <span className="masonry-img--caption">
-                        <strong>Token Submission Step</strong>
-                        <br />
-                        Anyone can submit a token to be listed on the registry. A verifier then checks the validity of the submission.
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="column is-half-tablet is-half-desktop is-half-widescreen is-two-fifths-fullhd">
-                    <div className="masonry--img-container shadow">
-                      <img
-                        className="masonry--img"
-                        src={data.regTokenShot2.publicURL}
-                      />
-                      <span className="masonry-img--caption">
-                        <strong>Following Successful Verification</strong>
-                        <br />
-                        If the verifier and the applicant's answers match (ie. the token, ticker symbol and contract address are valid) the token is in the registry.
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="column is-half-tablet is-half-desktop is-half-widescreen is-two-fifths-fullhd">
-                    <div className="masonry--img-container shadow">
-                      <img
-                        className="masonry--img"
-                        src={data.regTokenShot1.publicURL}
-                      />
-                      <span className="masonry-img--caption">
-                        <strong>Public Listing</strong>
-                        <br />
-                        Anyone can view the public registry, use the token &amp; contract address data in their DApps and challenge tokens as they see fit.
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="columns">
-              <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
-                <p>
-                  Tokens are listed on many different exchanges, but there is no decentralized list of tokens.  Using our objective TCR contracts we were able to create a decentralized registry of tokens which lives on the Ethereum blockchain and anyone can use.
-                </p>
+                <h3 className='subtitle-3'>
+                  A smart contract protocol proof-of-concept
+                </h3>
               </div>
             </div>
           </div>
         </section>
+        <section className='section has-background-grey'>
+          <div className='container'>
+            <div className='columns'>
+
+              <div className='column'>
+
+                <p>
+                  <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> is creating a global market for healthcare using censorship-resistant software.  A key piece of their ecosystem will be a registry of physicians that smart contracts and other software can tap into.  MedX Protocol calls this the <a href='https://medium.com/medxprotocol/a-tcr-protocol-design-for-objective-content-6abb04aac027' target='_blank' rel="noopener noreferrer">Token Incentivized List</a>.
+                </p>
+
+                <h4>Challenge</h4>
+
+                <p>
+                  MedX Protocol needed an implementation of their Token Incentivized List.
+                </p>
+
+                <h4>Solution</h4>
+
+                <p>
+                  Working closely with their team we created a smart contract implementation of the protocol along with a application proof-of-concept.  The application is called the <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>Token Registry</a> and allows users to build a registry of approved ERC20 tokens in a decentralized way.
+                </p>
+
+                <h4>Technologies</h4>
+
+                <ul className='ul'>
+                  <li>React, Redux, Redux Saga</li>
+                  <li>Solidity Smart Contracts</li>
+                  <li>Ethereum, Netlify</li>
+                </ul>
+
+                <br />
+
+                <WorkNav nextProjectPath='/work/open-care' />
+              </div>
+
+              <div className='column'>
+                <div className="masonry--img-container">
+                  <img
+                    className="masonry--img"
+                    src={data.regTokenAnimated.publicURL}
+                  />
+                </div>
+
+                <div className="masonry--img-container">
+                  <img
+                    className="masonry--img"
+                    src={data.regTokenShot2.publicURL}
+                  />
+                </div>
+
+                <div className="masonry--img-container">
+                  <img
+                    className="masonry--img"
+                    src={data.regTokenShot1.publicURL}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <ContactCallToAction />
       </React.Fragment>
     )
   }

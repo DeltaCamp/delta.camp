@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 import AntdIcon from 'react-antd-icons/esm'
+import ContactCallToAction from 'src/components/ContactCallToAction'
+import WorkNav from 'src/components/work/WorkNav'
 
 class Work extends React.PureComponent {
 
@@ -12,10 +14,10 @@ class Work extends React.PureComponent {
       <React.Fragment>
         <section id="work-section-token-reg" className="section first">
           <div className='container'>
-            <div className="columns">
-              <div className="column">
+            <div className='columns'>
+              <div className='column is-half-tablet'>
                 <h2>
-                  OpenCare
+                  Open Care
                   <br className="is-hidden-desktop" />
 
                   <small>
@@ -25,74 +27,77 @@ class Work extends React.PureComponent {
                   </small>
                 </h2>
 
-                <div className="columns">
-                  <div className="column is-full-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
-                    <p>
-                      A decentralized application for the global healthcare market.
-                    </p>
-                    <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a>
-                  </div>
-                </div>
-
-                <div className="masonry">
-                  <div className="columns is-multiline">
-                    <div className="column is-half-tablet is-half-desktop is-half-widescreen is-two-fifths-fullhd">
-                      <div className="masonry--img-container shadow">
-                        <img
-                          className="masonry--img"
-                          src={data.openCareShot1.publicURL}
-                        />
-                        <span className="masonry-img--caption">
-                          <strong>Landing Page</strong>
-
-                          New users are greeted by a welcoming landing page which asks them to submit a new case for Doctor's to diagnose.
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="column is-half-tablet is-half-desktop is-half-widescreen is-two-fifths-fullhd">
-                      <div className="masonry--img-container shadow">
-                        <img
-                          className="masonry--img"
-                          src={data.openCareShot2.publicURL}
-                        />
-                        <span className="masonry-img--caption">
-                          <strong>Sign-up Flow</strong>
-                          256-bit encryption is employed to create user accounts and encrypt any and all information the patient provides, and the decryption key is only shared with their Doctor.
-                        </span>
-                      </div>
-                    </div>
-                    <div className="column is-half-tablet is-half-desktop is-half-widescreen is-two-fifths-fullhd">
-                      <div className="masonry--img-container shadow">
-                        <img
-                          className="masonry--img"
-                          src={data.openCareShot3.publicURL}
-                        />
-                        <span className="masonry-img--caption">
-                          <strong>Case Submission</strong>
-                          A clean and reactive form requests the patient's general information and skin condition details. Names, addresses, etc. are not collected and patients are kept anonymous.
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <h3 className='subtitle-3'>
+                  A decentralized telemedicine application
+                </h3>
               </div>
             </div>
-
-            <div className="columns">
-              <div className="column is-three-quarters-desktop is-two-thirds-widescreen is-two-thirds-fullhd">
-                <p>
-                  Patients create a new case that includes some demographic information, a brief history of the condition, and several photos.  The case is assigned to a doctor who can submit a diagnosis and receive a fee.  If the patient is unhappy with the diagnosis they can receive a second opinion.
-                </p>
-
-                <p>
-                  OpenCare uses a broad spectrum of decentralized technologies: including IPFS, Whisper and Ethereum.
-                </p>
-              </div>
-            </div>
-
           </div>
         </section>
+        <section className='section has-background-grey'>
+          <div className='container'>
+            <div className='columns'>
+
+              <div className='column'>
+
+                <p>
+                  MedX Protocol is creating a global market for healthcare using censorship-resistant software.  Open Care is the first application in this ecosystem and provides dermatological diagnoses to anyone in the world.
+                </p>
+
+                <h4>Challenge</h4>
+
+                <p>
+                  We were approached by MedX Protocol to take Open Care from a proof-of-concept to a production-grade application.
+                </p>
+
+                <h4>Solution</h4>
+
+                <p>
+                  A high performance static web application backed by smart contracts and decentralized messaging and storage.
+                </p>
+
+                <h4>Technologies</h4>
+
+                <ul className='ul'>
+                  <li>React, Redux, Redux Saga</li>
+                  <li>Solidity Smart Contracts</li>
+                  <li>Whisper, IPFS</li>
+                  <li>Ethereum, Netlify, AWS</li>
+                </ul>
+
+                <br />
+
+                <WorkNav nextProjectPath='/work/token-registry' />
+              </div>
+
+              <div className='column'>
+                <div className="masonry--img-container">
+                  <img
+                    className="masonry--img"
+                    src={data.openCareShot1.publicURL}
+                  />
+                </div>
+
+                <div className="masonry--img-container">
+                  <img
+                    className="masonry--img"
+                    src={data.openCareShot2.publicURL}
+                  />
+                </div>
+
+                <div className="masonry--img-container">
+                  <img
+                    className="masonry--img"
+                    src={data.openCareShot3.publicURL}
+                  />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <ContactCallToAction />
       </React.Fragment>
     )
   }

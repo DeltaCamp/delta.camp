@@ -56,15 +56,15 @@
   display: inline-block;
   margin-bottom: 20px;
   margin-right: 10px;
-  min-height: 480px;
-
-  @media (max-width: 800px) {
-    min-height: 580px !important;
-  }
-
-  @media (max-width: 460px) {
-    min-height: 460px !important;
-  }
+  // min-height: 480px;
+  //
+  // @media (max-width: 800px) {
+  //   min-height: 580px !important;
+  // }
+  //
+  // @media (max-width: 460px) {
+  //   min-height: 460px !important;
+  // }
 }
 
 .masonry--img {
