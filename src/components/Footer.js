@@ -19,7 +19,7 @@ class Footer extends React.Component {
             <div className="columns is-multiline">
               <div className={columnClassName}>
                 <div className='is-vertical-align-top'>
-                  <h6 className='ul-title'>Case Studies</h6>
+                  <h6 className='ul-title'>Work</h6>
                   <ul>
                     <li>
                       <Link to='/work/open-care'>Open Care</Link>
