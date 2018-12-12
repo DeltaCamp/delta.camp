@@ -201,20 +201,20 @@ contract ColonyNetwork is ColonyNetworkStorage {
 Colony uses Truffle for contract deployment. The steps are as follows:
 
 1. The Colony Network contracts are deployed:
-  * ColonyNetwork
-  * ColonyNetworkStaking
-  * EtherRouter
-  * Resolver
+    * ColonyNetwork
+    * ColonyNetworkStaking
+    * EtherRouter
+    * Resolver
 
 2. The ColonyNetwork and ColonyNetworkStaking contracts are registered with the Resolver
 
 3. The EtherRouter is set to point to the Resolver and serves as the main point of contact for the Colony Network
 
 4. The Colony contracts are deployed:
-  * Colony
-  * ColonyTask
-  * ColonyFunding
-  * ColonyTransactionReviewer
+    * Colony
+    * ColonyTask
+    * ColonyFunding
+    * ColonyTransactionReviewer
 
 5. A new Resolver is created and each of the contracts from step 4 are registered.
 

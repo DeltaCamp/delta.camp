@@ -49,27 +49,22 @@ exports.createPages = ({ graphql, actions }) => {
 
 
         // Blog Post Pages:
-        // Create blog posts pages
-        const posts = result.data.allMarkdownRemark.edges
+        let posts = result.data.allMarkdownRemark.edges
 
-        // Filter out draft posts in production but show in dev
-        const showDrafts = (env.NODE_ENV === 'development')
+        // Filter out draftt posts in production
+        if (process.env.NODE_ENV !== 'development') {
+          console.log('All posts (drafts and published)', posts.length)
 
-        console.log('######################', showDrafts)
-        console.log('showDrafts', showDrafts)
-        console.log('######################', showDrafts)
+          posts = posts.filter(post =>
+            post.node.frontmatter.draft === showDrafts
+          )
 
-        console.log('All posts (drafts and published)', posts.length)
-        const allowedPosts = posts.filter(post =>
-          post.node.frontmatter.draft === showDrafts
-        )
-        console.log('Number of published posts', allowedPosts.length)
+          console.log('Number of published posts', posts.length)
+        }
 
-
-
-        allowedPosts.forEach((post, index) => {
-          const previous = index === allowedPosts.length - 1 ? null : allowedPosts[index + 1].node;
-          const next = index === 0 ? null : allowedPosts[index - 1].node;
+        posts.forEach((post, index) => {
+          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+          const next = index === 0 ? null : posts[index - 1].node;
 
           createPage({
             path: post.node.fields.slug,
@@ -88,7 +83,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Tags Pages:
         // Iterate through each post, putting all found tags into `tags`
-        _.each(allowedPosts, edge => {
+        _.each(posts, edge => {
           if (_.get(edge, "node.frontmatter.tags")) {
             tags = tags.concat(edge.node.frontmatter.tags)
           }

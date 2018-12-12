@@ -147,6 +147,10 @@ code[class*="language-"] ::selection,
   color: #568 !important;
 }
 
+.blog-post--content {
+  font-family: 'source-serif-pro', serif;
+}
+
 .blog-post--content h1,
 .blog-post--content h2,
 .blog-post--content h3 {
@@ -155,31 +159,24 @@ code[class*="language-"] ::selection,
 }
 
 .blog-post--content h1 {
-  font-family: 'source-serif-pro', serif;
-
   @media screen and (max-width: 768px) {
     font-size: 3rem;
   }
 }
 
 .blog-post--content h2 {
-  font-family: 'source-serif-pro', serif;
-
   @media screen and (max-width: 768px) {
     font-size: 2.5rem;
   }
 }
 
 .blog-post--content h3 {
-  font-family: 'source-serif-pro', serif;
-
   @media screen and (max-width: 768px) {
     font-size: 2rem;
   }
 }
 
 .blog-post--content p {
-  font-family: 'source-serif-pro', serif;
   font-size: 2rem;
   line-height: 1.5;
   margin-bottom: 2.5rem;
@@ -192,6 +189,23 @@ code[class*="language-"] ::selection,
 .blog-post--content em {
   font-family: 'source-serif-pro', serif;
   font-style: italic;
+}
+
+.blog-post--content li {
+  margin: 0 0 2rem 0;
+}
+
+.blog-post--content li p {
+  margin: 0;
+}
+
+.blog-post--content li ul {
+  list-style: initial;
+  margin: 1rem 0 0 1.5rem;
+}
+
+.blog-post--content li ul li {
+  margin: 0 0 1rem 0;
 }
 
 p.excerpt {

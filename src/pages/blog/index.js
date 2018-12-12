@@ -26,18 +26,18 @@ class BlogIndex extends React.Component {
   }
 
   renderBlogLayout = (data) => {
-    const posts = data.allMarkdownRemark.edges
+    let posts = data.allMarkdownRemark.edges
 
-    const showDrafts = (process.env.NODE_ENV === 'development')
-    console.log('######################', showDrafts)
-    console.log('showDrafts', showDrafts)
-    console.log('######################', showDrafts)
+    // Filter out draftt posts in production
+    if (process.env.NODE_ENV !== 'development') {
+      console.log('All posts (drafts and published)', posts.length)
 
-    console.log('All posts (drafts and published)', posts.length)
-    const allowedPosts = posts.filter(post =>
-      post.node.frontmatter.draft === showDrafts
-    )
-    console.log('Number of published posts', allowedPosts.length)
+      posts = posts.filter(post =>
+        post.node.frontmatter.draft === showDrafts
+      )
+
+      console.log('Number of published posts', posts.length)
+    }
 
     return (
       <Fragment>
@@ -47,7 +47,7 @@ class BlogIndex extends React.Component {
           <div className="container">
             <div className="columns">
               <BlogColumn>
-                {allowedPosts.map(({ node }) => {
+                {posts.map(({ node }) => {
                   const twitterLink = this.formattedTwitterLink(node.frontmatter.author)
                   const title = node.frontmatter.title || node.fields.slug
                   const tags = node.frontmatter.tags
