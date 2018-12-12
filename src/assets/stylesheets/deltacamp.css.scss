@@ -1,4 +1,4 @@
-@import './normalize.css';
+// @import './normalize.css';
 @import "./variables.css.scss";
 @import "./bulma_and_overrides.css.scss";
 @import "./components/_all.css.scss";
@@ -21,6 +21,12 @@
 
 * {
   box-sizing: border-box;
+}
+
+em {
+  font-family: 'futura-pt';
+  font-weight: 400;
+  font-style: italic;
 }
 
 .img-responsive {
@@ -52,7 +58,7 @@
 body {
   background: white;
   border-top: 6px solid $link-color;
-  color: #565659;
+  color: #363639;
   font-family: 'futura-pt', sans-serif;
   font-size: 1.5rem;
   transition: border-color 2s ease-in-out;
@@ -154,12 +160,6 @@ h6 {
   @media (max-width: 800px) {
     font-size: 1.5rem;
   }
-}
-
-em {
-  color: #333;
-  font-style: initial;
-  font-weight: 700;
 }
 
 p {
@@ -967,4 +967,8 @@ form {
 
 .is-bottom-marginless {
   margin-bottom: 0;
+}
+
+.is-light {
+  color: lighten($link-color, 30%);
 }

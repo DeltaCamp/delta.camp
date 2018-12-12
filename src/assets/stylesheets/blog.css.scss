@@ -25,9 +25,17 @@
 }
 
 .blog p {
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin-bottom: 2.5rem;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.blog p.excerpt {
+  font-size: 1.5rem;
 }
 
 .blog-post--listing {
@@ -97,7 +105,7 @@
   border-radius: 0;
   box-shadow: 0 5px 15px 0 rgba(100,120,150,.2),
     0 2px 7px rgba(100,100,100,.1) !important;
-  margin: 2rem 0 0;
+  margin: 2rem 0 2rem;
   padding: 0;
   overflow: auto;
 }
@@ -120,7 +128,7 @@
   border-radius: 0;
   font-size: 1rem;
   top: -2px;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   position: relative;
 }
 
@@ -140,10 +148,14 @@
   border-radius: 2px;
 }
 
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection,
 .gatsby-highlight pre ::selection,
 :not(pre) > code[class*="language-"] ::selection {
-  background-color: #000;
-  color: white;
+  background-color: #000 !important;
+  color: white !important;
 }
 
 .line-numbers .line-numbers-rows {
@@ -155,4 +167,29 @@
 
 .line-numbers-rows > span:before {
   color: #568 !important;
+}
+
+.blog-post--content h1,
+.blog-post--content h2,
+.blog-post--content h3 {
+  font-weight: 700;
+  margin-top: 5rem;
+}
+
+.blog-post--content h1 {
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+.blog-post--content h2 {
+  @media screen and (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.blog-post--content h3 {
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+  }
 }

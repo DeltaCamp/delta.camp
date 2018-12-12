@@ -70,6 +70,8 @@ exports.createPages = ({ graphql, actions }) => {
               next,
             },
           })
+
+          return true
         })
 
 
@@ -95,7 +97,7 @@ exports.createPages = ({ graphql, actions }) => {
         })
 
 
-
+        return true
       })
     )
   })

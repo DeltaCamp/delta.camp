@@ -7,8 +7,8 @@ export const BlogColumn = function(props) {
     'is-full-tablet',
     'is-three-fifths-desktop',
     'is-offset-one-fifth-desktop',
-    'is-half-widescreen',
-    'is-offset-one-quarter-widescreen',
+    'is-three-fifths-widescreen',
+    'is-offset-one-fifth-widescreen',
     {
       'has-text-centered': props.hasTextCentered
     }
