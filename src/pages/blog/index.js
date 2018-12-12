@@ -53,11 +53,12 @@ class BlogIndex extends React.Component {
                           {title}
                         </Link>
                       </h6>
-                      <p>
-                        <small>{node.frontmatter.date}{twitterLink}</small>
-                      </p>
 
-                      <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+                      <small>{node.frontmatter.date}{twitterLink}</small>
+                      <br />
+                      <br />
+
+                      <p dangerouslySetInnerHTML={{ __html: node.excerpt }} className="excerpt" />
 
                       <TagList tags={tags} />
                     </div>
@@ -75,13 +76,6 @@ class BlogIndex extends React.Component {
     return <StaticQuery
       query={graphql`
         query {
-          chuckProfilePic: file(relativePath: { eq: "chuck-bergeron--profile-sm.jpg" }) {
-            childImageSharp {
-              fixed(width: 96, height: 96) {
-                ...GatsbyImageSharpFixed_tracedSVG
-              }
-            }
-          }
           allMarkdownRemark(
             sort: {
               fields: [frontmatter___date], order: DESC

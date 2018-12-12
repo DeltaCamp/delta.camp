@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import library from 'src/library'
 
 class Footer extends React.Component {
 

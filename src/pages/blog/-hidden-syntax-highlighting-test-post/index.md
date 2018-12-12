@@ -5,13 +5,13 @@ author:    "Chuck Bergeron"
 category:  blog
 date:      "2016-07-05T15:00:00.200Z"
 draft: true
-excerpt: A couple of months ago I was mussing around integrating noise, vigenette, chromatic aberration, and other image effects into Astervoid 2000.
 tags: ["music", "ableton", "live"]
 shared_square_image: posts/LoFiFox-running-animated-still-lightboxed_114.jpg
 ---
 
 
-<p> A couple of months ago I was mussing around integrating noise, vigenette, chromatic aberration, and other image effects into Astervoid 2000. </p>
+A couple of months ago I was mussing around integrating noise, vigenette, chromatic aberration, and other image effects into Astervoid 2000.
+
 <!-- more -->
 
 ```javascript{1,4-6}
