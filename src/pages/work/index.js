@@ -9,6 +9,8 @@ import WorkBrief from 'src/components/work/WorkBrief'
 import ContactCallToAction from 'src/components/ContactCallToAction'
 import { Transition } from 'react-transition-group'
 
+const workImageTransitionDuration = 0
+
 class Work extends React.PureComponent {
   constructor (props) {
     super(props)
@@ -30,8 +32,6 @@ class Work extends React.PureComponent {
   renderWork = (data) => {
     const columnSize = 'is-two-thirds-tablet'
 
-    console.log("activeTo: ", this.state.activeTo)
-
     return (
       <React.Fragment>
         <section className='work-briefs section first'>
@@ -48,10 +48,10 @@ class Work extends React.PureComponent {
                 <div className={classnames('column has-background-grey', columnSize)}>
                 </div>
                 <div className='column background-image-container'>
-                  <Transition in={this.state.activeTo === '/work/token-registry'} timeout={500}>
+                  <Transition in={this.state.activeTo === '/work/token-registry'} timeout={workImageTransitionDuration}>
                     {(state) => <TokenRegistryImage1 className={classnames('work-background is-hidden-mobile panning', state)} />}
                   </Transition>
-                  <Transition in={this.state.activeTo === '/work/open-care'} timeout={500}>
+                  <Transition in={this.state.activeTo === '/work/open-care'} timeout={workImageTransitionDuration}>
                     {(state) => <OpenCare1 className={classnames('work-background is-hidden-mobile panning', state)} />}
                   </Transition>
                 </div>

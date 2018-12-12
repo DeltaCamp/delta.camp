@@ -17,24 +17,39 @@
 
 img.work-background {
   position: absolute;
-  min-width: 100%;
-  max-width: 1000%;
-  min-height: 100%;
   left: 0;
   top: 0;
   transition: 500ms opacity;
   opacity: 0;
+  max-width: none;
+  width: 400px;
+
+  @include tablet {
+    width: 1000px;
+  }
+
+  @include fullhd {
+    width: 1200px;
+  }
 }
 
-img.work-background.entering,
+.work-background {
+  animation-duration: 30s;
+  animation-name: workImagePan;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
 img.work-background.entered {
   opacity: 1;
 }
 
-img.width-100 {
-  width: 100%;
-}
+@keyframes workImagePan {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
 
-img.height-100 {
-  height: 100%;
+  to {
+    transform: translate3d(-28%, 0, 0);
+  }
 }

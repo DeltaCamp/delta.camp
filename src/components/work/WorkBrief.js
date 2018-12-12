@@ -19,6 +19,7 @@ export default class extends React.PureComponent {
   }
 
   handleMouseEnter = () => {
+    if (this.state.mouseOn) { return }
     this.setState(
       { mouseOn: true },
       () => {
@@ -50,7 +51,8 @@ export default class extends React.PureComponent {
         to={to}
         className={classnames('work-brief--link', { 'is-active': this.state.mouseOn })}
         onMouseEnter={this.handleMouseEnter}
-        onMouseLeave={this.handleMouseExit}>
+        onMouseLeave={this.handleMouseExit}
+        onMouseMove={this.handleMouseEnter}>
         <h2 className='work-brief--title'>
           {title}
         </h2>
