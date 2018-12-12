@@ -67,7 +67,7 @@ class Contact extends React.PureComponent {
 
     } else {
       content =
-        <form onSubmit={this.submit}>
+        <form onSubmit={this.submit} className='form'>
           <div className="field">
             <label className="label" htmlFor="contact-project-name-input">
               What is your company or project name?

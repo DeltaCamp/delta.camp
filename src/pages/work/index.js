@@ -20,7 +20,7 @@ class Work extends React.PureComponent {
           </div>
         </section>
         <section className='section has-background-grey'>
-          <div className='container'>
+          <div className='container form'>
             <div className='columns'>
               <div className='column is-two-thirds-tablet'>
                 <WorkBrief
