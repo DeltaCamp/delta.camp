@@ -1,0 +1,34 @@
+.work-brief--link:hover {
+  color: $link-color;
+}
+
+.work-brief--link {
+  color: inherit;
+  display: block;
+  margin-bottom: 4rem;
+}
+
+.work-brief--title {
+  color: inherit;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+
+  @include mobile {
+    // text-decoration: underline;
+  }
+}
+
+.work-brief--subtitle {
+  color: inherit;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
+  .light {
+    color: grey;
+  }
+}
+
+.work-brief.is-active {
+  color: $link-color;
+}

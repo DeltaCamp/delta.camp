@@ -13,16 +13,23 @@ class Footer extends React.Component {
         <div className="container">
           <section className='section'>
             <div className='is-inline-block is-vertical-align-top'>
-              <div className='ul-title'>Work</div>
+              <div className='ul-title'>Case Studies</div>
               <ul>
-                <li><Link to='/work'>Client Work</Link></li>
+                <li><Link to='/work/open-care'>Open Care</Link></li>
+                <li><Link to='/work/token-registry'>The Token Registry</Link></li>
+              </ul>
+            </div>
+            <div className='is-inline-block is-vertical-align-top'>
+              <div className='ul-title'>Community</div>
+              <ul>
+                <li><Link to='/blog'>Articles</Link></li>
                 <li>
                   <a
                     href='https://github.com/DeltaCamp'
                     target='_blank'
                     rel='noopener noreferred'
                     title='Delta Camp on Github'>
-                    Open Source
+                    Open Source on Github
                   </a>
                 </li>
               </ul>

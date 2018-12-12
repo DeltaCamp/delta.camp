@@ -2,7 +2,7 @@
 @import "./variables.css.scss";
 @import "./bulma_and_overrides.css.scss";
 @import "./components/_all.css.scss";
-@import "./blog.css.scss";
+@import "./pages/_all.css.scss";
 
 // Acier BAT Noir 'acier-bat-noir', 400
 // Acier BAT Text Solid 'acier-bat-solid', 400
@@ -118,7 +118,7 @@ h2 {
   margin-bottom: 1.5rem;
 
   @media (max-width: 800px) {
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
 }
 
@@ -127,7 +127,7 @@ h3 {
   margin-bottom: 1.5rem;
 
   @media (max-width: 800px) {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
   }
 }
 
