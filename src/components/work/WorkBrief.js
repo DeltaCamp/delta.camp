@@ -51,9 +51,15 @@ export default class extends React.PureComponent {
         className={classnames('work-brief--link', { 'is-active': this.state.mouseOn })}
         onMouseEnter={this.handleMouseEnter}
         onMouseLeave={this.handleMouseExit}>
-        <h2 className='work-brief--title'>{title}</h2>
-        <h3 className='work-brief--subtitle'>{name}</h3>
-        <h3 className='work-brief--subtitle'><span className='light'>{technology}</span></h3>
+        <h2 className='work-brief--title'>
+          {title}
+        </h2>
+        <h3 className='work-brief--subtitle'>
+          {name}
+        </h3>
+        <h3 className='work-brief--subtitle'>
+          <span className='is-light'>{technology}</span>
+        </h3>
       </Link>
     )
   }
