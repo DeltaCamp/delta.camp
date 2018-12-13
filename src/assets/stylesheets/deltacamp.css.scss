@@ -924,3 +924,34 @@ ul.ul li:before {
     color: $danger;
   }
 }
+
+.list-icon__circle {
+  background-color: $purpleDark;
+  border-radius: 50%;
+  color: white;
+  display: inline-flex;
+  margin-right: 12px;
+  position: relative;
+  padding: 10px;
+  top: 4px;
+}
+
+.is-background-blue {
+  background-color: $blueLight;
+}
+
+.is-background-teal {
+  background-color: $tealLight;
+}
+
+.is-background-pink {
+  background-color: $pinkLight;
+}
+
+.is-background-orange {
+  background-color: $light-orange;
+}
+
+.icon-list li {
+  margin: 0 0 1.5rem;
+}

@@ -95,13 +95,38 @@ class IndexContent extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className='column'>
-                <ul className='ul'>
-                  <li>Weekly iterations</li>
-                  <li>Continous delivery</li>
-                  <li>Dedicated team</li>
-                  <li>Constant communication</li>
-                  <li>Flexible process</li>
+              <div className="column">
+                <ul className="icon-list">
+                  <li>
+                    <span className="list-icon__circle is-background-orange">
+                      <AntdIcon type='interation' />
+                    </span>
+                    Weekly iterations
+                  </li>
+                  <li>
+                    <span className="list-icon__circle is-background-teal">
+                      <AntdIcon type='upload' />
+                    </span>
+                    Continous delivery
+                  </li>
+                  <li>
+                    <span className="list-icon__circle is-background-blue">
+                      <AntdIcon type='team' />
+                    </span>
+                    Dedicated team
+                  </li>
+                  <li>
+                    <span className="list-icon__circle is-background-pink">
+                      <AntdIcon type='smile' />
+                    </span>
+                    Constant communication
+                  </li>
+                  <li>
+                    <span className="list-icon__circle">
+                      <AntdIcon type='rocket' />
+                    </span>
+                    Flexible process
+                  </li>
                 </ul>
               </div>
             </div>

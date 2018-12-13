@@ -6,7 +6,13 @@ import {
   Medium,
   Twitter,
   GithubFill,
-  RightSquare
+  RightSquare,
+  Interation,
+  Upload,
+  Team,
+  Smile,
+  Sound,
+  Rocket
 } from 'antd-icons/esm'
 
 library.add(
@@ -16,7 +22,13 @@ library.add(
   Medium,
   Twitter,
   GithubFill,
-  RightSquare
+  RightSquare,
+  Interation,
+  Upload,
+  Team,
+  Smile,
+  Sound,
+  Rocket
 )
 
 export default library
