@@ -9,7 +9,8 @@ module.exports = {
     title: 'Delta Camp | Building Apps for the Third Web',
     author: 'Chuck Bergeron, Brendan Asselstine',
     siteUrl: 'https://delta.camp',
-    siteDescription: 'Delta Camp creates DApps in Vancouver, BC.'
+    description: 'Delta Camp creates DApps in Vancouver, BC.',    // update both!
+    siteDescription: 'Delta Camp creates DApps in Vancouver, BC.' // update both!
   },
   plugins: [
     'gatsby-plugin-layout',
