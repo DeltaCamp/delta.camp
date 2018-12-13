@@ -8,11 +8,9 @@ module.exports = {
   siteMetadata: {
     title: 'Delta Camp | Building Apps for the Third Web',
     author: 'Chuck Bergeron, Brendan Asselstine',
-    description: '.',
     siteUrl: 'https://delta.camp',
     siteDescription: 'Delta Camp creates DApps in Vancouver, BC.'
   },
-  pathPrefix: '/gatsby-starter-blog',
   plugins: [
     'gatsby-plugin-layout',
     {
@@ -98,18 +96,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-feed`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Delta Camp, Fresh Tracks`,
-        short_name: `DeltaCamp`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/favicon.svg`,
-      },
-    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {

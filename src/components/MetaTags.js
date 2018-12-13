@@ -41,12 +41,20 @@ class MetaTags extends React.Component {
         }
         meta={[
           {
+            name: 'theme-color',
+            content: '#50286d'
+          },
+          {
             name: "description",
             content: siteDescription
           },
           {
             property: "og:description",
             content: siteDescription
+          },
+          {
+            property: "og:title",
+            content: siteTitle
           },
           {
             name: "keywords",
@@ -70,27 +78,11 @@ class MetaTags extends React.Component {
           },
           {
             property: "og:type",
-            content: "business.business"
+            content: "website"
           },
           {
             property: "og:image",
             content: `${siteUrl}${data.deltaCampLogo.publicURL}`
-          },
-          {
-            property: "business:contact_data:street_address",
-            content: "151 E Broadway, Vancouver BC V5T 1W1"
-          },
-          {
-            property: "business:contact_data:locality",
-            content: "Vancouver, BC"
-          },
-          {
-            property: "business:contact_data:postal_code",
-            content: "V5T 1W1"
-          },
-          {
-            property: "business:contact_data:country_name",
-            content: "Canada"
           },
           {
             property: "twitter:card",
@@ -122,7 +114,7 @@ class MetaTags extends React.Component {
               siteMetadata {
                 siteUrl
                 title
-                description
+                siteDescription
               }
             }
             deltaCamp3DSymbol: file(relativePath: { eq: "DeltaCamp-logo-3d--symbol.fbx" }) {

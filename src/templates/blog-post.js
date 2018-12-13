@@ -11,20 +11,35 @@ import { authorImages } from 'src/utils/authorImages'
 
 class BlogPostTemplate extends React.Component {
   render() {
-    const post = this.props.data.markdownRemark
-    const data = this.props.data
-    const siteTitle = data.site.siteMetadata.title
-    const siteDescription = post.excerpt
-    const tags = post.frontmatter.tags
     const { previous, next } = this.props.pageContext
+    const data = this.props.data
+    const post = data.markdownRemark
+
+    const postTitle = post.frontmatter.title
+    const postDescription = post.excerpt
+
+    const tags = post.frontmatter.tags
     const author = post.frontmatter.author
 
     return (
       <div>
         <Helmet
+          title={postTitle}
           htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={post.frontmatter.title}
+          meta={[
+            {
+              name: 'description',
+              content: postDescription
+            },
+            {
+              property: "og:description",
+              content: postDescription
+            },
+            {
+              property: "og:title",
+              content: postTitle
+            }
+          ]}
         />
 
         <section className="section first">
