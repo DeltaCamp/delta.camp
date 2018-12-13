@@ -38,6 +38,10 @@ class BlogPostTemplate extends React.Component {
             {
               property: "og:title",
               content: postTitle
+            },
+            {
+              property: "twitter:title",
+              content: postTitle
             }
           ]}
         />

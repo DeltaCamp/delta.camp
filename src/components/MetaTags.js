@@ -49,14 +49,6 @@ class MetaTags extends React.Component {
             content: siteDescription
           },
           {
-            property: "og:description",
-            content: siteDescription
-          },
-          {
-            property: "og:title",
-            content: siteTitle
-          },
-          {
             name: "keywords",
             content: "apps dapps design ethereum blockchain frontend ui ux"
           },
@@ -67,6 +59,14 @@ class MetaTags extends React.Component {
           {
             name: "copyright",
             content: `© ${year} Chuck Bergeron, Brendan Asselstine`
+          },
+          {
+            property: "og:title",
+            content: siteTitle
+          },
+          {
+            property: "og:description",
+            content: siteDescription
           },
           {
             property: "og:site_name",
@@ -83,6 +83,10 @@ class MetaTags extends React.Component {
           {
             property: "og:image",
             content: `${siteUrl}${data.deltaCampLogo.publicURL}`
+          },
+          {
+            property: "twitter:title",
+            content: siteTitle
           },
           {
             property: "twitter:card",
