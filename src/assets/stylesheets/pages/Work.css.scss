@@ -53,3 +53,27 @@ img.work-background.entered {
     transform: translate3d(-28%, 0, 0);
   }
 }
+
+.work-background-image-container {
+  position: relative;
+  overflow: hidden;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+}
+
+.work-background-box-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background: transparent;
+  box-shadow: inset 0px 0px 23px 0 rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: 500ms opacity;
+}
+
+.work-background-box-shadow.entering,
+.work-background-box-shadow.entered {
+  opacity: 1;
+}

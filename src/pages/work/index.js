@@ -47,13 +47,18 @@ class Work extends React.PureComponent {
               <div className='columns is-gapless has-height-100'>
                 <div className={classnames('column has-background-grey', columnSize)}>
                 </div>
-                <div className='column background-image-container'>
-                  <Transition in={this.state.activeTo === '/work/token-registry'} timeout={workImageTransitionDuration}>
-                    {(state) => <TokenRegistryImage1 className={classnames('work-background is-hidden-mobile panning', state)} />}
-                  </Transition>
-                  <Transition in={this.state.activeTo === '/work/open-care'} timeout={workImageTransitionDuration}>
-                    {(state) => <OpenCare1 className={classnames('work-background is-hidden-mobile panning', state)} />}
-                  </Transition>
+                <div className='column'>
+                  <div className='work-background-image-container'>
+                    <Transition in={!!this.state.activeTo} timeout={workImageTransitionDuration}>
+                      {(state) => <div className={classnames('work-background-box-shadow', state)} />}
+                    </Transition>
+                    <Transition in={this.state.activeTo === '/work/token-registry'} timeout={workImageTransitionDuration}>
+                      {(state) => <TokenRegistryImage1 className={classnames('work-background is-hidden-mobile panning', state)} />}
+                    </Transition>
+                    <Transition in={this.state.activeTo === '/work/open-care'} timeout={workImageTransitionDuration}>
+                      {(state) => <OpenCare1 className={classnames('work-background is-hidden-mobile panning', state)} />}
+                    </Transition>
+                  </div>
                 </div>
               </div>
             </div>
