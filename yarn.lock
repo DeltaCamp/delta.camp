@@ -10708,10 +10708,15 @@ pretty-error@^2.1.1:
     renderkid "^2.0.1"
     utila "~0.4"
 
-prismjs@^1.15.0:
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.15.0.tgz#8801d332e472091ba8def94976c8877ad60398d9"
-  integrity sha512-Lf2JrFYx8FanHrjoV5oL8YHCclLQgbJcVZR+gikGGMqz6ub5QVWDTM6YIwm3BuPxM/LOV+rKns3LssXNLIf+DA==
+"prismjs@github:deltacamp/prism":
+  version "1.14.0"
+  resolved "https://codeload.github.com/deltacamp/prism/tar.gz/964b73cf56c2d6ac0a9aa67c8e57ecabc57165d9"
+  optionalDependencies:
+    clipboard "^2.0.0"
+
+"prismjs@https://github.com/deltacamp/prism":
+  version "1.14.0"
+  resolved "https://github.com/deltacamp/prism#964b73cf56c2d6ac0a9aa67c8e57ecabc57165d9"
   optionalDependencies:
     clipboard "^2.0.0"
 

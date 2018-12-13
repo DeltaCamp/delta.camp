@@ -30,7 +30,7 @@
     "lodash": "^4.17.11",
     "node-sass": "^4.10.0",
     "postprocessing": "^5.3.1",
-    "prismjs": "^1.15.0",
+    "prismjs": "https://github.com/deltacamp/prism",
     "query-string": "^6.2.0",
     "react": "^16.5.1",
     "react-antd-icons": "^0.1.0-alpha.5",
