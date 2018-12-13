@@ -13,10 +13,10 @@ class NotFoundPage extends React.Component {
   render() {
     return (
       <Fragment>
-        <section className='section is-medium first'>
+        <section className='section first'>
           <div className="container">
             <h1 className="page-title is-marginless">
-              Not Found
+              That's a 404, Jim ...
             </h1>
           </div>
         </section>
@@ -27,7 +27,7 @@ class NotFoundPage extends React.Component {
             <div className="columns">
               <div className="column">
                 <p>
-                  You found a page that doesn&#39;t exist...!
+                  You found a page that doesn't exist!
                 </p>
 
                 <button onClick={this.goBack} className="button is-large is-primary">
@@ -36,10 +36,12 @@ class NotFoundPage extends React.Component {
 
                 <br />
 
-
                 <Link to="/" className="button is-large">
                   Start from the Start
                 </Link>
+                <br />
+                <br />
+                <br />
               </div>
             </div>
 

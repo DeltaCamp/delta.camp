@@ -16,7 +16,7 @@ class Work extends React.PureComponent {
             <div className='columns'>
               <div className='column is-half-tablet'>
                 <h2>
-                  Open Care
+                  OpenCare
                   <br className="is-hidden-desktop" />
 
                   <small>
@@ -33,26 +33,26 @@ class Work extends React.PureComponent {
             </div>
           </div>
         </section>
-        <section className='section has-background-grey'>
+        <section className='section section--work-brief has-background-grey'>
           <div className='container'>
             <div className='columns'>
 
               <div className='column'>
 
                 <p>
-                  MedX Protocol is creating a global market for healthcare using censorship-resistant software.  Open Care is the first application in this ecosystem and provides dermatological diagnoses to anyone in the world.
+                  MedX Protocol is creating a global market for healthcare using censorship-resistant software.  OpenCare is the first application in this ecosystem and provides dermatological diagnoses to anyone in the world.
                 </p>
 
                 <h4>Challenge</h4>
 
                 <p>
-                  We were approached by MedX Protocol to take Open Care from a proof-of-concept to a production-grade application.
+                  We were approached by MedX Protocol to take OpenCare from a proof-of-concept to a production-grade application.
                 </p>
 
                 <h4>Solution</h4>
 
                 <p>
-                  A high performance static web application backed by smart contracts and decentralized messaging and storage.
+                  A high performance single-page web application backed by smart contracts and decentralized messaging and storage.
                 </p>
 
                 <h4>Technologies</h4>
@@ -70,23 +70,23 @@ class Work extends React.PureComponent {
               </div>
 
               <div className='column'>
-                <div className="masonry--img-container">
+                <div className="work-brief--img-container">
                   <img
-                    className="masonry--img"
+                    className="work-brief--img shadow"
                     src={data.openCareShot1.publicURL}
                   />
                 </div>
 
-                <div className="masonry--img-container">
+                <div className="work-brief--img-container">
                   <img
-                    className="masonry--img"
+                    className="work-brief--img shadow"
                     src={data.openCareShot2.publicURL}
                   />
                 </div>
 
-                <div className="masonry--img-container">
+                <div className="work-brief--img-container">
                   <img
-                    className="masonry--img"
+                    className="work-brief--img shadow"
                     src={data.openCareShot3.publicURL}
                   />
                 </div>

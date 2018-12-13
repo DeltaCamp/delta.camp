@@ -13,14 +13,28 @@ class Contact extends React.PureComponent {
       companyName: "",
       email: "",
       budget: "",
+      hearAboutUs: "",
       comments: ""
     }
   }
 
   submit = (e) => {
     e.preventDefault()
+    this.setState({
+      emailError: false
+    })
+
+    if (this.state.email === '') {
+      this.setState({
+        emailError: true
+      })
+      return
+    }
+
     const url = "https://script.google.com/macros/s/AKfycby1cKI5HlVcwx8uR0XB4w68SULY2v5dVSbI2lj4BQKBA1HudJ8/exec"
+
     this.setState({isLoading: true})
+
     fetch(`${url}?${queryString.stringify(this.state)}`)
       .then(() => {
         this.setState({
@@ -33,6 +47,12 @@ class Contact extends React.PureComponent {
           wasError: error
         })
       })
+  }
+
+  handleBudgetChanged = (e) => {
+    this.setState({
+      budget: e.currentTarget.value
+    })
   }
 
   render () {
@@ -75,7 +95,7 @@ class Contact extends React.PureComponent {
             <div className="control">
               <input id="contact-project-name-input" className="input" type="text" name="companyProjectName"
                 value={this.state.projectName} onChange={(e) => this.setState({projectName: e.target.value})}
-                />
+              />
             </div>
           </div>
 
@@ -86,29 +106,99 @@ class Contact extends React.PureComponent {
             <div className="control">
               <input id="contact-name-input" className="input" type="text" name="name"
                 value={this.state.name} onChange={(e) => this.setState({name: e.target.value})}
-                />
+              />
             </div>
           </div>
 
           <div className="field">
             <label className="label" htmlFor="contact-email-input">
-              What is your email address?
+              What is your email address? <span className="has-text-info">*</span>
             </label>
             <div className="control">
-              <input id="contact-email-input" className="input" type="text" name="email"
-                value={this.state.email} onChange={(e) => this.setState({email: e.target.value})}
+              <input
+                id="contact-email-input"
+                className="input"
+                type="text"
+                name="email"
+                pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                value={this.state.email}
+                onChange={(e) => this.setState({email: e.target.value})}
+              />
+            </div>
+
+            {this.state.emailError ? (
+              <label className="hint has-text-danger is-attention-grabby">
+                Please enter an email address which we can reach you at
+              </label>
+            ) : null}
+          </div>
+
+          <div className="field">
+            <label className="label">
+              What is your budget?
+            </label>
+
+            <div className="control">
+              <label className="radio">
+                <input
+                  type="radio"
+                  value="Less than $25,000"
+                  name="budget"
+                  onChange={this.handleBudgetChanged}
                 />
+                <span className="radio-label">Less than $25,000</span>
+              </label>
+
+              <label className="radio">
+                <input
+                  type="radio"
+                  value="$25,000 to $50,000"
+                  name="budget"
+                  onChange={this.handleBudgetChanged}
+                />
+                <span className="radio-label">$25,000 to $50,000</span>
+              </label>
+
+              <label className="radio">
+                <input
+                  type="radio"
+                  value="$50,000 to $100,000"
+                  name="budget"
+                  onChange={this.handleBudgetChanged}
+                />
+                <span className="radio-label">$50,000 to $100,000</span>
+              </label>
+
+              <label className="radio">
+                <input
+                  type="radio"
+                  value="$100,000 or more"
+                  name="budget"
+                  onChange={this.handleBudgetChanged}
+                />
+                <span className="radio-label">$100,000 or more</span>
+              </label>
+
+              <label className="radio">
+                <input
+                  type="radio"
+                  value="Currently uncertain"
+                  name="budget"
+                  onChange={this.handleBudgetChanged}
+                />
+                <span className="radio-label">Currently uncertain</span>
+              </label>
             </div>
           </div>
 
           <div className="field">
-            <label className="label" htmlFor="contact-budget-input">
-              What is your budget?
+            <label className="label" htmlFor="contact-hearAboutUs-input">
+              How did you hear about Delta Camp?
             </label>
             <div className="control">
-              <input id="contact-budget-input" className="input" type="text" name="budget"
-                value={this.state.budget} onChange={(e) => this.setState({budget: e.target.value})}
-                />
+              <input id="contact-hearAboutUs-input" className="input" type="text" name="hearAboutUs"
+                value={this.state.hearAboutUs} onChange={(e) => this.setState({hearAboutUs: e.target.value})}
+              />
             </div>
           </div>
 
@@ -124,13 +214,18 @@ class Contact extends React.PureComponent {
                 name="Name"
                 rows="5"
                 value={this.state.comments} onChange={(e) => this.setState({comments: e.target.value})}
-                />
+              />
             </div>
           </div>
 
           <div className="field is-pulled-right">
             <div className="control">
-              <button type="submit" className={classnames("button is-info is-large", { "is-loading": this.state.isLoading })}>Submit</button>
+              <button
+                type="submit"
+                className={classnames("button button-primary is-large", {
+                  "is-loading": this.state.isLoading
+                })}
+              >Submit</button>
             </div>
           </div>
         </form>
@@ -146,7 +241,7 @@ class Contact extends React.PureComponent {
                   Contact Us
                 </h1>
                 <p className='no-margin-bottom'>
-                  Let's work together. Start a conversation with us.
+                  Drop us a line to get your project in motion:
                 </p>
               </div>
             </div>

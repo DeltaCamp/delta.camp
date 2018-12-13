@@ -33,12 +33,10 @@ class Work extends React.PureComponent {
             </div>
           </div>
         </section>
-        <section className='section has-background-grey'>
+        <section className='section section--work-brief has-background-grey'>
           <div className='container'>
             <div className='columns'>
-
               <div className='column'>
-
                 <p>
                   <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> is creating a global market for healthcare using censorship-resistant software.  A key piece of their ecosystem will be a registry of physicians that smart contracts and other software can tap into.  MedX Protocol calls this the <a href='https://medium.com/medxprotocol/a-tcr-protocol-design-for-objective-content-6abb04aac027' target='_blank' rel="noopener noreferrer">Token Incentivized List</a>.
                 </p>
@@ -69,23 +67,23 @@ class Work extends React.PureComponent {
               </div>
 
               <div className='column'>
-                <div className="masonry--img-container">
+                <div className="work-brief--img-container">
                   <img
-                    className="masonry--img"
+                    className="work-brief--img shadow"
                     src={data.regTokenAnimated.publicURL}
                   />
                 </div>
 
-                <div className="masonry--img-container">
+                <div className="work-brief--img-container">
                   <img
-                    className="masonry--img"
+                    className="work-brief--img shadow"
                     src={data.regTokenShot2.publicURL}
                   />
                 </div>
 
-                <div className="masonry--img-container">
+                <div className="work-brief--img-container">
                   <img
-                    className="masonry--img"
+                    className="work-brief--img shadow"
                     src={data.regTokenShot1.publicURL}
                   />
                 </div>
