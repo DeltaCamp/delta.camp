@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
+import Helmet from 'react-helmet'
 
 class NotFoundPage extends React.Component {
 
@@ -12,7 +13,11 @@ class NotFoundPage extends React.Component {
 
   render() {
     return (
-      <Fragment>
+      <div>
+        <Helmet>
+          <title>404, File Not Found</title>
+        </Helmet>
+
         <section className='section first'>
           <div className="container">
             <h1 className="page-title is-marginless">
@@ -47,7 +52,7 @@ class NotFoundPage extends React.Component {
 
           </div>
         </section>
-      </Fragment>
+      </div>
     )
   }
 }

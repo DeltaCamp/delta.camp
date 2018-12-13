@@ -8,13 +8,18 @@ class MetaTags extends React.Component {
     const location = this.props.location || {}
 
     const siteTitle = data.site.siteMetadata.title
-    const siteDescription = data.site.siteMetadata.description
+    const siteUrl = data.site.siteMetadata.siteUrl
+    const siteDescription = data.site.siteMetadata.siteDescription
+
+    const year = (new Date()).getFullYear()
 
     return (
       <Helmet
+        titleTemplate={`%s | ${siteTitle}`}
+        defaultTitle={siteTitle}
         htmlAttributes={{
           lang: 'en',
-          class: this.props.cssClass || 'wf-loading'
+          class: this.props.cssClass
         }}
         link={
           [
@@ -29,63 +34,51 @@ class MetaTags extends React.Component {
             {
               rel: 'alternate',
               type: 'application/atom+xml',
-              href: `${data.siteUrl}/index.xml`,
+              href: `${siteUrl}/rss.xml`,
               title: `The Delta Camp blog feed`
             }
           ]
         }
         meta={[
           {
-            name: 'description',
-            content: siteDescription,
-          },
-          {
             name: "description",
-            content: "Delta Camp creates DApps in Vancouver, BC."
+            content: siteDescription
           },
           {
             property: "og:description",
-            content: "Delta Camp creates DApps in Vancouver, BC."
+            content: siteDescription
           },
           {
             name: "keywords",
-            content: "apps dapps design"
+            content: "apps dapps design ethereum blockchain frontend ui ux"
           },
-          {
-            property: "og:title",
-            content: "delta.camp -- Blockchain Development"
-          },
-
           {
             name: "author",
             content: "Chuck Bergeron, Brendan Asselstine"
           },
           {
             name: "copyright",
-            content: "Chuck Bergeron, Brendan Asselstine"
+            content: `© ${year} Chuck Bergeron, Brendan Asselstine`
           },
-
           {
             property: "og:site_name",
             content: "deltacamp"
           },
           {
             property: "og:url",
-            content: `${data.siteUrl}${location.pathname}`
+            content: `${siteUrl}${location.pathname}`
           },
           {
             property: "og:type",
             content: "business.business"
           },
-
           {
             property: "og:image",
-            content: data.profilePic.childImageSharp.fixed
+            content: `${siteUrl}${data.deltaCampLogo.publicURL}`
           },
-
           {
             property: "business:contact_data:street_address",
-            content: "280 Nelson St - Suite #523"
+            content: "151 E Broadway, Vancouver BC V5T 1W1"
           },
           {
             property: "business:contact_data:locality",
@@ -93,45 +86,29 @@ class MetaTags extends React.Component {
           },
           {
             property: "business:contact_data:postal_code",
-            content: "V6B 2E2"
+            content: "V5T 1W1"
           },
           {
             property: "business:contact_data:country_name",
             content: "Canada"
           },
-
           {
             property: "twitter:card",
             content: "summary"
           },
           {
             property: "twitter:site",
-            content: "@thedeltacamp"
+            content: "@teamdeltacamp"
           },
           {
             property: "twitter:image",
-            content: data.profilePic.childImageSharp.fixed // this work?
+            content: `${siteUrl}${data.deltaCampLogo.publicURL}`
           },
           {
             property: "twitter:url",
-            content: `${data.siteUrl}${location.pathname}`
-          },
+            content: 'https://twitter.com/teamdeltacamp'
+          }
         ]}
-        link={
-          [
-            {
-              rel: "stylesheet",
-              href: "https://use.typekit.net/xce0plw.css"
-            },
-            {
-              rel: 'alternate',
-              type: 'application/atom+xml',
-              href: `${data.siteUrl}/index.xml`,
-              title: `The Delta Camp blog feed`
-            }
-          ]
-        }
-        title={siteTitle}
       />
     )
   }
@@ -143,6 +120,7 @@ class MetaTags extends React.Component {
           query {
             site {
               siteMetadata {
+                siteUrl
                 title
                 description
               }
@@ -153,14 +131,8 @@ class MetaTags extends React.Component {
             deltaCamp3DLightbox: file(relativePath: { eq: "DeltaCamp-logo-3d--lightbox.fbx" }) {
               publicURL
             }
-            profilePic: file(relativePath: { eq: "delta-camp--logo.png" }) {
-              childImageSharp {
-                # Specify the image processing specifications right in the query.
-                # Makes it trivial to update as your page's design changes.
-                fixed(width: 851, height: 737) {
-                  ...GatsbyImageSharpFixed_tracedSVG
-                }
-              }
+            deltaCampLogo: file(relativePath: { eq: "delta-camp--logo-pink-vertical--outlines@2x.png" }) {
+              publicURL
             }
           }
         `}

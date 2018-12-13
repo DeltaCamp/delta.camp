@@ -10,8 +10,11 @@ class Work extends React.PureComponent {
   renderWork = (data) => {
 
     return (
+      <div>
+        <Helmet>
+          <title>The Token Registry for MedX Protocol</title>
+        </Helmet>
 
-      <React.Fragment>
         <section id="work-section-token-reg" className="section first">
           <div className='container'>
             <div className='columns'>
@@ -93,7 +96,7 @@ class Work extends React.PureComponent {
         </section>
 
         <ContactCallToAction />
-      </React.Fragment>
+      </div>
     )
   }
 

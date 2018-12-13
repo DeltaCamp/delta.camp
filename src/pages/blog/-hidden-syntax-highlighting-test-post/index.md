@@ -65,22 +65,9 @@ class Layout extends React.Component {
     location: {}
   }
 
-  currentPage = () => {
-    const pathname = this.props.location.pathname
-    return getPurePathname(pathname)
-  }
-
   render() {
     return (
       <div>
-        <MetaTags {...this.props} cssClass={this.currentPage()} />
-        <Nav />
-        <Transition location={this.props.location}>
-          <div className="animatable-content">
-            { this.props.children }
-            <Footer />
-          </div>
-        </Transition>
       </div>
     )
   }

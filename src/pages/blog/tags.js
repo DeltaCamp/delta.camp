@@ -15,7 +15,11 @@ const TagsPage = ({
   }
 }) => (
   (
-    <Fragment>
+    <div>
+      <Helmet>
+        <title>Fresh Tracks - All tags</title>
+      </Helmet>
+
       <BlogHeader />
 
       <section className="section">
@@ -43,7 +47,7 @@ const TagsPage = ({
           </div>
         </div>
       </section>
-    </Fragment>
+    </div>
   )
 )
 

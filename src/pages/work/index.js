@@ -33,7 +33,11 @@ class Work extends React.PureComponent {
     const columnSize = 'is-two-thirds-tablet'
 
     return (
-      <React.Fragment>
+      <div>
+        <Helmet>
+          <title>{'Our Work'}</title>
+        </Helmet>
+
         <section className='work-briefs section first'>
           <div className='container'>
             <h1 className="page-title">
@@ -87,7 +91,7 @@ class Work extends React.PureComponent {
           </div>
         </section>
         <ContactCallToAction />
-      </React.Fragment>
+      </div>
     )
   }
 

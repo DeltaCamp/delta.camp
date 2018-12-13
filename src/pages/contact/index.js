@@ -232,7 +232,11 @@ class Contact extends React.PureComponent {
     }
 
     return (
-      <React.Fragment>
+      <div>
+        <Helmet>
+          <title>{'Contact Us'}</title>
+        </Helmet>
+
         <section className="section first">
           <div className="container">
             <div className="columns">
@@ -257,7 +261,7 @@ class Contact extends React.PureComponent {
             </div>
           </div>
         </section>
-      </React.Fragment>
+      </div>
     )
   }
 }

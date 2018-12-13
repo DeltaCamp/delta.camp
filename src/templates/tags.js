@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import { Link, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 import { BlogColumn } from 'src/components/BlogColumn'
 import { BlogHeader } from 'src/components/BlogHeader'
@@ -13,12 +14,12 @@ const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
 
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
-
   return (
-    <Fragment>
+    <div>
+      <Helmet>
+        <title>Posts tagged: {tag}</title>
+      </Helmet>
+
       <BlogHeader />
 
       <section className="section">
@@ -56,7 +57,7 @@ const Tags = ({ pageContext, data }) => {
           </div>
         </div>
       </section>
-    </Fragment>
+    </div>
   )
 }
 

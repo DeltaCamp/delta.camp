@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -20,11 +20,11 @@ class BlogPostTemplate extends React.Component {
     const author = post.frontmatter.author
 
     return (
-      <Fragment>
+      <div>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
-          title={`${post.frontmatter.title} | ${siteTitle}`}
+          title={post.frontmatter.title}
         />
 
         <section className="section first">
@@ -129,7 +129,7 @@ class BlogPostTemplate extends React.Component {
             </div>
           </div>
         </section>
-      </Fragment>
+      </div>
     )
   }
 }

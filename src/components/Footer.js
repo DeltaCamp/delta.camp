@@ -19,7 +19,7 @@ class Footer extends React.Component {
             <div className="columns is-multiline">
               <div className={columnClassName}>
                 <div className='is-vertical-align-top'>
-                  <h6 className='ul-title'>Work</h6>
+                  {/*<h6 className='ul-title'>Work</h6>*/}
                   <ul>
                     <li>
                       <Link to='/work/open-care'>Open Care</Link>
@@ -34,7 +34,7 @@ class Footer extends React.Component {
 
               <div className={columnClassName}>
                 <div className='is-vertical-align-top'>
-                  <h6 className='ul-title'>Community</h6>
+                  {/*<h6 className='ul-title'>Community</h6>*/}
                   <ul>
                     <li>
                       <Link to='/blog'>Articles</Link>
@@ -54,7 +54,7 @@ class Footer extends React.Component {
 
               <div className={columnClassName}>
                 <div className='is-vertical-align-top'>
-                  <h6 className='ul-title'>Contact</h6>
+                  {/*<h6 className='ul-title'>Contact</h6>*/}
                   <ul>
                     <li>
                       <Link to='/contact'>Hire Us</Link>

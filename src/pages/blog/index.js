@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 import AntdIcon from 'react-antd-icons/esm'
@@ -15,10 +15,10 @@ class BlogIndex extends React.Component {
 
     if (author) {
       link = (
-        <Fragment>
+        <div>
           &nbsp;-&nbsp;
           <a href={`https://twitter.com/${authorTwitterUsernames[author]}`}>{author} <AntdIcon className="inline-icon" type={'twitter'} /></a>
-        </Fragment>
+        </div>
       )
     }
 
@@ -40,7 +40,11 @@ class BlogIndex extends React.Component {
     }
 
     return (
-      <Fragment>
+      <div>
+        <Helmet>
+          <title>Fresh Tracks, the Delta Camp Blog</title>
+        </Helmet>
+
         <BlogHeader />
 
         <section className="section">
@@ -74,7 +78,7 @@ class BlogIndex extends React.Component {
             </div>
           </div>
         </section>
-      </Fragment>
+      </div>
     )
   }
 
