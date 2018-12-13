@@ -59,6 +59,10 @@ em {
   clear: both;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: white;
   border-top: 6px solid $link-color;
