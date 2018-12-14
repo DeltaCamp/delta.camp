@@ -41,13 +41,13 @@ class Work extends React.PureComponent {
             <div className='columns'>
               <div className='column'>
                 <p>
-                  <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> is creating a global market for healthcare using censorship-resistant software.  A key piece of their ecosystem will be a registry of physicians that smart contracts and other software can tap into.  MedX Protocol calls this the <a href='https://medium.com/medxprotocol/a-tcr-protocol-design-for-objective-content-6abb04aac027' target='_blank' rel="noopener noreferrer">Token Incentivized List</a>.
+                  <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> is creating a global market for healthcare using censorship-resistant software.  A key piece of their ecosystem will be a registry of physicians that smart contracts and other software can tap into.  MedX Protocol calls this the <a href='https://medium.com/medxprotocol/a-tcr-protocol-design-for-objective-content-6abb04aac027' target='_blank' rel="noopener noreferrer">Trustless Incentivized List</a>.
                 </p>
 
                 <h4>Challenge</h4>
 
                 <p>
-                  MedX Protocol needed an implementation of their Token Incentivized List.
+                  MedX Protocol needed an implementation of their Trustless Incentivized List.
                 </p>
 
                 <h4>Solution</h4>
