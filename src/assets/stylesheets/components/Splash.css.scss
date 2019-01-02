@@ -1,6 +1,6 @@
-$light-blue: #77bce6;
-$light-purple: #a28ad2;
-$lighter-purple: #ac9de8;
+$splashBlue: #77bce6;
+$splashPurple: #a28ad2;
+$splashPink: #ac9de8;
 
 html {
   width: 100%;
@@ -13,7 +13,7 @@ html {
   top: 0;
   width: 100%;
   height: 700px;
-  background: linear-gradient($light-blue, $light-purple, $lighter-purple);
+  background: linear-gradient($splashBlue, $splashPurple, $splashPink);
 
   @include tablet {
     height: 100vh;

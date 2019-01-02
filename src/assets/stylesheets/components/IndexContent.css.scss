@@ -1,3 +1,30 @@
-.IndexContent .nav--link {
+.home .nav--link {
   color: $work-link-color;
+}
+
+.testimonial {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.testimonial blockquote {
+  color: #797979;
+  display: block;
+  line-height: 2.5rem;
+  font-style: italic;
+  font-size: 1.325rem;
+  margin: 0 0 10px;
+  padding: 0 0 0 0;
+}
+
+.testimonial--author {
+  color: darken($blueLight, 8%);
+  display: block;
+  margin-top: 0.5rem;
+  font-style: normal;
+}
+
+.testimonial--author a {
+  color: darken($blueLight, 8%);
+  border-bottom: 1px solid darken($blueLight, 8%);
 }

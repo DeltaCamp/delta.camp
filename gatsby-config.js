@@ -13,6 +13,7 @@ module.exports = {
     siteDescription: 'Delta Camp creates DApps in Vancouver, BC.' // update both!
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-layout',
     {
       resolve: 'gatsby-plugin-react-svg',

@@ -8,14 +8,20 @@
 }
 
 .section--work-brief .container {
-  padding-bottom: 100px;
+  padding-bottom: 8rem;
+  padding-top: 3rem;
+
+  @media screen and (max-width: $navbar-breakpoint) {
+    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+  }
 }
 
 .case-study-content {
-  padding: 3.25rem 2rem;
+  padding: 3rem 2rem;
 
   @include desktop {
-    padding: 6.5rem 0rem;
+    padding: 6rem 0rem;
   }
 }
 

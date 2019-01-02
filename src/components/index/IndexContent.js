@@ -45,18 +45,18 @@ class IndexContent extends React.Component {
                       <li>Prototyping</li>
                       <li>User Interface</li>
                       <li>Interaction</li>
-                      <li>Logo &amp; Wordmark</li>
+                      <li>Branding</li>
                     </ul>
                   </div>
                   <div className='column'>
                     <h6 className='subtitle-2'>
-                      <AntdIcon type={'thunderbolt'} className='prefix-icon' />
+                      <AntdIcon type={'thunderbolt'} className='prefix-icon subtitle-2--icon' />
                       <span>
                         Web Development
                       </span>
                     </h6>
                     <ul className='prefix-icon-list'>
-                      <li>Front end Development</li>
+                      <li>Front-end Development</li>
                       <li>Server Development</li>
                       <li>Infrastructure</li>
                     </ul>
@@ -69,7 +69,7 @@ class IndexContent extends React.Component {
                       </span>
                     </h6>
                     <ul className='prefix-icon-list'>
-                      <li>Smart contract development</li>
+                      <li>Smart Contract Development</li>
                       <li>Protocol Integration</li>
                       <li>Distributed Storage</li>
                       <li>Dapp Browser Integration</li>
@@ -92,6 +92,26 @@ class IndexContent extends React.Component {
                       We will work closely with you to refine your product.  Our iterative process ensures
                       we build the <strong>right</strong> product.
                     </p>
+
+                    <hr />
+
+                    <div className="testimonial">
+                      <blockquote>
+                        "
+                        <span className="is-hidden-touch">
+                        It's no secret that building decentralized applications is a demanding undertaking. We spent months searching for the best developers capable of taking on the challenge.&nbsp;
+                        </span>
+                        The team at Delta Camp blew us away. Delta Camp is the triple threat combining deep expertise in web 3.0 development, UI/UX design and web development. There's really nothing they can't build! Highly recommend."
+
+                        <span className="testimonial--author">
+                          - <a
+                              href="https://twitter.com/mpraver1"
+                              target='_blank'
+                              rel='noopener noreferred'
+                            >Dr. Moshe Praver</a>, COO MedX Protocol
+                        </span>
+                      </blockquote>
+                    </div>
                   </div>
                 </div>
               </div>
