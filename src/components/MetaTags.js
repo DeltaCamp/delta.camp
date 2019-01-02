@@ -41,6 +41,10 @@ class MetaTags extends React.Component {
         }
         meta={[
           {
+            name: "google-site-verification",
+            content: "AgulHzqJ6_2xljkDwUNxoCen8X7-qzKbGx_DJBGJjgg"
+          },
+          {
             name: 'theme-color',
             content: '#50286d'
           },
