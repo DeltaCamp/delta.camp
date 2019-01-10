@@ -28,3 +28,37 @@
   color: darken($blueLight, 8%);
   border-bottom: 1px solid darken($blueLight, 8%);
 }
+
+.is-team-img img {
+  padding: 5px;
+}
+
+.team-member--container {
+  display: grid;
+  margin-top: 20px;
+}
+
+.team-member--name {
+  font-size: 1.25rem;
+  font-weight: 400;
+  padding-top: 12px;
+}
+
+.team-member--bio {
+  color: #909090;
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  top: -8px;
+  position: relative;
+  width: 80%;
+}
+
+.team-member--contact {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.team-member--contact .inline-icon {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}

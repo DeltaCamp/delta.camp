@@ -1,12 +1,13 @@
 import React from 'react'
-import Img from "gatsby-image"
-import { Link } from 'gatsby'
+import Img from 'gatsby-image'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import antdIconLibrary from 'src/antdIconLibrary'
 import AntdIcon from 'react-antd-icons/esm'
 import EthereumImage from './EthereumImage'
 
 class IndexContent extends React.Component {
-  render() {
+
+  renderIndexContent = (data) => {
     var ethereumSection
 
     const columnsClassName = 'columns is-centered'
@@ -155,14 +156,107 @@ class IndexContent extends React.Component {
 
         <section className='section is-medium'>
           <div className='container'>
-            <div className={columnsClassName}>
-              <div className={columnClassName}>
+            <div className='columns'>
+              <div className='column is-full-tablet'>
+                <h2>
+                  The Delta Camp Team
+                </h2>
+                {/*<p>
+                  Dedicated to Crafting the Future Web
+                </p>*/}
+                <p>
+                  The trick to successful projects isn't only tech,
+                  <br />it’s also working with the right people.
+                </p>
+
+                <div className='columns'>
+                  <div className='column is-half-tablet'>
+
+                    <div className="team-member--container">
+                      <figure className="image is-256x256">
+                        <Img
+                          fixed={data.brendanTeamPic.childImageSharp.fixed}
+                          alt={`Photo of Brendan Asselstine`}
+                          className="shadow is-team-img"
+                        />
+                      </figure>
+
+                      <h6 className="team-member--name">
+                        <br />
+                        Brendan Asselstine
+                        <br />
+                        &mdash;
+                      </h6>
+                      <p className="team-member--bio">
+                        Brendan Asselstine is a developer from Victoria currently
+                        living and working in Vancouver, BC. Currently, Brendan
+                        is teaching a weekly evening course on blockchain programming
+                        at Lighthouse Labs. His experience working on real estate
+                        accounting apps ...
+                      </p>
+
+                      <p className="team-member--contact">
+                        <a href={`mailto:brendan@delta.camp`}>Email Brendan</a>
+
+                        <br />
+                        <a href={`https://twitter.com/b_asselstine`}><AntdIcon className="inline-icon" type={'twitter'} /></a>
+                        <a href={`https://linkedin.com/in/brendanasselstine`}><AntdIcon className="inline-icon" type={'linkedin'} /></a>
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <div className='column is-half-tablet'>
+
+                    <div className="team-member--container">
+                      <figure className="image is-256x256">
+                        <Img
+                          fixed={data.chuckTeamPic.childImageSharp.fixed}
+                          alt={`Photo of Chuck Bergeron`}
+                          className="shadow is-team-img"
+                        />
+                      </figure>
+
+                      <h6 className="team-member--name">
+                        <br />
+                        Chuck Bergeron
+                        <br />
+                        &mdash;
+                      </h6>
+                      <p className="team-member--bio">
+                        Chuck Bergeron is a designer and developer from Calgary currently
+                        living and working in Vancouver, BC. He has built video
+                        telemedecine apps, virtual reality games, email marketing platforms,
+                        as well as countless other projects over his fifteen year career.
+                      </p>
+
+                      <p className="team-member--contact">
+                        <a href={`mailto:chuck@delta.camp`}>Email Chuck</a>
+                        <br />
+                        <a href={`https://twitter.com/chuckbergeron`}><AntdIcon className="inline-icon" type={'twitter'} /></a>
+                        <a href={`https://linkedin.com/in/chuckbergeron`}><AntdIcon className="inline-icon" type={'linkedin'} /></a>
+                      </p>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className='section is-medium has-background-grey'>
+          <div className='container'>
+            <div className='columns'>
+              <div className='column is-two-thirds-tablet'>
                 <div className='values'>
                   <h2>
                     Forward Thinking
                   </h2>
                   <p>
-                    We made a decision to focus on blockchain technology because we believe it's the future of the internet. We believe that open technology will continue to transform the world and that embracing this change will enable us to innovate even faster.
+                    We made a decision to focus on blockchain technology because to us it's the future of the internet. We believe that open technology will continue to transform the world and that embracing this change will enable us to innovate even faster.
                   </p>
                   <h5>
                     Openness
@@ -186,6 +280,30 @@ class IndexContent extends React.Component {
         </section>
       </div>
     )
+  }
+
+  render() {
+    return <StaticQuery
+      query={graphql`
+        query {
+          chuckTeamPic: file(relativePath: { eq: "team-chuck.jpg" }) {
+            childImageSharp {
+              fixed(width: 256, height: 256) {
+                ...GatsbyImageSharpFixed_tracedSVG
+              }
+            }
+          }
+          brendanTeamPic: file(relativePath: { eq: "team-brendan.jpg" }) {
+            childImageSharp {
+              fixed(width: 256, height: 256) {
+                ...GatsbyImageSharpFixed_tracedSVG
+              }
+            }
+          }
+        }
+      `}
+      render={(data) => this.renderIndexContent(data)}
+    />
   }
 }
 
