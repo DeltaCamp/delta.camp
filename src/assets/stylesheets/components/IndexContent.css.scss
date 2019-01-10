@@ -29,8 +29,14 @@
   border-bottom: 1px solid darken($blueLight, 8%);
 }
 
+.is-team-img {
+  max-height: 330px;
+  width: 100% !important;
+}
+
 .is-team-img img {
   padding: 5px;
+  object-position: center -20px !important;
 }
 
 .team-member--container {
@@ -50,7 +56,10 @@
   margin-bottom: 0;
   top: -8px;
   position: relative;
-  width: 80%;
+
+  @media (min-width: $navbar-breakpoint) {
+    width: 80%;
+  }
 }
 
 .team-member--contact {

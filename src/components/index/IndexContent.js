@@ -165,15 +165,14 @@ class IndexContent extends React.Component {
                   Dedicated to Crafting the Future Web
                 </p>*/}
                 <p>
-                  The trick to successful projects isn't only tech,
-                  <br />it’s also working with the right people.
+                  The trick to successful projects isn't only tech, <br className="is-hidden-touch" />it’s also working with the right people.
                 </p>
 
                 <div className='columns'>
                   <div className='column is-half-tablet'>
 
                     <div className="team-member--container">
-                      <figure className="image is-256x256">
+                      <figure className="image">
                         <Img
                           fixed={data.brendanTeamPic.childImageSharp.fixed}
                           alt={`Photo of Brendan Asselstine`}
@@ -209,7 +208,7 @@ class IndexContent extends React.Component {
                   <div className='column is-half-tablet'>
 
                     <div className="team-member--container">
-                      <figure className="image is-256x256">
+                      <figure className="image">
                         <Img
                           fixed={data.chuckTeamPic.childImageSharp.fixed}
                           alt={`Photo of Chuck Bergeron`}
@@ -286,16 +285,16 @@ class IndexContent extends React.Component {
     return <StaticQuery
       query={graphql`
         query {
-          chuckTeamPic: file(relativePath: { eq: "team-chuck.jpg" }) {
+          chuckTeamPic: file(relativePath: { eq: "team-chuck-fake.jpg" }) {
             childImageSharp {
-              fixed(width: 256, height: 256) {
+              fixed(width: 660, height: 660) {
                 ...GatsbyImageSharpFixed_tracedSVG
               }
             }
           }
-          brendanTeamPic: file(relativePath: { eq: "team-brendan.jpg" }) {
+          brendanTeamPic: file(relativePath: { eq: "team-chuck-fake3.jpg" }) {
             childImageSharp {
-              fixed(width: 256, height: 256) {
+              fixed(width: 660, height: 660) {
                 ...GatsbyImageSharpFixed_tracedSVG
               }
             }
