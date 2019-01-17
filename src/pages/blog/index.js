@@ -94,7 +94,7 @@ class BlogIndex extends React.Component {
           ) {
             edges {
               node {
-                excerpt
+                excerpt(format: HTML)
                 fields {
                   slug
                 }
