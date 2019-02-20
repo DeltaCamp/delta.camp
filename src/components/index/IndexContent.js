@@ -165,7 +165,7 @@ class IndexContent extends React.Component {
                   Dedicated to Crafting the Future Web
                 </p>*/}
                 <p>
-                  The trick to successful projects isn't only tech, <br className="is-hidden-touch" />it’s also working with the right people.
+                  The trick to successful digital projects isn't just tech, <br className="is-hidden-touch" />it’s also working with the right people.
                 </p>
 
                 <div className='columns'>
@@ -178,7 +178,13 @@ class IndexContent extends React.Component {
                           alt={`Photo of Brendan Asselstine`}
                           className="shadow is-team-img"
                         />
+                        <Img
+                          fixed={data.brendanTeamPicHover.childImageSharp.fixed}
+                          alt={`Alt Photo of Brendan Asselstine`}
+                          className="shadow is-team-img is-team-img__hovered blue-background"
+                        />
                       </figure>
+                      
 
                       <h6 className="team-member--name">
                         <br />
@@ -189,9 +195,8 @@ class IndexContent extends React.Component {
                       <p className="team-member--bio">
                         Brendan Asselstine is a developer from Victoria currently
                         living and working in Vancouver, BC. Currently, Brendan
-                        is teaching a weekly evening course on blockchain programming
-                        at Lighthouse Labs. His experience working on real estate
-                        accounting apps ...
+                        teaches courses on blockchain programming. His experience
+                        working on real estate accounting apps ...
                       </p>
 
                       <p className="team-member--contact">
@@ -214,6 +219,11 @@ class IndexContent extends React.Component {
                           alt={`Photo of Chuck Bergeron`}
                           className="shadow is-team-img"
                         />
+                        <Img
+                          fixed={data.chuckTeamPicHover.childImageSharp.fixed}
+                          alt={`Alt Photo of Chuck Bergeron`}
+                          className="shadow is-team-img is-team-img__hovered"
+                        />
                       </figure>
 
                       <h6 className="team-member--name">
@@ -224,9 +234,9 @@ class IndexContent extends React.Component {
                       </h6>
                       <p className="team-member--bio">
                         Chuck Bergeron is a designer and developer from Calgary currently
-                        living and working in Vancouver, BC. He has built video
-                        telemedecine apps, virtual reality games, email marketing platforms,
-                        as well as countless other projects over his fifteen year career.
+                        living and working in Vancouver, BC. He has worked on telemedecine 
+                        videoconferencing apps, virtual reality experiences, an email marketing
+                        platform, as well as countless other projects over his fifteen year career.
                       </p>
 
                       <p className="team-member--contact">
@@ -285,16 +295,30 @@ class IndexContent extends React.Component {
     return <StaticQuery
       query={graphql`
         query {
-          chuckTeamPic: file(relativePath: { eq: "team-chuck-fake.jpg" }) {
+          chuckTeamPic: file(relativePath: { eq: "DSC_0145.jpg" }) {
             childImageSharp {
-              fixed(width: 660, height: 660) {
+              fixed(width: 600, height: 600) {
                 ...GatsbyImageSharpFixed_tracedSVG
               }
             }
           }
-          brendanTeamPic: file(relativePath: { eq: "team-chuck-fake3.jpg" }) {
+          brendanTeamPic: file(relativePath: { eq: "DSC_0187.jpg" }) {
             childImageSharp {
-              fixed(width: 660, height: 660) {
+              fixed(width: 600, height: 600) {
+                ...GatsbyImageSharpFixed_tracedSVG
+              }
+            }
+          }
+          chuckTeamPicHover: file(relativePath: { eq: "DSC_0170.jpg" }) {
+            childImageSharp {
+              fixed(width: 600, height: 600) {
+                ...GatsbyImageSharpFixed_tracedSVG
+              }
+            }
+          }
+          brendanTeamPicHover: file(relativePath: { eq: "DSC_0195.jpg" }) {
+            childImageSharp {
+              fixed(width: 600, height: 600) {
                 ...GatsbyImageSharpFixed_tracedSVG
               }
             }
