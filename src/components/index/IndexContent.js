@@ -1,12 +1,13 @@
 import React from 'react'
-import Img from "gatsby-image"
-import { Link } from 'gatsby'
+import Img from 'gatsby-image'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import antdIconLibrary from 'src/antdIconLibrary'
 import AntdIcon from 'react-antd-icons/esm'
 import EthereumImage from './EthereumImage'
 
 class IndexContent extends React.Component {
-  render() {
+
+  renderIndexContent = (data) => {
     var ethereumSection
 
     const columnsClassName = 'columns is-centered'
@@ -155,14 +156,120 @@ class IndexContent extends React.Component {
 
         <section className='section is-medium'>
           <div className='container'>
-            <div className={columnsClassName}>
-              <div className={columnClassName}>
+            <div className='columns'>
+              <div className='column is-full-tablet'>
+                <h2>
+                  The Delta Camp Team
+                </h2>
+                {/*<p>
+                  Dedicated to Crafting the Future Web
+                </p>*/}
+                <p>
+                  The trick to successful digital projects isn't just tech, <br className="is-hidden-touch" />it’s also working with the right people.
+                </p>
+
+                <div className='columns'>
+                  <div className='column is-half-tablet'>
+
+                    <div className="team-member--container">
+                      <figure className="image">
+                        <Img
+                          fixed={data.brendanTeamPic.childImageSharp.fixed}
+                          alt={`Photo of Brendan Asselstine`}
+                          className="shadow is-team-img"
+                        />
+                        <Img
+                          fixed={data.brendanTeamPicHover.childImageSharp.fixed}
+                          alt={`Alt Photo of Brendan Asselstine`}
+                          className="shadow is-team-img is-team-img__hovered blue-background"
+                        />
+                      </figure>
+                      
+
+                      <h6 className="team-member--name">
+                        <br />
+                        Brendan Asselstine
+                        <br />
+                        &mdash;
+                      </h6>
+                      <p className="team-member--bio">
+                        Brendan has architected web and mobile software solutions
+                        for more than ten years, and is currently exploring how distributed
+                        protocol design impacts application architecture. Currently he
+                        teaches courses on blockchain programming and enjoys knowledge sharing and open
+                        source software. He's always happy to foster shared
+                        understanding using open communication.
+                      </p>
+
+                      <p className="team-member--contact">
+                        <a href={`mailto:brendan@delta.camp`}>Email Brendan</a>
+
+                        <br />
+                        <a href={`https://twitter.com/b_asselstine`}><AntdIcon className="inline-icon" type={'twitter'} /></a>
+                        <a href={`https://linkedin.com/in/brendanasselstine`}><AntdIcon className="inline-icon" type={'linkedin'} /></a>
+                      </p>
+                    </div>
+
+                  </div>
+
+                  <div className='column is-half-tablet'>
+
+                    <div className="team-member--container">
+                      <figure className="image">
+                        <Img
+                          fixed={data.chuckTeamPic.childImageSharp.fixed}
+                          alt={`Photo of Chuck Bergeron`}
+                          className="shadow is-team-img"
+                        />
+                        <Img
+                          fixed={data.chuckTeamPicHover.childImageSharp.fixed}
+                          alt={`Alt Photo of Chuck Bergeron`}
+                          className="shadow is-team-img is-team-img__hovered"
+                        />
+                      </figure>
+
+                      <h6 className="team-member--name">
+                        <br />
+                        Chuck Bergeron
+                        <br />
+                        &mdash;
+                      </h6>
+                      <p className="team-member--bio">
+                        Chuck Bergeron is a designer and developer from Calgary currently
+                        living and working in Vancouver, BC. He has worked on telemedecine 
+                        videoconferencing apps, virtual reality experiences, an email marketing
+                        platform, as well as countless other projects over his fifteen year career.
+                        Chuck is deeply committed to blockchain technology as he believes it will
+                        power the next generation of the web.
+                      </p>
+
+                      <p className="team-member--contact">
+                        <a href={`mailto:chuck@delta.camp`}>Email Chuck</a>
+                        <br />
+                        <a href={`https://twitter.com/chuckbergeron`}><AntdIcon className="inline-icon" type={'twitter'} /></a>
+                        <a href={`https://linkedin.com/in/chuckbergeron`}><AntdIcon className="inline-icon" type={'linkedin'} /></a>
+                      </p>
+                    </div>
+
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className='section is-medium has-background-grey'>
+          <div className='container'>
+            <div className='columns'>
+              <div className='column is-two-thirds-tablet'>
                 <div className='values'>
                   <h2>
                     Forward Thinking
                   </h2>
                   <p>
-                    We made a decision to focus on blockchain technology because we believe it's the future of the internet. We believe that open technology will continue to transform the world and that embracing this change will enable us to innovate even faster.
+                    We made a decision to focus on blockchain technology because to us it's the future of the internet. We believe that open technology will continue to transform the world and that embracing this change will enable us to innovate even faster.
                   </p>
                   <h5>
                     Openness
@@ -186,6 +293,44 @@ class IndexContent extends React.Component {
         </section>
       </div>
     )
+  }
+
+  render() {
+    return <StaticQuery
+      query={graphql`
+        query {
+          chuckTeamPic: file(relativePath: { eq: "DSC_0145.jpg" }) {
+            childImageSharp {
+              fixed(width: 600, height: 600) {
+                ...GatsbyImageSharpFixed_tracedSVG
+              }
+            }
+          }
+          brendanTeamPic: file(relativePath: { eq: "DSC_0187.jpg" }) {
+            childImageSharp {
+              fixed(width: 600, height: 600) {
+                ...GatsbyImageSharpFixed_tracedSVG
+              }
+            }
+          }
+          chuckTeamPicHover: file(relativePath: { eq: "DSC_0170.jpg" }) {
+            childImageSharp {
+              fixed(width: 600, height: 600) {
+                ...GatsbyImageSharpFixed_tracedSVG
+              }
+            }
+          }
+          brendanTeamPicHover: file(relativePath: { eq: "DSC_0195.jpg" }) {
+            childImageSharp {
+              fixed(width: 600, height: 600) {
+                ...GatsbyImageSharpFixed_tracedSVG
+              }
+            }
+          }
+        }
+      `}
+      render={(data) => this.renderIndexContent(data)}
+    />
   }
 }
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import Img from "gatsby-image"
 import { Link } from 'gatsby'
 import Nav from 'src/components/Nav'
 import { DeltaCamp3D } from 'src/components/DeltaCamp3D'
