@@ -193,10 +193,12 @@ class IndexContent extends React.Component {
                         &mdash;
                       </h6>
                       <p className="team-member--bio">
-                        Brendan Asselstine is a developer from Victoria currently
-                        living and working in Vancouver, BC. Currently, Brendan
-                        teaches courses on blockchain programming. His experience
-                        working on real estate accounting apps ...
+                        Brendan has architected web and mobile software solutions
+                        for more than ten years, and is currently exploring how distributed
+                        protocol design impacts application architecture. Currently he
+                        teaches courses on blockchain programming and enjoys knowledge sharing and open
+                        source software. He's always happy to foster shared
+                        understanding using open communication.
                       </p>
 
                       <p className="team-member--contact">
@@ -237,6 +239,8 @@ class IndexContent extends React.Component {
                         living and working in Vancouver, BC. He has worked on telemedecine 
                         videoconferencing apps, virtual reality experiences, an email marketing
                         platform, as well as countless other projects over his fifteen year career.
+                        Chuck is deeply committed to blockchain technology as he believes it will
+                        power the next generation of the web.
                       </p>
 
                       <p className="team-member--contact">
