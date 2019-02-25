@@ -22,6 +22,9 @@ class Footer extends React.Component {
                   {/*<h6 className='ul-title'>Work</h6>*/}
                   <ul>
                     <li>
+                      <Link to='/work/zos-registry'>ZeppelinOS</Link>
+                    </li>
+                    <li>
                       <Link to='/work/open-care'>Open Care</Link>
                     </li>
                     <li>

@@ -12,7 +12,7 @@ class Work extends React.PureComponent {
     return (
       <div>
         <Helmet>
-          <title>The Token Registry for MedX Protocol</title>
+          <title>ZeppelinOS Registry for Zeppelin Solutions</title>
         </Helmet>
 
         <section id="work-section-token-reg" className="section first">
@@ -20,17 +20,17 @@ class Work extends React.PureComponent {
             <div className='columns'>
               <div className='column is-half-tablet'>
                 <h2>
-                  The Token Registry
+                  ZeppelinOS Registry
                   <br className="is-hidden-desktop" />
 
                     <small>
                       <span className="is-hidden-touch">&nbsp;&nbsp;</span>
-                      <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>view live <AntdIcon type={'right-square'} className='icon--work-view-live' /></a>
+                      <a href='https://registry.zeppelinos.org/' target='_blank' rel='noopener noreferrer'>view live <AntdIcon type={'right-square'} className='icon--work-view-live' /></a>
                     </small>
                 </h2>
 
                 <h3 className='subtitle-3'>
-                  A smart contract protocol proof-of-concept
+                  An application for EVM Packages.
                 </h3>
               </div>
             </div>
@@ -41,32 +41,35 @@ class Work extends React.PureComponent {
             <div className='columns'>
               <div className='column'>
                 <p>
-                  <a href='https://medxprotocol.com/' target='_blank' rel='noopener noreferrer'>MedX Protocol</a> is creating a global market for healthcare using censorship-resistant software.  A key piece of their ecosystem will be a registry of physicians that smart contracts and other software can tap into.  MedX Protocol calls this the <a href='https://medium.com/medxprotocol/a-tcr-protocol-design-for-objective-content-6abb04aac027' target='_blank' rel="noopener noreferrer">Trustless Incentivized List</a>.
+                  <a href='https://zeppelinos.org' target='_blank' rel='noopener noreferrer'>ZeppelinOS</a> is a development platform designed specifically for smart contracts. It allows for seamless upgrades and provides economic incentives to create a healthy ecosystem of secure applications.
                 </p>
 
                 <h4>Challenge</h4>
 
                 <p>
-                  MedX Protocol needed an implementation of their Trustless Incentivized List.
+                  ZeppelinOS needed a front-end to interact with their smart contracts.  They also wanted it to be ready for integration with <a href='https://thegraph.com' target='_blank' rel='noopener noreferrer'>The Graph</a>.
                 </p>
 
                 <h4>Solution</h4>
 
                 <p>
-                  Working closely with their team we created a smart contract implementation of the protocol along with a application proof-of-concept.  The application is called the <a href='https://tokenregistry.medxprotocol.com/' target='_blank' rel='noopener noreferrer'>Token Registry</a> and allows users to build a registry of approved ERC20 tokens in a decentralized way.
+                  We had been working on a direct-to-Ethereum GraphQL Apollo Client module called <a href='https://github.com/DeltaCamp/apollo-link-ethereum' target='_blank' rel='noopener noreferrer'>apollo-link-ethereum</a> so the timing of the project was serendipitous.
+                </p>
+
+                <p>
+                  We crafted a beautiful, responsive application that works across all browsers and screen sizes.  Mobile dapp browsers have broad support when transacting with the contracts.  The application code turned out beautiful as well, with a reduction of typical Web3 boilerplate code to near zero.
                 </p>
 
                 <h4>Technologies</h4>
 
                 <ul className='ul'>
-                  <li>React, Redux, Redux Saga</li>
-                  <li>Solidity Smart Contracts</li>
-                  <li>Ethereum, Netlify</li>
+                  <li>React, Apollo Client</li>
+                  <li>Netlify</li>
                 </ul>
 
                 <br />
 
-                <WorkNav nextProjectPath='/work/zos-registry' />
+                <WorkNav nextProjectPath='/work/open-care' />
               </div>
 
               <div className='column'>

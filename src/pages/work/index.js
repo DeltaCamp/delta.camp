@@ -3,6 +3,7 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import classnames from 'classnames'
 import Helmet from 'react-helmet'
 import TokenRegistryImage1 from 'src/components/work/TokenRegistryImage1'
+import ZeppelinOSImage from 'src/components/work/ZeppelinOSImage'
 import OpenCare1 from 'src/components/work/OpenCare1'
 import OpenCareThumbImg from 'src/components/work/OpenCareThumbImg'
 import WorkBrief from 'src/components/work/WorkBrief'
@@ -23,13 +24,7 @@ class Work extends React.PureComponent {
     })
   }
 
-  onMouseExit = (path) => {
-    // this.setState({
-    //   activeTo: null
-    // })
-  }
-
-  renderWork = (data) => {
+  render () {
     const columnSize = 'is-two-thirds-tablet'
 
     return (
@@ -56,6 +51,9 @@ class Work extends React.PureComponent {
                     <Transition in={!!this.state.activeTo} timeout={workImageTransitionDuration}>
                       {(state) => <div className={classnames('work-background-box-shadow', state)} />}
                     </Transition>
+                    <Transition in={this.state.activeTo === '/work/zos-registry'} timeout={workImageTransitionDuration}>
+                      {(state) => <ZeppelinOSImage className={classnames('work-background is-hidden-mobile panning', state)} />}
+                    </Transition>
                     <Transition in={this.state.activeTo === '/work/token-registry'} timeout={workImageTransitionDuration}>
                       {(state) => <TokenRegistryImage1 className={classnames('work-background is-hidden-mobile panning', state)} />}
                     </Transition>
@@ -71,18 +69,22 @@ class Work extends React.PureComponent {
                 <div className={classnames('column has-background-grey', columnSize)}>
                   <div className='case-study-content'>
                     <WorkBrief
+                      title="An app to interface with the EVM package ecosystem"
+                      name="ZeppelinOS EVM Package Registry"
+                      technology="Web App Design &amp; Development"
+                      onMouseEnter={this.onMouseEnter}
+                      to="/work/zos-registry" />
+                    <WorkBrief
                       title="A decentralized telemedicine app"
                       name="Open Care for MedX Protocol"
                       technology="Ethereum Smart Contracts, Web App Design &amp; Development, Encryption Protocol, IPFS Infrastructure"
                       onMouseEnter={this.onMouseEnter}
-                      onMouseExit={this.onMouseExit}
                       to="/work/open-care" />
                     <WorkBrief
                       title="A smart contract protocol proof-of-concept"
                       name="The Token Registry for MedX Protocol"
                       technology="Ethereum Smart Contracts, Web App Design &amp; Development"
                       onMouseEnter={this.onMouseEnter}
-                      onMouseExit={this.onMouseExit}
                       to="/work/token-registry" />
                   </div>
                 </div>
@@ -92,37 +94,6 @@ class Work extends React.PureComponent {
         </section>
         <ContactCallToAction />
       </div>
-    )
-  }
-
-  render () {
-    return (
-      <StaticQuery
-        query={graphql`
-          query {
-            regTokenAnimated: file(relativePath: { eq: "reg-token-animated.gif" }) {
-              publicURL
-            }
-            regTokenShot1: file(relativePath: { eq: "reg-token-shot-1.png" }) {
-              publicURL
-            }
-            regTokenShot2: file(relativePath: { eq: "reg-token-shot-2.png" }) {
-              publicURL
-            }
-            openCareShot1: file(relativePath: { eq: "open-care-shot-1.png" }) {
-              publicURL
-            }
-            openCareShot2: file(relativePath: { eq: "open-care-shot-2.png" }) {
-              publicURL
-            }
-            openCareShot3: file(relativePath: { eq: "open-care-shot-3.png" }) {
-              publicURL
-            }
-
-          }
-        `}
-        render={(data) => this.renderWork(data)}
-      />
     )
   }
 }
