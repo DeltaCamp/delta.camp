@@ -69,7 +69,7 @@ class Work extends React.PureComponent {
                 <div className={classnames('column has-background-grey', columnSize)}>
                   <div className='case-study-content'>
                     <WorkBrief
-                      title="An app to interface with the EVM package ecosystem"
+                      title="An application to interact with EVM packages"
                       name="ZeppelinOS EVM Package Registry"
                       technology="Web App Design &amp; Development"
                       onMouseEnter={this.onMouseEnter}

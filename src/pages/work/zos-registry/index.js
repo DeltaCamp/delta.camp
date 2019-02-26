@@ -12,7 +12,7 @@ class Work extends React.PureComponent {
     return (
       <div>
         <Helmet>
-          <title>ZeppelinOS Registry for Zeppelin Solutions</title>
+          <title>ZeppelinOS Registry</title>
         </Helmet>
 
         <section id="work-section-token-reg" className="section first">
