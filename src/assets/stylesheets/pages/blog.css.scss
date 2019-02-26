@@ -177,12 +177,12 @@ code[class*="language-"] ::selection,
 }
 
 .blog-post--content p {
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   margin-bottom: 2.5rem;
 
   @media screen and (max-width: 768px) {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -192,7 +192,7 @@ code[class*="language-"] ::selection,
 }
 
 .blog-post--content li {
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem 2rem;
 }
 
 .blog-post--content li p {

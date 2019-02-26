@@ -6,7 +6,7 @@ category:  blog
 date:      "2018-03-26T15:00:00.200Z"
 draft:     false
 tags:      ["smart contracts", "software architecture", "ethereum", "blockchain", "design patterns", "software design patterns"]
-shared_square_image: posts/etherplate-logo.png
+shared_square_image: ./augur-colony-logos.png
 from_medium: true
 ---
 
