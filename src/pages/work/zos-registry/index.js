@@ -76,23 +76,17 @@ class Work extends React.PureComponent {
                 <div className="work-brief--img-container">
                   <img
                     className="work-brief--img shadow"
-                    src={data.regTokenAnimated.publicURL}
+                    src={data.zeppelinOs.publicURL}
                   />
                 </div>
 
                 <div className="work-brief--img-container">
                   <img
                     className="work-brief--img shadow"
-                    src={data.regTokenShot2.publicURL}
+                    src={data.zeppelinOsDesktop.publicURL}
                   />
                 </div>
 
-                <div className="work-brief--img-container">
-                  <img
-                    className="work-brief--img shadow"
-                    src={data.regTokenShot1.publicURL}
-                  />
-                </div>
               </div>
             </div>
           </div>
@@ -108,13 +102,13 @@ class Work extends React.PureComponent {
       <StaticQuery
         query={graphql`
           query {
-            regTokenAnimated: file(relativePath: { eq: "reg-token-animated.gif" }) {
+            zeppelinOs: file(relativePath: { eq: "ZeppelinOS.png" }) {
               publicURL
             }
-            regTokenShot1: file(relativePath: { eq: "reg-token-shot-1.png" }) {
+            zeppelinOsDesktop: file(relativePath: { eq: "ZeppelinOS_Desktop.gif" }) {
               publicURL
             }
-            regTokenShot2: file(relativePath: { eq: "reg-token-shot-2.png" }) {
+            zeppelinOsMobile: file(relativePath: { eq: "ZeppelinOS_Mobile.gif" }) {
               publicURL
             }
           }
