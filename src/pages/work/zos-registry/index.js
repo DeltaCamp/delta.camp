@@ -30,7 +30,7 @@ class Work extends React.PureComponent {
                 </h2>
 
                 <h3 className='subtitle-3'>
-                  An application for EVM Packages.
+                  An application for EVM Packages
                 </h3>
               </div>
             </div>

@@ -366,7 +366,9 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-  border-width: 2px;
+  border-radius: 5px;
+  border-width: 3px;
+  box-shadow: 0 3px 7px 1px rgba(100, 110, 140, 0.12);
   font-family: "acier-bat-solid", Verdana, sans-serif;
   letter-spacing: 1px;
   margin-right: 20px;
@@ -376,6 +378,24 @@ input[type="button"] {
   padding-bottom: 2px;
   padding-top: 3px;
   transition: 0.2s;
+
+  @media (max-width: 420px) {
+    width: 100%;
+  }
+}
+
+.button:last-child,
+button:last-child,
+input[type="submit"]:last-child,
+input[type="reset"]:last-child,
+input[type="button"]:last-child {
+  margin-right: 0;
+}
+
+.button.is-large {
+  @media (max-width: 420px) {
+    font-size: 1.25rem;
+  }
 }
 
 button[type="submit"] {
@@ -406,28 +426,52 @@ input[type="button"]:active {
   // padding-top: 4px;
 }
 
-.button.button-primary,
-button.button-primary,
-input[type="submit"].button-primary,
-input[type="reset"].button-primary,
-input[type="button"].button-primary {
+.button.is-dark,
+button.is-dark,
+input[type="submit"].is-dark,
+input[type="reset"].is-dark,
+input[type="button"].is-dark {
+  background-color: $dark-btn-background-color;
+  border-color: $dark-btn-border-color;
+  color: $dark-btn-color;
+}
+
+.button.is-dark:hover,
+button.is-dark:hover,
+input[type="submit"].is-dark:hover,
+input[type="reset"].is-dark:hover,
+input[type="button"].is-dark:hover,
+.button.is-dark:focus,
+button.is-dark:focus,
+input[type="submit"].is-dark:focus,
+input[type="reset"].is-dark:focus,
+input[type="button"].is-dark:focus {
+  background-color: $dark-btn-background-hover-color;
+  border-color: $dark-btn-border-hover-color;
+}
+
+.button.is-primary,
+button.is-primary,
+input[type="submit"].is-primary,
+input[type="reset"].is-primary,
+input[type="button"].is-primary {
   background-color: $primary-btn-background-color;
   border-color: $primary-btn-border-color;
   color: $primary-btn-color;
 }
 
-.button.button-primary:hover,
-button.button-primary:hover,
-input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover,
-.button.button-primary:focus,
-button.button-primary:focus,
-input[type="submit"].button-primary:focus,
-input[type="reset"].button-primary:focus,
-input[type="button"].button-primary:focus {
+.button.is-primary:hover,
+button.is-primary:hover,
+input[type="submit"].is-primary:hover,
+input[type="reset"].is-primary:hover,
+input[type="button"].is-primary:hover,
+.button.is-primary:focus,
+button.is-primary:focus,
+input[type="submit"].is-primary:focus,
+input[type="reset"].is-primary:focus,
+input[type="button"].is-primary:focus {
   background-color: $primary-btn-background-hover-color;
-  border-color: $primary-btn-background-hover-color;
+  border-color: $primary-btn-border-hover-color;
 }
 
 .button.button-outline,
@@ -775,6 +819,10 @@ ul.ul  {
   list-style: none;
 }
 
+ul.ul li {
+  margin-left: 1rem;
+}
+
 ul.ul li:before {
   content: "";
   border-color: $orangeLight transparent;
@@ -784,8 +832,24 @@ ul.ul li:before {
   height: 0;
   width: 0;
   left: -1em;
-  top: 0.9em;
+  top: 0.875em;
   position: relative;
+}
+
+ul.ul li:nth-child(2)::before {
+  border-color: $teal transparent;
+}
+
+ul.ul li:nth-child(3)::before {
+  border-color: $pink transparent;
+}
+
+ul.ul li:nth-child(4)::before {
+  border-color: $blueLight transparent;
+}
+
+ul.ul li:nth-child(5)::before {
+  border-color: $purpleDark transparent;
 }
 
 .is-attention-grabby {

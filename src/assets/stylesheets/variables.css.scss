@@ -1,12 +1,14 @@
 $grey: #f8f8f8;
 $pink: #fa12be;
-$pinkLight: #de5ae1;
-$tealLight: #7fd9d0;
+$pinkLight: #fa12be;
+$tealLight: #2fd9f0;
 $teal: #0cc0d8;
 $blueLight: #7fc6f5;
 $orangeLight: #ffa32a;
 $purple: #ac9cec;
 $purpleDark: #8c75e8;
+
+$turquoise: $teal;
 
 $link-color: $pink;
 $hover-color: $tealLight;
@@ -21,14 +23,21 @@ $contact-link-hover-color: #1fb90a;
 $contact-brand-color: #0c14d2;
 $contact-brand-hover-color: #1fb90a;
 
-$primary-btn-background-color: #3c4049;
-$primary-btn-border-color: #3a3a3a;
-$primary-btn-background-hover-color: $pinkLight;
+$dark-btn-background-color: #3c4049;
+$dark-btn-border-color: white;
+$dark-btn-background-hover-color: $pink;
+$dark-btn-border-hover-color: white;
+$dark-btn-color: #fff;
+
+$primary-btn-background-color: $teal;
+$primary-btn-border-color: white;
+$primary-btn-background-hover-color: $tealLight;
+$primary-btn-border-hover-color: white;
 $primary-btn-color: #fff;
 
 $outline-btn-background-color: transparent;
-$outline-btn-border-color: $blueLight;
+$outline-btn-border-color: $turquoise;
 $outline-btn-background-hover-color: white;
 $outline-btn-color: #fff;
-$outline-btn-hover-color: $blueLight;
+$outline-btn-hover-color: $turquoise;
 $outline-btn-border-hover-color: white;

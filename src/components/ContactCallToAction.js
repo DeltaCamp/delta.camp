@@ -11,7 +11,7 @@ export default function () {
       </p>
 
       <div className='has-text-centered'>
-        <Link className="button is-large button-primary" to="/contact" title="Reach out and let's start a discussion">
+        <Link className="button is-large is-dark" to="/contact" title="Reach out and let's start a discussion">
           Let's Build Together
         </Link>
       </div>

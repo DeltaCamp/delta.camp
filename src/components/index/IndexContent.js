@@ -280,7 +280,7 @@ class IndexContent extends React.Component {
                 </div>
 
                 <p>
-                  <Link className="button is-medium button-primary" to="/contact" title="Reach out and let's start a discussion">
+                  <Link className="button is-medium is-dark" to="/contact" title="Reach out and let's start a discussion">
                     Let's Build Together
                   </Link>
                   &nbsp;

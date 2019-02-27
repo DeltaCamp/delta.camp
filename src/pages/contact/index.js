@@ -222,7 +222,7 @@ class Contact extends React.PureComponent {
             <div className="control">
               <button
                 type="submit"
-                className={classnames("button button-primary is-large", {
+                className={classnames("button is-dark is-large", {
                   "is-loading": this.state.isLoading
                 })}
               >Submit</button>

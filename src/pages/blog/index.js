@@ -16,7 +16,6 @@ class BlogIndex extends React.Component {
     if (author) {
       link = (
         <div>
-          &nbsp;-&nbsp;
           <a href={`https://twitter.com/${authorTwitterUsernames[author]}`}>{author} <AntdIcon className="inline-icon" type={'twitter'} /></a>
         </div>
       )

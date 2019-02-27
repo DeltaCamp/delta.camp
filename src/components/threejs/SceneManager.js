@@ -95,14 +95,14 @@ export default (canvas, data) => {
       },
       {
         distance: 12000,
-        color: '#f62680', // back light
+        color: '#d64640', // back light
         x: -180,
         y: -100,
         z: 150
       },
       {
         distance: 8000,
-        color: '#470d86',
+        color: '#fa12be',
         x: -100,
         y: 400,
         z: -100
