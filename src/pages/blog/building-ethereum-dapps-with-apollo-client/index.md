@@ -14,7 +14,7 @@ _tldr; we have created a package called [apollo-link-ethereum](https://github.co
 
 <!-- more -->
 
-![Apollo Client and Ethereum](./ApolloEthereum.jpg)
+![Apollo Client and Ethereum](./apollo-link-ethereum--logo.png)
 
 I've been building Ethereum apps now for about a year.  My toolset was the typical React + Redux + Redux Saga combination like many people use: until recently, when I decided to try something new.
 
