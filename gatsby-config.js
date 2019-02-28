@@ -116,23 +116,22 @@ module.exports = {
         dir: 'auto',
         lang: 'en-US',
         background: '#fff',
-        theme_color: '#fff',
         display: 'standalone',
         orientation: 'any',
-        start_url: '/?homescreen=1',
+        start_url: '/',
         version: '1.0',
 
         icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
+          android: false,
+          appleIcon: false,
+          appleStartup: false,
           coast: false,
           favicons: true,
-          firefox: true,
-          opengraph: true,
-          twitter: true,
+          firefox: false,
+          opengraph: false,
+          twitter: false,
           yandex: false,
-          windows: true
+          windows: false
         }
       }
     }

@@ -188,14 +188,14 @@ export const pageQuery = graphql`
         draft
       }
     }
-    chuckProfilePic: file(relativePath: { eq: "chuck-bergeron--profile-sm.jpg" }) {
+    chuckProfilePic: file(relativePath: { eq: "chuck-bergeron--blog-photo-xs.jpg" }) {
       childImageSharp {
         fixed(width: 72, height: 72) {
           ...GatsbyImageSharpFixed_tracedSVG
         }
       }
     }
-    brendanProfilePic: file(relativePath: { eq: "brendan-asselstine--profile-sm.png" }) {
+    brendanProfilePic: file(relativePath: { eq: "brendan-asselstine--blog-photo-xs.jpg" }) {
       childImageSharp {
         fixed(width: 72, height: 72) {
           ...GatsbyImageSharpFixed_tracedSVG

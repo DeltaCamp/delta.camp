@@ -30,7 +30,7 @@ class IndexContent extends React.Component {
           <div className="container">
             <div className={columnsClassName}>
               <div className={columnClassName}>
-                <h2>Experience and skills you need.</h2>
+                <h2>Experience and skills you need</h2>
                 <p>
                   We produce top quality web applications.  Here is what we can do for you:
                 </p>
@@ -159,11 +159,8 @@ class IndexContent extends React.Component {
             <div className='columns'>
               <div className='column is-full-tablet'>
                 <h2>
-                  The Delta Camp Team
+                  The Delta Camp team
                 </h2>
-                {/*<p>
-                  Dedicated to Crafting the Future Web
-                </p>*/}
                 <p>
                   The trick to successful digital projects isn't just tech, <br className="is-hidden-touch" />it’s also working with the right people.
                 </p>
@@ -299,28 +296,28 @@ class IndexContent extends React.Component {
     return <StaticQuery
       query={graphql`
         query {
-          chuckTeamPic: file(relativePath: { eq: "DSC_0145.jpg" }) {
+          chuckTeamPic: file(relativePath: { eq: "chuck-bergeron--photo-md-1.jpg" }) {
             childImageSharp {
               fixed(width: 600, height: 600) {
                 ...GatsbyImageSharpFixed_tracedSVG
               }
             }
           }
-          brendanTeamPic: file(relativePath: { eq: "DSC_0187.jpg" }) {
+          brendanTeamPic: file(relativePath: { eq: "brendan-asselstine--photo-md-1.jpg" }) {
             childImageSharp {
               fixed(width: 600, height: 600) {
                 ...GatsbyImageSharpFixed_tracedSVG
               }
             }
           }
-          chuckTeamPicHover: file(relativePath: { eq: "DSC_0170.jpg" }) {
+          chuckTeamPicHover: file(relativePath: { eq: "chuck-bergeron--photo-md-2.jpg" }) {
             childImageSharp {
               fixed(width: 600, height: 600) {
                 ...GatsbyImageSharpFixed_tracedSVG
               }
             }
           }
-          brendanTeamPicHover: file(relativePath: { eq: "DSC_0195.jpg" }) {
+          brendanTeamPicHover: file(relativePath: { eq: "brendan-asselstine--photo-md-2.jpg" }) {
             childImageSharp {
               fixed(width: 600, height: 600) {
                 ...GatsbyImageSharpFixed_tracedSVG

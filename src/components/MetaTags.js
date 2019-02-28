@@ -46,7 +46,7 @@ class MetaTags extends React.Component {
           },
           {
             name: 'theme-color',
-            content: '#50286d'
+            content: '#0cc0d8'
           },
           {
             name: "description",
