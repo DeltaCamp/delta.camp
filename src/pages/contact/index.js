@@ -1,8 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-
+import ScrollToTop from 'src/components/ScrollToTop'
 import queryString from 'query-string'
 
 class Contact extends React.PureComponent {
@@ -233,6 +232,7 @@ class Contact extends React.PureComponent {
 
     return (
       <div>
+        <ScrollToTop />
         <Helmet>
           <title>{'Contact Us'}</title>
         </Helmet>

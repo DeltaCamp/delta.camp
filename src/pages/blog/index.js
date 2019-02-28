@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 import AntdIcon from 'react-antd-icons/esm'
-
+import ScrollToTop from 'src/components/ScrollToTop'
 import { BlogColumn } from 'src/components/BlogColumn'
 import { BlogHeader } from 'src/components/BlogHeader'
 import { TagList } from 'src/components/TagList'
@@ -40,6 +40,8 @@ class BlogIndex extends React.Component {
 
     return (
       <div>
+        <ScrollToTop />
+
         <Helmet>
           <title>Fresh Tracks, the Delta Camp Blog</title>
         </Helmet>

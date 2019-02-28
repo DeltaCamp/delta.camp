@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import classnames from 'classnames'
 import Helmet from 'react-helmet'
+import ScrollToTop from 'src/components/ScrollToTop'
 import TokenRegistryImage1 from 'src/components/work/TokenRegistryImage1'
 import ZeppelinOSImage from 'src/components/work/ZeppelinOSImage'
 import OpenCare1 from 'src/components/work/OpenCare1'
@@ -29,6 +30,8 @@ class Work extends React.PureComponent {
 
     return (
       <div>
+        <ScrollToTop />
+        
         <Helmet>
           <title>{'Our Work'}</title>
         </Helmet>

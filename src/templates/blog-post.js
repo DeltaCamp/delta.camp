@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import AntdIcon from 'react-antd-icons/esm'
-
+import ScrollToTop from 'src/components/ScrollToTop'
 import { BlogColumn } from 'src/components/BlogColumn'
 import { TagList } from 'src/components/TagList'
 import { authorTwitterUsernames } from 'src/utils/authorTwitterUsernames'
@@ -23,6 +23,7 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <div>
+        <ScrollToTop />
         <Helmet
           title={postTitle}
           htmlAttributes={{ lang: 'en' }}

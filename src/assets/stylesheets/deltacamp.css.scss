@@ -663,7 +663,7 @@ input[type='radio'] {
 
 .page-transition-group--active {
   opacity: 1;
-  transition: opacity 3s cubic-bezier(0.6, 0, 0.20, 1);
+  transition: opacity 3000ms cubic-bezier(0.6, 0, 0.20, 1);
   transition-property: opacity;
 }
 
@@ -909,7 +909,7 @@ ul.ul li:nth-child(5)::before {
 
 .fade-in-entering {
   opacity: 1;
-  transition: all 700ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .fade-in-exiting {

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Helmet from 'react-helmet'
 import AntdIcon from 'react-antd-icons/esm'
+import ScrollToTop from 'src/components/ScrollToTop'
 import ContactCallToAction from 'src/components/ContactCallToAction'
 import WorkNav from 'src/components/work/WorkNav'
 
@@ -11,6 +12,7 @@ class Work extends React.PureComponent {
 
     return (
       <div>
+        <ScrollToTop />
         <Helmet>
           <title>ZeppelinOS Registry</title>
         </Helmet>
