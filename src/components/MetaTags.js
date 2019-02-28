@@ -131,7 +131,7 @@ class MetaTags extends React.Component {
             deltaCamp3DLightbox: file(relativePath: { eq: "DeltaCamp-logo-3d--lightbox.fbx" }) {
               publicURL
             }
-            deltaCampLogo: file(relativePath: { eq: "delta-camp--logo-pink-vertical--outlines@2x.png" }) {
+            deltaCampLogo: file(relativePath: { eq: "delta-camp--white-triangle--wordmark--pink-bg@2x.png" }) {
               publicURL
             }
           }
