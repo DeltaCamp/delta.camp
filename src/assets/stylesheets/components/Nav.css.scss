@@ -47,9 +47,16 @@ $navbar-mobile-height: 73px;
   }
 }
 
+@media all and (max-width: 650px) {
+  .navbar-item.brand {
+    max-width: 50%;
+  }
+}
+
 @media all and (max-width: 480px) {
   .navbar-item.brand {
-    max-width: 60%;
+    max-width: 65%;
+    padding-right: 0.5rem;
   }
 }
 
@@ -60,6 +67,7 @@ $navbar-mobile-height: 73px;
   width: 6rem;
 
   @media all and (max-width: 768px) {
+    margin-right: 1rem;
     margin-top: 0.5rem;
     height: 73px;
     width: 73px;

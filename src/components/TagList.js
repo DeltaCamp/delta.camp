@@ -8,11 +8,11 @@ export const TagList = function({ tags }) {
   const tagLinks = tags.map(tag => {
       const tagSlug = kebabCase(tag.replace(' ', '-'))
 
-      return <small className="tag-list" key={`tag-fragment-${tagSlug}`}>
+      return <p className="tag-list" key={`tag-fragment-${tagSlug}`}>
         <Link key={`tag-${tagSlug}`} to={`/blog/tags/${tagSlug}`}>{tag}</Link>
         &nbsp;
         &nbsp;
-      </small>
+      </p>
   })
   
   return tagLinks

@@ -97,13 +97,25 @@ class BlogPostTemplate extends React.Component {
                 <h6 className="is-bottom-marginless">
                   <small>Written by <a href={`https://twitter.com/${authorTwitterUsernames[author]}`}>{author} <AntdIcon className="inline-icon" type={'twitter'} /></a></small>
                 </h6>
-                <small>
-                  Originally Published {post.frontmatter.from_medium ? 'on Medium' : ''} {post.frontmatter.date}
-                </small>
+                <h6 className="is-bottom-marginless">
+                  <small>Originally Published {post.frontmatter.from_medium ? 'on Medium' : ''} {post.frontmatter.date}</small>
+                </h6>
 
                 <br />
                 <br />
                 <TagList tags={tags} />
+
+                <br />
+                <br />
+                <hr />
+                <br />
+                <h3 className="is-size-3 has-text-centered">
+                  Need something built?
+                  <br />
+                  <Link to='/contact' className="has-text-center">
+                    We'd love to help
+                  </Link>
+                </h3>
 
               </BlogColumn>
             </div>
@@ -114,32 +126,32 @@ class BlogPostTemplate extends React.Component {
           <div className="container">
             <div className="columns">
               <BlogColumn>
-                <ul>
-                  <li>
+                <div className="columns">
+                  <div className="column has-text-left">
                     {
                       previous &&
                       <Link to={previous.fields.slug} rel="prev">
-                        ← {previous.frontmatter.title}
+                        ←<br />{previous.frontmatter.title}
                       </Link>
                     }
-                  </li>
-                  <li>
+                  </div>
+
+                  <div className="column has-text-right">
                     {
                       next &&
                       <Link to={next.fields.slug} rel="next">
-                        {next.frontmatter.title} →
+                        →
+                        <br />
+                        {next.frontmatter.title}
                       </Link>
                     }
-                  </li>
-                </ul>
-
-                <br />
-                <hr />
+                  </div>
+                </div>
 
                 <div className='has-text-centered'>
                   <Link to='/blog'>
                     <small>
-                      View more articles
+                      View all articles
                     </small>
                   </Link>
                 </div>
