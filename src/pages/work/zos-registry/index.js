@@ -57,7 +57,7 @@ class Work extends React.PureComponent {
                 </p>
 
                 <p>
-                  We crafted a beautiful, responsive application that works across all browsers and screen sizes.  Mobile dapp browsers have broad support when transacting with the contracts.  The application code turned out beautiful as well, with a reduction of typical Web3 boilerplate code to near zero.
+                  We crafted a beautiful, responsive application that works across all browsers and screen sizes.  Mobile dapp browsers have broad support when transacting with the contracts.  The application code is beautiful as well, with a reduction of typical Web3 boilerplate code to near zero.
                 </p>
 
                 <h4>Technologies</h4>
