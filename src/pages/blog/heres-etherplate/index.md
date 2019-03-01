@@ -6,7 +6,7 @@ category:  blog
 date:      "2018-05-22T15:00:00.200Z"
 draft: false
 tags: ["nft", "erc721", "ethereum", "blockchain"]
-shared_square_image: ./etherplate-logo.png
+socialImage: "./etherplate-logo.png"
 from_medium: true
 ---
 

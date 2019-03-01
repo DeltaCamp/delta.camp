@@ -14,12 +14,44 @@ class BlogPostTemplate extends React.Component {
     const { previous, next } = this.props.pageContext
     const data = this.props.data
     const post = data.markdownRemark
+    const siteUrl = data.site.siteMetadata.siteUrl
 
     const postTitle = post.frontmatter.title
     const postDescription = post.excerpt
 
     const tags = post.frontmatter.tags
     const author = post.frontmatter.author
+    const socialImage = post.frontmatter.socialImage
+
+    const meta = [
+      {
+        name: 'description',
+        content: postDescription
+      },
+      {
+        property: "og:description",
+        content: postDescription
+      },
+      {
+        property: "og:title",
+        content: postTitle
+      },
+      {
+        property: "twitter:title",
+        content: postTitle
+      }  
+    ]
+
+    if (socialImage) {
+      meta.push({
+        property: "twitter:image",
+        content: `${siteUrl}${socialImage.publicURL}`
+      })
+      meta.push({
+        property: "og:image",
+        content: `${siteUrl}${socialImage.publicURL}`
+      })
+    }
 
     return (
       <div>
@@ -27,24 +59,7 @@ class BlogPostTemplate extends React.Component {
         <Helmet
           title={postTitle}
           htmlAttributes={{ lang: 'en' }}
-          meta={[
-            {
-              name: 'description',
-              content: postDescription
-            },
-            {
-              property: "og:description",
-              content: postDescription
-            },
-            {
-              property: "og:title",
-              content: postTitle
-            },
-            {
-              property: "twitter:title",
-              content: postTitle
-            }
-          ]}
+          meta={meta}
         />
 
         <section className="section first">
@@ -169,6 +184,7 @@ export const pageQuery = graphql`
       siteMetadata {
         title
         author
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -182,6 +198,9 @@ export const pageQuery = graphql`
         tags
         from_medium
         draft
+        socialImage {
+          publicURL
+        }
       }
     }
     chuckProfilePic: file(relativePath: { eq: "chuck-bergeron--blog-photo-xs.jpg" }) {

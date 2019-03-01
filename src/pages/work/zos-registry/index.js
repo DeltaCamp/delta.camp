@@ -77,14 +77,14 @@ class Work extends React.PureComponent {
               <div className='column'>
                 <div className="work-brief--img-container">
                   <img
-                    className="work-brief--img shadow"
+                    className="work-brief--img shadow__strong"
                     src={data.zeppelinOs.publicURL}
                   />
                 </div>
 
                 <div className="work-brief--img-container">
                   <img
-                    className="work-brief--img shadow"
+                    className="work-brief--img shadow__strong"
                     src={data.zeppelinOsDesktop.publicURL}
                   />
                 </div>

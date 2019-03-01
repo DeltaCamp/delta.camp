@@ -622,6 +622,11 @@ input[type='radio'] {
     0 5px 35px rgba(0,0,0,.06) !important;
 }
 
+.shadow__strong {
+  box-shadow: 0 10px 30px 0 rgba(60,90,120,.12),
+    0 3px 20px rgba(0,0,0,.09) !important;
+}
+
 @keyframes shake {
   2% {
     opacity: 0.2;

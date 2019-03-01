@@ -6,7 +6,7 @@ category:  blog
 date:      "2019-02-25T15:00:00.200Z"
 draft:     false
 tags:      ["apollo client", "graphql", "graph protocol", "smart contracts", "software architecture", "ethereum", "blockchain"]
-shared_square_image: posts/etherplate-logo.png
+socialImage: "./apollo-link-ethereum--logo.png"
 from_medium: false
 ---
 

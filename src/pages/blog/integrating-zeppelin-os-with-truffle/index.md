@@ -6,7 +6,7 @@ category:  blog
 date:      "2018-11-30T15:00:00.200Z"
 draft:     false
 tags: ["truffle", "zos", "zeppelin", "openzeppelin", "ethereum", "blockchain"]
-shared_square_image: ./integrating-zeppelin.jpeg
+socialImage: "./integrating-zeppelin.jpeg"
 from_medium: true
 ---
 

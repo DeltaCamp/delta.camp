@@ -74,21 +74,21 @@ class Work extends React.PureComponent {
               <div className='column'>
                 <div className="work-brief--img-container">
                   <img
-                    className="work-brief--img shadow"
+                    className="work-brief--img shadow__strong"
                     src={data.regTokenAnimated.publicURL}
                   />
                 </div>
 
                 <div className="work-brief--img-container">
                   <img
-                    className="work-brief--img shadow"
+                    className="work-brief--img shadow__strong"
                     src={data.regTokenShot2.publicURL}
                   />
                 </div>
 
                 <div className="work-brief--img-container">
                   <img
-                    className="work-brief--img shadow"
+                    className="work-brief--img shadow__strong"
                     src={data.regTokenShot1.publicURL}
                   />
                 </div>

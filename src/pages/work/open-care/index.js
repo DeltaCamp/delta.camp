@@ -78,21 +78,21 @@ class Work extends React.PureComponent {
               <div className='column'>
                 <div className="work-brief--img-container">
                   <img
-                    className="work-brief--img shadow"
+                    className="work-brief--img shadow__strong"
                     src={data.openCareShot1.publicURL}
                   />
                 </div>
 
                 <div className="work-brief--img-container">
                   <img
-                    className="work-brief--img shadow"
+                    className="work-brief--img shadow__strong"
                     src={data.openCareShot2.publicURL}
                   />
                 </div>
 
                 <div className="work-brief--img-container">
                   <img
-                    className="work-brief--img shadow"
+                    className="work-brief--img shadow__strong"
                     src={data.openCareShot3.publicURL}
                   />
                 </div>
