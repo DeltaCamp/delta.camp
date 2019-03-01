@@ -5,6 +5,7 @@ import AntdIcon from 'react-antd-icons/esm'
 import ScrollToTop from 'src/components/ScrollToTop'
 import ContactCallToAction from 'src/components/ContactCallToAction'
 import WorkNav from 'src/components/work/WorkNav'
+import Gallery from 'src/components/Gallery'
 
 class Work extends React.PureComponent {
 
@@ -89,6 +90,9 @@ class Work extends React.PureComponent {
                   />
                 </div>
 
+                <Gallery photos={[
+                  data.zeppelinOs
+                ]} />
               </div>
             </div>
           </div>
@@ -106,6 +110,11 @@ class Work extends React.PureComponent {
           query {
             zeppelinOs: file(relativePath: { eq: "ZeppelinOS.png" }) {
               publicURL
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_tracedSVG
+                }
+              }
             }
             zeppelinOsDesktop: file(relativePath: { eq: "ZeppelinOS_Desktop.gif" }) {
               publicURL
