@@ -33,7 +33,7 @@ $mobile-padding: 1.5rem;
 }
 
 .footer__copyright {
-  padding: 3rem 0;
+  padding: 0 0 4rem 0;
 }
 
 .ul-title {
@@ -44,4 +44,13 @@ $mobile-padding: 1.5rem;
 
 .is-vertical-align-top {
   vertical-align: top;
+}
+
+.footer .prefix-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.footer .column {
+  padding-bottom: 0;
 }

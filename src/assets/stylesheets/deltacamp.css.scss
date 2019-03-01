@@ -916,3 +916,16 @@ ul.ul li:nth-child(5)::before {
 .fade-in-exiting {
   opacity: 0;
 }
+
+.is-inline-list {
+
+}
+
+.is-inline-list li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.is-inline-list li:last-child {
+  margin-right: 0;
+}

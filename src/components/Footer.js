@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import AntdIcon from 'react-antd-icons/esm'
 
 class Footer extends React.Component {
 
@@ -69,10 +70,29 @@ class Footer extends React.Component {
             </div>
           </div>
 
-          <div className='footer__copyright'>
-            <div className='has-text-left'>
-              <div className='is-inline-block'>&copy; {year} Delta Camp</div> <span className='is-hidden-mobile'>&mdash; </span><div className='is-inline-block'>Vancouver, BC. Canada</div>
-            </div>
+          <div>
+            <br />
+            <ul className="is-inline-list">
+              <li>
+                <a href='https://twitter.com/TeamDeltaCamp'>
+                  <AntdIcon type={'twitter'} className='prefix-icon' />
+                </a>
+              </li>
+              <li>
+                <a href='https://www.linkedin.com/company/delta-camp-blockchain-consultancy'>
+                  <AntdIcon type={'linkedin-fill'} className='prefix-icon' />
+                </a>
+              </li>
+              <li>
+                <a href='https://github.com/DeltaCamp'>
+                  <AntdIcon type={'github-fill'} className='prefix-icon' />
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className='footer__copyright has-text-left'>
+            <div className='is-inline-block'>&copy; {year} Delta Camp</div> <span className='is-hidden-mobile'>&mdash; </span><div className='is-inline-block'>Vancouver, BC. Canada</div>
           </div>
         </div>
       </footer>

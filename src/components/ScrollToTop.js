@@ -14,9 +14,6 @@ export default ReactTimeout(class _ScrollToTop extends PureComponent {
   componentDidMount() {
     this.props.setTimeout(() => {
       if (window) {
-        console.log("wtf")
-        window.scrollTo(0, 0)
-        console.log("SCROLL!")
         window.scrollTo(0, 0)
       }
     }, this.props.delay)
