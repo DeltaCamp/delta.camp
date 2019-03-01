@@ -9,7 +9,6 @@ tags: ["truffle", "zos", "zeppelin", "openzeppelin", "ethereum", "blockchain"]
 socialImage: "./integrating-zeppelin.jpeg"
 from_medium: true
 ---
-
 _tldr; easily integrate Zeppelin OS into an existing Truffle-based project using a migration pattern and Zeppelin OS to Truffle merge command. You can find a mirror of the tutorial and example code on Github_
 
 <!-- more -->

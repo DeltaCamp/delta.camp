@@ -9,7 +9,6 @@ tags:      ["apollo client", "graphql", "graph protocol", "smart contracts", "so
 socialImage: "./apollo-link-ethereum--logo.png"
 from_medium: false
 ---
-
 _tldr; we have created a package called [apollo-link-ethereum](https://github.com/DeltaCamp/apollo-link-ethereum) that links Apollo Client directly to Ethereum.  We've really enjoyed developing with this package and encourage any Dapp developers to try it too._
 
 <!-- more -->

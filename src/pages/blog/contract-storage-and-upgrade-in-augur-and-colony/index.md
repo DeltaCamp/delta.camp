@@ -9,7 +9,6 @@ tags:      ["smart contracts", "software architecture", "ethereum", "blockchain"
 socialImage: "./augur-colony-logos.png"
 from_medium: true
 ---
-
 In this article I’ll examine two major Ethereum projects to see how they approach contract storage and upgrades. I try to stick strictly to analysis and avoid giving opinions or making assumptions (at least until the summary!). I examined [Augur](http://www.augur.net/) and [Colony](https://colony.io/) because they are mature and have public code bases.
 
 <!-- more -->

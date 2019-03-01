@@ -9,7 +9,6 @@ tags: ["nft", "erc721", "ethereum", "blockchain"]
 socialImage: "./etherplate-logo.png"
 from_medium: true
 ---
-
 Recently I found myself wanting to dive in to blockchain development after working through the fantastic [CryptoZombies tutorials](https://cryptozombies.io/), and what better way to start working on DApps than to create something for the open source community.
 
 <!-- more -->

@@ -8,6 +8,7 @@ import { BlogColumn } from 'src/components/BlogColumn'
 import { TagList } from 'src/components/TagList'
 import { authorTwitterUsernames } from 'src/utils/authorTwitterUsernames'
 import { authorImages } from 'src/utils/authorImages'
+import { stripMarkdown } from 'src/utils/stripMarkdown'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -17,7 +18,10 @@ class BlogPostTemplate extends React.Component {
     const siteUrl = data.site.siteMetadata.siteUrl
 
     const postTitle = post.frontmatter.title
-    const postDescription = post.excerpt
+
+    const sanitizedPostDescription = stripMarkdown(post.excerpt.substr(0, 240))
+    const lastIndex = sanitizedPostDescription.lastIndexOf(' ')
+    const shortenedSanitizedPostDescription = `${sanitizedPostDescription.substring(0, lastIndex)} ...`
 
     const tags = post.frontmatter.tags
     const author = post.frontmatter.author
@@ -26,11 +30,11 @@ class BlogPostTemplate extends React.Component {
     const meta = [
       {
         name: 'description',
-        content: postDescription
+        content: shortenedSanitizedPostDescription
       },
       {
         property: "og:description",
-        content: postDescription
+        content: shortenedSanitizedPostDescription
       },
       {
         property: "og:title",
