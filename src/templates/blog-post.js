@@ -51,15 +51,6 @@ class BlogPostTemplate extends React.Component {
           <div className="container">
             <div className="columns">
               <BlogColumn>
-                <Link to='/blog' className="is-light">
-                  <small>
-                    ← Read more articles
-                  </small>
-                </Link>
-                <br />
-                <br />
-                <br />
-
                 <h2 className="is-bottom-marginless">
                   {post.frontmatter.title}
                 </h2>
@@ -131,31 +122,35 @@ class BlogPostTemplate extends React.Component {
                   <div className="column has-text-left">
                     {
                       previous &&
-                      <Link to={previous.fields.slug} rel="prev">
-                        ←<br />{previous.frontmatter.title}
+                      <Link to={previous.fields.slug} rel="prev" className='is-size-6'>
+                        <strong className="is-size-3">←</strong>
+                        <br />
+                        <strong className="is-size-6">{previous.frontmatter.title}</strong>
                       </Link>
                     }
                   </div>
 
                   <div className="column has-text-right">
                     {
-                      next &&
-                      <Link to={next.fields.slug} rel="next">
-                        →
-                        <br />
-                        {next.frontmatter.title}
-                      </Link>
+                      next && 
+                        <Link to={next.fields.slug} rel="next">
+                          <strong className="is-size-3">→</strong>
+                          <br />
+                          <strong className="is-size-6">{next.frontmatter.title}</strong>
+                        </Link>
                     }
                   </div>
                 </div>
 
                 <div className='has-text-centered'>
-                  <Link to='/blog'>
-                    <small>
+                  <Link to='/blog' className="is-size-6">
+                    <strong>
                       View all articles
-                    </small>
+                    </strong>
                   </Link>
                 </div>
+                <br />
+                <br />
                 <br />
               </BlogColumn>
             </div>
